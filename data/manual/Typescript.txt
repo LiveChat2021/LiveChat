@@ -1,0 +1,1799 @@
+
+[2016-11-23 23:24:36] <stevekane>  [<-CODE->] 
+[2016-11-23 23:24:56] <stevekane> for those following along, this is the proper way to do the sort of type-safe polymorphism I've been trying for the last few days
+[2016-11-23 23:25:39] <stevekane> very analogous to typeclasses in a language that has them
+[2016-11-24 02:30:08] <dtabuenc> stevekane: That's cool stuff.... I keep forgetting that overloads can be helpful
+--------------------------------------------------------------------------------------------------
+[2016-11-24 09:30:57] <d3lm> Hey guys
+[2016-11-24 09:31:29] <d3lm> I was wondering, do imports of the same file in multiple files generate code duplication?
+[2016-11-24 09:41:22] <dtabuenc> d3lm: no imports don't genrate any code
+[2016-11-24 09:41:33] <dtabuenc> they just generate [<-CODE->] 
+[2016-11-24 09:41:47] <dtabuenc> or the equivalent depending on what you configure your module in tsconfig.json
+[2016-11-24 09:41:48] <d3lm> Ah ok but require produces code, no?
+[2016-11-24 09:42:11] <dtabuenc> no it's just a functionthat returns an object
+[2016-11-24 09:42:32] <dtabuenc> of whatever that file exports
+[2016-11-24 09:42:47] <dtabuenc> each time you call require you get the same instance
+[2016-11-24 09:42:50] <dtabuenc> so no duplication
+[2016-11-24 09:50:19] <d3lm> dtabuenc: Oh interesting
+[2016-11-24 09:50:23] <dtabuenc> It is really recommended you start filling in your typings as you code... so if you come to a method like [<-CODE->] 
+[2016-11-24 09:50:44] <d3lm> So I can import that as often as I want and wont end up having the same code multipe times in my bundle
+[2016-11-24 09:50:45] <dtabuenc> you can then go into your typing and do something like: [<-CODE->] 
+[2016-11-24 09:50:47] <d3lm> Pretty cool
+[2016-11-24 09:50:58] <d3lm> Treeshaking is then just to eliminate code that is not used, right?
+[2016-11-24 09:53:18] <dtabuenc> d3lm: yeah tree shaking is to remove parts from within a module that were never imported
+[2016-11-24 09:53:26] <d3lm> Nice
+[2016-11-24 09:53:30] <d3lm> Thanks
+--------------------------------------------------------------------------------------------------
+1 [2016-11-28T04:52:01] <Sweet-Bob> Hi Guys, how i can find definitions for typescript?
+2 [2016-11-28T04:52:48] <Sweet-Bob> maybe exist some service? like npm
+3 [2016-11-28T06:02:22] <dtabuenc> you actually use npm
+4 [2016-11-28T06:02:29] <dtabuenc> as long as you are using typsecript 2.0 +
+5 [2016-11-28T06:03:15] <dtabuenc>  [<-LINK->]
+6 [2016-11-28T06:03:35] <dtabuenc> so for  example if you need types for lodash
+7 [2016-11-28T06:03:42] <dtabuenc> you do [<-CODE->]
+--------------------------------------------------------------------------------------------------
+1 [2016-11-28T11:03:59] <jeusdi> Could somebody give me a helping hand in order to generate a npm module from a typescript library? Which steps would I need to follow?I've created a [<-LINK->] in order to give access to the code.
+2 [2016-11-28T11:04:19] <serhiisol> dtabuenc: basically converts it to mongoose-way
+3 [2016-11-28T11:05:30] <dtabuenc> jeusdi: just adddeclarations: trueto your tsconfig
+4 [2016-11-28T11:05:41] <dtabuenc> and addtypes: index.d.tsto your package.config
+5 [2016-11-28T11:06:56] <jeusdi> dtabuenc: let me a time in order to dive a bit into whatdeclarations: trueandtypes: index.d.tsmeans
+6 [2016-11-28T11:07:27] <dtabuenc> declarations true makestscoutput a.d.tsfile for every.jsfile it outputs
+7 [2016-11-28T11:07:42] <dtabuenc> andtypesin pacakge.json just points to it
+8 [2016-11-28T11:10:54] <jeusdi> Mmm, as far I've been able to figure out"*.d.ts"files stand for providing typescript code to javascript libraries, doesn't it?
+9 [2016-11-28T11:11:34] <jeusdi> By other side,index.d.tsis generated or is hand-made?
+10 [2016-11-28T11:12:41] <dtabuenc> jeusdi: when you compile ts it produces a.jsbut the js has no information about the types. If you havedeclarations: trueit will also produce a.d.tsfile which has the type information
+11 [2016-11-28T11:12:58] <dtabuenc> the.d.tsfile is only used if you import that module in another typescript project
+12 [2016-11-28T11:17:44] <jeusdi> Got it!
+--------------------------------------------------------------------------------------------------
+[2016-11-29 01:20:18] <born2net> how do I enable generaotrs in tsconfig so when I use async / await in 2.1.1 so my code will take advantage of generators and thus create a lot less trasnpiled code (I am only targeting latest browsers)  ?
+[2016-11-29 01:21:01] <born2net> found it
+[2016-11-29 01:23:18] <born2net> sorry didn't find it
+[2016-11-29 01:24:50] <born2net> I thought this will do it
+[2016-11-29 01:25:01] <born2net>  [<-CODE->] 
+[2016-11-29 01:25:17] <born2net> but still I dont see it taking advantage of generators
+[2016-11-29 01:25:29] <born2net> when used
+[2016-11-29 01:25:37] <born2net>  [<-CODE->] 
+[2016-11-29 01:25:39] <born2net> same results
+[2016-11-29 01:29:36] <born2net> also tried
+[2016-11-29 01:29:38] <born2net>  [<-CODE->] 
+[2016-11-29 01:30:32] <dtabuenc> born2net: you have to target es6
+[2016-11-29 01:30:57] <dtabuenc> "target": "es6"
+[2016-11-29 01:32:07] <dtabuenc> the"lib"property is just for type declarations from those libs, it doesn't change what's output
+--------------------------------------------------------------------------------------------------
+[2016-11-30 02:32:23] <stevekane> can I force typescript to trust a cast?
+[2016-11-30 02:32:37] <Izzmo> What do you mean by "trust"?
+[2016-11-30 02:32:40] <stevekane> like if I implement a safer function that the type system cannot verify is correct, can I cast it
+[2016-11-30 02:32:47] <stevekane> such that I'm saying "trust me compiler, this is correct"
+[2016-11-30 02:32:50] <Izzmo> Yes
+[2016-11-30 02:32:51] <dtabuenc> yeah
+--------------------------------------------------------------------------------------------------
+[2016-11-30 04:13:42] <varunjayaraman> is there a way for my node terminal to give me errors from thetypescriptfile and not thejsfile. I havesourceMaptrue in my tsconfig.json and theres a.mapfile that gets spit out in the same directory as the file that it maps
+[2016-11-30 04:14:02] <dtabuenc> if I paste your transpiled example as is
+[2016-11-30 04:14:05] <dtabuenc> it alsow works
+[2016-11-30 04:14:11] <dtabuenc> but I'm on node 6.6.0
+[2016-11-30 04:14:17] <varunjayaraman> yeah it works for me now too
+[2016-11-30 04:14:22] <varunjayaraman> it was a syntax error elsewhere in the file
+[2016-11-30 04:14:32] <dtabuenc> oh ok
+[2016-11-30 04:16:43] <varunjayaraman> do you inline your sourcemaps?
+[2016-11-30 07:27:37] <mika-fischer> varunjayaraman: You need to use [<-LINK->] for typescript stack traces in node
+--------------------------------------------------------------------------------------------------
+[2016-11-30 08:28:42] <kristho91> Hey! Is@types/angular-mocks removed? npmjs tells me that the latest version is "0.0.0" and I can't find it in DT on Github :D
+[2016-11-30 08:39:04] <con-ssc>  [<-LINK->] 
+[2016-11-30 08:39:30] <kristho91> con-ssc: I see that :) But the latest version is stated as "0.0.0"
+[2016-11-30 08:39:51] <con-ssc> well if they use that in their package json so it is
+[2016-11-30 08:40:28] <kristho91> True, but I can't find it on DT on github, that's why I think they maybe removed it. But could just be a mistake
+[2016-11-30 08:41:40] <con-ssc>  [<-LINK->] 
+[2016-11-30 08:41:43] <kristho91> Oh... It's in another branch :D
+[2016-11-30 08:42:00] <con-ssc>  [<-LINK->] 
+[2016-11-30 08:42:11] <kristho91> They pull it from types-2.0 branchs
+--------------------------------------------------------------------------------------------------
+[2016-11-30 19:54:18] <jacobus-brogly> can someone check out my code?
+[2016-11-30 19:54:19] <jacobus-brogly>  [<-LINK->] 
+[2016-11-30 19:54:26] <jacobus-brogly> first time I am using TS
+[2016-11-30 19:56:46] <jacobus-brogly> I am interesting in opinions of some senior programmers
+[2016-11-30 19:57:19] <stevekane> OCD comment: remove your commented code
+[2016-11-30 19:58:23] <jacobus-brogly> ??
+[2016-11-30 19:58:40] <stevekane>  [<-LINK->] tons of commented out content here
+[2016-11-30 19:58:49] <stevekane> just makes your clarity worse as reviewer and author
+[2016-11-30 19:59:23] <jacobus-brogly> lol
+[2016-11-30 19:59:38] <jacobus-brogly> thats 30 lines, in a 60 line test program
+[2016-11-30 19:59:45] <dtabuenc> using greek letters is charming but ultimately bad for working with your code
+[2016-11-30 19:59:59] <jacobus-brogly> its statistics
+[2016-11-30 20:00:01] <jacobus-brogly> sigma
+[2016-11-30 20:00:07] <jacobus-brogly> D3 gave me the idea
+[2016-11-30 20:00:16] <dtabuenc> I know but it just makes it harder to work with it.
+[2016-11-30 20:00:17] <jacobus-brogly> they us greeks like no other
+[2016-11-30 20:00:23] <dtabuenc> people have to figure ou how to type that on a keyboard.
+[2016-11-30 20:00:24] <dtabuenc> or alt-code
+[2016-11-30 20:00:26] <dtabuenc> it's annoying
+[2016-11-30 20:00:33] <dtabuenc> although it might look visually prettier
+[2016-11-30 20:00:42] <jacobus-brogly> i will keep it, but thanks
+[2016-11-30 20:00:42] <dtabuenc> I'd rather seelet sigma =
+[2016-11-30 20:01:19] <jacobus-brogly> sigma is not a constant like PI or Epsilon
+[2016-11-30 20:01:24] <dtabuenc> Lately I've been also trying to use const more instead of let
+[2016-11-30 20:01:30] <dtabuenc> only going to let when I need to
+[2016-11-30 20:01:38] <stevekane> I agree w/@dtabuencand@jacobus-brogly
+[2016-11-30 20:01:40] <con-ssc> yes const is pretty handy
+[2016-11-30 20:01:46] <dtabuenc> it seems to catch  a lot more problems
+[2016-11-30 20:01:52] <stevekane> I think symbols are fantastic conceptually and ligatures are a great example of their effectiveness
+[2016-11-30 20:01:54] <dtabuenc> with unintended reference re-assignment
+[2016-11-30 20:01:59] <stevekane> but they are still challenging to type :/
+[2016-11-30 20:02:12] <jacobus-brogly> so no comments on structure , templating, .. thats good
+[2016-11-30 20:02:30] <con-ssc> So you are going for a rogue-like?
+[2016-11-30 20:02:36] <stevekane> we're getting the bike-shedding out of the way first
+[2016-11-30 20:02:41] <stevekane> we'll start on substance soon
+[2016-11-30 20:03:00] <dtabuenc> lol
+[2016-11-30 20:03:21] <stevekane> this is very representative of ANY time you ask for feedback lol
+[2016-11-30 20:03:26] <dtabuenc> I would be looking for a bit more consistency in naming scheme
+[2016-11-30 20:03:30] <jacobus-brogly>  [<-LINK->] 
+[2016-11-30 20:03:32] <jacobus-brogly> the code generates this
+[2016-11-30 20:03:41] <jacobus-brogly> procedure dungeon map
+[2016-11-30 20:03:47] <jacobus-brogly> its not done yet
+[2016-11-30 20:03:53] <dtabuenc>  [<-CODE->] 
+[2016-11-30 20:03:57] <con-ssc> That reminds me a bit of Space Quest the board game
+[2016-11-30 20:03:59] <jacobus-brogly> the final result should look like this
+[2016-11-30 20:04:11] <dtabuenc> some functions are camel-case some are snake-case etc..
+[2016-11-30 20:04:51] <con-ssc> an editorconfig and a tslintrc would come in handy
+[2016-11-30 20:05:14] <jacobus-brogly>  [<-LINK->] 
+[2016-11-30 20:05:23] <jacobus-brogly> the final result should look like this
+[2016-11-30 20:05:38] <jacobus-brogly> yeah, I mix CamelCase and _
+[2016-11-30 20:05:45] <stevekane> I think in general your code looks good
+[2016-11-30 20:05:45] <jacobus-brogly> i chaned later in the game
+[2016-11-30 20:05:51] <con-ssc> would definiately be nice if you can make it that far
+[2016-11-30 20:05:52] <stevekane> there are a lot of stylistic ways to pick at it
+[2016-11-30 20:06:01] <jacobus-brogly> dtabuenc: the naming follows the usage exaclty
+[2016-11-30 20:06:02] <stevekane> and you should probably strive to pull data and rendering concerns apart
+[2016-11-30 20:06:06] <stevekane> as much as you possibly can
+[2016-11-30 20:06:13] <stevekane> to find the true data-essence of your model
+[2016-11-30 20:06:22] <stevekane> as a completely independent concept from HOW you will draw it
+[2016-11-30 20:06:45] <jacobus-brogly> con-ssc: the carpets I am going to place
+[2016-11-30 20:06:47] <stevekane> also you have several 1-liner=>that you don't make 1-liners
+[2016-11-30 20:06:52] <con-ssc> louse coupling
+[2016-11-30 20:07:00] <jacobus-brogly> then the  fire lamps
+[2016-11-30 20:07:13] <stevekane> also as a matter of style, try to put data types at the header of a file
+[2016-11-30 20:07:20] <stevekane> followed by exported functions/classes
+[2016-11-30 20:07:30] <stevekane> then private or non-exported functions/classes
+[2016-11-30 20:07:39] <stevekane> this is purely an arbitrary preference from reading codebases tho
+[2016-11-30 20:08:06] <jacobus-brogly> yeah a more C like programming style might make sense
+[2016-11-30 20:08:09] <dlee-nvisia> Hey guys, quick question. I'm working on creating some type definitions for existing JS-code, and I'm curious if there's a way via module declaration merging that I can update/extend a type alias. The handbookseemsto imply it's possible, but I'm not finding a way to do it?
+[2016-11-30 20:08:25] <con-ssc> So anyone has a small ts github project or something where I can support ? I want to get my hands dirty a bit
+[2016-11-30 20:10:02] <jacobus-brogly> its not small, I need to port 5000+ lines of code to TS
+[2016-11-30 20:10:10] <con-ssc> :)
+[2016-11-30 20:10:32] <jacobus-brogly>  [<-LINK->] 
+[2016-11-30 20:10:34] <con-ssc> That may be too much for me but I could try to contribute
+[2016-11-30 20:10:35] <jacobus-brogly> it works
+[2016-11-30 20:10:45] <jacobus-brogly> oase project works
+[2016-11-30 20:10:49] <jacobus-brogly> but still alpha
+[2016-11-30 20:11:08] <jacobus-brogly> some 1500+ downloads a month , but in valilla js
+[2016-11-30 20:11:29] <stevekane> jacobus-brogly: I'd code-golf this project if I were you
+[2016-11-30 20:11:29] <con-ssc> well I could try if you want
+[2016-11-30 20:11:34] <stevekane> you learn a lot about how to wield the tools
+[2016-11-30 20:11:38] <con-ssc> Would be interesting
+[2016-11-30 20:11:40] <stevekane> from striving for minimalism in expressing your domain
+[2016-11-30 20:11:56] <stevekane> your code already trends that direction, so I'd encourage you to further compress it
+[2016-11-30 20:11:58] <jacobus-brogly> code-golf? wtf is that?
+[2016-11-30 20:12:07] <stevekane>  [<-LINK->] 
+[2016-11-30 20:12:10] <con-ssc> But then I'd really need a editorconfig and a tslintrc
+[2016-11-30 20:12:14] <stevekane> read this post at some point, it's excellent
+[2016-11-30 20:12:50] <jacobus-brogly> mm ok
+[2016-11-30 20:13:58] <stevekane> my extremely strong preference in programs is air-tight data models of the domain
+[2016-11-30 20:14:05] <stevekane> that are ground down to their barest essentials
+[2016-11-30 20:14:08] <stevekane> and very little functions
+[2016-11-30 20:14:17] <stevekane> functions are a poor-man's design tool
+[2016-11-30 20:14:21] <stevekane> /end soapbox
+[2016-11-30 20:14:37] <jacobus-brogly> yeah i template as much as  I can
+[2016-11-30 20:14:54] <stevekane> your code should look trivial
+[2016-11-30 20:14:58] <stevekane> like any idiot could have done that
+[2016-11-30 20:15:05] <stevekane> except the secret is that it's actually much harder to do
+[2016-11-30 20:15:11] <jacobus-brogly> minimal = elegant
+[2016-11-30 20:15:18] <con-ssc> KISS
+[2016-11-30 20:15:20] <stevekane> Brevity is the soul of wit!
+[2016-11-30 20:15:42] <stevekane> when I lead dev teams, I tell them that regularity is king
+[2016-11-30 20:15:49] <stevekane> every section of every file of the whole project
+[2016-11-30 20:15:51] <stevekane> should look similar
+[2016-11-30 20:15:55] <stevekane> like extremely similar
+[2016-11-30 20:16:04] <stevekane> that's much more valuable than code re-use
+[2016-11-30 20:16:07] <con-ssc> like strong conventions?
+[2016-11-30 20:16:10] <stevekane> yes
+[2016-11-30 20:16:17] <stevekane> and a consistent level of abstraction
+[2016-11-30 20:16:24] <stevekane> very often younger devs will reach for extreme abstractions
+[2016-11-30 20:16:28] <jacobus-brogly> ok, back to coding, see you later folks
+[2016-11-30 20:16:29] <stevekane> as an exercise in learning
+[2016-11-30 20:16:34] <stevekane> good luck
+--------------------------------------------------------------------------------------------------
+[2016-12-01 20:56:19] <varunjayaraman> anyone know how to override Webpack Dev Server complaints about errors while compiling so a reload was prevented
+[2016-12-01 20:56:31] <varunjayaraman> there was a typescript error but it's non fatal
+[2016-12-01 20:56:46] <varunjayaraman> it's just like property x can't exist on type {} or whatever
+[2016-12-01 20:56:55] <varunjayaraman> because i modified an object after i declared it
+[2016-12-01 21:00:57] <dtabuenc> if you use awesome-typescript-loader with fork checker plugin you can split type checking from compilation
+[2016-12-01 21:01:08] <dtabuenc> for ts-loader I think there's an option to not do type checking
+[2016-12-01 21:01:32] <varunjayaraman> what about other errors that are not typescript-related?
+[2016-12-01 21:02:26] <dtabuenc> actually ts-loader won't propogate errros to webpack so it will build fine even if you have a few type errors
+--------------------------------------------------------------------------------------------------
+[2016-12-01 23:45:04] <colshacol> Anybody have a good example of TSX/React? Having hell clearing my terminal of[at-loader]errors. -_-
+[2016-12-01 23:46:09] <dtabuenc> colshacol: It's probably better you share what type of errors you are seeing.
+[2016-12-01 23:47:04] <colshacol> I was receivingcannot find module "..."on everything, but I switched fromimport ... from ...torequire()and those are gone.
+[2016-12-01 23:47:21] <colshacol> Right now I am working to clear these out: [<-CODE->] 
+[2016-12-01 23:47:22] <dtabuenc> colshacol: sounds like you are missing typing definitions for modules
+[2016-12-01 23:47:44] <colshacol> It was mostly on.sassfiles, as I am using CSSModules.
+[2016-12-01 23:47:45] <dtabuenc> does props exist on DeatilsView?
+[2016-12-01 23:47:49] <stevekane>  [<-CODE->] 
+[2016-12-01 23:48:04] <stevekane> the above works because scope of the fn is constrained to the else-block
+[2016-12-01 23:48:06] <stevekane> kind of gross...
+[2016-12-01 23:48:27] <colshacol>  [<-CODE->] 
+[2016-12-01 23:48:47] <colshacol> Theprops: anything is just my latest tinker to try to get this to resolve.
+[2016-12-01 23:49:16] <stevekane> i think you want any
+[2016-12-01 23:49:18] <stevekane> only
+[2016-12-01 23:49:20] <stevekane> not { props: any }
+[2016-12-01 23:49:34] <stevekane>  [<-LINK->] see here for example
+[2016-12-01 23:49:52] <stevekane> { props: any } says youa re expecting an object of the shape { props: any } as the type of props
+[2016-12-01 23:49:59] <stevekane> but props is already assumed to be a hash-like of some kind
+[2016-12-01 23:50:51] <colshacol> <{ any }, {}><any, {}>Neither of these fix the warning, but don't break my app either.
+[2016-12-01 23:51:18] <stevekane> <any, any >
+[2016-12-01 23:51:50] <colshacol> No sir.
+[2016-12-01 23:52:00] <stevekane> gonna need more information here
+[2016-12-01 23:52:01] <stevekane> what is the error
+[2016-12-01 23:52:10] <colshacol>  [<-CODE->] 
+[2016-12-01 23:52:14] <stevekane> o wait I'm dumb soryr
+[2016-12-01 23:52:16] <stevekane> I didn't see
+[2016-12-01 23:52:20] <colshacol> Haha, no worried friend.
+[2016-12-01 23:52:33] <stevekane> which line is that
+[2016-12-01 23:52:35] <stevekane> in your pasted block
+[2016-12-01 23:52:36] <dtabuenc> I still don't see why props don't exist....unless yor typings is bad
+[2016-12-01 23:52:49] <colshacol> It may help me if I understood what the <..., ...> is. Mind pointing me in the right direction?
+[2016-12-01 23:52:59] <stevekane> those are generics
+[2016-12-01 23:53:06] <dtabuenc>  [<-CODE->] 
+[2016-12-01 23:53:09] <dtabuenc> that compiles for me
+[2016-12-01 23:53:09] <stevekane> React.Component is generic for two type properties P, and S
+[2016-12-01 23:53:12] <stevekane> or props and state
+[2016-12-01 23:53:24] <stevekane> so you're intended to narrow the types
+[2016-12-01 23:53:26] <stevekane> of both
+[2016-12-01 23:53:29] <stevekane> as you can see in my example file
+[2016-12-01 23:53:31] <dtabuenc> stevekane: yeah but regardles of the types of it.. shouldn't the property itself be there?
+[2016-12-01 23:53:35] <stevekane> but if you do <any, any> it should work
+[2016-12-01 23:53:43] <stevekane> ya you would think so :/
+[2016-12-01 23:53:44] <dtabuenc> why would he getProperty 'props' does not exist on type???
+[2016-12-01 23:53:47] <stevekane> ya seems odd
+[2016-12-01 23:53:56] <dtabuenc> the only way you get that is if React.Component is not defining a props property
+[2016-12-01 23:53:57] <dtabuenc> at all
+[2016-12-01 23:53:57] <colshacol> Alrighty
+[2016-12-01 23:54:02] <dtabuenc> so maybe his typings are bad
+[2016-12-01 23:54:08] <dtabuenc> are you using@types/react?
+[2016-12-01 23:54:11] <colshacol> So switching back fromrequire('react')toimportgot rid of that.
+[2016-12-01 23:54:17] <stevekane> hah
+[2016-12-01 23:54:32] <dtabuenc> Ahh... yeah that would do it
+[2016-12-01 23:54:40] <colshacol> Haha, apologies.
+[2016-12-01 23:54:51] <dtabuenc> so you should be doingimport * as React from 'react'correct?
+[2016-12-01 23:55:05] <colshacol> Yes sir.
+[2016-12-01 23:55:25] <colshacol> What about stateless components?
+[2016-12-01 23:55:32] <colshacol> What is the proper way to create one of these?
+[2016-12-01 23:55:55] <stevekane> same will work just fine
+[2016-12-01 23:55:58] <stevekane> or you can declare the fn
+[2016-12-01 23:56:14] <stevekane> actually I shouldn't say that
+[2016-12-01 23:56:16] <stevekane> I don't actually know
+[2016-12-01 23:56:18] <colshacol> This is what I am sitting on... [<-CODE->] 
+[2016-12-01 23:56:18] <stevekane> haven't tried it
+[2016-12-01 23:59:47] <colshacol> Holy cow. -_-
+[2016-12-01 23:59:52] <colshacol> For the first time in 3 days...
+[2016-12-02 00:00:03] <colshacol> I see no red in my terminal on compile.
+--------------------------------------------------------------------------------------------------
+[2016-12-02 21:30:03] <jacobus-brogly> hi folks)
+[2016-12-02 21:49:00] <jacobus-brogly> Hi, i am looking for types for mongo-db-native
+[2016-12-02 21:49:29] <jacobus-brogly> package mongodb
+[2016-12-02 21:50:08] <jacobus-brogly> how can i see if my typesdefs and the lib are in sync?
+[2016-12-02 22:15:57] <pfrankov> I found a well-known bug :) [<-LINK->] 
+[2016-12-02 22:16:12] <jcimoch> jacobus-brogly: you can't thats the problem of community driven typedefs, if author of js lib/framework do not provide them, you can't be sure, even it they are packed together in npm
+[2016-12-02 22:20:14] <jacobus-brogly> jcimoch: okidoki
+[2016-12-02 22:20:43] <jacobus-brogly> so how do i mix libraries with type decl and one without  type decl
+[2016-12-02 22:20:54] <jacobus-brogly> will it default to "any"
+[2016-12-02 22:21:20] <jcimoch> depends on tsconfig but generaly yes, those without typeings will be any
+[2016-12-02 22:21:39] <jacobus-brogly> ok
+--------------------------------------------------------------------------------------------------
+[2016-12-06 10:53:36] <kristho91> Isn't this the correct syntax to execute a callback in an Angular 1.5 component?this.onSomethingChange({ value: this.someValue });
+[2016-12-06 10:53:54] <kristho91> The callback stuff really gets me every single time I use it :(
+[2016-12-06 10:54:19] <dtabuenc> where's the callback?
+[2016-12-06 10:54:54] <kristho91> this.onSomethingChange is the callback (it has type Function) and is in the bindings with "&"
+[2016-12-06 10:55:52] <dtabuenc> do you wnat the correct syntax for calling it? or for defining it's type?
+[2016-12-06 10:56:43] <kristho91> for calling it. Because it seems like it does not get executed (don't get the "response" in the other end)
+[2016-12-06 10:57:39] <dtabuenc> well... it really depends on what you are binding it to
+[2016-12-06 10:58:18] <kristho91> I don't follow? :) It's binded to a Function?
+[2016-12-06 10:58:21] <dtabuenc> so if you have [<-CODE->] 
+[2016-12-06 10:58:28] <kristho91> Yes
+[2016-12-06 10:58:39] <dtabuenc> then at it's simplest you just call it: [<-CODE->] 
+[2016-12-06 10:58:57] <kristho91> Sure, but it expects a parameter in the other end :)
+[2016-12-06 10:59:05] <kristho91> that's the "value"-part
+[2016-12-06 10:59:07] <dtabuenc> what does onSomethingChanged look like?
+[2016-12-06 10:59:40] <kristho91> it just takes the value as parameter and console.log it right now
+[2016-12-06 10:59:50] <kristho91> At least that's what I suspect it to do
+[2016-12-06 10:59:56] <kristho91> expect *
+[2016-12-06 11:00:00] <dtabuenc> ok.. but show me how you use it in a template
+[2016-12-06 11:00:07] <dtabuenc> because it's how you use it in the template that matters
+[2016-12-06 11:00:15] <dtabuenc> do you include the parameter in the template?
+[2016-12-06 11:01:06] <dtabuenc> for example..... [<-CODE->] 
+[2016-12-06 11:01:18] <kristho91> yes: on-something-changed="vm.doSomething(value)"
+[2016-12-06 11:02:29] <kristho91> But it never hits the doSomething(value) function :(
+[2016-12-06 11:03:10] <dtabuenc> You're calling it right.
+[2016-12-06 11:03:56] <kristho91> I thought so... And it usually works that way too... But everytime I need to use it a new place, I have problems with it :(
+[2016-12-06 11:04:33] <dtabuenc> My guess is the expression in your template is somehow wrong
+[2016-12-06 11:04:44] <dtabuenc> like you are in the wrong scope or your controller as is bound to something different etc...
+[2016-12-06 11:05:52] <kristho91> Nope, that seems fine :(
+[2016-12-06 11:13:41] <dtabuenc> Try seeing if it gets called directly with no controller
+[2016-12-06 11:13:50] <dtabuenc>  [<-CODE->] 
+[2016-12-06 11:14:02] <dtabuenc> see if the value is output correctly
+[2016-12-06 11:14:47] <dtabuenc> also, no errors in the console?
+[2016-12-06 11:14:54] <kristho91> No errors :(
+[2016-12-06 11:14:57] <dtabuenc> and does this.onSomethingChanged look like it's being set?
+[2016-12-06 11:15:25] <kristho91> Yes, and I have checked typos on every part I could think of
+[2016-12-06 11:16:26] <dtabuenc> Don't know then... you must be doing something odd
+[2016-12-06 11:16:29] <dtabuenc> somewhere
+[2016-12-06 11:16:39] <kristho91> Lol, yeah ;) I know :D
+[2016-12-06 11:16:59] <kristho91> The joy of being a programmer... :D
+[2016-12-06 11:23:51] <kristho91> dtabuenc: Actually, are there a better type to defined the callback as instead of just Function?
+[2016-12-06 11:28:19] <kristho91> Something like this? (param: { value: string }) => ng.IPromise<any>
+[2016-12-06 16:00:33] <dtabuenc> kristho91: yes that's how you do it.... I have stuff like this for example [<-CODE->] 
+--------------------------------------------------------------------------------------------------
+[2016-12-06 17:50:36] <jacobus-brogly> will this work?
+[2016-12-06 17:50:41] <jacobus-brogly> npm search@types/arcgis-js-api
+[2016-12-06 17:54:57] <jacobus-brogly> i see only@typesversion 3.18 is on npm (i looked at valid install targets)
+[2016-12-06 17:55:28] <jacobus-brogly> i see the vendor also released version 4.1 some time ago on github but not updated npm
+[2016-12-06 17:55:44] <jacobus-brogly> can i just copy paste the t.ds file over the index file and be done with it?
+[2016-12-06 17:55:54] <jacobus-brogly>  [<-LINK->] 
+[2016-12-06 17:56:13] <jacobus-brogly>  [<-LINK->] 
+[2016-12-06 17:56:16] <jacobus-brogly> the 2 versions
+[2016-12-06 18:01:12] <dtabuenc> jacobus-brogly: no I would not copy over the file into the@types/folder
+[2016-12-06 18:01:22] <dtabuenc> just don't use the@typesfor that one if there is no npm package available for it
+[2016-12-06 18:01:30] <jacobus-brogly> ok
+[2016-12-06 18:01:36] <dtabuenc> just use typings command or download it manually
+[2016-12-06 18:01:48] <dtabuenc> and add it to your files:[] array or your includes:[]
+--------------------------------------------------------------------------------------------------
+[2016-12-07 09:33:39] <tuoitrexuquang> hi all, i have issue when lookup object and update value, my browser is crash when update data// Load datafor (let i = 0; i < data.length; i++) {for (let j = 0; j < data[i].length; j++) {let object1 = data[i][j];this.objIndex[object1.KEY] = { t: i, r: j };}}// Update datafor (let i = 0; i < data.length; i++) {let object2 = data[i];let idx = this.objIndex[object2.KEY];if (typeof idx !== "undefined") {this.object1[idx.t][idx.r] = object2;} else {console.log('not found ');}}
+[2016-12-07 09:34:19] <tuoitrexuquang> how can i fix it?
+[2016-12-07 09:57:56] <con-ssc>  [<-CODE->] 
+[2016-12-07 09:59:05] <con-ssc> Just for readability
+[2016-12-07 14:39:22] <tuoitrexuquang> con-ssc: thanks for your format. everybody can help me? thanks
+[2016-12-07 14:42:04] <tuoitrexuquang> code [<-CODE->] 
+[2016-12-07 14:42:39] <tuoitrexuquang> how do i can lookup and update the value object1
+[2016-12-07 14:43:03] <tuoitrexuquang> my browser is crash when run this code
+[2016-12-07 14:43:05] <con-ssc> You can't
+[2016-12-07 14:43:24] <con-ssc> if you useletit will be only available in the for loop
+[2016-12-07 14:46:53] <tuoitrexuquang> you mean, we need use var@con-ssc
+[2016-12-07 14:48:18] <con-ssc>  [<-CODE->] 
+[2016-12-07 14:51:38] <tuoitrexuquang> con-ssc: thanks
+--------------------------------------------------------------------------------------------------
+[2016-12-07 15:18:27] <dadleyy> hey all - I'm searching for some thoughts on a question I've been having regarding the consumption and publishing of third party libraries. I posted it on [<-LINK->] but I don't know if it'd get much attention as it would here. sorry for the re-post if you saw it over there
+[2016-12-07 15:22:07] <con-ssc> dadleyy: tsc --noResolveare you trying that?
+[2016-12-07 15:29:06] <dadleyy> con-ssc: use the "-noResolve" flag during the generation my library's ".d.ts" file using "-declaration" or during the compilation of the consuming module that is importing it?
+[2016-12-07 15:56:05] <con-ssc> I made you a ts version if you want
+[2016-12-07 15:57:20] <con-ssc>  [<-LINK->] 
+[2016-12-07 15:57:53] <con-ssc> hope this works
+--------------------------------------------------------------------------------------------------
+1 [2016-12-07T18:54:30] <felixfbecker> 2.1 is out aaaaaaaaaaand all my builds are broken
+2 [2016-12-07T18:54:44] <felixfbecker> nice
+3 [2016-12-07T18:54:45] <felixfbecker>  [<-ISSUE->]
+4 [2016-12-07T19:02:50] <felixfbecker> That is possible withtoString()
+--------------------------------------------------------------------------------------------------
+[2016-12-08 16:08:57] <karptonite> dtabuenc: Did you get a chance to get the details of you ts/webpack config for non-relative module resolution?
+[2016-12-08T17:32:18] <karptonite> dtabuenc: Did you get a chance to get the details of you ts/webpack config for non-relative module resolution?
+[2016-12-08 17:34:22] <dtabuenc> Yeah we just use resolve: {modules}
+[2016-12-08 17:34:30] <dtabuenc>  [<-CODE->] 
+[2016-12-08 17:34:48] <dtabuenc> baseUrl is set toapp
+[2016-12-08 17:35:04] <dtabuenc> and [<-CODE->] 
+[2016-12-08 17:35:43] <dtabuenc> I'm not actually sure the../node_modulesis necessary
+[2016-12-08 17:38:55] <karptonite> Thanks. I'll try something like that. So you it set in both the tsconfig and resolve.modules/
+[2016-12-08 17:59:06] <dtabuenc> karptonite: yeah you definitely need both
+[2016-12-08 19:35:49] <karptonite> dtabuenc: Thanks again for you help. I've finally got it working, first with ts-loader, now with awesome-typescript-loader. Oddly, although awesome-typescript-loader has a special plugin for Advanced path resolution, [<-LINK->] , it worked fine without it, and using that plugin caused a crash withMaximum call stack size exceedederror.
+[2016-12-08 19:36:20] <dtabuenc> well with advanced path resolution plugin you wouldn't add the folder to the modules
+[2016-12-08 19:36:33] <dtabuenc> it's probably recursive due to that
+[2016-12-08 19:36:55] <karptonite> Yeah, maybe the problem was adding it to both.
+[2016-12-08 19:37:27] <karptonite> I could try without adding it to modules, using their plugin, but I think I might as well leave well enough alone for now.
+--------------------------------------------------------------------------------------------------
+1 [2016-12-09T04:57:02] <etsuo> How would I use a Proxy on a class if I’m trying to intercept a static method?
+--------------------------------------------------------------------------------------------------
+[2016-12-12 01:29:59] <Gacnt> Can somebody explain to me what@means in this code [<-LINK->] 
+[2016-12-12 01:34:05] <dtabuenc> Gacnt: yeah the @ is usually decorators, but they wouldn't typically be used like@vts.blah(1)They would typically be decorating a class, method, parameter, or something like that.
+[2016-12-12 01:35:25] <dtabuenc> I guess it could  be used that way if there was an objectvtsthat had a functionblah( param1:number)that returned another function that would actually be the decorator
+[2016-12-12 01:59:09] <dtabuenc> In the code you linked.....vts.componentis a decorator provided by the  vue framework
+[2016-12-12 01:59:36] <dtabuenc> a decorator is just a function that gets called when your class is declared. It gets passed in information about your class and can do whatever it wants.
+[2016-12-12 02:00:01] <dtabuenc> In this case, it would probably register a component with the vue framework or attache extra information to the class  or any number of things.
+[2016-12-12 02:00:18] <dtabuenc> you can read about them here [<-LINK->] 
+--------------------------------------------------------------------------------------------------
+[2016-12-13 15:53:26] <Z3roCoder> Hi@all, I have a important question about the Interfacing in Typescript.Why does this example act like it does? Shouldn't test2,3 and 4 throw errors? [<-CODE->] 
+[2016-12-13 15:53:53] <dtabuenc> Z3roCoder: you should wrap your code in ```
+[2016-12-13 15:53:57] <dtabuenc> so it's readable
+[2016-12-13 15:54:15] <Z3roCoder> There we go :)
+[2016-12-13 15:54:25] <dtabuenc> interfaces aren't exclusive
+[2016-12-13 15:54:32] <dtabuenc> they only require properties be there
+[2016-12-13 15:54:42] <dtabuenc> it doesn't care about extra properties
+[2016-12-13 15:54:46] <Z3roCoder> But in case 2 and 3, it requires exactly the properties in the interface
+[2016-12-13 15:55:03] <Z3roCoder> b is not in the interface, and this it complains that b shouldnt be there
+[2016-12-13 15:55:21] <Z3roCoder>  [<-LINK->] 
+[2016-12-13 15:55:24] <dtabuenc> return{a : 3 b:3}satisfies the interface
+[2016-12-13 15:55:42] <Z3roCoder> Look at my screenshot
+[2016-12-13 15:55:53] <dtabuenc> oh ... on object literals yeah
+[2016-12-13 15:56:24] <dtabuenc> you need to do any on object literals if you want it to work
+[2016-12-13 15:56:24] <Z3roCoder> So this is expected behaviour?
+[2016-12-13 15:56:28] <dtabuenc> yes
+[2016-12-13 15:56:38] <dtabuenc> it's mostly designed for when you are passing object literals to function
+[2016-12-13 15:57:02] <Z3roCoder> When is, and when isn't, something a object literal in my example?
+[2016-12-13 15:57:34] <Z3roCoder> Isn't <ITest>{ a: 3, b: 3 }; also a object literal?
+[2016-12-13 15:58:18] <dtabuenc> yeah but then you are casting it specifically to an ITest
+[2016-12-13 15:58:43] <Z3roCoder> So what's the difference then betweenreturn <ITest>{ a: 3, b: 3 };andconst c: ITest = { a: 3, b: 3 } (This complains)
+[2016-12-13 15:58:46] <dtabuenc> what version are you using?
+[2016-12-13 15:58:58] <Z3roCoder> 2.1.4
+[2016-12-13 16:02:49] <dtabuenc> So the thinking is if you are setting extra properties you'll never be able to safely access them from the interface that you are assigning
+[2016-12-13 16:02:58] <dtabuenc> so the compiler assumes this is likely an error on your part
+[2016-12-13 16:03:08] <dtabuenc> and you have to use type assertion to get around it
+[2016-12-13 16:08:43] <Z3roCoder> Why would this not apply to test4 then? This is basically the same example as test3, only that in this case, a Promise of the type ITest is returned
+[2016-12-13 16:09:40] <dtabuenc> probably an edgecase the compiler does not consider
+[2016-12-13 16:09:53] <Z3roCoder> Alright, i will write a issue about this then
+[2016-12-13 16:10:01] <Z3roCoder> Maybe then it will become clearer
+--------------------------------------------------------------------------------------------------
+[2016-12-13 21:24:24] <scarlier> is there any Di/ioc framework (for node.js) currenly widely accepted by typescript community? or is there some method/function in typescript so it’s not needed? couldnt really find anything except the angular one
+[2016-12-13 21:25:14] <dtabuenc>  [<-LINK->] 
+[2016-12-13 21:25:25] <dtabuenc> haven't used it but I know that some people have used that
+[2016-12-13 21:25:31] <dtabuenc> would think it's similar to the angular 2 one
+[2016-12-13 21:25:51] <scarlier> thanks going to check it out
+[2016-12-13 21:26:01] <dtabuenc> thre are probably others, although I wouldn't classify any as having "wide acceptance" in the community
+[2016-12-13 21:26:27] <dtabuenc> angular 2 and aurelia have wide acceptance within their respective communities
+[2016-12-13 21:26:45] <dtabuenc> but  probably very few people using them outside as standalone DI
+[2016-12-13 21:27:10] <varunjayaraman> scarlier: try there's one that's SUPER heavy handed calledinversify
+[2016-12-13 21:27:26] <varunjayaraman> i prefer this one calledtypedithat i prefer since its API is super simple
+[2016-12-13 21:28:58] <scarlier> varunjayaraman: ty inversify looks promesing
+[2016-12-13 21:29:33] <dtabuenc> varunjayaraman: what qualifies as SUPER heavy handed
+[2016-12-13 21:29:34] <dtabuenc> ?
+[2016-12-13 21:30:00] <scarlier> varunjayaraman: any experience with the performance of it?
+[2016-12-13 21:30:48] <varunjayaraman> dtabuenc: just felt like it was overly complicated to get it to work
+[2016-12-13 21:31:20] <dtabuenc> scarlier: I don't think performance is going to vary much between frameworks
+[2016-12-13 21:31:24] <varunjayaraman> scarlier: i doubt it
+[2016-12-13 21:31:29] <dtabuenc> they all essentially register dependencies in some kind of lookup table
+[2016-12-13 21:31:33] <dtabuenc> and pull from there on instantiation
+[2016-12-13 21:31:41] <dtabuenc> so performance wise they will all be similar
+[2016-12-13 21:31:46] <dtabuenc> unless they are doing something really stupid
+[2016-12-13 21:32:00] <varunjayaraman> all i needed was something that registers, gets, and can invoke functions with injected dependencies
+[2016-12-13 21:33:14] <scarlier> ah ok
+--------------------------------------------------------------------------------------------------
+[2016-12-14 04:43:43] <HerringtonDarkholme> Does anyone have idea on why this code does not compile undernoImplicitAny?
+[2016-12-14 04:43:56] <HerringtonDarkholme>  [<-CODE->] 
+[2016-12-14 05:15:17] <dtabuenc> how would it know the type of s?
+[2016-12-14 05:17:17] <HerringtonDarkholme> dtabuenc: noteStrs<T>has an index signature
+[2016-12-14 05:17:38] <HerringtonDarkholme> if I delete the first overload ofmutations, it compiles
+[2016-12-14 05:20:20] <dtabuenc> I think the type algebra might be too much for the inference engine and you just have to specify it
+[2016-12-14 05:20:57] <HerringtonDarkholme> This is a reduced example, in real world code the first argument is too complex to get manual annotation
+[2016-12-14 05:26:55] <HerringtonDarkholme> I guess there is some problem in overloading resolution and contextual inference, but cannot debugging further deeper.
+[2016-12-14 05:34:34] <HerringtonDarkholme> Probably this is a related issue to [<-ISSUE->] 
+[2016-12-14 06:42:34] <dtabuenc> Yeah it looks like that would be it. It's not clear that they are fixing that anytime soon though.
+--------------------------------------------------------------------------------------------------
+[2016-12-14 14:52:35] <acterhd> Will TypeScript interact with C++? Or even embed TypeScript/JavaScript API to C++?
+[2016-12-14 16:18:14] <dtabuenc> acterhd: there are some things out there, like nibind, and asm.js that can compile c++ to  js/ts or you can embed chrome v8 engine in c++ and run compiled typescript code.
+--------------------------------------------------------------------------------------------------
+[2016-12-14 19:34:55] <jacobus-brogly> sneek peek
+[2016-12-14 19:35:13] <jacobus-brogly> my progress so far, first "major" use of typescript,
+[2016-12-14 19:35:20] <jacobus-brogly>  [<-LINK->] 
+[2016-12-14 19:35:29] <jacobus-brogly>  [<-LINK->] 
+[2016-12-14 19:36:18] <jacobus-brogly> Some libraries didnt have type defs (npm-tracer etc) so I didnt learn how to do advanced type defs file yet,
+[2016-12-14 19:36:55] <dtabuenc> looks like it's coming along nicely
+[2016-12-14 19:40:38] <jacobus-brogly> the only thing left to do is real time updates (websockets) and of course to sign up, i just spread some data around for testing, so not "real people"
+[2016-12-14 19:40:44] <jacobus-brogly> thanks@dtabuenc
+[2016-12-14 19:41:50] <jacobus-brogly> also the icons will get smaller when you zoom out to help prevent clogging the screen, ArCGIS is hands down the best Geo API, but it needs a lot of reading into
+[2016-12-14 19:42:44] <jacobus-brogly> --
+[2016-12-14 19:52:13] <jacobus-brogly> for my app, I want to use repsonse mailing to validate signup
+[2016-12-14 19:52:25] <jacobus-brogly> any good solutions for this (preferably something i can try for free)
+--------------------------------------------------------------------------------------------------
+[2016-12-16 20:49:05] <ghetolay> dtabuenc: do you have an idea for  [<-LINK->] 
+[2016-12-16 21:03:07] <dtabuenc> yeah you trying to do a discriminated union?
+[2016-12-16 21:03:15] <dtabuenc> they type of type has to be a literal type
+[2016-12-16 21:03:20] <dtabuenc> right now it's just a string
+[2016-12-16 21:03:55] <dtabuenc>  [<-CODE->] 
+[2016-12-16 21:04:53] <stevekane> they also probably shouldn't be classes. use interface whenever possible for developing these apis
+[2016-12-16 21:05:06] <stevekane> you can make classes to construct them if you want
+[2016-12-16 21:11:22] <ghetolay> dtabuenc: still not working. does this mean I have to create a type'A'?
+[2016-12-16 21:11:58] <stevekane> that should work for certain
+[2016-12-16 21:12:02] <stevekane> paste your full real code
+[2016-12-16 21:13:15] <ghetolay> ok sorry this is indeed working
+[2016-12-16 21:13:23] <ghetolay> but this was a minimal
+[2016-12-16 21:15:38] <ghetolay> now what if I use a var [<-CODE->] 
+[2016-12-16 21:16:21] <stevekane> no change, it will still infer the type of A_TYPE is string
+[2016-12-16 21:16:28] <stevekane> and won't narrow it to the literal string 'A'
+[2016-12-16 21:17:04] <ghetolay> but I can't doreadonly type: A_TYPE = A_TYPE
+[2016-12-16 21:17:13] <stevekane> yea because that wouldn't make any sense
+[2016-12-16 21:17:18] <stevekane> A_TYPE is a value not a type
+[2016-12-16 21:17:25] <stevekane> it's an alias/name for a value in your program
+[2016-12-16 21:18:02] <stevekane> when the code sees a string literal, it assumes unless given other context that it must be of type string
+[2016-12-16 21:18:13] <stevekane> I actually have a ticket open about a use-case where I think this is not-awesome
+[2016-12-16 21:18:31] <stevekane>  [<-ISSUE->] 
+[2016-12-16 21:23:18] <ghetolay> I don't understand what this is doing [<-CODE->] because if I do [<-CODE->] this works
+[2016-12-16 21:23:28] <ghetolay> but the type function is not creating any type
+[2016-12-16 21:23:44] <ghetolay> T is string ?
+[2016-12-16 21:24:26] <stevekane> where are you gettiug this code from?
+[2016-12-16 21:24:34] <stevekane> that doesn't look like something you would write accidently
+[2016-12-16 21:24:40] <ghetolay>  [<-LINK->] 
+[2016-12-16 21:24:44] <ghetolay> absolutely not lol
+[2016-12-16 21:25:00] <ghetolay> I'm trying to understand
+[2016-12-16 21:25:03] <stevekane> gotcha
+[2016-12-16 21:25:16] <stevekane> ok so what's happening there is they are providing type-narrowing hiunts to the compiler
+[2016-12-16 21:25:24] <stevekane> that the meaning of the type being unioned here is a string literal
+[2016-12-16 21:25:28] <stevekane> not string in general
+[2016-12-16 21:25:51] <stevekane> so they use that function to coerce the type into the literal 'A' ( as a type ) not type string with value 'A'
+[2016-12-16 21:25:59] <stevekane> in that case, they are abusing the compiler
+[2016-12-16 21:26:12] <stevekane> to dope the type into being further narrowed that it would ordinarily take it
+[2016-12-16 21:26:22] <stevekane> it's a hack around the compiler's defaults basically
+[2016-12-16 21:26:53] <stevekane> normally when the compiler sees a raw literal, it assumes it's a value from the set that it comes from ( 'A' comes from string, 5 from number, etc )
+[2016-12-16 21:27:05] <stevekane> but here you're "OR"ing it with a literal empty string ''
+[2016-12-16 21:27:21] <stevekane> which allows the compiler to decide it should try further narrowing the type to a string literal type
+[2016-12-16 21:27:45] <stevekane> they are almost certainly doing this
+[2016-12-16 21:27:50] <stevekane> for exactyly the reason my ticket addresses
+[2016-12-16 21:27:57] <stevekane> you want your end user to NEVER have to think about this stuff
+[2016-12-16 21:28:09] <stevekane> they should put in a literal 'A' into an object literal
+[2016-12-16 21:28:13] <stevekane> pass it to your framework
+[2016-12-16 21:28:20] <stevekane> which actually treats that literal as a type literal
+[2016-12-16 21:28:22] <stevekane> internally
+[2016-12-16 21:28:27] <stevekane> and adds safety as a result
+[2016-12-16 21:28:31] <stevekane> without you being any wiser
+[2016-12-16 21:29:28] <ghetolay> ok thks
+[2016-12-16 21:29:33] <stevekane> no problem
+[2016-12-16 21:29:36] <stevekane> hope that helped!
+[2016-12-16 21:30:03] <ghetolay> I just thought this function was used for the cache
+[2016-12-16 21:30:08] <ghetolay> so I skipped it
+[2016-12-16 21:30:29] <stevekane> I applaud you for reading the source!
+[2016-12-16 21:30:54] <ghetolay> that's how you learn
+[2016-12-16 21:32:42] <stevekane> actually what they are doing here
+[2016-12-16 21:32:47] <stevekane> still won't really address my concern
+[2016-12-16 21:32:57] <stevekane> but they use it to cleanup the ugliness of their class constructors slightly
+[2016-12-16 21:33:40] <stevekane> you still couldn't construct an instance satisfying the interface w/o wrapping your literal in the type function
+[2016-12-16 21:33:51] <stevekane> which is a shame because it's my view that the compiler should try this automatically
+[2016-12-16 21:34:00] <stevekane> it forces your end user to know this hack
+[2016-12-16 21:34:13] <stevekane> or you to provide constructors ( classes ) for every data type in your system w/ this issue
+[2016-12-16 21:34:23] <stevekane> which in my view is anti-js
+[2016-12-16 21:34:28] <stevekane> and anti-structural typing
+[2016-12-16 21:35:08] <ghetolay> I don't even know why there is a type
+[2016-12-16 21:35:25] <ghetolay> isn't just class andinstanceofenough
+[2016-12-16 21:35:43] <stevekane> that's a very naive understanding the type system
+[2016-12-16 21:35:51] <stevekane> it's a reasonable place to begin but I think it's counter-productive
+[2016-12-16 21:36:10] <stevekane> you shoudl focus much more on the interface/type syntaxes and learn to understand how they algebraicly form types
+[2016-12-16 21:36:22] <stevekane> classes and instanceof are very brittle
+[2016-12-16 21:36:41] <stevekane> sorry that sounded harsh, but isn't what I meant
+[2016-12-16 21:37:00] <stevekane> what I meant by naive is that that's a very minor part of the type system and won't give you access to most of its power
+[2016-12-16 21:37:32] <ghetolay> you're talking about js or just ts ?
+[2016-12-16 21:37:40] <stevekane> both
+[2016-12-16 21:37:44] <stevekane> ts specifically tho
+[2016-12-16 21:37:48] <stevekane> but in JS instanceof is a bad plan
+[2016-12-16 21:37:54] <stevekane> you should put data members on the structure itself
+[2016-12-16 21:37:59] <stevekane> that allow you to deduce its type
+[2016-12-16 21:38:06] <stevekane> which is of course all that instanceof is sugar for anyway
+[2016-12-16 21:38:12] <stevekane> if you "new Ctor" something in js
+[2016-12-16 21:38:22] <stevekane> it slaps a paramater on the object w/ a particular name
+[2016-12-16 21:38:28] <stevekane> which it checks via instanceof
+[2016-12-16 21:38:37] <stevekane> but you could just as easily do that yourself
+[2016-12-16 21:38:54] <stevekane> and then your type checks are structural in a domain you fully control ( object literals ) not dependent on brittle things like constructors
+[2016-12-16 21:40:31] <ghetolay> do you have a case in mind whereinstanceofdoesn't work properly
+[2016-12-16 21:40:37] <ghetolay> not as I don't trust you
+[2016-12-16 21:40:49] <ghetolay> but this may help
+[2016-12-16 21:41:08] <stevekane> that's a sort of tricky question because it's a bit philosophical
+[2016-12-16 21:41:18] <stevekane> { foo: number, bar: string }
+[2016-12-16 21:41:21] <stevekane> is a type
+[2016-12-16 21:41:25] <stevekane> it's the union of a number and a string
+[2016-12-16 21:41:30] <stevekane> a class that MAKES that type
+[2016-12-16 21:41:36] <felixfbecker> wat
+[2016-12-16 21:41:40] <stevekane> is just a means of constructing that type
+[2016-12-16 21:41:45] <stevekane> so when you do instanceof checking
+[2016-12-16 21:41:53] <stevekane> you're saying "did you use exactly this method to make a type"
+[2016-12-16 21:42:08] <stevekane> it's a valid thing to do
+[2016-12-16 21:42:09] <stevekane> because of course I lied above
+[2016-12-16 21:42:13] <stevekane> when you new MyType
+[2016-12-16 21:42:16] <stevekane> you actually make this
+[2016-12-16 21:42:29] <stevekane> { foo: number, bar: string, constructor: "MyType" }
+[2016-12-16 21:42:32] <stevekane> which means your instanceof check
+[2016-12-16 21:42:36] <felixfbecker> no
+[2016-12-16 21:42:39] <ghetolay> yes exactly
+[2016-12-16 21:42:49] <ghetolay> instanceof check the constructor property
+[2016-12-16 21:42:56] <ghetolay> as we would check the type property
+[2016-12-16 21:43:04] <ghetolay> right ?
+[2016-12-16 21:43:07] <stevekane> apologies
+[2016-12-16 21:43:09] <stevekane> it's constructor.name
+[2016-12-16 21:43:13] <stevekane> but same principle applies
+[2016-12-16 21:43:26] <stevekane> ya that's right
+[2016-12-16 21:43:30] <stevekane> which is why I say it's a valid thing to do
+[2016-12-16 21:43:31] <stevekane> but
+[2016-12-16 21:43:38] <stevekane> in typescript, the discriminated union concept
+[2016-12-16 21:43:47] <felixfbecker> you do{ foo: number, bar: string, __proto__: Ctor.prototype, constructor: Ctor }
+[2016-12-16 21:43:53] <stevekane> "lowers" that sort of primitive type checking to the object literal itself
+[2016-12-16 21:44:03] <stevekane> felixfbecker: it's not really important here
+[2016-12-16 21:44:08] <stevekane> you're correct, but noone does that ever
+[2016-12-16 21:44:11] <felixfbecker> it is important if you do inheritance
+[2016-12-16 21:44:14] <stevekane> as a literal construction pattern
+[2016-12-16 21:44:36] <felixfbecker> What?
+[2016-12-16 21:44:48] <felixfbecker> Sequelize.js uses this for example
+[2016-12-16 21:44:59] <stevekane> it's fine but don't distract this please
+[2016-12-16 21:45:08] <stevekane> the point is why I THINK it's an anti-pattern
+[2016-12-16 21:45:12] <stevekane> not that you cannot do it
+[2016-12-16 21:45:28] <ghetolay> it's a conf dude, quiet till he finish
+[2016-12-16 21:45:30] <stevekane> and why in typescript in particular, I think it's further solidified as anti-attern
+[2016-12-16 21:45:49] <felixfbecker> yeah sure continue
+[2016-12-16 21:45:59] <stevekane> so if you have two kinds of data in your app
+[2016-12-16 21:46:01] <stevekane> let's say users
+[2016-12-16 21:46:34] <stevekane>  [<-CODE->] 
+[2016-12-16 21:46:50] <stevekane> you can discriminate them from one-another using a literal at your object-level
+[2016-12-16 21:47:07] <stevekane> if ( registered ) // access to properties only for registered
+[2016-12-16 21:47:09] <stevekane> that sort of thing
+[2016-12-16 21:47:17] <stevekane> but the literals can be string, number, enums, etc
+[2016-12-16 21:47:22] <stevekane> so there's a lot of flxibility here
+[2016-12-16 21:47:29] <stevekane> and in the end it's SIMILAR to constructors
+[2016-12-16 21:47:30] <stevekane> BUT
+[2016-12-16 21:47:33] <stevekane> unlike instanceof checks
+[2016-12-16 21:47:42] <stevekane> you can MAKE instances of that data type many different ways
+[2016-12-16 21:48:07] <ghetolay> yes if you need it
+[2016-12-16 21:48:20] <felixfbecker> But inheritance becomes harder
+[2016-12-16 21:48:24] <ghetolay> but when you create a class RegisteredUser
+[2016-12-16 21:48:29] <felixfbecker> Especially if your object should have methods
+[2016-12-16 21:48:32] <ghetolay> you don't really expect any other object
+[2016-12-16 21:48:42] <ghetolay> matching the propreties of RegisteredUser
+[2016-12-16 21:48:47] <ghetolay> without being that particular class
+[2016-12-16 21:48:56] <ghetolay> I mean most of the time
+[2016-12-16 21:49:00] <stevekane> are you both javascript devs or from another language orginally?
+[2016-12-16 21:49:16] <stevekane> the key thing to grok about object literals as handled by typescript is that they are union types
+[2016-12-16 21:49:17] <ghetolay> but I agree it's more powerfull to check each properties to see if it really fits
+[2016-12-16 21:49:19] <stevekane> yes
+[2016-12-16 21:49:30] <stevekane> btw
+[2016-12-16 21:49:32] <stevekane> it's totally ok
+[2016-12-16 21:49:34] <stevekane> to have classes
+[2016-12-16 21:49:36] <stevekane> and even inheritance
+[2016-12-16 21:49:41] <stevekane> w/ everything I said above
+[2016-12-16 21:49:57] <stevekane> class RegisteredUser implements IRegisteredUser {}
+[2016-12-16 21:50:07] <stevekane> you can make one more conveniently
+[2016-12-16 21:50:14] <stevekane> but your functions should be in terms of the interface User
+[2016-12-16 21:50:23] <stevekane> and you should discriminate on the fields you declared yourself
+[2016-12-16 21:50:30] <stevekane> ( if you buy my line of reasonining of course )
+[2016-12-16 21:50:43] <stevekane> that is a cleaner way to share implementations of methods
+[2016-12-16 21:50:45] <stevekane> for example
+[2016-12-16 21:50:52] <stevekane> than making object literals all the time ( of course )
+[2016-12-16 21:51:24] <stevekane> or you could make functions
+[2016-12-16 21:51:48] <stevekane>  [<-CODE->] 
+[2016-12-16 21:52:00] <stevekane> etc
+[2016-12-16 21:52:43] <ghetolay> in fact I'm using classes here more like factory
+[2016-12-16 21:52:52] <ghetolay> to avoid defining the whole object
+[2016-12-16 21:52:56] <stevekane> yup
+[2016-12-16 21:53:00] <stevekane> that's totally valid
+[2016-12-16 21:53:02] <stevekane> and a good idea in general
+[2016-12-16 21:53:08] <stevekane> but make your functions over interfaces
+[2016-12-16 21:53:10] <stevekane> or types
+[2016-12-16 21:54:31] <felixfbecker> stevekane: what about inheritance
+[2016-12-16 21:54:31] <ghetolay> yep but then it's about boilerplate
+[2016-12-16 21:54:36] <ghetolay> creating a list of types
+[2016-12-16 21:54:52] <ghetolay> then interfaces, then classes
+[2016-12-16 21:55:09] <stevekane> so I agree in the cases
+[2016-12-16 21:55:20] <stevekane> whereyou think your class will NEVER by polymorphic
+[2016-12-16 21:55:20] <ghetolay> that kind of things [<-LINK->] 
+[2016-12-16 21:55:23] <ghetolay> over and over
+[2016-12-16 21:55:24] <stevekane> it's probably "ok" there
+[2016-12-16 21:55:51] <stevekane> but then
+[2016-12-16 21:55:58] <stevekane> you wouldn't be instanceof checking anyway
+[2016-12-16 21:56:04] <stevekane> so it's moot
+[2016-12-16 21:57:01] <stevekane> there's another discussion here actually that might be confusing the issue
+[2016-12-16 21:57:13] <stevekane> open-ended or "arbitrary" polymorphism
+[2016-12-16 21:57:18] <stevekane> cannot and should not be implemented in this way
+[2016-12-16 21:57:32] <stevekane> in that case the only tool typescript gives you is classes and methods for virtual dispatch
+[2016-12-16 21:57:39] <stevekane> so if your type may be extended, you should not do this
+[2016-12-16 21:57:55] <stevekane> this is mostly about modeling types where the set of possible options is finite
+[2016-12-16 21:58:04] <stevekane> even user is a bit of a dubious case for example
+[2016-12-16 21:58:17] <stevekane> because you may have users that are other categorizations down the road
+[2016-12-16 21:58:24] <stevekane> like "temporary" users
+[2016-12-16 21:58:26] <stevekane> that sort of thing
+[2016-12-16 21:58:33] <stevekane> then you'd have to rip out your types
+[2016-12-16 21:58:37] <stevekane> and re-write them
+[2016-12-16 21:59:04] <stevekane> which is completely OK IF you want that sort of tight control over what counts as a user
+[2016-12-16 21:59:19] <stevekane> but bad if you're writing a type which could be extended by another programmer or some user of your library
+[2016-12-16 22:00:59] <ghetolay> yes agree I always use interfaces for API
+[2016-12-16 22:01:13] <stevekane> that code you linked me
+[2016-12-16 22:01:17] <stevekane> from typescript examples
+[2016-12-16 22:01:21] <stevekane> is an excellent example of this pattern
+[2016-12-16 22:01:29] <stevekane> classes as convenience means of construction
+[2016-12-16 22:01:44] <stevekane> but types embedded at the literal level for discriminating among a finite set of options
+[2016-12-16 22:03:26] <stevekane> also I should correct myself from way above, { foo: number, bar: string } is the product of the Set number and string
+[2016-12-16 22:03:30] <stevekane> I said union for some reason above
+[2016-12-16 22:07:51] <ghetolay> yeah the intersectinon of {foo: number} and {bar: string} right ?
+[2016-12-16 22:07:59] <stevekane> ya
+[2016-12-16 22:09:08] <ghetolay> I'm just realizing that union is indeed the union
+[2016-12-16 22:09:28] <ghetolay> A | B is A or B or both
+[2016-12-16 22:09:31] <stevekane> ya it really helps in the current era of languages to think about types in the domain of sets
+[2016-12-16 22:09:33] <ghetolay> never thought of the both case
+[2016-12-16 22:09:38] <stevekane> and not anything else
+[2016-12-16 22:10:08] <stevekane> all your sum/product types
+[2016-12-16 22:10:10] <stevekane> are exactly that
+[2016-12-16 22:10:14] <stevekane> sums and products of sets
+[2016-12-16 22:12:05] <ghetolay> ok Thks a lot steven
+[2016-12-16 22:12:14] <stevekane> for sure, hope it was helpful
+[2016-12-16 22:12:31] <ghetolay> is there some docs/acticles about the inside of typescript ?
+[2016-12-16 22:12:51] <ghetolay> if I want to know a bit more than just a typical user
+[2016-12-16 22:12:53] <stevekane> I'm not too sure, most of my opinions/ideas actually come from Haskell
+[2016-12-16 22:12:57] <stevekane> and then just applied here
+[2016-12-16 22:13:13] <stevekane> so I'm a little unsure how the TS ecosystem itself would help people w/ these ideas
+[2016-12-16 22:13:19] <stevekane> though the official docs are not bad
+[2016-12-16 22:13:22] <stevekane> if you actually read them
+[2016-12-16 22:13:26] <stevekane> there's pretty detailed examples
+[2016-12-16 22:13:52] <stevekane>  [<-LINK->] 
+[2016-12-16 22:13:57] <stevekane> handbook section is pretty solid stuff
+[2016-12-16 22:14:02] <stevekane> they keep it up-to-date too
+[2016-12-16 22:16:40] <ghetolay> yeah maybe I should re-read it again
+[2016-12-16 22:17:11] <ghetolay> with some background I may understand new things
+[2016-12-16 22:17:32] <stevekane> I wrote a bunch of code before I even realized you could overload functions
+[2016-12-16 22:17:33] <stevekane> :/
+[2016-12-16 22:17:38] <stevekane> and it was right there the whole time
+[2016-12-16 22:17:52] <stevekane> same w/ understanding when/why to use custom type discrimination functions
+[2016-12-16 22:18:01] <stevekane> super basic concept, but didn't see a use-case for awhile
+[2016-12-16 22:18:03] <ghetolay> I've seen overload function
+[2016-12-16 22:18:10] <ghetolay> but never worked with it
+[2016-12-16 22:18:26] <stevekane> if you have RegUser and AnonUser
+[2016-12-16 22:18:33] <stevekane> it let's you write one login function
+[2016-12-16 22:18:40] <stevekane> actually no
+[2016-12-16 22:18:41] <stevekane> ignore that
+[2016-12-16 22:18:47] <stevekane> it's too subtle and weird to expalin here lol
+[2016-12-16 22:18:57] <stevekane> the restrictions in typescript for it are.. interesting
+[2016-12-16 22:19:08] <stevekane> and that's not even the use case anyway
+[2016-12-16 22:19:15] <stevekane> so just disregard that
+[2016-12-16 22:19:32] <stevekane> I think in general it's a bit of an anti-pattern
+[2016-12-16 22:19:36] <stevekane> but some js libs do it a lot etc
+[2016-12-16 22:20:20] <ghetolay> only aware of RxJS using it
+[2016-12-16 22:20:34] <stevekane> ya but lots of js core libs use it
+[2016-12-16 22:20:49] <stevekane> all the diff signatures for built-ins and stuff
+[2016-12-16 22:20:56] <ghetolay> oh yeah
+[2016-12-16 22:21:31] <ghetolay> I didn't like doing it because like you need like 5 lines of codes to understand which function was called
+[2016-12-16 22:21:53] <ghetolay> well which type of it
+[2016-12-16 22:22:00] <ghetolay> jQuery does it a lot
+--------------------------------------------------------------------------------------------------
+[2016-12-19 12:40:14] <intellix> anyone got an example of a library that attaches an instance to window? I need to create typings for such a library and can't seem to get it to work
+[2016-12-19 12:43:46] <felixfbecker> Use interface augmentation
+[2016-12-19 12:44:03] <felixfbecker>  [<-CODE->] 
+[2016-12-19 12:44:23] <felixfbecker> you can also declare a global [<-CODE->] 
+[2016-12-19 12:45:04] <intellix> hmmm, says X is not a module
+[2016-12-19 12:45:26] <intellix> I have the import like: [<-CODE->] 
+[2016-12-19 12:45:41] <intellix> I guess I don't get the reference to thewindow.lpTagwith that?
+[2016-12-19 12:47:08] <intellix> also with that I get:File '/node_modules/liveperson-chat-api/src/index.d.ts' is not a module.
+[2016-12-19 12:47:40] <intellix> I tried this: [<-CODE->] but then the lpTag is just an empty object and not the one that's attached to window
+[2016-12-19 12:49:42] <intellix> not a fun experience :/ my TSC takes 7 seconds to compile so it takes me ages to try something that isn't going to work. trial and error
+[2016-12-19 12:53:08] <intellix> expected this to work, but nope :/ [<-CODE->] 
+[2016-12-19 12:57:24] <intellix> I've linked in the library that adds itself to window and am providing an index.d.ts, so that when I import it, then the script gets loaded.. but then how to get ahold of that window.lpTag reference -.-
+[2016-12-19 13:02:32] <intellix> with the declare var lpTag; when I console.log lpTag as I import it, it just seems to be an empty object. Not sure wtf that is meant to be
+--------------------------------------------------------------------------------------------------
+1 [2016-12-20T08:53:16] <itsphil> tsconfig paths - having an issue with using similar names. [<-CODE->] Issue 1: Can't make reference to @core within components core.Issue 2: Would have the word @core in both confuse the compiler?
+--------------------------------------------------------------------------------------------------
+[2016-12-20 20:25:35] <subvertallchris> hello! does anyone know where the version number for types pulled using@types/librarycan be found online? i’m trying to figure out whether i have the most recent version of published types.
+[2016-12-20 20:26:02] <dtabuenc> well if you just npm install it will update to the latest
+[2016-12-20 20:26:11] <subvertallchris> that’s not what i’m looking for, though
+[2016-12-20 20:26:33] <coldacid> subvertallchris: there should be a package.json inside thenode_modules/@types/library directories that would have the version number in it, just like anything else from npm
+[2016-12-20 20:26:59] <dtabuenc> I use npm update checker to check for updates and tell me what version of everything I have.
+[2016-12-20 20:27:15] <dtabuenc> or are you referring to what version of the lib a particular npm package works with?
+[2016-12-20 20:27:16] <subvertallchris> coldacid: i see that, but i am looking in the repo on github and package.json isn’t there
+[2016-12-20 20:27:53] <coldacid> pretty much every package in the@typesscope is magically generated
+[2016-12-20 20:27:54] <subvertallchris> there’s a mistake in the types for Three.js
+[2016-12-20 20:27:55] <con-ssc> scarlier: exactly
+[2016-12-20 20:28:06] <subvertallchris> and i’m trying to figure out whether i should update first or if i’m already on latest
+[2016-12-20 20:28:07] <coldacid> you have to actually go into the node_modules directory in your project
+[2016-12-20 20:28:11] <dtabuenc> subvertallchris: just use npm view
+[2016-12-20 20:28:18] <dtabuenc> to see  all the versions available for a package
+[2016-12-20 20:28:41] <subvertallchris> ahh, that’s a big help! thanks.
+[2016-12-20 20:28:55] <dtabuenc>  [<-LINK->] 
+[2016-12-20 20:29:10] <subvertallchris> very cool
+[2016-12-20 20:29:11] <dtabuenc> I use this though, to check all my dependencies and report what updates are available
+[2016-12-20 20:29:33] <subvertallchris> that is really helpful
+[2016-12-20 20:29:51] <dtabuenc> But in any case, if you WANT to be on the latest version and you are not sure...just runnpm install @types/libraryagain
+[2016-12-20 20:30:04] <dtabuenc> that will always bring you up to the latest
+[2016-12-20 20:30:22] <con-ssc> Vscode has a version lens plugin
+[2016-12-20 20:30:45] <subvertallchris> i’m on yarn, soyarn upgrade @types/whateveralso does it
+[2016-12-20 20:31:17] <con-ssc> Has yarn still the bug with not installing ex cutables
+[2016-12-20 20:31:22] <dtabuenc> Did they fix yarn? I've  had trouble with it dealing with@types/whateveror other sub-repo type stuff like@angular/core
+[2016-12-20 20:31:32] <dtabuenc> like I would have to run it twice for it to work
+[2016-12-20 20:31:37] <dtabuenc> but I'm on windows
+[2016-12-20 20:31:48] <subvertallchris> couldn’t tell you about executables but it’s been great with@types/whatever
+[2016-12-20 20:31:50] <con-ssc> Yes had the same problem with yarn
+[2016-12-20 20:31:57] <dtabuenc> are you on linux or unix-like ?
+[2016-12-20 20:32:00] <subvertallchris> i am
+[2016-12-20 20:32:13] <dtabuenc> yeah unix works I think.. the@types/bugs are windows related
+[2016-12-20 20:32:16] <subvertallchris> i haven’t had any problems with it at all, been using it for a few weeks now
+[2016-12-20 20:32:16] <con-ssc> Yarn often left out the package JSON with types
+[2016-12-20 20:32:29] <con-ssc> Yes, agreed
+[2016-12-20 20:32:45] <dtabuenc> yarn also somehow adds a BOM character in some package.json files that confuses webpack so haven't been able to fully use it yet
+[2016-12-20 20:32:51] <con-ssc> More issues on WI does
+[2016-12-20 20:32:55] <dtabuenc> but hoping to, because it's awesome when it works
+[2016-12-20 20:33:01] <subvertallchris> that’s a shame. coming from ruby, yarn felt quite familiar and was a nice upgrade over npm
+[2016-12-20 20:33:36] <dtabuenc> con-ssc: Version Lense is awesome.. thanks for the tip
+[2016-12-20 20:34:15] <con-ssc> YW
+[2016-12-20 20:35:57] <con-ssc> I have to admit, I'm really into all those extensions
+[2016-12-20 20:36:16] <dtabuenc> just have to be careful sometimes with some lesser-quality extensions
+[2016-12-20 20:36:28] <dtabuenc> making things unstable/crashy
+[2016-12-20 20:37:41] <con-ssc> Yes absolutely, if you have multiple lenses installed that can have some performance impacts
+--------------------------------------------------------------------------------------------------
+1 [2016-12-20T21:08:24] <subvertallchris> Anyone have experience contributing to DefinitelyTyped?
+2 [2016-12-20T21:13:14] <subvertallchris> It looks like I should clone the entire repo (!) and then runnpm test, which appears to run through the entire directory, says “Testing…” and then exists silently. I do not expect any errors based on the change I made. Travis is failing on the PR and it seems like it has something to do with TypeScript versions — I doubt it was my change. Is this normal?
+--------------------------------------------------------------------------------------------------
+[2016-12-21 13:56:17] <jasonbiondo> Can anyone explain to me how I can get my jquery plugins working with typescript?  I'm trying to get [<-LINK->] working but there is no typings file available.  Any idea on a quick way I can make this happen?
+[2016-12-21 14:29:33] <mseddon> jasonbiondo: did you trynpm i -S @types/jquery?
+[2016-12-21 14:30:24] <mseddon> doh, misread that.
+[2016-12-21 14:31:34] <mseddon> you should be able to merge your declarations on top of the jquery declarations like: [<-LINK->] 
+[2016-12-21 14:43:17] <jasonbiondo> mseddon: yeah, I’m trying to sort it out but can’t seem to figure it out.  Let me check this doc
+[2016-12-21 14:43:59] <jasonbiondo> mseddon: I’m using [<-CODE->] 
+[2016-12-21 14:44:57] <jasonbiondo> whoa…somehow now that works
+[2016-12-21 14:45:03] <jasonbiondo> maybe I just needed to recompile
+[2016-12-21 14:55:08] <mseddon> huh. strange. still, glad that worked for you :)
+[2016-12-21 17:38:15] <jasonbiondo> @mseddon so this is weird.  This is what I have… [<-CODE->] then below that code I reference the clndr plugin.  When I remove the console.log then clndr is no longer available as a function.  Any idea why?
+[2016-12-21 17:38:52] <dtabuenc> jasonbiondo: Are you trying to write a decalration file ?
+[2016-12-21 17:39:22] <jasonbiondo> I’m trying to use clndr in my ts file
+[2016-12-21 17:39:35] <jasonbiondo> since the declaration file is not available
+[2016-12-21 17:40:23] <dtabuenc> jasonbiondo: You need to do something llike this template
+[2016-12-21 17:40:24] <dtabuenc>  [<-LINK->] 
+[2016-12-21 17:41:45] <dtabuenc> because it is almost always an error to manually write out properties that can never be accessed from the object you are assigning to
+[2016-12-21 17:42:15] <dtabuenc> but in the case ofx=yyou can still accessbazthroughy.baz
+[2016-12-21 17:42:21] <jasonbiondo> dtabuenc: hmm I see.  Seems a bit confusing.  Is there a boilerplate example anywhere for converting a jquery plugin?
+[2016-12-21 17:42:59] <dtabuenc> jasonbiondo: what I gave you is pretty close... you'd dodeclare module 'jquery'{ ...]
+[2016-12-21 17:43:10] <dtabuenc> and add stuff to the interface
+[2016-12-21 17:43:21] <jasonbiondo> wouldn’t it be declare module cldnr?
+[2016-12-21 17:43:29] <dtabuenc> no ...
+[2016-12-21 17:43:37] <dtabuenc> you are augmenting jquery
+[2016-12-21 17:43:42] <jasonbiondo> I see
+[2016-12-21 17:43:57] <dtabuenc> so you would put that in a d.ts file
+[2016-12-21 17:44:17] <dtabuenc> and make sure it's included in your comile throughfiles:[]or///<refernce>etc..
+[2016-12-21 17:45:10] <jasonbiondo> I have already download the jQuery.d.ts
+[2016-12-21 17:45:21] <jasonbiondo> should I be appending that?
+[2016-12-21 17:45:21] <jasonbiondo> or create a new file?
+[2016-12-21 17:46:49] <dtabuenc> new file
+[2016-12-21 17:46:59] <dtabuenc> but are you using typescript 2.0 or above?
+[2016-12-21 17:47:26] <jasonbiondo> yeah 2.1
+[2016-12-21 17:47:30] <jasonbiondo>  [<-CODE->] 
+[2016-12-21 17:47:37] <dtabuenc> you shouldn't be downloading jquery.d.ts
+[2016-12-21 17:47:43] <jasonbiondo> ohh...
+[2016-12-21 17:47:44] <dtabuenc> you should just be usingnpm install @types/jquery
+[2016-12-21 17:47:48] <jasonbiondo> I’ll remove then
+[2016-12-21 17:48:05] <jasonbiondo> so I should not be using typings install?
+[2016-12-21 17:52:00] <jasonbiondo> dtabuenc: also shouldn’t it be npm install@types/jquery - D
+[2016-12-21 17:52:27] <dtabuenc> jasonbiondo: up to you where you want to save the version
+[2016-12-21 17:54:59] <jasonbiondo> @dtabuenc can you clear this up for me.  If you use npm to install your types then do you still need to put reference paths?<reference path="globals/velocity-animate/index.d.ts" />
+[2016-12-21 17:55:11] <dtabuenc> no you do not
+[2016-12-21 17:55:16] <dtabuenc> they automatically get included by default
+[2016-12-21 17:55:35] <jasonbiondo> I see
+[2016-12-21 17:56:44] <dtabuenc> looks like jquery typings are global...
+[2016-12-21 17:56:49] <dtabuenc> so don't do thedeclare module
+[2016-12-21 17:57:12] <dtabuenc> what I do is I have acustom-definitionsfolder that I put d.ts files in
+[2016-12-21 17:57:24] <dtabuenc> and then I
+--------------------------------------------------------------------------------------------------
+ [2016-12-21 22:01:00] <johnfn> here's another problem
+[2016-12-21 22:01:09] <johnfn>  [<-CODE->] 
+[2016-12-21 22:02:21] <johnfn> but note that this is fine:
+[2016-12-21 22:02:25] <johnfn>  [<-CODE->] 
+[2016-12-21 22:15:00] <dtabuenc> and again you actually need to use generics?
+[2016-12-21 22:16:09] <johnfn> hahaha
+[2016-12-21 22:16:21] <johnfn> dont you know i just put <T> on all my methods for fun by now? ;-)
+[2016-12-21 22:16:28] <johnfn> alright, let me explain what im doing
+[2016-12-21 22:16:33] <johnfn> im writing a clone() method
+[2016-12-21 22:16:44] <johnfn> that recursively clones a JS obj
+[2016-12-21 22:17:03] <johnfn> so i do something liketype MyObject = number | string | boolean | Buffer
+[2016-12-21 22:17:22] <johnfn> i even have{ [key: string]: MyObject }in there, but it's not really relevant
+[2016-12-21 22:18:08] <johnfn> but yeah, the idea is that i want the signature of my clone method to befunction clone<T extends GenericObject>(x: T): T
+[2016-12-21 22:18:29] <johnfn> in order to ensure that when i try to clone something, i've actually written a rule for how it should be cloned, so i dont accidentally try to clone something i can't.
+[2016-12-21 22:18:51] <johnfn> hopefully that's a simple and understandable use case, perhaps unlike yesterday ;-)
+[2016-12-21 22:18:53] <dtabuenc> but you don't have to make x be of type T
+[2016-12-21 22:19:02] <johnfn> hm?
+[2016-12-21 22:22:14] <dtabuenc> nevermind I see it now
+[2016-12-21 22:22:23] <dtabuenc> write up another issue, they seem to be really responsive.
+[2016-12-21 22:22:52] <johnfn> kk
+[2016-12-21 22:23:01] <johnfn> since the answer to the last one i got, im kind of scared about typescript
+[2016-12-21 22:23:21] <johnfn> where it seems okay until you do soemthing complicated and then its like "heh you cant do that because of really arcane javascript reasons"
+[2016-12-21 22:23:38] <johnfn> and i cry a little and refresh the "is web assembly available yet" page
+[2016-12-21 22:24:48] <dtabuenc> Well on yesterday's you ended up getting a response from Mr Typescript himself, saying it should be possible to make it work
+[2016-12-21 22:25:13] <johnfn> oh, i mean this one: [<-LINK->] 
+[2016-12-21 22:25:34] <johnfn> the union type parameterization was more heartening, i agree
+[2016-12-21 22:27:44] <johnfn> at this point im hesitant to call anything i find in typescript a bug
+[2016-12-21 22:28:04] <johnfn> everything i find is always "oh hah thats by design"
+[2016-12-21 22:28:30] <johnfn> at some point im going to find that they constant fold 2+2 to be 5 and open an issue and they're gonna be like "nah thats on purpose"
+[2016-12-21 22:28:56] <johnfn> (disclaimer: typescript is awesome and i use it all the time)
+--------------------------------------------------------------------------------------------------
+[2016-12-22 02:35:04] <stevekane> anyone know how to check for instances of vendor-specific apis?
+[2016-12-22 02:35:18] <stevekane> liek for example, how do I check if window.mozRequestAnimationFrame is defined?
+[2016-12-22 02:35:24] <stevekane> vs msRequestAnimationFrame etc
+[2016-12-22 05:00:59] <spacejack> stevekane: you mean so typescript won't complain? I'd doif (window['mozRequestAnimationFrame']) {...
+[2016-12-22 05:02:07] <spacejack> Otherwise I'd just use a requestAnimationFrame polyfill.
+--------------------------------------------------------------------------------------------------
+1 [2016-12-23T00:38:40] <thaDude> Hi guys, I am having a hard time getting@types/cal-heatmapto work inside an Angular2/ionic2 project. The d.ts doesn't export anything, what do I have to add to benefit from the typings in this case? Here they are: [<-LINK->]
+2 [2016-12-23T00:39:32] <thaDude> For now, I use adeclarations.d.tsin my project where I putdeclare module "cal-heatmap";but this is only to make the transpiler shut up.
+3 [2016-12-23T01:44:36] <dtabuenc> thaDude: They are just global declarations
+4 [2016-12-23T01:44:43] <dtabuenc> so you just install them and use them... no need to import anything.
+5 [2016-12-23T01:45:34] <dtabuenc> The declarations assume that there is a globalCalHeatMapvariable
+6 [2016-12-23T01:49:29] <dtabuenc> thaDude: You can do this to make it more friendly so you can import: [<-CODE->]
+7 [2016-12-23T01:49:56] <dtabuenc> put that in yourdeclrations.d.ts
+8 [2016-12-23T01:50:16] <dtabuenc> and then do [<-CODE->] in your files.
+9 [2016-12-23T09:09:07] <thaDude> dtabuenc: Thanks for the tip. I'll try that.
+--------------------------------------------------------------------------------------------------
+[2016-12-23 19:40:16] <thaDude>  [<-CODE->] Hi @dtabuenc. Thanks a lot! This does work but for me it's still black magic. Are there more comprehensive resources than the official TS doc to learn about how to write declaration files? I don't want to come asking for help here overtime I use a new JS library in my project. [<-CODE->]  [<-CODE->]  [<-CODE->] 
+[2016-12-23 20:56:27] <dtabuenc> that just describes a constructor
+[2016-12-23 20:56:49] <dtabuenc> so if you have a variable:
+[2016-12-23 20:57:20] <dtabuenc>  [<-CODE->] the new in that interface is what allows you to do [<-CODE->] 
+[2016-12-23 20:57:36] <dtabuenc> if the new wasn't in the interface then that would not compile
+[2016-12-23 20:58:08] <dtabuenc> Think of interfaces as a description of what you can do with the object they describe.
+[2016-12-23 21:00:50] <dtabuenc>  [<-CODE->] Just declares that there is a global constant calledCalHeatMapand the things you can do with it are describe by the interfaceCalHeatMapStatic
+[2016-12-23 21:01:50] <dtabuenc> which means that the thing you can do with that constant is callnew CalHeatMap()and you will get back an object which you can do the things described in theCalHeatMapinterface.
+--------------------------------------------------------------------------------------------------
+1 [2016-12-28T09:42:34] <peeter-tomberg> Hello
+2 [2016-12-28T09:43:13] <peeter-tomberg> Can I use mapped types with generics somehow?
+3 [2016-12-28T09:44:22] <peeter-tomberg> For example: [<-CODE->]
+4 [2016-12-28T09:45:56] <peeter-tomberg>  [<-CODE->]
+5 [2016-12-28T09:47:20] <peeter-tomberg> So errors should be typehinted as errors.key1 and errors.key2, both resolving to strings and both being optional
+6 [2016-12-28T09:52:12] <peeter-tomberg>  [<-LINK->] is the error I get
+7 [2016-12-28T09:52:50] <peeter-tomberg> Same error if I leave errors as an empty object [<-CODE->]
+--------------------------------------------------------------------------------------------------
+1 [2016-12-30T23:11:42] <duckkiller53> Could someone tell me:  I have created a utility class with  export class Utility {  formatDate() { } }     And to use it in a component, I create a variable of that class ie: util = new Utility();  and the to use the formatDate() function I just call util.formatDate();   My question is this, in C# if  you create a 'static' class with a public static function, you don't have to instantiate the class with new.  Can you do that with typescript ?  What I'm wondering is if I can just do Utility.formatDate()
+2 [2016-12-30T23:48:01] <con-ssc> yes you can do that
+3 [2016-12-30T23:48:32] <con-ssc> if the class has a static function you don't need to invoke it with new
+--------------------------------------------------------------------------------------------------
+[2017-01-02 20:38:26] <dtabuenc> I'm not sure that's corect. Should the type ofmatchersbe Matchers?
+[2017-01-02 20:38:30] <dtabuenc> or an array of some sort?
+[2017-01-02 20:38:51] <abelmokadem> I think that should be fine because he redefined another interface inside that module
+[2017-01-02 20:39:03] <abelmokadem> That matches the matchers object
+[2017-01-02 20:39:13] <dtabuenc> what do your exports look like for test-matchers ?
+[2017-01-02 20:39:31] <abelmokadem>  [<-CODE->] 
+[2017-01-02 20:40:50] <dtabuenc> hmm.. should you be doing export default?
+[2017-01-02 20:40:54] <dtabuenc> it's typically better not to if you intend to be used from node js
+[2017-01-02 20:41:16] <O4epegb> He exporting both default and named
+[2017-01-02 20:41:57] <dtabuenc> oh I missed that.. I would remove the unecessary "namespacing" around the named one
+[2017-01-02 20:42:08] <abelmokadem> Yeah I was wondering
+[2017-01-02 20:42:13] <dtabuenc> just export jasmineMatchers
+[2017-01-02 20:42:23] <dtabuenc> people will name it whatever they want when they import
+[2017-01-02 20:42:26] <abelmokadem> Yeah  I was about to ask that
+[2017-01-02 20:42:42] <dtabuenc> what are the matchers though?
+[2017-01-02 20:42:46] <dtabuenc> are they an array of some interface from jasmine?
+[2017-01-02 20:42:58] <abelmokadem> An object of string: functions
+[2017-01-02 20:45:57] <dtabuenc> abelmokadem:  [<-CODE->] 
+[2017-01-02 20:47:05] <dtabuenc> actually don't make your own type
+[2017-01-02 20:47:08] <abelmokadem> Yeah I’m trying that out now, I think it’s working@dtabuenc
+[2017-01-02 20:47:10] <dtabuenc> There's a CustomMatcherFactory
+[2017-01-02 20:47:36] <dtabuenc>  [<-CODE->] 
+[2017-01-02 20:47:46] <dtabuenc>  [<-CODE->] 
+[2017-01-02 20:48:37] <dtabuenc> Is there a reason you're sticking to plain ES6 rather than just writing this all in TS? It would give you the typings for free if you did that.
+[2017-01-02 20:59:30] <dtabuenc> abelmokadem: Actually, refining things a bit more, if you are actually creating a module you can import from elsewhere then this should be more correct: [<-CODE->] 
+[2017-01-02 20:59:53] <abelmokadem> Nice, I’m almost ready to push out an update
+[2017-01-02 21:00:46] <dtabuenc> The first part basically means you are merging with theglobalnamespace/interface
+[2017-01-02 21:01:02] <dtabuenc> all other exports in your file are what your module exports...
+[2017-01-02 21:01:06] <dtabuenc> so you would also add a default export if you wanted
+[2017-01-02 21:02:55] <dtabuenc> although I would just get rid of the default experts, and just do a named exports... default exports just complicate things with little value (e.g. doing: [<-CODE->] vs [<-CODE->] 
+[2017-01-02 21:02:56] <abelmokadem> I removed all the default exports
+[2017-01-02 21:03:16] <abelmokadem> Exactly , just complicates things
+[2017-01-02 21:04:00] <abelmokadem> Update should be out in a bit, just pushed some updates
+[2017-01-02 21:07:11] <abelmokadem> Whoops, made a mistake. Pushing out another fix. I’ll let you know if it works
+[2017-01-02 21:22:22] <abelmokadem> It’s working guys!@dtabuenc@O4epegbthx a lot!
+[2017-01-03 00:10:34] <abelmokadem>  [<-LINK->] 
+[2017-01-03 00:10:47] <abelmokadem> dtabuenc: @O4epegbfinally!
+--------------------------------------------------------------------------------------------------
+1 [2017-01-05T07:51:18] <iDiver76> How can i create a dynamic instance of a class? Something like this:new CLASSNAMEFROMSTRING("Title","Dummy Title",null);
+--------------------------------------------------------------------------------------------------
+[2017-01-05 14:43:33] <arnederuwe> Hi, can I ask a syntax question here?
+[2017-01-05 14:43:47] <DrMabuse23> try ;)
+[2017-01-05 14:44:05] <arnederuwe>  [<-CODE->] 
+[2017-01-05 14:45:40] <arnederuwe> this works, but I was wondering if there was a construct like this: [<-CODE->] 
+[2017-01-05 14:45:56] <arnederuwe> I'm lazy you see ;)
+[2017-01-05 14:59:33] <arnederuwe>  [<-CODE->] Works fine too, so I was wondering if there was a similar way for class variables
+[2017-01-05 15:19:33] <DrMabuse23> const [a,b] = [foo‘, bar']
+[2017-01-05 15:19:37] <DrMabuse23> like this ?
+[2017-01-05 15:23:19] <arnederuwe> that works, the problem is that typeAPrivateList and typeBPrivateList are class variables, they are already declaerd in the constructor
+--------------------------------------------------------------------------------------------------
+[2017-01-06 01:53:11] <bherila> Does anyone know how to fix VS from showing zillions of typescript errors from my d.ts files? I have a build working perfectly using webpack but it shows  all kinds of TS2307 errors and such that are taken care of via webpackexternalsand other packages. (I am invoking webpack via a build target and also <TypescriptCompileBlocked /> in the csproj)
+[2017-01-06 01:57:28] <dtabuenc> For TS2307 you need to either use the path mapping facilities in tsconfig or generate dummy module definitions usingdeclare module 'whatever'
+[2017-01-06 01:57:59] <dtabuenc> visual studio can be weird sometimes though, do you see the same errors when compiling  from commandline using plain tsc? (no webpack)
+[2017-01-06 01:58:44] <dtabuenc> It's strange though that you would need externals and packages for code in your declaration files
+[2017-01-06 01:58:57] <dtabuenc> so i'd be interested to know the specifics of one or two pacakges that you are seeing that error for
+[2017-01-06 01:59:27] <dtabuenc> another strategy is to use wildcard declarations
+[2017-01-06 02:00:11] <bherila> hmm I am a bit of a noobie at setting up the thing, I guess. I am using ts-loader and have never tried to get it to compile with just tsc
+[2017-01-06 02:00:33] <dtabuenc> I use tsloader, but it still compiles fine with tsc for me
+[2017-01-06 02:00:58] <bherila> declare module 'xxx';did not work, it says "Invalid module name in augmentation"
+[2017-01-06 02:01:28] <bherila> let me see if I can add the paths to tsconfig.json
+[2017-01-06 02:01:58] <bherila> can I just add it to rootDirs?
+[2017-01-06 02:02:24] <dtabuenc> Well I'm trying to understand what modules you are actually mapping to somewhere else
+[2017-01-06 02:02:30] <dtabuenc> to see if you are doing it correctly or not
+[2017-01-06 02:03:48] <dtabuenc> declare module 'xxx'needs to be in  ad.tsfile
+[2017-01-06 02:04:02] <bherila> It's actually just not finding the modules from the same folder. I have a fileaddress.tsxinside a folder calledsrcwhich also has a file calledclientdata.ts; in address.tsx I haveimport {states} from "clientdata";and it isn't finding clientdata.
+[2017-01-06 02:04:40] <dtabuenc> oh  ok.. so it' snot from yourd.tsfiles that's the problem
+[2017-01-06 02:04:41] <bherila> Actually I changed it to "./clientdata" and that seemed to work
+[2017-01-06 02:04:55] <dtabuenc> yeah so when you don't do relative paths..
+[2017-01-06 02:05:01] <dtabuenc> it will try to resolve modules fromnode_modules
+[2017-01-06 02:05:10] <bherila> ohh
+[2017-01-06 02:05:15] <bherila> even though I added my src folder to rootDirs?
+[2017-01-06 02:05:16] <dtabuenc> it will walk up your folders
+[2017-01-06 02:05:27] <dtabuenc> so first don't add your src folder torootDirs
+[2017-01-06 02:05:35] <dtabuenc> you want to set it forrootDir
+[2017-01-06 02:06:00] <dtabuenc> now... if youw ant it to work like you had
+[2017-01-06 02:06:03] <dtabuenc> you need to add some path mappings
+[2017-01-06 02:10:07] <bherila> I see... I am ok with using './' I think it is probably a better practice
+[2017-01-06 02:10:33] <bherila> I do have one more question, it is not happening on my computer but it is happening on my friend's. He tried to open it up and has 1000s of "duplicate identifier" errors from d.ts files.
+[2017-01-06 02:10:45] <bherila> webpack build also does work on his machine
+[2017-01-06 02:10:58] <dtabuenc> you can use baseUrl too for it to work without relative paths
+[2017-01-06 02:11:38] <dtabuenc> for best intellisense and IDE support it's always good to make sure your project compiles fine through planetsc
+[2017-01-06 02:11:46] <dtabuenc> just make sure you do --noEmit or something
+[2017-01-06 02:11:58] <dtabuenc> unless you want a gazillion .js files generated throughout your codebase
+[2017-01-06 02:12:01] <dtabuenc> or use outDir
+[2017-01-06 02:12:14] <dtabuenc> I would have to know the duplicate identifiers
+[2017-01-06 02:12:45] <dtabuenc> it's likely stuff in hisnode_module/@types/*folder conflicting with maybe old-school typings files from typings or tsd
+[2017-01-06 02:13:22] <bherila> That sounds likely, so I should get rid of one or the other?
+[2017-01-06 02:13:29] <bherila> Also, should the d.ts files be included in the project?
+[2017-01-06 02:14:19] <dtabuenc> you should get rid of the typings/tsd installed ones if they have that
+[2017-01-06 02:14:29] <dtabuenc> andnpm installthe equivalent
+[2017-01-06 02:14:39] <dtabuenc> e.gnpm install @types/jquery --save-dev
+[2017-01-06 02:14:58] <dtabuenc> all definitely typed typings files are available as npm packages
+[2017-01-06 02:15:09] <dtabuenc> and that's the prefered way going forward for third-party global typings
+[2017-01-06 02:15:37] <dtabuenc> you should include d.ts  files in the project yes
+[2017-01-06 02:15:45] <dtabuenc> you don't need to include any that are installed with npm in@typesthough
+[2017-01-06 02:15:52] <bherila> Got it
+[2017-01-06 02:15:54] <dtabuenc> ususally people will have 1 or 2 custom ones
+[2017-01-06 02:15:57] <dtabuenc> that are included globally
+[2017-01-06 02:16:16] <dtabuenc> for custom typings you may want to add
+[2017-01-06 02:16:38] <dtabuenc> or if a particular project has a stand-alone typings file they publish outside of  definitely typed (more rare)
+[2017-01-06 02:17:10] <dtabuenc> most projects will either include d.ts file in the standard npm package (e.g. like angular2 for example) or they will have third-party typings you can install using@types/package-name
+[2017-01-06 02:17:33] <dtabuenc> it's rare to have a project just have their own random d.ts file you donwload and install,  although there are a few cases out there
+[2017-01-06 02:17:53] <bherila> sometimes for client-side external libraries
+[2017-01-06 02:18:05] <bherila> ///<reference path="../../typings/tsd.d.ts" />is a line into node_modules needed for@types?
+[2017-01-06 02:18:15] <dtabuenc> no you should get rid of that
+[2017-01-06 02:18:26] <bherila> okies I am going to do my refactoring now :)
+[2017-01-06 02:18:29] <dtabuenc> and delete everything in typings folderafter installing the equivalent package with npm
+[2017-01-06 02:18:32] <bherila> Thank you so much, I really appreciate the help
+[2017-01-06 02:18:44] <dtabuenc> tsd and typings are deprecated tools
+[2017-01-06 02:18:44] <bherila> These kind of errors are extremely difficult to figure out on stackoverflow and github
+[2017-01-06 02:18:49] <dtabuenc> npm is the preferred way to get typings
+[2017-01-06 02:19:04] <dtabuenc> --traceResolutionis a great tool in tsc
+[2017-01-06 02:19:12] <dtabuenc> to  figure out where typescript is looking for modules
+[2017-01-06 02:19:33] <dtabuenc> if you getTS2307errors
+[2017-01-06 02:24:56] <bherila> ahh that is useful
+[2017-01-06 02:31:46] <bherila>  [<-CODE->] it is looking inside node_modules but notnode_modules/@types/
+[2017-01-06 02:34:48] <bherila> I found: [<-ISSUE->] 
+[2017-01-06 02:34:56] <bherila> but I am using "node" module resolution
+[2017-01-06 02:50:18] <bherila> ^ that was fixed by upgrading totypescript@2.0
+[2017-01-06 02:50:56] <dtabuenc> ahh yeah@types/was introduced in 2.0+
+[2017-01-06 02:51:09] <dtabuenc> so maybe your friend was on 2.0 and that's why he was getting all those conflicting duplicate definitions
+[2017-01-06 02:55:43] <bherila> that makes sense!
+--------------------------------------------------------------------------------------------------
+[2017-01-09 15:35:29] <asolopovas> Hi Guys.
+[2017-01-09 15:35:58] <asolopovas> Has anyone tried building Vue.plugin using typescript class?
+[2017-01-09 15:37:43] <asolopovas> I am trying to get install method triggered but having no luck in doing that. If someone tried please let me know
+--------------------------------------------------------------------------------------------------
+1 [2017-01-09T18:42:21] <sharwell> That link would be a lot shorter if they used Unix style line endings
+2 [2017-01-09T18:43:24] <sharwell> (not something that's configurable, just something I noticed and found interesting)
+3 [2017-01-09T18:47:52] <sharwell> More curious: [<-LINK->]
+4 [2017-01-09T18:49:55] <sharwell>  Or this one
+5 [2017-01-09T18:49:57] <sharwell>  [<-LINK->]
+--------------------------------------------------------------------------------------------------
+[2017-01-10 09:59:41] <rajdeep26> Hi, I am a beginner to typescript, and have some simple question. If I have some js library file, then how can I use it in a ts file?
+[2017-01-10 10:00:32] <HendrikRoth> rajdeep26:  [<-LINK->] 
+[2017-01-10 10:01:42] <rajdeep26> Thanks@HendrikRoth. I'll go through it
+[2017-01-10 10:02:14] <HendrikRoth> rajdeep26: /// <reference path="pathtofile.ts" />
+[2017-01-10 10:04:09] <rajdeep26> Can you give some example?
+[2017-01-10 10:06:15] <rajdeep26> Lets say i have a simple js file which has only 1 function like this: [<-CODE->] How can i use this function in a ts file?
+[2017-01-10 10:06:59] <echeese> does the library have typescript definitions?
+[2017-01-10 10:07:40] <HendrikRoth>  [<-CODE->] 
+[2017-01-10 10:09:21] <con-ssc> Not sure if it works but have you triedimport './that_file.js';?
+[2017-01-10 10:09:34] <rajdeep26> actually we want to start using typescript for one of our project and were wondering  that there will be many a times where we might come across a library which doesnt  have any type deifinitions and its just a normal js file. So how should we proceed in this scenario?
+[2017-01-10 10:09:49] <con-ssc> Usually it is hard to import anything that doesn't has an export
+[2017-01-10 10:10:04] <rajdeep26> So how to use such files?
+[2017-01-10 10:10:26] <con-ssc> well, mayberequireworks here
+[2017-01-10 10:10:33] <HendrikRoth> rajdeep26: i would suggest you to use d.ts files
+[2017-01-10 10:10:49] <HendrikRoth> better for "porting" an existing project
+[2017-01-10 10:11:30] <rajdeep26> what if the d.ts file doesnt exist for some 3rd party library? I wil have to create  a d.ts for it inorder to use it?
+[2017-01-10 10:11:47] <HendrikRoth> yes create a dummy d.ts file
+[2017-01-10 10:12:08] <rajdeep26> dummy?
+[2017-01-10 10:12:18] <rajdeep26> what do you mean by dummy d.ts file?
+[2017-01-10 10:12:51] <rajdeep26> creating an empty d.ts works?
+[2017-01-10 10:12:55] <con-ssc> rajdeep26: do you have a specific 3rd party lib you want to use?
+[2017-01-10 10:13:32] <am0nshi> rajdeep26: name the library pls
+[2017-01-10 10:13:45] <am0nshi> coz even peerJS which i plan to use have dts files
+[2017-01-10 10:15:09] <rajdeep26> How about this? [<-LINK->] 
+[2017-01-10 10:15:40] <rajdeep26> BTW I just wanted to know this before we jump into using typescript
+[2017-01-10 10:16:58] <echeese> You could create a definition that sets the root class or whatever as :any
+[2017-01-10 10:18:03] <echeese> you won't get type safety, obviously
+[2017-01-10 10:18:21] <rajdeep26> thats fine
+[2017-01-10 10:18:44] <rajdeep26> For some things we are willing to ignore the type checks for now
+[2017-01-10 10:19:50] <echeese> in that case you'd probably want something likedeclare var CitrusPay: any
+[2017-01-10 10:20:22] <rajdeep26> echeese: Thanks. Understood
+[2017-01-10 10:21:00] <rajdeep26> BTW how do i use it in my code after creating d.ts file?
+[2017-01-10 10:21:08] <rajdeep26> Cant import anything from it
+[2017-01-10 10:31:04] <rajdeep26> I think i understood what I need to do. Just referred this d.ts file for jquery [<-LINK->] 
+[2017-01-10 10:31:10] <rajdeep26> Thanks guys
+--------------------------------------------------------------------------------------------------
+1 [2017-01-10T10:40:56] <con-ssc> would it be possibe withtscto get  the AST output of a javascript file? And would it be possible to generate a simple d.ts from that AST ?
+--------------------------------------------------------------------------------------------------
+1 [2017-01-10T11:51:57] <itsphil> I am using the following TSConfig; [<-CODE->] In my .ts files, where ever I have a comment on the last line, the JS output is broken. E.g. [<-CODE->] Is this a known TS bug?
+2 [2017-01-10T11:53:46] <itsphil>  [<-CODE->] does resolve it, but doesn't seem right that it should break on false.
+3 [2017-01-10T11:54:25] <itsphil> TS file in question [<-CODE->]
+4 [2017-01-10T11:57:37] <itsphil> Version 2.1.4
+--------------------------------------------------------------------------------------------------
+1 [2017-01-10T17:32:08] <TheeRFG>  [<-CODE->] What is the type of _cachedRights?
+2 [2017-01-10T17:34:36] <TheeRFG> My json is [<-CODE->]
+3 [2017-01-10T17:34:51] <TheeRFG> so I thought it would be _cachedRights: boolean[]But perhaps this is not the case?
+4 [2017-01-10T18:37:51] <dtabuenc> types is weird
+5 [2017-01-10T18:37:54] <dtabuenc> why do you do that?
+6 [2017-01-10T18:38:09] <dtabuenc> What'stypes/*??
+7 [2017-01-10T18:39:21] <dtabuenc> you should link to a specific d.ts file
+8 [2017-01-10T18:39:55] <dtabuenc> it should be probably pointing totypes/index.d.ts
+9 [2017-01-10T18:40:06] <dtabuenc> if you have one
+10 [2017-01-10T18:40:28] <dtabuenc> basically types should point to the d.ts file of  what main is pointing to
+11 [2017-01-10T18:45:04] <dtabuenc> scippio: it's better if you don't keep a seaparate types/ folder
+12 [2017-01-10T18:45:11] <dtabuenc> and just output d.ts files side-by-side
+13 [2017-01-10T18:45:38] <dtabuenc> so there are both alib/index.jsand alib/lindex.d.tsalong side it
+14 [2017-01-10T18:45:56] <dtabuenc> then you don't really even need the"types":field in your package.json
+--------------------------------------------------------------------------------------------------
+[2017-01-12 06:32:45] <tycho01> Hi, I wanted to use TS'sHarnessAPIs to better verify the correctness of my typings forramda.js, but had trouble importing them since it doesn't export its namespace. Has anyone used these before?
+[2017-01-12 06:34:18] <tycho01> (hi@ShadowManu:D, please consider pulling my tests/documentation to your pug pr! :P)
+[2017-01-12 08:07:21] <con-ssc> never heard of harness, what is that?
+[2017-01-12 08:08:50] <tycho01> TypeScript uses it to test compilation output for different use-cases to prevent regressions.
+[2017-01-12 08:11:17] <con-ssc> domoritz: My guess forts.TypeFlags.Anonymousthat now onlyts.ObjectFlags.Anonymousis possible, but I'm only guessing
+[2017-01-12 08:13:13] <con-ssc> ts.NodeFlags.Abstractseems to be only available asts.ModifierFlags.Abstract
+[2017-01-12 08:13:38] <con-ssc> Since I have no Idea what your ts to json compiler does it is hard to help you out :)
+[2017-01-12 08:14:42] <con-ssc> tuple is also now in object
+[2017-01-12 08:14:56] <con-ssc> and reference also
+[2017-01-12 08:17:24] <con-ssc> just a reminder@domoritzadd more documentation to your lib code ;)
+[2017-01-12 10:05:43] <tycho01> con-ssc: : json-schema does... schemas for json. his lib would allow reusing TS's compile-time sanity checks during run-time (i.e. on JSON data coming in over the wire), which is pretty cool. :)
+[2017-01-12 12:46:41] <scippio> @scippio bluebird? why not stick with vanilla promises?@jacobus-brogly I love some functions like mapSeries, all .... etc. ... I copy d.ts file and import "bluebird" as Promise ...
+[2017-01-12 13:39:44] <CubaSAN> Hello guys, could you suggest some typescript tutorial, fresh one, where I can learn ts deep :) Tutorial at site doesn't deep enough. The best would be example transferring to ts.
+[2017-01-12 13:46:31] <con-ssc> CubaSAN:  [<-LINK->] 
+--------------------------------------------------------------------------------------------------
+[2017-01-14 02:14:32] <SamD> Anyone know how to extend map so as to provide your own strong typed version
+[2017-01-14 02:14:39] <Bnaya> HeyI have the following type and i'm looking for a more elegant way  to declare it (an interface maube) [<-CODE->] 
+[2017-01-14 02:15:36] <Bnaya> SamD: Map is a generic, so you can do: [<-CODE->] 
+[2017-01-14 02:15:56] <SamD> That's not a type though
+[2017-01-14 02:16:20] <SamD> I want to define my own type for usage throughout
+[2017-01-14 02:16:44] <Bnaya> type myMap = Map<string, number>; ?
+[2017-01-14 02:17:45] <SamD> So interface x implements Map<string, sometype> for example
+[2017-01-14 02:18:16] <SamD> Oh u don't need to extend/implement ?
+[2017-01-14 02:18:39] <Bnaya> what is your usecase?
+[2017-01-14 02:18:55] <SamD> OK I'm a bit new to type script, I'll try it out thanks
+[2017-01-14 02:19:46] <Bnaya>  [<-CODE->] 
+[2017-01-14 02:19:50] <SamD> I want to define a type such as that which can be used a parameter across various methods so I want the types to the map to be specific
+[2017-01-14 02:20:11] <SamD> I had an error when I tried that
+[2017-01-14 02:20:19] <SamD> U can't extend
+[2017-01-14 02:20:48] <Bnaya> js error or type check error?
+[2017-01-14 02:21:07] <SamD> Can't remember the exact error, was giving me a problem creating a new instance
+[2017-01-14 02:21:14] <SamD> Type
+[2017-01-14 02:22:01] <SamD> I figured it would have been simple like you were sayimg
+[2017-01-14 02:22:21] <SamD> But whatever I tried cmae up with an error
+[2017-01-14 02:22:25] <SamD> Came
+[2017-01-14 02:23:17] <SamD> Oh actually I didn't define the type first like your example, I'll try that thanks
+[2017-01-14 02:23:57] <SamD> Oh that is not related to the interface so nevermind
+[2017-01-14 02:25:17] <Bnaya>  [<-LINK->] 
+[2017-01-14 02:27:05] <SamD> Thanks I'll take a look when I get back to my comp on my phone now
+--------------------------------------------------------------------------------------------------
+[2017-01-12 18:28:39] <domoritz> To follow up on my questions about the transition to TS 2.1 for [<-LINK->] , most test are passing now but I'm a bit stuck nonetheless.symbol.getDocumentationComment()used to return the complete comment but now I'm not seeing comments that start with@any more. E.g. [<-LINK->] 
+[2017-01-12 18:32:10] <domoritz> I believe changes to this function cause missing comments in [<-LINK->] 
+[2017-01-12 19:18:19] <domoritz> Looks like it's [<-ISSUE->] 
+[2017-01-13 07:45:18] <con-ssc> domoritz: the json schema looks like the one microsoft is using for ms flow and such
+--------------------------------------------------------------------------------------------------
+[2017-01-19 21:09:07] <jacobus-brogly> hi folks
+[2017-01-19 21:09:13] <jacobus-brogly> i have a question
+[2017-01-19 21:09:17] <jacobus-brogly>  [<-CODE->] 
+[2017-01-19 21:09:31] <jacobus-brogly> what type should dispatch have, I dont want to give "any"
+[2017-01-19 21:09:40] <jacobus-brogly> (react-redux)
+[2017-01-19 21:10:39] <jacobus-brogly> Dispatch is defined like so [<-CODE->] 
+[2017-01-19 21:11:38] <jacobus-brogly>  [<-CODE->] 
+[2017-01-19 21:13:09] <jacobus-brogly> S from Dispatch<S> is not used,  note, this is the orignal "type" file of "react-redux"
+[2017-01-19 21:22:11] <jacobus-brogly> ok I see its related to this issue [<-ISSUE->] 
+[2017-01-19 21:22:39] <jacobus-brogly> its a "fix" on Dispatch
+[2017-01-19 22:54:47] <TheeRFG>  [<-CODE->]  [<-CODE->] Types have separate declarations of a private propertyWhat am I doing...
+[2017-01-19 22:55:52] <dtabuenc> you are definining  _changeDetector twice
+--------------------------------------------------------------------------------------------------
+[2017-01-20 12:37:58] <avik-so> Hi, what do I need to do to get my typescript module which is hosted on my private github group to be used as a module dependancy for other projects from other users in my group?  I read that I should not put my .d.ts or my .js files in github, but they should be in my  module and the .ts files should not be in the module but should be in my github.  Publishing the module privately isn't an option sadly.
+[2017-01-20 13:32:56] <ShadowManu> avik-so: and option you can consider (I'm not sure if the best one) is using git submodules and your users have relative imports to your submodule location.
+
+--------------------------------------------------------------------------------------------------
+1 [2017-01-25T10:42:41] <quantuminformation> would you say this router is looking like a framework? or can I still get away with calling it vanilla?
+2 [2017-01-25T10:42:54] <dtabuenc> I don't think you should fixate on labels
+3 [2017-01-25T10:42:58] <dtabuenc> who cares?
+4 [2017-01-25T10:43:03] <dtabuenc> hehe
+5 [2017-01-25T10:43:06] <quantuminformation> I'm gonna demo it in the [<-LINK->]
+6 [2017-01-25T10:43:18] <quantuminformation> well I'm trying to put myself forward as the vanillats guy
+7 [2017-01-25T10:43:32] <quantuminformation> but don't just want to be the inventor of another framework
+8 [2017-01-25T10:43:39] <quantuminformation> its my sales pitch
+9 [2017-01-25T10:44:17] <quantuminformation> all or nothing
+10 [2017-01-25T10:44:25] <quantuminformation> or at least lots of parts
+11 [2017-01-25T10:45:09] <quantuminformation> yeah I think I can get away calling it vanilla for now
+12 [2017-01-25T10:45:27] <quantuminformation> I will give the end user full flexiblity of what they stick in the routing fn
+13 [2017-01-25T10:46:22] <quantuminformation> All these things I am making so that they can be used in vanillajs apps with no surprises or dependancies
+14 [2017-01-25T10:46:42] <quantuminformation> gdgd
+15 [2017-01-25T10:47:21] <quantuminformation> I might have one depenancy: the router itself would implement: [<-LINK->]
+16 [2017-01-25T10:47:24] <quantuminformation> opinions?)
+17 [2017-01-25T10:49:22] <quantuminformation> each router instance can attach to one dom element
+18 [2017-01-25T10:49:35] <quantuminformation> kinda cool in that you could have several route windows in the 1 page
+19 [2017-01-25T10:49:49] <quantuminformation> make sense?
+20 [2017-01-25T10:50:16] <quantuminformation> not something that I would do now, but the lib leaves the option open
+21 [2017-01-25T11:09:04] <quantuminformation> attach: is just to give my vanilla comps some commonality : [<-LINK->]
+22 [2017-01-25T11:09:17] <quantuminformation> Well Icomponent in this case
+23 [2017-01-25T11:10:32] <quantuminformation> yeah thats true, atm solarpopup needs this dep: [<-LINK->]
+24 [2017-01-25T11:11:17] <quantuminformation> parameters in your url, partial matching, etc... would be handled by the routingFunction by the user
+25 [2017-01-25T11:11:34] <quantuminformation> not by the lib
+26 [2017-01-25T11:11:43] <quantuminformation> thats the beauty of it
+27 [2017-01-25T11:12:05] <quantuminformation> the lib will take care of the boring stuff common to most routes in the real world
+28 [2017-01-25T11:12:17] <quantuminformation> hahahah
+29 [2017-01-25T11:12:23] <quantuminformation> that fine
+30 [2017-01-25T11:12:49] <quantuminformation> well this has been a great discussion so far
+--------------------------------------------------------------------------------------------------
+1 [2017-01-25T22:56:38] <joelday> What’s the easiest way to test/debug/step through a change to the compiler?
+2 [2017-01-25T22:57:09] <joelday> There’s no VSCode launch.json for instance
+3 [2017-01-26T00:03:22] <joelday> also, I can’t seem to get sourcemaps to work. :/
+4 [2017-01-26T00:19:50] <joelday> Hrm, had to build with jake (why are there two build tools?) and change it to no longer add -mapRoot
+5 [2017-01-26T00:23:24] <joelday> … but it skips my breakpoints, even with stopOnEntry
+6 [2017-01-26T00:23:34] <joelday> only works if i use “debugger;"
+--------------------------------------------------------------------------------------------------
+1 [2017-01-27T18:40:55] <Rudde> When will we get async/await btw?
+2 [2017-01-27T18:41:04] <dtabuenc> you have it now@Rudde
+3 [2017-01-27T18:41:06] <joelday> I assume if there’s a dep conflict, it’ll just nest that version of tslib in the installed package
+4 [2017-01-27T18:41:15] <dtabuenc> joelday: dep conflict with what though?
+5 [2017-01-27T18:41:20] <dtabuenc> tslib is just some internal helpers
+6 [2017-01-27T18:41:21] <joelday> Rudde: yep, you can use async/await even when targeting es5
+7 [2017-01-27T18:41:23] <dtabuenc> should be no conflicts
+8 [2017-01-27T18:41:37] <joelday> true
+9 [2017-01-27T18:41:51] <dtabuenc>  [<-LINK->]
+10 [2017-01-27T18:41:57] <Rudde> joelday: At this time?
+11 [2017-01-27T18:42:02] <joelday> Rudde: you need to have a promise polyfill, though
+12 [2017-01-27T18:42:06] <dtabuenc> Rudde: yes, since 2.1 +
+13 [2017-01-27T18:42:07] <joelday> yeah, as of 2.1 i think
+14 [2017-01-27T18:42:15] <Rudde> WHen was that released? :S
+15 [2017-01-27T18:42:21] <dtabuenc> few months ago
+16 [2017-01-27T18:42:25] <joelday> hahaha,@dtabuencI’ll let you answer these :D
+17 [2017-01-27T18:42:27] <Rudde> Oh
+18 [2017-01-27T18:42:42] <dtabuenc> early december I think
+19 [2017-01-27T18:42:43] <Rudde> Just remember TS didn't have it when I needed it :(
+20 [2017-01-27T18:43:04] <dtabuenc> was the primary reason they did the tslib thing too
+21 [2017-01-27T18:43:43] <dtabuenc> joelday: Tslib is basically just these helpers: [<-CODE->]
+22 [2017-01-27T18:44:15] <dtabuenc> if you don't use tslib then each of those helpers gets inlined into every file that uses a feature required for it
+23 [2017-01-27T18:44:51] <dtabuenc> soextendsis in almost every file,awaiterandgeneratorwhich are pretty big would be in every file that uses async/await ..etc
+24 [2017-01-27T18:44:57] <dtabuenc> so you want to definitely take advantage of tslib
+25 [2017-01-27T18:45:03] <dtabuenc> there is no downside that I know of
+--------------------------------------------------------------------------------------------------
+[2017-01-28 15:18:14] <chrillewoodz>  [<-CODE->]  [<-CODE->]  [<-CODE->] 
+[2017-01-28 16:13:28] <MartinJohns> chrillewoodz: According to the typestring | DateyourstartDatecould either be astringor aDate. Only theDatehas the methodtoISOString()- thestringdoes not. So TypeScript is smart enough to prevent you from calling a method that potentially does not exist during runtime.
+
+--------------------------------------------------------------------------------------------------
+[2017-01-31 15:05:52] <poulinjoel> Hey, easiest way to transform a string into a JSON? The string is already in a valid json format, only a bracket at the beginning and at the ending (was originally an array of json objects). Anyone has an idea?
+[2017-01-31 15:20:34] <con-ssc> poulinjoel: JSON.parse(validjson)
+--------------------------------------------------------------------------------------------------
+[2017-02-01 18:13:10] <masonk> are there any npm packages for polyfilling EC2015 in typescript? E.g., the new Array methods?
+[2017-02-01 19:04:13] <nbransby> masonk: just use any js polyfill lib
+[2017-02-01 19:05:36] <nbransby> then just lib in your tsconfig to inform the compiler your env has those methods
+[2017-02-01 19:29:43] <masonk> nbransby: If I set a lib flag in tsconfig, that only works if I use a polyfill that gives me everything in ecmascript2015, doesn't it? It effectively asserts typings for all of EC2015
+[2017-02-01T22:54:02] <nbransby> masonk: I supports finer options than that, check the docs
+
+--------------------------------------------------------------------------------------------------
+[2017-02-03 08:32:10] <assaftenen> does a getter at typescript is recommended using Angular2 for  component?
+[2017-02-03 10:22:30] <Toxicable> assaftenen: huh?
+[2017-02-03 10:22:54] <Toxicable> Angular2 components areclass's
+[2017-02-03 11:18:05] <assaftenen> Toxicable: I know...what I meant to ask...is it good practice to use setter and getter at angular classes? Getter by definition is getting called at intervals, putting my proparties with it seems to be not so a good idea,
+[2017-02-03 11:20:09] <Toxicable> If you're going to bind data to a getter then no
+[2017-02-03 11:20:29] <Toxicable> It's often a bad idea to bind to a function
+[2017-02-03 11:20:43] <Toxicable> A getter is just a function with synxtaxtical sugar
+[2017-02-03 11:23:56] <assaftenen> which run every change detection is running so I guess it kind of bad prctice
+[2017-02-03 11:25:49] <Toxicable> Yup
+--------------------------------------------------------------------------------------------------
+[2017-02-05 04:53:09] <spacejack> I see it's on the roadmap but not for any specific version yet
+[2017-02-05 04:59:06] <spacejack> So one other question, regarding npm publishing.If you include a .d.ts with a JS npm library, how would you handle fixes to types only? i.e., if the package version doesn't increment, I guess no one will get the updated types.But if the library has primarily JS users, they might not want the versioning noise of typescript definition fixes and the maintainers might not want to bump versions for just that.
+[2017-02-05 04:59:46] <mmmveggies> type changes seem like a good reason to have a new version
+[2017-02-05 05:00:20] <spacejack> Most users (and maybe maintainers) might not think that way though
+[2017-02-05 05:01:12] <spacejack> Maybe DefinitelyTyped is still a better option here
+--------------------------------------------------------------------------------------------------
+[2017-02-06 07:46:28] <rajdeep26> Hi guys, I have a simple question.  We can define some attribute in class likename?: stringwhich means that it may or may not be present. So is there any compiler flag or anything in typescript which will force me to do a type check before using it. For example handle the null case and to handle the case when name is a string?
+[2017-02-06 07:48:45] <dtabuenc> rajdeep26: Sortof.
+[2017-02-06 07:48:57] <dtabuenc> the closest would be turning on strict null checks
+[2017-02-06 07:49:07] <dtabuenc> it won't catch every use, only mis-uses.
+[2017-02-06 07:49:28] <rajdeep26> that will not force me to do a type check or empty check before using right?
+[2017-02-06 07:49:33] <dtabuenc> the type for an optional property likename?: stringwould bestring | undefined
+[2017-02-06 07:49:58] <dtabuenc> so for example if you try to do [<-CODE->] 
+[2017-02-06 07:50:01] <dtabuenc> that would fail
+[2017-02-06 07:50:13] <dtabuenc> sincestring | undefinedis not assignable tostring
+[2017-02-06 07:52:08] <dtabuenc> Also it would  prevent you from doingobjectWithOptionalName.name.length
+[2017-02-06 07:52:26] <dtabuenc> without first doing a check forobjectWithOptionalName.name !== undefined
+[2017-02-06 08:00:54] <rajdeep26> Thanks@dtabuenc
+[2017-02-06 08:01:10] <rajdeep26> Pretty close to what i was looking.
+[2017-02-06 08:01:38] <dtabuenc> yes it's highly encouraged to have strict null checks on on any new project
+[2017-02-06 08:01:50] <dtabuenc> harder sometimes to get an existing project up to a state where you can turn that on though
+[2017-02-06 08:02:08] <dtabuenc> that's why it's not the default
+[2017-02-06 08:02:20] <rajdeep26> ya, we just started with a new project a week back
+[2017-02-06 08:02:51] <dtabuenc> then I would recommend turning all the optional features on
+[2017-02-06 08:04:41] <dtabuenc> noImplicitAnynoImplicitReturnsnoImplicitThisstrictNullChecksnoUnusedLocalsnoUnusedParametersnoFallthroughCasesInSwitch
+[2017-02-06 08:04:58] <dtabuenc> they really make your code much safer, and it's easy to comply with them if the codebase is new
+[2017-02-06 08:05:58] <rajdeep26> thanks. I'll do it.
+[2017-02-06 08:06:16] <rajdeep26> BTW how will be the code for doingobjectWithOptionalName.name.length
+[2017-02-06 08:06:24] <rajdeep26> use aif elsestmt?
+[2017-02-06 08:07:29] <dtabuenc>  [<-CODE->] 
+[2017-02-06 08:08:24] <dtabuenc> most any way you would naturally check for null to use it safely would work
+[2017-02-06 08:09:25] <dtabuenc>  [<-CODE->] 
+[2017-02-06 08:09:43] <dtabuenc> etc ...
+[2017-02-06 08:10:26] <rajdeep26> I think its giving meObject is possibly 'null'.error
+[2017-02-06 08:10:41] <rajdeep26> any idea why?
+[2017-02-06 08:11:02] <dtabuenc> What's your code look like?
+[2017-02-06 08:11:06] <dtabuenc> do you have an example?
+[2017-02-06 08:18:03] <rajdeep26> I'll try to figure this out and if i still face issues i'll get back to you. Thanks for now.
+--------------------------------------------------------------------------------------------------
+[2017-02-06 22:53:28] <masonk>  [<-CODE->] 
+[2017-02-06 22:53:50] <masonk> It's consistent with what I've said. If webpack says, "I can't find this file", it's not lying to you
+[2017-02-06 22:54:01] <masonk> It didn't find the file and then pretend that it hasn't found it
+[2017-02-06 22:54:15] <dtabuenc> Well that may have to do  with search strategy, base-paths, mappings, etc.
+[2017-02-06 22:54:29] <masonk> Yes, that's exactly what it has to do with
+[2017-02-06 22:54:37] <masonk> I thought that part was clear
+[2017-02-06 22:54:42] <masonk> "can't find file" means, "Can't find file"
+[2017-02-06 22:54:50] <dtabuenc> require('')will not use typescripts module resolution strategy
+[2017-02-06 22:54:58] <dtabuenc> it's just pased through to webpack
+[2017-02-06 22:55:02] <dtabuenc> whileimportwill use typescript module resolution
+[2017-02-06 22:55:15] <dtabuenc> which will try several different paths and things
+[2017-02-06 22:55:33] <dtabuenc> if you don't get a compile time error with typescript that means typescript has found it
+[2017-02-06 22:55:54] <dtabuenc> but typescript search paths might not always equate to webpack settings, so a lot of times webpack settings need to be tweaked to match
+[2017-02-06 22:56:55] <dtabuenc> usually only the case if you are using path mapping or multiple source roots in typescript
+--------------------------------------------------------------------------------------------------
+1 [2017-02-08T03:30:02] <fungos> what does this mean?node_modules/vue/types/index"' has no default export
+2 [2017-02-08T03:50:51] <fungos> if anyone can help me get this working, it is much appreciated: [<-LINK->]
+--------------------------------------------------------------------------------------------------
+[2017-02-10 08:46:43] <MikeShysh> Hi, could you please help me with the following conflict: [<-CODE->] i have the following dependencies [<-CODE->] and tsconfig.json [<-CODE->] 
+[2017-02-10 08:49:27] <con-ssc> MegaUkrainian: only thing that comes to mind is noLib and then manually define the libs in the tsconfig
+[2017-02-10 08:50:09] <con-ssc> have a look at [<-LINK->] --lib
+[2017-02-10 08:50:39] <con-ssc> but you could possibly just remove the es6-shim
+[2017-02-10 08:58:16] <MikeShysh> Thanks, I'll try
+--------------------------------------------------------------------------------------------------
+[2017-02-12 21:12:37] <d3lm> Anyone around who could help me with generic types?
+[2017-02-12 21:13:32] <d3lm> I wanna make use of the new literal types to get an automatic type inference
+[2017-02-12 21:14:36] <d3lm> I don't really understand the concept ofkeyof
+[2017-02-12 21:14:41] <d3lm> Maybe I don't even need it
+[2017-02-12 21:16:08] <d3lm> I have this so far [<-CODE->] 
+[2017-02-12 21:16:49] <d3lm> I kind of want to make those methods generic [<-CODE->] 
+[2017-02-12 21:18:07] <d3lm> So that when I callobserve(EventTypes. APP_TITLE_CHANGE)I wanna get auto completion for the correct return value
+[2017-02-12 21:18:12] <d3lm> Does that makes sense?
+[2017-02-12 21:21:44] <d3lm> Maybe I am getting it completely wrong
+[2017-02-12 21:21:50] <d3lm> Is that even useful in that case?
+[2017-02-12 21:21:58] <d3lm> Or do I just have to use generics?
+[2017-02-12 22:58:47] <dtabuenc> d3lm: What is thistype<'AppTitleChange'>('AppTtitleChange')notation? Is that something new I don't know about?
+[2017-02-13 08:35:28] <d3lm> dtabuenc: Oh that is just something to ensure that the key is unique. Kind of like this [<-CODE->] 
+[2017-02-13 08:36:01] <d3lm> dtabuenc: Do you have any idea if I can make it typed without always passing in the return type to observe like soobserve<string>(...)
+[2017-02-13 08:36:26] <d3lm> I just wanna pass in the literal type and want TS to infere the return value
+[2017-02-13 08:36:29] <d3lm> Is that even possible?
+[2017-02-13 08:36:42] <d3lm> I know it is in a switchCase
+[2017-02-13 08:37:36] <d3lm> It works for me when I have a reducer. TS is smart enough to tell me the type of the payload in a particular case
+--------------------------------------------------------------------------------------------------
+1 [2017-02-13T12:05:30] <SetTrend> Currently, TypeScript/JavaScript debugging in VS2015 is a mess ( [<-LINK->] ). Can we hope that web client script debugging will be strongly improved with VS 2017?
+--------------------------------------------------------------------------------------------------
+1 [2017-02-14T17:45:20] <alonextou> How can I pass a variable into the scope of a foreach, like so? [<-LINK->]
+--------------------------------------------------------------------------------------------------
+[2017-02-15 03:43:46] <heyheyhey11> Hi guys, I would like to know a way to import json from a json file into a Typescript file
+[2017-02-15 04:03:24] <dtabuenc> heyheyhey11: import it in what format?
+[2017-02-15 04:03:33] <dtabuenc> like import json straight into a variable?
+[2017-02-15 04:06:36] <dtabuenc> heyheyhey11: I don't think your question makes sense any more than say "How do you import a .txt " file into typescript. Or how do I import an ".html" file into typescript.
+[2017-02-15 04:06:59] <dtabuenc> Json files must be read using whatever library, parser, or facility your runtime environment provides.
+[2017-02-15 04:07:05] <dtabuenc> it's not a native language feature.
+[2017-02-15 04:07:48] <dtabuenc> You can, however, describe the content of the json using interfaces, so that when you read it in using whatever method is appropriate, you  get intellisense in accessing that json's members.
+--------------------------------------------------------------------------------------------------
+[2017-02-15 13:06:01] <galvesribeiro> hello guys
+[2017-02-15 13:08:01] <galvesribeiro> before 2.0, in order to usePromises in TS we would need to targed ES6 at tsconfig… if the target browser requires ES5, then we need to use babel to transpile again to ES5… so basically we had TS -> ES6 -> Babel -> ES5… so, did it changed with TS 2.0+ so we can usePromisein TS and target directlyh ES5? Or do we still need babel?
+[2017-02-15 15:16:59] <dtabuenc> galvesribeiro: You never had to target ES6 to use promises
+[2017-02-15 15:17:34] <dtabuenc> galvesribeiro: You could target es5 and set your lib to es6
+[2017-02-15 15:17:53] <dtabuenc> Of course, your browser needs support for Promise to work, or you need a poly-fill for older browsers
+[2017-02-15 15:18:07] <dtabuenc> suche ascore-js
+[2017-02-15 15:32:04] <galvesribeiro> @dtabuencYou could target es5 and set your lib to es6How to do that?
+[2017-02-15 15:32:46] <galvesribeiro> and by poly-fill, it is just a matter of addcore-jsas a dependency and load it?
+[2017-02-15 15:36:48] <galvesribeiro> dtabuenc: I don’t understand one thing… if we are targeting ES5, why do we need polypill ? (sorry the dumb questions)
+[2017-02-15 15:36:50] <dtabuenc> galvesribeiro: In your tsconfig: [<-CODE->] 
+[2017-02-15 15:37:11] <dtabuenc> Because promises are not a language feature
+[2017-02-15 15:37:21] <dtabuenc> they are a feature of the runtime environment
+[2017-02-15 15:37:39] <galvesribeiro> hummm
+[2017-02-15 15:37:47] <dtabuenc> when you target es6 typescript automatically defaults your "lib" to be ["dom", "es6"]
+[2017-02-15 15:37:59] <galvesribeiro> I though it were transpired to something ES5 browsers understand since we are using ES5
+[2017-02-15 15:38:12] <dtabuenc> galvesribeiro: language features are transpile to es5
+[2017-02-15 15:38:18] <dtabuenc> for example classes, or arrow functions
+[2017-02-15 15:38:21] <galvesribeiro> ic
+[2017-02-15 15:38:26] <dtabuenc> Promises and Array stuff etc, are library features
+[2017-02-15 15:38:36] <galvesribeiro> Async/await as well, right?
+[2017-02-15 15:38:43] <dtabuenc> async/await yes
+[2017-02-15 15:38:52] <dtabuenc> that also  has a down-compile
+[2017-02-15 15:39:12] <dtabuenc> Promises are library features, you can be running es5 in the browser and use promises
+[2017-02-15 15:39:18] <dtabuenc> as long as the browser has support for promises
+[2017-02-15 15:39:22] <galvesribeiro> ic
+[2017-02-15 15:39:32] <dtabuenc> if it's an older browser that does not, you need poly-fill
+[2017-02-15 15:39:35] <dtabuenc> like for older IE
+[2017-02-15 15:39:52] <dtabuenc> if you are runing on modern browser you can target es5 but use es6 libs without a polyfill
+[2017-02-15 15:40:12] <galvesribeiro> need to check how to detect if it is available and load or not core-js
+[2017-02-15 15:40:59] <dtabuenc> there are many many projects out there that target es5 and use es6 libs
+[2017-02-15 15:41:01] <dtabuenc> it's very common
+[2017-02-15 15:41:21] <galvesribeiro> ic
+[2017-02-15 15:41:26] <galvesribeiro> need to check on that
+[2017-02-15 15:41:42] <galvesribeiro> when you have multiple options you don’t know which one to pick :P
+[2017-02-15 15:42:32] <dtabuenc> there are other options too... like not use es6 inyou rlibs and then just load types for core-js
+[2017-02-15 15:42:37] <dtabuenc> sort-of the equivalent though
+[2017-02-15 15:42:44] <dtabuenc> it's just about who wrote the typings at that point
+[2017-02-15 15:44:19] <galvesribeiro> ic
+[2017-02-15 15:44:32] <galvesribeiro> do you recommend core-js? [<-LINK->] 
+[2017-02-15 15:44:52] <dtabuenc> yes, that's the most common
+[2017-02-15 15:45:26] <galvesribeiro> ic
+[2017-02-15 15:45:55] <galvesribeiro> ok, now I need to check how to detect at runtime, whether or not ES6 is available in a browser, and then load core-js
+[2017-02-15 15:48:04] <dtabuenc> if you don't care about size, you can just always load it
+[2017-02-15 15:48:11] <dtabuenc> you can also just use the shims you need from it
+[2017-02-15 15:48:16] <dtabuenc> such as only promises if you only need that
+[2017-02-15 15:48:35] <galvesribeiro>  [<-LINK->] 
+[2017-02-15 15:48:52] <galvesribeiro> No IE will ever support promises… even the latest IE11 heheheh
+[2017-02-15 15:52:12] <ShawnTalbert> galvesribeiro: true that, given that IE is no longer developed
+[2017-02-15 15:57:33] <galvesribeiro> yup
+[2017-02-15 15:57:46] <galvesribeiro> I hope it get gone from Windows :P
+[2017-02-15 15:58:33] <dtabuenc> it's time for safari to become the bane of developer's existence with undocumented and non-standard behavior..... IE has held that crown way too long..
+[2017-02-15 15:59:05] <galvesribeiro> hahaha yeah
+[2017-02-15 15:59:34] <galvesribeiro> well, Chrome follow the standard, but both Chrome and WebKit engines are a pain, because they have 0 docs
+[2017-02-15 16:00:01] <galvesribeiro> ChakraCore in other hand, is very well documented, and the MS team working on it is very kind
+[2017-02-15 16:00:57] <dtabuenc> you mean ChakraCore vs v8?
+[2017-02-15 16:26:28] <galvesribeiro> yes
+--------------------------------------------------------------------------------------------------
+1 [2017-02-16T03:59:13] <lorezzed> how do you extend an rxjs Observable?
+2 [2017-02-16T04:20:03] <lorezzed> basically this lineRx.Observable.$watch = function (scope, watchExpression, objectEquality)from [<-LINK->]
+--------------------------------------------------------------------------------------------------
+[2017-02-17 21:04:14] <DavisSylvester> I am getting the following messages when I run tsc.
+[2017-02-17 21:04:36] <DavisSylvester> declare var require: Require; ~~~node_modules/@types/requirejs/index.d.ts(416,13): error TS2403: Subsequent variable declarations must have the same type.  Variable 'require' must be of type 'NodeRequire', but here has type 'Require'.3:03:07 PM - Compilation complete. Watching for file changes.
+[2017-02-17 21:05:13] <DavisSylvester> i have node_modules  as exclude in tsconfig.json
+[2017-02-17 21:12:15] <dtabuenc> DavisSylvester: you have two conflicting declarations for require. You likely have both@types/nodeand@types/requirejs. Is there a reason you need both?
+[2017-02-17 21:12:36] <dtabuenc> Is your project AMD?
+[2017-02-17 21:15:19] <DavisSylvester> nope
+[2017-02-17 21:15:34] <dtabuenc> then try uninstalling@types/requirejs
+[2017-02-17 21:15:48] <DavisSylvester> thanks a million.  I removed@types/requirejs and all is HAPPY!
+[2017-02-17 21:16:05] <DavisSylvester> Thanks@dtabuenc
+--------------------------------------------------------------------------------------------------
+[2017-02-19 19:50:56] <DanielKucal>  [<-CODE->] How to do it without Typescript warning? B cannot extend A.
+[2017-02-19 20:32:36] <dtabuenc> DanielKucal: so you want to start with an array ofAbut then mutate each element so it becomes aB?
+[2017-02-19 20:33:32] <DanielKucal> Yes, should i create new array of elements instead?
+[2017-02-19 20:36:25] <dtabuenc> I don't know, I'd need more context, but you can get it to work as is.
+--------------------------------------------------------------------------------------------------
+[2017-02-24 17:41:52] <foxjazz> does this look ok for the typedef.d.ts
+[2017-02-24 17:41:58] <foxjazz> typings.d.ts
+[2017-02-24 17:42:11] <dtabuenc> ?do you have al ink to the js file you downloaded
+[2017-02-24 17:42:22] <dtabuenc> just dodecalre module 'mymod';
+[2017-02-24 17:42:24] <dtabuenc> no body no block
+[2017-02-24 17:42:34] <dtabuenc> if all you don't care things will be any
+[2017-02-24 17:43:21] <foxjazz> yea I can get that need a sec
+[2017-02-24 17:45:29] <foxjazz>  [<-LINK->] 
+--------------------------------------------------------------------------------------------------
+[2017-02-24 22:09:46] <aaronbeall> How come the latest release is listed as 2.2 here: [<-LINK->] But the version in npm is 2.1.5? [<-LINK->] 
+[2017-02-24 22:14:14] <ShadowManu> aaronbeall: It's 2.2.1 for me, check again?
+[2017-02-24 22:14:34] <dtabuenc> yeah it's 2.2.1 not sure why you are seeing 2.1.5
+[2017-02-24 22:15:13] <aaronbeall> woah, it literally just changed before my eyes...
+[2017-02-24 22:15:25] <aaronbeall> and yep,nownpm install typescriptpicks up 2.2
+[2017-02-24 22:16:22] <aaronbeall> did it just change? or some kind of cache issue on my local?
+[2017-02-24 22:16:36] <dtabuenc> no it's been 2.2.1 since a couple days I think
+[2017-02-24 22:16:41] <dtabuenc> must be a cache issue
+[2017-02-24 22:16:48] <aaronbeall> yeah I thought so... weird
+--------------------------------------------------------------------------------------------------
+[2017-02-25 12:30:50] <larvanitis> Hi. Is there any simply way (eg some decorator) to convert an interface to a class which will wrap one such object? [<-CODE->] 
+[2017-02-25 12:48:52] <dany-on-demand> larvanitis:  [<-CODE->] 
+[2017-02-25 12:53:29] <larvanitis> dany-on-demand: Thanks but I would like to make it dynamic (at compile time) so that if the IPerson changes my  Friend would automatically get the extra properties
+[2017-02-25 12:56:06] <larvanitis> dany-on-demand: The use case is: I have an api libary which defines its responses using interfaces and returns plain objects. I would like to easily extend some responses with custom functionality without having to manually track and apply changes from the source interface
+--------------------------------------------------------------------------------------------------
+[2017-02-26 19:45:11] <Deviad> What Typescript version is suggested for compiling  RXJS ?
+[2017-02-26 19:45:20] <Deviad> In order to avoid these issues
+[2017-02-26 20:05:23] <crystalbyte> Deviad: You need core-js or a similar lib to add Promise support.
+--------------------------------------------------------------------------------------------------
+[2017-02-27 14:23:19] <chrillewoodz> does it make sense to doboolean|voidas return signature of a function?
+[2017-02-27 14:25:39] <ghetolay> chrillewoodz: want to know what I think ?
+[2017-02-27 14:25:44] <ghetolay> :)
+[2017-02-27 14:26:06] <chrillewoodz> ghetolay: Yes please tell me 
+[2017-02-27 14:26:42] <ghetolay> It's programatically right but designely weird
+--------------------------------------------------------------------------------------------------
+[2017-02-27 17:51:25] <Matmo10> Given this: [<-CODE->] Why does this cause an error: [<-CODE->] But this does not: [<-CODE->] 
+[2017-02-27 17:52:10] <Matmo10> TS2365: Operator '===' cannot be applied to types 'TemplateType.Boolean | TemplateType.Date | TemplateType.Numeric | TemplateType.Text' and 'TemplateType.Complex'.
+[2017-02-27 18:52:30] <dtabuenc> Matmo10: ahh.. the dangers of javascript type coercion
+[2017-02-27 18:52:47] <dtabuenc> it's actually keeping you from doing a  subtle error
+[2017-02-27 18:52:57] <dtabuenc> TemplateType.Complexis equal to0
+[2017-02-27 18:53:20] <dtabuenc> so when you do!templateTypeon aTemplateType.Complexit will actually return true
+[2017-02-27 18:53:42] <dtabuenc> which means on the right hand side of your||templateTypewill never be able to beTemplateType.Complex
+[2017-02-27 18:54:10] <dtabuenc> You should just always avoid doing shorthand!templateTypewhen you actually mean to do a null check
+[2017-02-27 18:54:38] <dtabuenc> you should always be explicit on your null checks, or you'll run into a lot of subtle js bugs.
+[2017-02-27 19:47:51] <Matmo10> Ah I see..that makes sense now
+[2017-02-27 19:47:57] <Matmo10> Thank you :)
+--------------------------------------------------------------------------------------------------
+[2017-02-27 23:02:01] <ghetolay> is it possible to keep typings of function arguments free [<-CODE->] 
+[2017-02-27 23:27:44] <dtabuenc> ghetolay: sure.... .
+[2017-02-27 23:28:47] <dtabuenc>  [<-CODE->] 
+[2017-02-27 23:29:06] <ghetolay> dtabuenc: yeah thks thought about that but unfortunately this won't work for my real case :(
+[2017-02-27 23:29:19] <ghetolay> because I need to keep typings
+[2017-02-27 23:29:27] <ghetolay> my minimal example is wrong
+[2017-02-27 23:30:04] <dtabuenc> you want to use overloads?
+[2017-02-27 23:31:04] <ghetolay> it's more : [<-CODE->] 
+[2017-02-27 23:33:07] <ghetolay> where herefuncArgscould have any arguments. and problem here is if I do...args: any[]I'll lose my typings [<-CODE->] 
+[2017-02-27 23:34:27] <ghetolay> I need to somehow transpose the arguments typings
+[2017-02-27 23:35:13] <dtabuenc> I'm not sure exactly what you mean but something like this? [<-CODE->] 
+[2017-02-27 23:37:06] <dtabuenc> I'm just confused as to what you are actually passing toextendFuncare you passing arguments? or are you passing another function
+[2017-02-27 23:40:11] <ghetolay> I want that, which is working but without typings [<-CODE->] 
+[2017-02-27 23:40:54] <ghetolay> I need to keep the full signature of the initial function
+[2017-02-27 23:41:00] <ghetolay> want to copy it
+[2017-02-27 23:42:13] <dtabuenc> so funcArgs is a function not function arguments
+[2017-02-27 23:42:39] <ghetolay> yeah it's the source function
+[2017-02-27 23:42:56] <ghetolay> and I'm building a proxy function around it
+[2017-02-27 23:47:11] <dtabuenc> ghetolay: See if this example makes sense to you: [<-CODE->] 
+[2017-02-27 23:49:53] <ghetolay> rhaahaaaa
+[2017-02-27 23:50:23] <ghetolay> this works but again I'm a moron and my minimal example did not reflect my real case
+[2017-02-27 23:50:47] <ghetolay> I need the return value of the function
+[2017-02-27 23:50:59] <ghetolay> here is what I'mreallytrying to do
+[2017-02-27 23:51:29] <ghetolay> I don't know if you're familiar with redux
+[2017-02-27 23:51:42] <ghetolay> but with redux there is a lot of boilerplate creating action
+[2017-02-27 23:52:06] <ghetolay> so I'm trying to create anactionFactoryto reduce it
+[2017-02-27 23:52:08] <ghetolay>  [<-LINK->] 
+[2017-02-27 23:52:40] <farism> ghetolay: check out [<-LINK->] 
+[2017-02-27 23:52:54] <ghetolay> here is what I've done, but problem here is that(payload: R) => Ris too restrictive
+[2017-02-27 23:53:05] <ghetolay> I only care for the return type
+[2017-02-27 23:53:20] <ghetolay> yet the function return should match the same typings
+[2017-02-27 23:54:29] <farism> you should really look at that library for inspiration. It allows you to define actionCreators that take the payload type as a generic, and then provides anisTypehelper for narrowing the action types
+[2017-02-27 23:55:27] <farism> I’ve been playing with it and it works well
+[2017-02-27 23:56:14] <ghetolay> yep it's close to what I'm doing
+[2017-02-27 23:56:17] <farism> there is also [<-LINK->] which has a similar goal, and may seem more like the approach you are trying to take
+[2017-02-27 23:56:33] <farism> with passing the action type as another generic parameter
+[2017-02-27 23:56:55] <farism> but the thing both of these have in common is user defined guards for narrowing the action type
+[2017-02-27 23:57:17] <farism> isActionfor typed-fsa andisTypefor redux-typescript-actions
+[2017-02-27 23:58:12] <ghetolay> yep but you can't build your action
+[2017-02-27 23:58:24] <ghetolay> I would like to able to supply a function that'll build the payload
+[2017-02-27 23:58:38] <farism> redux-typescript-actions does that
+[2017-02-27 23:58:47] <farism> it gives you back a function that when you pass the correct payload will generate the FSA
+[2017-02-27 23:58:50] <ghetolay> missed something then
+[2017-02-27 23:59:02] <farism> const action = somethingHappened({foo: 'bar'});
+[2017-02-27 23:59:17] <farism> const somethingHappened = actionCreator<{foo: string}>('SOMETHING_HAPPENED’);
+[2017-02-27 23:59:22] <ghetolay> it's passing the payload already built
+[2017-02-27 23:59:45] <farism> well yea.. you need to pass a payload to an action
+[2017-02-27 23:59:58] <farism> the point of this is to get strong typings on your payload actions
+[2017-02-28 00:00:15] <ghetolay> I want likesomethingHappened(5, 'a', 'b')=> generate a payload object
+[2017-02-28 00:00:32] <farism> payloads are objects
+[2017-02-28 00:00:39] <ghetolay> yep
+[2017-02-28 00:00:49] <farism> what would the underlying object that is constructed look like if you passed those arguments?
+[2017-02-28 00:00:52] <ghetolay> I want to be able to add logic to my Action builder
+[2017-02-28 00:00:59] <ghetolay> dunno anything
+[2017-02-28 00:01:03] <ghetolay> the user defines it
+[2017-02-28 00:01:31] <ghetolay> as a function
+[2017-02-28 00:01:32] <dtabuenc> ghetolay: so in your example where's the usage?
+[2017-02-28 00:01:37] <dtabuenc> where don't you have the type you want?
+[2017-02-28 00:01:56] <ghetolay> my example work but I'm looking at something less rectrictive
+[2017-02-28 00:02:19] <ghetolay> that partpayloadFunc: (payload: R) => R
+[2017-02-28 00:02:32] <ghetolay> means you have to pass the payload object and it'll returns it
+[2017-02-28 00:02:45] <dtabuenc> so payload object should always return type R
+[2017-02-28 00:02:48] <ghetolay> I would like a typing that says you pass anything and it'll return the payload object
+[2017-02-28 00:02:51] <dtabuenc> but you don't care aboout the args?
+[2017-02-28 00:02:56] <ghetolay> yep I need that R
+[2017-02-28 00:02:59] <ghetolay> exactly
+[2017-02-28 00:03:30] <dtabuenc> but wha'ts wrong withpayloadFunc: (...args:any[])=> R
+[2017-02-28 00:03:32] <dtabuenc> ?
+[2017-02-28 00:04:21] <ghetolay> you lose arguments typings
+[2017-02-28 00:04:28] <dtabuenc> where?
+[2017-02-28 00:04:38] <ghetolay> so you  may pass(a: number) => string
+[2017-02-28 00:05:00] <dtabuenc> well what are the restrictions?
+[2017-02-28 00:05:18] <ghetolay> only 1 argument of type number
+[2017-02-28 00:05:32] <ghetolay> I'll try a better minimal one sec
+[2017-02-28 00:09:01] <ghetolay>  [<-CODE->] 
+[2017-02-28 00:09:08] <ghetolay> this one should cover everything
+[2017-02-28 00:10:44] <dtabuenc> so what should the type ofactionbe?
+[2017-02-28 00:11:13] <dtabuenc> a function taking the same params as the payloadFunc that was passed in  and returning  a T?
+[2017-02-28 00:11:17] <farism> I’m not sure how you would pass…args: any[]and retain the original typings that you are passing into that method
+[2017-02-28 00:13:18] <ghetolay> action should be(a: number) => { type: 'a', payload: string }
+[2017-02-28 00:22:07] <farism> I think what you may want is tuple types
+[2017-02-28 00:23:15] <ghetolay> my best is
+[2017-02-28 00:23:22] <ghetolay>  [<-CODE->] 
+[2017-02-28 00:25:07] <ghetolay>  [<-CODE->] will result in [<-CODE->] 
+[2017-02-28 00:25:22] <ghetolay> so I should just ignore any{}type
+[2017-02-28 00:27:48] <farism>  [<-CODE->] 
+[2017-02-28 00:27:54] <farism> an example using tuple args
+[2017-02-28 00:28:51] <ghetolay> your payload type is matching the argument type
+[2017-02-28 00:30:01] <farism> yea it shouldn’t
+[2017-02-28 00:31:16] <farism> I think you would have to add another generic parameter and define that in your payloadCreator func
+[2017-02-28 00:32:23] <dtabuenc>  [<-ISSUE->] 
+[2017-02-28 00:36:25] <ghetolay> I think I've reached agood enoughpoint here [<-LINK->] 
+[2017-02-28 00:36:50] <dtabuenc> yeah I think that's as good as you're gonna get for now
+[2017-02-28 00:37:03] <dtabuenc> I tried to do some fancy thingks with type mapping but didin't work out
+[2017-02-28 00:38:12] <ghetolay> thks a lot
+[2017-02-28 00:38:39] <ghetolay> no need to waste anymore time I'll see this again with the next version of typescript
+[2017-02-28 00:38:46] <ghetolay> will probably take secs to do then
+[2017-02-28 00:39:22] <ghetolay> thks you for pointing me to the right path
+--------------------------------------------------------------------------------------------------
+[2017-02-28 23:10:42] <vyrotek> Hey guys. What's your favorite Ajax NPM utility that has built in TypeScript support?
+[2017-02-28 23:11:45] <vyrotek> Or should I go with something like 'Request' and grab a .ts from DefinitelyTyped?
+[2017-02-28 23:13:31] <ghetolay> vyrotek: as lon as there is typings shouldn't be any difference between a ts and a js lib
+--------------------------------------------------------------------------------------------------
+1 [2017-03-01T09:44:51] <Keksike> If I'm coding node with TS, should I avoid npm packages which dont have declaration files or a@typespackage?
+2 [2017-03-01T12:45:02] <AntonRatnick> Keksike: If you need package, which dont have typings, so you can write your own
+3 [2017-03-02T07:32:38] <Keksike> dtabuenc: When I try to use a npm package which doesnt have a declaration file (@types), I get a errorCould not find a declaration file for module 'myLibrary'when I try to import it withimport * as myLib from 'myLibrary';
+4 [2017-03-02T07:32:46] <Keksike> How can I get around that error?
+5 [2017-03-02T07:33:05] <dtabuenc> you need to add a declaration
+6 [2017-03-02T07:33:20] <dtabuenc> at it's most basic you just have to dodeclare module 'myLibrary';
+7 [2017-03-02T07:33:33] <dtabuenc> in that casemyLibwill be typeany
+8 [2017-03-02T07:33:46] <Keksike> where should I do it so typescript knows how to use it?
+9 [2017-03-02T07:34:01] <dtabuenc> usually in a file in your project likecustom-typings.d.ts
+10 [2017-03-02T07:34:08] <dtabuenc> and then just make sure you include it in your compilation
+11 [2017-03-02T07:40:37] <Keksike> allright, thanks alot :)
+--------------------------------------------------------------------------------------------------
+[2017-03-07 19:58:11] <ofabricio>  [<-CODE->] Guys, I'm new to typescript, how do I garantee the object been passed to.setis of a specific type (say, User)?
+[2017-03-07 20:06:14] <patsissons>  [<-CODE->] 
+[2017-03-07 20:07:14] <patsissons> that's the easiest way to validate json against a defined interface
+[2017-03-07 20:07:52] <patsissons> however, if your json is read and stored an ananythen you can't do anything, this type of type checking is only valid at compile time
+[2017-03-07 20:08:30] <ofabricio> hmm.. I see...setparam is defined asanyby angularfire lib, so I cant do anything right?
+[2017-03-07 20:11:21] <patsissons> if your use case is developer written objects, then it doesn't matter if your.setsignature uses ananyfor a parameter, as long as you validate it ahead of time. you could use a passthru function to do this: [<-CODE->] 
+[2017-03-07 20:12:38] <ofabricio> thanks!
+[2017-03-07 20:27:00] <ofabricio> Hm.. when I retrieve my object from the server it adds a new field to it (.$key) so I cannot use my type (User) anymore. How can I handle this?
+[2017-03-07 20:27:28] <tommck> use an interface instead of a class?
+[2017-03-07 20:28:01] <tommck> you probably don't need a class anyway
+[2017-03-07 20:28:08] <ofabricio> it is an interface
+[2017-03-07 20:28:18] <tommck> sorry... brain wasn't fully engaged
+[2017-03-07 20:28:22] <ofabricio> hehe
+[2017-03-07 20:28:37] <dtabuenc> Why can't you use your type?
+[2017-03-07 20:28:40] <dtabuenc> extra properties don't matter
+[2017-03-07 20:28:44] <tommck> yeah.. it should work fine
+[2017-03-07 20:28:51] <ofabricio> i don't know. it saysProperty '$key' does not exist on type 'User'
+[2017-03-07 20:28:54] <dtabuenc> only if you are trying to assign an object literal
+[2017-03-07 20:29:05] <dtabuenc> if you get it from a server it's fine
+[2017-03-07 20:29:16] <ofabricio> I'm passing it via parameter
+[2017-03-07 20:29:32] <tommck> are you trying to access $key off of a variable of type User?
+[2017-03-07 20:29:38] <tommck> if so, that's the problem
+[2017-03-07 20:30:03] <dtabuenc> ofabricio: if it's coming form the server, extra properties don't matter
+[2017-03-07 20:30:09] <dtabuenc> if you are coding the object in the code, it won't let you
+[2017-03-07 20:30:41] <tommck> let foo: User = objFromServer; // this is fine
+[2017-03-07 20:30:56] <tommck> console.lof(foo.$key); // this is not
+[2017-03-07 20:31:02] <ofabricio> I see
+[2017-03-07 20:31:13] <ofabricio> Hmm.. but I need that key
+[2017-03-07 20:31:18] <dtabuenc> then add it to the interface?
+[2017-03-07 20:31:23] <ofabricio> should I create two interfaces?
+[2017-03-07 20:31:38] <patsissons> just add a$key?: ...to the interface
+[2017-03-07 20:31:42] <tommck> either that or cast it to <any> :)
+[2017-03-07 20:31:47] <ofabricio> i cannot send a key to the server@dtabuenc
+[2017-03-07 20:31:51] <dtabuenc> or use intersection type
+[2017-03-07 20:32:02] <dtabuenc> or extend a base interface with the key
+[2017-03-07 20:32:04] <dtabuenc> you have lots of options
+[2017-03-07 20:32:12] <tommck> interface IServerObject { $key: string; }
+[2017-03-07 20:32:34] <tommck> function foo(obj: IServerObject & User) { }
+[2017-03-07 20:32:41] <dtabuenc> or  you can dointerface User extends IServerObject {}
+[2017-03-07 20:32:43] <tommck> lots of weird stuff you can do :)
+[2017-03-07 20:32:46] <tommck> right
+[2017-03-07 20:32:47] <dtabuenc> it's up to you and what you are trying to do
+[2017-03-07 20:33:56] <patsissons> if you cannot send$keyto the server, you'll have to run your object through a sanitize function to strip the unwanted bits, no way to automate that unfortunately
+[2017-03-07 20:35:05] <ofabricio> Hmm.. I think I'm going to create two interfaces then
+[2017-03-07 20:35:20] <patsissons> that sounds like the most reasonable plan
+[2017-03-07 20:35:38] <ofabricio> not sure yet if I will ever send the objects i retrieve back to the server so this seems to fit better
+[2017-03-07 20:35:49] <patsissons> and either use polymorphism or a type union to express the actual object
+[2017-03-07 20:41:21] <ofabricio> a type union is a third type?
+[2017-03-07 20:43:32] <tommck> look up Union Types on this page: [<-LINK->] 
+[2017-03-07 20:44:00] <ofabricio> Thanks!
+--------------------------------------------------------------------------------------------------
+1 [2017-03-08T17:49:59] <grovesNL> Ok great. What's the advantage of usingPromise<void>overPromise<undefined>in this case? Where do they behave differently?
+2 [2017-03-08T17:52:02] <dtabuenc> grovesNL: I don't think it will be different in practice, but void really indicates that you expect no value
+3 [2017-03-08T17:52:17] <dtabuenc> vs undefined implies you would callresolve(undefined)
+4 [2017-03-08T17:52:27] <dtabuenc> even though in practice it won't make a difference, void is more semantically correct
+5 [2017-03-08T17:52:57] <grovesNL> dtabuenc: right, it does seem to make more sense semantically. Alright I'll try outPromise<void>, thanks
+--------------------------------------------------------------------------------------------------
+[2017-03-08 22:04:33] <ezra-quemuel> Hi all, quick question on testing with typescript/nodejs. What's the best practice for testing a file (without testing its dependencies/mocking them) if I'm not using an IoC container for dependency injection?
+[2017-03-08 22:05:10] <ezra-quemuel> In the past I've used proxyquire/mockery to "hijack" node's require but I'm having a little difficulty getting that setup with typescript
+[2017-03-08 22:46:15] <Bnaya> ezra-quemuel: with jest (ts-jest) you can mock es6 modules
+[2017-03-08 22:47:24] <Bnaya> The trick/problem is that, when es6 modules imports are transpiled to commonjs require calls they are hoisted to the top of the file
+[2017-03-08 22:49:37] <Bnaya> babel-jest hoist your mock calls above the  require calls, but ts-jest doesn't support it yet.So what you can do is to put your jest.mock calls on a module and import first thing to your test file
+[2017-03-08 22:50:36] <Bnaya> ts-jest has other issues, like sometimes inaccurate coverage reports. but its working and super fast
+[2017-03-08 22:51:54] <idchlife> Guys, did anyone find properly working lib with Dispatcher? Like in Flux, but without react dependencies. Just Dispatcher.
+[2017-03-08 22:52:00] <Bnaya> anyway, i would advocate to inject all the dependencies and import only type information
+[2017-03-08 22:52:34] <ezra-quemuel> thanks@Bnayai think i may end up having to do that
+--------------------------------------------------------------------------------------------------
+[2017-03-09 08:23:48] <sasxa> What are the valid characters for property names in TS? Cuneiform  is not (; Is there a list/rule-book I can check?
+[2017-03-09 08:25:29] <con-ssc> that is not typescript specific I think, that is javascript in general
+[2017-03-09 08:27:22] <sasxa> yea, just realized... I found es6 character validator
+--------------------------------------------------------------------------------------------------
+1 [2017-03-13T09:23:25] <Bnaya> I have an issue [<-ISSUE->] that haven't been triaged for 9 days now while later issues i've opened are already resolved.Is it possible it got missed?
+2 [2017-03-13T09:33:06] <Bnaya> There is upcoming feature to be able to import plain json to typescript
+3 [2017-03-13T09:33:59] <Bnaya> until then you can change the extension to .tsand to something like:export default JSONCONTENT
+4 [2017-03-13T09:34:50] <Bnaya> or if you are using any code bundler (webpack etc) you can use json-loader. but then the returned object won't pick the json structure byitself.
+5 [2017-03-13T11:28:40] <Bnaya>  [<-CODE->]
+6 [2017-03-13T11:28:45] <Bnaya>  [<-LINK->]
+7 [2017-03-13T11:31:19] <Bnaya> And something maybe more simple: [<-CODE->]
+--------------------------------------------------------------------------------------------------
+[2017-03-14 19:34:55] <spion> is there a semver compare tool for .d.ts files ?
+[2017-03-14 19:35:20] <spion> compares two versions of .d.ts and suggests either major, minor or revision bump based on differences in types
+[2017-03-14 19:37:07] <DanielRosenwasser>  [<-LINK->] may be able to help with that@spion
+[2017-03-14 19:37:54] <DanielRosenwasser> there is some support there for diffing .d.ts files in some capacity
+[2017-03-14 19:37:58] <DanielRosenwasser> but I haven't used it
+[2017-03-14 19:42:19] <spion> hmm. It doesn’t seem like its based on the language service API, and...
+[2017-03-14 19:42:27] <spion> it seems like I might want to read the paper to understand it, and its not linked :D
+[2017-03-14 19:43:36] <spion> I was thinking, how hard can it be? no changes to types = revision, “additions" to covariant positions and removals from contravariant positions = minor, every other change in types = major
+[2017-03-14 19:43:38] <spion> :D
+[2017-03-14 19:43:54] <spion> but thats probably a bit naive
+--------------------------------------------------------------------------------------------------
+[2017-03-17 13:41:38] <BloodofDen> Hi, I am beginner in TypeScript, and I would like  to ask next question: in JS arrow functions don't have own "this" and "arguments" and what about TS functions?
+[2017-03-17 14:32:02] <thibaultsavary> Hey, is it normal that object destructuring of inner object's method causes error ?For example [<-CODE->] My guess is that there's a reference to another member somewhere that causes the error.Anybody knows if this is expected ?
+[2017-03-17 14:43:53] <thibaultsavary> BloodofDen: Arrow functions are transpiled to regular functions if your target is ES5 but I believethisis assigned to a variable to lock the execution context.Well in general, how something behave in TS should closely follow how it behave in JS.
+
+--------------------------------------------------------------------------------------------------
+
+[2017-03-18 01:39:46] <wz2b> if you should never use Number why does it even exist?
+[2017-03-18 01:41:12] <wkrueger> never is a too strong word
+[2017-03-18 01:42:20] <wz2b> oh.
+[2017-03-18 01:49:24] <dtabuenc> wz2b: you should always use primitives and let javascript handle the boxing/unboxing
+[2017-03-18 01:49:55] <dtabuenc> thing like Number are there to serve as the prototype for all number operations
+[2017-03-18 01:50:08] <dtabuenc> and it's ok to use Number as a function to do runtime type conversion
+[2017-03-18 01:50:21] <dtabuenc> e.g.var myNumber = Number('5')
+[2017-03-18 02:02:52] <dtabuenc> Although discouraged... if you really needed to add something to the number prototype you could do so... e.g. [<-CODE->] 
+[2017-03-18 02:08:05] <wz2b> cool
+--------------------------------------------------------------------------------------------------
+[2017-03-19 10:19:52] <FatherDougal> i wonder if anyone can help me with this query.  I have an array of line items.  i want to loop over them and convert them to a different type of line items (typical transform type stuff).  but within my loop, the ts compiler is not recognising that my line item as a property called 'quantity' for example
+[2017-03-19 10:56:40] <hinell> FatherDougal: Code example?
+[2017-03-19 14:16:59] <FatherDougal> hinell: thanks for coming back to me, it seems that, my property 'quantity' wasn't seen as public, i had presumed it was public by default.. weird.
+
+--------------------------------------------------------------------------------------------------
+[2017-03-19 12:38:17] <sharwell> Is it possible to create an object literal in TypeScript which extends a class? For example, consider the following: [<-CODE->]  [<-CODE->]  [<-CODE->] 
+[2017-03-19 13:03:38] <felixfbecker> sharwell: you can use class expressions: [<-CODE->] 
+[2017-03-19 13:04:18] <sharwell> Oh, interesting!
+[2017-03-19 13:04:39] <felixfbecker> JS also has__proto__for object literals, but it doesn't play well with TS [<-CODE->] 
+[2017-03-19 13:05:14] <felixfbecker> you would need to cast it, TS doesn't realise this object inherits fromotherObject
+--------------------------------------------------------------------------------------------------
+[2017-03-20 14:10:07] <hinell> @dtabuencAnd to consider using inheritance when a base class needs a way to access the child (polymorphism)What?
+[2017-03-20 15:33:29] <dtabuenc> hinell: did you not understand my polymorphism point?
+[2017-03-20 18:44:39] <hinell> dtabuenc: Yep. I didn't.
+--------------------------------------------------------------------------------------------------
+1 [2017-03-21T11:48:33] <con-ssc> How do I export default a function that can return two different types?
+2 [2017-03-21T11:51:10] <con-ssc>  [<-LINK->]
+3 [2017-03-21T11:51:35] <con-ssc> trying with generics didn't help
+4 [2017-03-21T11:52:09] <wkrueger> it would be just string | INamespace
+5 [2017-03-21T11:52:18] <con-ssc> tried that didn' work
+6 [2017-03-21T11:52:52] <con-ssc>  [<-LINK->]
+7 [2017-03-21T11:53:18] <con-ssc> when I try to use it later on and try to decide which function I have to return depending on if it is string or INamespace I get this
+8 [2017-03-21T11:54:01] <con-ssc>  [<-LINK->]
+9 [2017-03-21T11:54:45] <wkrueger> hows the definition of "namespace"?
+10 [2017-03-21T11:56:20] <con-ssc> trying to work on that too
+11 [2017-03-21T11:56:29] <con-ssc>  [<-LINK->]
+12 [2017-03-21T11:57:02] <con-ssc> lets start from the beginning
+13 [2017-03-21T11:57:06] <con-ssc> namespaces.ts [<-CODE->]
+14 [2017-03-21T11:57:38] <con-ssc> namespace.ts [<-CODE->]
+15 [2017-03-21T11:58:04] <con-ssc> having difficulties with one function returning and accepting different types
+16 [2017-03-21T11:59:10] <wkrueger> then you writereturn namespaces.hasOwnProperty(prefix) ? {space: namespaces[prefix], local} : local;it infers a type to the function
+17 [2017-03-21T11:59:27] <wkrueger> and it then compares to the type you have defined for it
+18 [2017-03-21T11:59:35] <con-ssc> ?
+19 [2017-03-21T11:59:59] <wkrueger> lets say if you replace
+20 [2017-03-21T12:00:09] <wkrueger> return namespaces.hasOwnProperty(prefix) ? {space: namespaces[prefix], local} : local;
+21 [2017-03-21T12:00:25] <wkrueger> with [<-CODE->]
+22 [2017-03-21T12:00:35] <wkrueger> then you mouseover over out
+23 [2017-03-21T12:00:43] <wkrueger> (thats just for the mouseover thing)
+24 [2017-03-21T12:00:58] <wkrueger> oops type there, editing
+25 [2017-03-21T12:01:00] <wkrueger> typo
+26 [2017-03-21T12:02:13] <con-ssc>  [<-LINK->]
+27 [2017-03-21T12:02:20] <wkrueger> wait lemme paste it here
+28 [2017-03-21T12:02:37] <con-ssc> somehow [<-CODE->]  [<-CODE->]
+29 [2017-03-21T12:02:45] <con-ssc> ah I see
+30 [2017-03-21T12:03:01] <wkrueger> lemme check here
+31 [2017-03-21T12:04:55] <con-ssc> that works now
+32 [2017-03-21T12:05:02] <wkrueger> ah there
+33 [2017-03-21T12:05:11] <con-ssc>  [<-LINK->]
+34 [2017-03-21T12:05:15] <con-ssc>  [<-CODE->]
+35 [2017-03-21T12:05:56] <con-ssc>  [<-LINK->]
+36 [2017-03-21T12:06:29] <wkrueger> local can be string or INamespaceso{ space: namespaces[prefix], local }can be{ Inamespace, string }which is againts your function type
+37 [2017-03-21T12:07:18] <wkrueger> hmm general advice you should not be declaring types everywhere
+38 [2017-03-21T12:07:24] <con-ssc> { space: namespaces[prefix], local }can be{ string, INamespace | string }
+39 [2017-03-21T12:07:56] <wkrueger> yes, that.  unless you cast local to string
+40 [2017-03-21T12:07:59] <con-ssc> Well I want to define it as accurate as possible
+41 [2017-03-21T12:08:17] <con-ssc> so I have a good definition file as well
+42 [2017-03-21T12:09:09] <con-ssc> actually I think I need to use generics somehow because of the different input leads to different output
+43 [2017-03-21T12:09:23] <wkrueger> probably not
+44 [2017-03-21T12:09:50] <wkrueger>  [<-CODE->]
+45 [2017-03-21T12:10:06] <wkrueger> you are killing the return type of the thing by declaring it as a functions
+46 [2017-03-21T12:11:12] <wkrueger> lets say creatorFixed = () => A and creatorInherit = () => Bts would infer A | B as return
+47 [2017-03-21T12:12:32] <con-ssc> probably
+48 [2017-03-21T12:12:48] <con-ssc> but how can I untangle something like that
+49 [2017-03-21T12:13:35] <con-ssc> And why is does (ah this is it) [<-CODE->] is not of [<-CODE->]
+50 [2017-03-21T12:19:19] <con-ssc> just to add more context, I'm trying to convert this [<-LINK->] to typescript
+51 [2017-03-21T12:19:34] <con-ssc> and I started with the namespaces.js and so on
+52 [2017-03-21T12:19:39] <wkrueger> hmm
+53 [2017-03-21T12:19:58] <wkrueger> 1st thing you should just replace imports and exports
+54 [2017-03-21T12:20:12] <wkrueger> let the things untyped
+55 [2017-03-21T12:25:25] <wkrueger> oh its already in es6 modules
+56 [2017-03-21T12:46:05] <wkrueger>  [<-CODE->] this one is a bit tricky. see they return functions which reference "this"
+57 [2017-03-21T12:48:46] <wkrueger> its a good idea that you turn on "noImplicitThis", and the functions cannot be converted to arrow format there [<-CODE->]
+58 [2017-03-21T23:21:29] <wkrueger> otbe: i think you could maybe achieve that by simply using a function...
+59 [2017-03-21T23:27:37] <wkrueger> oh dang
+60 [2017-03-21T23:29:54] <wkrueger> is there any way to "remove a piece" from a type union? [<-CODE->]
+61 [2017-03-21T23:30:19] <unional> Not yet.
+62 [2017-03-21T23:30:53] <wkrueger> any tips on what to search for that on the issue tracker?
+63 [2017-03-21T23:31:05] <wkrueger> im very bad at finding things there....
+64 [2017-03-21T23:35:09] <wkrueger> <3
+65 [2017-03-22T03:11:31] <wkrueger> using singletons in javascript is kinda stockholm syndrome
+--------------------------------------------------------------------------------------------------
+[2017-03-21 17:43:45] <dtabuenc> Hmm.. I'm seeing some weirdness with namespace declaration merging
+[2017-03-21 17:44:25] <dtabuenc> you have an=in your code out of place
+[2017-03-21 17:44:33] <WillLuce> haha. sorry. Wrong room.
+[2017-03-21 17:53:32] <dtabuenc> So I have this declaration file [<-CODE->] 
+[2017-03-21 17:53:55] <dtabuenc> And then I use it like this: [<-CODE->] 
+[2017-03-21 17:53:59] <dtabuenc> and that's  fine.
+[2017-03-21 17:54:05] <dtabuenc> but I want to export FooInterface alias.
+[2017-03-21 17:54:47] <dtabuenc> but when I try that I get an error [<-CODE->] 
+[2017-03-21 17:55:24] <unional> You are switching form a script file to a module file when you add top-level exports.
+[2017-03-21 17:55:47] <unional> Namespace merging does not work across module files, if I remember correctly.
+[2017-03-21 17:55:49] <dtabuenc> hmm.. so maybe I have to put a declare global around the namespace
+[2017-03-21 17:55:51] <dtabuenc> let me try
+[2017-03-21 17:56:11] <dtabuenc> bingo! Thanks@unional
+--------------------------------------------------------------------------------------------------
+[2017-03-22 00:00:16] <alexjurkiewicz> I find myself writing code like this a little bit: [<-CODE->]  [<-CODE->] 
+[2017-03-22 00:07:05] <patsissons> you would need to declare the scope of the variable outside the loop, no way around that
+--------------------------------------------------------------------------------------------------

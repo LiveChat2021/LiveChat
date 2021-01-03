@@ -1,0 +1,841 @@
+[2016-11-21 02:02:26] <protometa> how are npm modules going to work when there are many different yearly versions of javascript?
+[2016-11-21 02:10:19] <ewnd9> protometa: there is theenginesproperty ( [<-LINK->] ) to warn about compatibility
+[2016-11-21 02:14:03] <protometa> ewnd9: engines could work but it doesn't seem to be used much. I'm also thinking about the use of npm for frontend modules. It seems like we are going to need to have better tracking of javascript version or we'll be in javascript version hell, or be stuck with publishing only es5 modules forever.
+[2016-11-21 02:19:49] <ewnd9> protometa: I'm fine with es5 . But as an example of a variation - somereact-nativemodules are published as is and if you need to use them in other environments you need to use only single presetbabel-preset-react-native
+[2016-11-21 02:32:42] <protometa> ewnd9: that works if you know a specific module or set of modules is pure es6 or es7 but seems like we need a more general solution for module consumers to know which version of javascript a module uses.
+[2016-11-21 02:38:34] <protometa> rather than making it a concern of newer modules to covert for older consumers the older consumers could just convert newer modules that they wish to use.
+[2016-11-21 02:41:58] <protometa> then we could all publish pure es7 modules and a platform that can run es7 isn't stuck with es5.
+--------------------------------------------------------------------------------------------------
+1 [2016-11-22T02:40:39] <DjRakso>  [<-LINK->] <- I took in this project and wanted to understand how to play with Node JS. I wanted to add to a page the system information. What would be a good suggestion on a guide to help me?
+2 [2016-11-22T02:41:29] <d3x0r>  [<-LINK->] ?
+3 [2016-11-22T02:41:36] <d3x0r> or OS
+4 [2016-11-22T02:41:54] <DjRakso> OS
+5 [2016-11-22T03:28:29] <d3x0r> (I do hope you saw the link on the side of that that says 'OS')
+--------------------------------------------------------------------------------------------------
+1 [2016-11-25T10:15:04] <achillesimo> Hello
+2 [2016-11-25T10:15:28] <achillesimo> i'm having this issue 'npm install'
+3 [2016-11-25T10:15:41] <achillesimo> npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform forfsevents@1.0.15: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+4 [2016-11-25T10:15:51] <achillesimo> please house to fix it ?
+--------------------------------------------------------------------------------------------------
+[2016-11-25 10:22:21] <AyzPat> hey guys I am using angular 2 as my client side , express +node at server and want to use firebase as my db ,, so hw can I get started??
+[2016-11-25 10:41:02] <AyzPat> when i try to retrieve the data.name from my server i dont get the value:
+[2016-11-25 10:41:21] <AyzPat> res.json({name:['ayz','s'],work:['web app dev','front end dev']});
+[2016-11-25 10:42:11] <AyzPat> i need to retireve data.name in my client side... when i retrieve name i get it but how can i retrieve data.name
+[2016-11-25 10:49:31] <fox1t> AyzPat: can you explain better "i need to retireve data.name in my client side... when i retrieve name i get it but how can i retrieve data.name"?
+[2016-11-25 10:50:42] <AyzPat> fox1t: i have a plukr with basic files not exactly working one..
+[2016-11-25 10:50:54] <AyzPat>  [<-LINK->] 
+[2016-11-25 11:04:26] <fox1t> *ngFor="let data of data"? maybe change the name of local var to not clash with data
+[2016-11-25 11:25:27] <AyzPat> @fox1tits not a problem on the client side, the problem is in res.json()
+[2016-11-25 11:28:23] <AyzPat> fox1t: m new to node so not getting how to send the information
+[2016-11-25 11:31:02] <fox1t> res.json({name:['ayz','s'],work:['web app dev','front end dev']}); <-- this is ok
+[2016-11-25 11:31:52] <fox1t> try to query the route with postman and check if the returned object's props
+[2016-11-25 11:32:57] <AyzPat> fox1t: then why is data.name or say user.name is not getting retrieved it gives an error: Cannot find a differ supporting object '[object Object]' of type 'ayz,s'. NgFor only supports binding to Iterables such as Arrays.
+[2016-11-25 11:33:26] <AyzPat> Cannot find a differ supporting object '[object Object]' of type 'ayz,s'. NgFor only supports binding to Iterables such as Arrays.
+[2016-11-25 11:35:18] <AyzPat> on queryin to postman i got this:{"name": ["ayz","s"],"work": ["web app dev","front end dev"]}
+[2016-11-25 11:35:40] <fox1t> so nodejs part is ok, as you can see
+[2016-11-25 11:35:57] <fox1t> the problem is inside client side code
+[2016-11-25 11:39:39] <fox1t> i am not angular2 ninja, but i suppose you have to find a way to convert your data to array.  Maybe here: [<-ISSUE->] 
+[2016-11-25 11:40:41] <fox1t> ok here is the answer: [<-LINK->] 
+[2016-11-25 11:41:14] <fox1t> this one is your issue, see problem 1
+--------------------------------------------------------------------------------------------------
+[2016-11-27 07:47:17] <devzer01>  [<-CODE->] anyone have suggestions for a tool for this?
+[2016-11-27 07:54:25] <rledford>  [<-CODE->] gulp.task('default', function () {   return browserify('./source/app.js')      .transform(babelify)      .bundle()      .pipe(source('your-destination-single-file-name.js'))      .pipe(gulp.dest('./build/'));});``` this will compile everything into a single js file that you can include in your html
+[2016-11-27 07:54:40] <devzer01> ah cool :)
+[2016-11-27 07:55:05] <rledford> not sure why to code isn't formatted correctly but you get the idea
+[2016-11-27 07:55:58] <rledford> babel is for jsx and stuff. not sure what libs you're using butbrowserifyis the main one you're looking for
+[2016-11-27 07:56:03] <rledford> devzer01: 
+[2016-11-27 07:56:37] <devzer01> i see
+[2016-11-27 07:56:41] <devzer01> i  didn't use anything yet
+[2016-11-27 07:57:23] <devzer01> i just wrote few classes and setup ci and stuff, and made a tiny mock for window and document by hand just to keep it simple and before i go any further wanted to figure out how to do this step properly :)
+[2016-11-27 07:57:43] <devzer01> so thank u very much, i have couple of things to read about now, thanks again :)
+[2016-11-27 08:05:30] <rledford> devzer01: yw
+[2016-11-27 09:23:39] <d3x0r> devzer01: rollup is pretty easy too
+[2016-11-27 09:23:54] <devzer01> cool :) thanks :)
+--------------------------------------------------------------------------------------------------
+1 [2016-11-28T14:46:07] <Kylintosh> Guys, does anyone have an example of a rest post form uploading images with express? Ty
+--------------------------------------------------------------------------------------------------
+1 [2016-11-29T02:53:22] <abhisekp> Even scientists are unable to understand time and space.Stephen Hawking is researching about it. We might see the results soon... o/
+--------------------------------------------------------------------------------------------------
+[2016-11-30 15:31:53] <iamtew> hi guys, I'm trying to install NodeJS 7.2.0 in an alpine:3.4 docker container, but I keep running in to this: [<-CODE->] 
+[2016-11-30 15:32:01] <iamtew> node is there but I can't execute it
+[2016-11-30 15:32:25] <iamtew>  [<-CODE->] 
+[2016-11-30 15:35:55] <buffmike> iamtew: the last time i ran into that of probelem i had to overwrite the old  node directory
+[2016-11-30 15:36:44] <iamtew> there's no old node directory, this is my Dockerfile [<-CODE->] 
+[2016-11-30 15:36:48] <iamtew> and that's it
+[2016-11-30 15:38:19] <xhallix> iamtew: did you trydocker rm -f $(docker ps -a -q)and rebuild your containers?
+[2016-11-30 16:46:33] <iamtew> no, but that's irrelevant, I'm missing some glibc symbols, so I need to install some comparability library package or something
+[2016-11-30 16:47:45] <iamtew> but that's a task for tomorrow, my work day is done here :)have a nice evening ya'll
+--------------------------------------------------------------------------------------------------
+[2016-11-30 19:47:34] <jerometea> Hello do you know how to create a HTTPS server and how to implement a payment system with credit cards ?
+[2016-11-30 19:47:54] <jerometea> If you have a link it would be great
+[2016-11-30 23:31:28] <Egoscio> jerometea: For HTTPS and node, I personally go with a regular HTTP express setup listening to some port on local host (make sure you're not listening to 0.0.0.0) then I apply certbot (letsencrypt) https certificates through a web facing Nginx proxy in Nginx configuration.
+[2016-12-01 10:25:43] <jerometea> Egoscio: Thank you, can you define quickly what are are Cerbot, EFF, web facing, Nginx ? Is it possible to use Amzon EC2 ?
+[2016-12-01 10:26:37] <jerometea> I am really new to node, I have 1 month exp in the web ^^'
+--------------------------------------------------------------------------------------------------
+1 [2016-12-02T21:09:41] <mightyiam> Can anyone recommend a package that exports an API for getting from the npm registry a package.json by name?
+2 [2016-12-02T21:10:30] <mightyiam>  [<-LINK->] , obviously, duh..
+--------------------------------------------------------------------------------------------------
+[2016-12-04 22:41:52] <as3k>  [<-LINK->] 
+[2016-12-04 22:42:06] <as3k> anybody using webpack? im getting an error when importing modules. not on my entry point but inside the module. im using ES6 with babel for transpiling. im getting this error on console when i build.@as3k
+[2016-12-04 22:52:59] <jenkynolasco11> This is more an error of what you're exporting
+[2016-12-04 22:53:13] <jenkynolasco11> as3k: 
+[2016-12-04 22:54:15] <jenkynolasco11> You're exporting an object, and you're declaring a constant inside the object
+[2016-12-04 22:58:06] <jenkynolasco11> You do eithermodule.exports = { apikey : blablah... etc }
+[2016-12-04 22:58:09] <jenkynolasco11> Or
+[2016-12-04 22:58:44] <jenkynolasco11> const config = { values }; module.exports = config ;
+[2016-12-04 23:12:53] <as3k> ahhhh okay Thanks@jenkynolasco11
+[2016-12-04 23:13:02] <as3k> ill try that and see if it works
+--------------------------------------------------------------------------------------------------
+[2016-12-05 21:23:35] <FantasyIsBae> Is there any way to make a key system with node js?
+[2016-12-05 21:42:59] <ewnd9> Fantasy-Agario: What do you exactly mean by a key system?
+[2016-12-05 21:59:06] <d3x0r> { key : value } ... just javascript....
+[2016-12-06 03:31:18] <abhisekp> Fantasy-Agario: For {key: value} system, tryLevelDB http://leveldb.org/\nRedis https://redis.io/
+--------------------------------------------------------------------------------------------------
+[2016-12-06 19:48:58] <loopyNid> can i ask something about node.js + socket.io here?
+[2016-12-06 19:49:07] <Egoscio> Go ahead
+[2016-12-06 19:49:13] <loopyNid> hey :)
+[2016-12-06 19:49:15] <loopyNid> so
+[2016-12-06 19:49:44] <Egoscio> Not sure if I'll be able to answer because class just started, but there are many capable and knowledgeable people here.
+[2016-12-06 19:50:15] <loopyNid> i am sending from the client side a messege to the server (for a chat)
+[2016-12-06 19:50:23] <loopyNid> but i am getting NaN
+[2016-12-06 19:50:34] <loopyNid> so it is sending numbers
+[2016-12-06 19:50:43] <loopyNid> how do i send a string?
+[2016-12-06 19:50:54] <Egoscio> Can you post your code here?
+[2016-12-06 19:53:42] <loopyNid> sorry that i posted it like this
+[2016-12-06 20:00:23] <d3x0r> you can edit and add ```   before and after the code to format it better
+[2016-12-06 20:00:41] <loopyNid> yes is saw it after
+[2016-12-06 20:00:55] <d3x0r> you can still go back and click edit (right side of message by timstamp)
+[2016-12-06 20:01:11] <loopyNid> oh ok
+[2016-12-06 20:02:05] <d3x0r> it's accent ticks (under the ~ )
+[2016-12-06 20:03:21] <loopyNid>  [<-CODE->] 
+[2016-12-06 20:03:47] <loopyNid>  [<-CODE->] 
+[2016-12-06 20:06:11] <jenkynolasco11> Did socket.io connect on the client side?
+[2016-12-06 20:06:22] <jenkynolasco11> NikkCh: 
+[2016-12-06 20:07:12] <loopyNid> i am getting message : NaN
+[2016-12-06 20:07:45] <loopyNid> i am just not getting the text i type in only numbers
+[2016-12-06 20:09:08] <jenkynolasco11> Look at this [<-CODE->] 
+[2016-12-06 20:09:17] <jenkynolasco11> What's wrong in it?
+[2016-12-06 20:10:32] <jenkynolasco11> That's the problem you have, right there
+[2016-12-06 20:14:19] <loopyNid> wups embarrasing....
+[2016-12-06 20:14:32] <loopyNid> thanks for your time
+[2016-12-06 20:14:50] <jenkynolasco11> You're welcome :)
+--------------------------------------------------------------------------------------------------
+[2016-12-07 06:13:40] <ankur1163> I really need help I am using auth0I i am confused about the flow. Do Ii need to set 2 html pagesone page login page with its own react login componentand if it authenticatesthen i send another html page, lets say welcome page andits own componentorit has to be one html page with unmounting login component and mounting welcome componentany idea?
+[2016-12-07 14:18:21] <abdalla> ankur1163: hey Ankur, I don’t know if it will helps you but check my project on github [<-LINK->] 
+[2016-12-07 14:44:24] <ankur1163> thanks@abdalla
+[2016-12-07 14:44:27] <ankur1163> let me take a look
+[2016-12-07 14:45:55] <ankur1163> I am using auth0@abdalla
+--------------------------------------------------------------------------------------------------
+[2016-12-08 10:32:43] <abhisekp>  [<-CODE->] e.g. [<-CODE->] How do you differentiate a sync from an async function?reveal me your secrets 
+[2016-12-08 10:34:54] <abhisekp> Yes ,I need to create a config file for production and dev  December 8, 2016 1:04 PM [<-CODE->] 
+
+--------------------------------------------------------------------------------------------------
+[2016-12-08 18:45:10] <miha-> Hello. Does anyone have some knowledge why if I manually put files on mounted folder (Linux), fs.watch() detects new file, if it is put in the same folder by costumer via webdav, it does not recognize new file. Can i do something?
+[2016-12-08 18:45:11] <miha-> tnx
+[2016-12-08 18:54:18] <miha-> miha-: Hello to@/all. Does anyone have some knowledge why if I manually put files on mounted folder (Linux), fs.watch() detects new file, if it is put in the same folder by costumer via webdav, it does not recognize new file. Can i do something?tnx
+[2016-12-08 19:28:56] <ikennaobimoro> hi@miha
+--------------------------------------------------------------------------------------------------
+[2016-12-08 19:35:03] <ErrorOperator> Hello everyone! I was wondering if anyone has any knowledge of the google-maps package?
+[2016-12-08 19:44:25] <ErrorOperator> I have require("google-maps") in one of my controller js files
+[2016-12-08 19:44:51] <ErrorOperator> But it seems to be passing in null for the root parameter and throwing the following exception: "Google-maps package can be used only in browser"
+[2016-12-08 19:45:02] <ErrorOperator> I'm not entirely sure where it gets the root from!
+[2016-12-08 21:52:01] <abdalla> ErrorOperator: I like to use react-google-maps in my react projects
+[2016-12-08 21:52:11] <abdalla>  [<-CODE->] 
+[2016-12-08 21:53:07] <abdalla> hope it is helpful :)
+--------------------------------------------------------------------------------------------------
+[2016-12-09 09:17:54] <roby2001> I have a quick question: When developing for the cloud how do you split your local code from the cloud code in such a way that you don't write too much local code ?
+[2016-12-09 10:32:44] <vipulpandeykv> try to create a config file and set your environment while starting server
+--------------------------------------------------------------------------------------------------
+[2016-12-09 02:49:41] <jbelmont> anybody here have good insight on testing streams in node.js
+[2016-12-09 13:00:16] <imatmati> jbelmont: You'll certainly have to write doubles and spies streams. You can start there to understand the idea of creating a stream  : [<-LINK->] 
+[2016-12-09 13:01:56] <jbelmont> imatmati: how about in tape.jsvar stream = test.createStream(opts)Create a stream of output, bypassing the default output stream that writes messages toconsole.log(). By default stream will be a text stream of TAP output, but you can get an object stream instead by setting opts.objectMode to true.`
+[2016-12-09 13:12:59] <jbelmont> imatmati: I will check out your markdown file as well
+--------------------------------------------------------------------------------------------------
+[2016-12-09 18:55:39] <BrianCodes33> im getting errors in my console when i try to run commands for nodeschool
+[2016-12-09 18:55:43] <BrianCodes33> any help please
+[2016-12-10 01:43:52] <dancancro>  [<-CODE->]  [<-CODE->]  [<-CODE->]  [<-CODE->]  [<-CODE->] 
+--------------------------------------------------------------------------------------------------
+1 [2016-12-14T06:46:54] <Art1sta> I wanna need beginner web developers for work with,does anyone interest
+--------------------------------------------------------------------------------------------------
+[2016-12-14 14:51:15] <bergben> Hi guys. I am trying to combine angular 2 with .net mvc 5 and I seem to lack some basic understanding here regarding npm. I have so far only used angular2 combined with meteor so I didn't have to deal with this things...Do I need to have node.js on the server for deployment? Like locally in development I just install my packages with npm install etc. in node_modules. But for deployment I don't want to have node.js there, can I just bundle node_modules somehow or how does it work?
+[2016-12-14 19:30:38] <maxwellsmart84> bergben: I would assume where you are deploying would have node installed - for example on Heroku you provide build instructions and your package.json file and it does the rest.  I believe digital ocean works the same way.  I have not done it in a while so I am recalling this from memory
+[2016-12-14 19:36:11] <ljharb> bergben: you need node at build time, and you should be deploying an archived tarball to production
+[2016-12-14 19:41:58] <bergben> I understand I need it at build time, but I would rather build it beforehand and then deploy the build. By now I am thinking about bundling the whole node_modules using [<-LINK->] and then just include that file... Do you think that would work? Or how do you mean "deploying an archived tarball", how would I do that@ljharb?@maxwellsmart84I know how it works for Heorku, unfortunately this project is for a company for a client on a custom server and communicating them to install node.js and npm then do npm install etc. just makes it complicated for them and should be avoided at all costs
+[2016-12-14 19:43:34] <bergben> I appreciate your help by the way guys@ljharband@maxwellsmart84
+[2016-12-14 19:50:14] <maxwellsmart84> bergben: are you deploying to a UNIX env?
+[2016-12-14 19:55:22] <bergben> Actually I am not even the one deploying so I don't even know that, I just know it should be as easy as possible and therefore the frontend stuff should just be bundled and included and good to go. No prior extra work on the server needed, so it shouldn't even matter which server I deploy to...
+[2016-12-14 20:12:10] <maxwellsmart84> yeah that is tricky
+[2016-12-14 20:12:11] <maxwellsmart84>  [<-LINK->] 
+[2016-12-14 20:12:32] <maxwellsmart84> i found that - so its possible to run package manager through a proxy - just not sure if its your solution
+[2016-12-14 20:30:26] <bergben> I actually got it runnng using rollupjs. It gets an entry point and follows up all the import statements and creates a minified bundle out of that. This is freaking awesome. All I have to do in production now is include one single javascript file
+[2016-12-14 20:30:37] <bergben> maxwellsmart84: Thanks though, I appreciate your effort!
+[2016-12-14 21:38:05] <ljharb> bergben: you're definitely supposed to build, tar up the build, and then deploy that archive later
+[2016-12-14 21:38:26] <ljharb> bergben: which means you only need node to make the build. you don't need it in production at all, unless you're using a node service
+--------------------------------------------------------------------------------------------------
+1 [2016-12-17T20:22:09] <d3x0r> is there an easy way to get  current function name? I could throw-catch a new Error and parse it from there... (yes it might be called 'Anonymous')
+2 [2016-12-17T20:25:14] <ljharb> d3x0r: no but why would you want it
+3 [2016-12-17T20:25:29] <ljharb> you're inside the function you wrote, so you can just reference it.
+4 [2016-12-17T20:26:24] <d3x0r> ya.... copyable code snippets... or just tags that reference where they are...shrugno macros so can't really hide it as easily as C
+5 [2016-12-17T20:27:38] <ljharb> what would be the use case?
+6 [2016-12-17T20:27:47] <ljharb> (also, code snippets should never be blindly copied)
+--------------------------------------------------------------------------------------------------
+1 [2016-12-17T20:31:51] <nico-sorice> Hi!
+2 [2016-12-17T20:32:01] <nico-sorice> I need help installing NOdeJs
+3 [2016-12-17T20:32:30] <nico-sorice> I copied the extracted files to /opt/nodejs, now what?
+4 [2016-12-17T20:33:17] <d3x0r>  [<-LINK->]
+5 [2016-12-17T20:43:13] <nico-sorice> Thanks!
+6 [2016-12-17T20:43:40] <ljharb> or [<-LINK->]
+--------------------------------------------------------------------------------------------------
+1 [2016-12-18T15:43:14] <dgdiablogist> anyone here with the WASD code keyboard?
+--------------------------------------------------------------------------------------------------
+[2016-12-18 21:27:26] <aleksandar-b> how to get font proxima nova for free?
+[2016-12-18 21:31:01] <d3x0r> samosale:  [<-LINK->] ?  $199.99 list price - must be a great font
+[2016-12-18 21:31:35] <aleksandar-b> d3x0r: sorry, wrong group....but tnx anyway 
+[2016-12-19 11:58:20] <wizardnet972>  [<-LINK->] 
+--------------------------------------------------------------------------------------------------
+[2016-12-20 04:03:08] <eliecerthoms> Hello, how can I call a function defined in the server side from the client?I have a grid that should be dynamically filled with different posts from a database, I am using a module for pagination and thus would need to make an AJAX request to the server so that it paginates and returns the required information.
+[2016-12-20 04:03:28] <eliecerthoms> Am I overcomplicating things? Kinda seems like it.
+[2016-12-20 04:54:18] <kailashyogeshwar85> eliecerthoms: if you are using template engines like nunjucks or pug with express there are filters in nunjucks which you can use in client side as well as app.locals which are readily available in views for doing manipulation on data and returning formatted data [<-CODE->] 
+[2016-12-20 05:08:28] <eliecerthoms> I went with something different, since I wanted to do Ajax I configured an endpoint, like so: [<-CODE->] 
+[2016-12-20 05:10:12] <eliecerthoms> kailashyogeshwar85: But my concern is now it not being secure and anyone who knows the path could retrieve said posts. Maybe not a BIG security flaw, but you never know. So is there something to protect it?
+[2016-12-20 09:26:26] <jamiemcconnell> eliecerthoms: you would have to put some authentication middleware into your route to handle authentication, however this adds complexity to your application. Have a look at PassportJS [<-LINK->] its a very nice authentication library if you need it.If the posts are public i’d leave it open and if you’re worried about hammering your backend you could look at rate limitingexpress-rate-limit [<-LINK->] 
+[2016-12-20 15:12:47] <eliecerthoms> jamiemcconnell: Thank you! I use passport.js in my app and you're right, posts indeed are public. And thank you for the rate-limit module!
+--------------------------------------------------------------------------------------------------
+1 [2016-12-21T15:37:01] <ksmith0001> Hey guys, I am trying to add a image to my tribute page, but it appears with a box with a x in it.  What should I do next?
+--------------------------------------------------------------------------------------------------
+1 [2016-12-22T17:01:05] <neunygph> can anyone show me how to handle internal server error with Nodejs please ?
+2 [2016-12-22T17:01:08] <neunygph> 500 error
+3 [2016-12-22T17:02:03] <neunygph> I would like to redirect user to a custom error page instead of displaying the default error page
+--------------------------------------------------------------------------------------------------
+[2016-12-22 04:12:51] <d3x0r> besides 'global' how can I get to global space?  (GLOBAL and root were removed between 5 and 6)
+[2016-12-22 05:01:17] <ljharb> d3x0r: globalis the proper way, and is actually going to be standardized in the language soon
+[2016-12-22 18:21:25] <d3x0r> ljharb: re 'global' you answer sounds like 'no, there is no other way'... but just to confirm.  I'm asking to patch obvious things so code doesn't jailbreak the VM sandbox.    When I started I know there was GLOBAL but that went away, and seems there's only really the one reference, or saving 'this' in the primary JS file run ?   There's no method/function to return global?
+[2016-12-22 20:10:18] <ljharb> d3x0r: there's alwaysFunction('return this')()
+[2016-12-22 20:10:36] <ljharb> d3x0r: but a vm doesn't share itsglobalwith the outer one
+--------------------------------------------------------------------------------------------------
+[2016-12-22 19:08:32] <okbel_twitter> Hi!
+[2016-12-22 19:08:53] <okbel_twitter> Is there a way to intercept with node all http requests that chrome is doing?
+[2016-12-22 19:50:08] <jenkynolasco11> okbel_twitter: maybe [<-LINK->] would help
+[2016-12-22 19:50:22] <jenkynolasco11> Hola mundo o/
+[2016-12-22 20:01:06] <okbel_twitter> Thanks! But I need to intercept that call and redirect it to somewhere else
+[2016-12-22 20:01:17] <okbel_twitter> like a proxy
+[2016-12-22 20:03:20] <jenkynolasco11> Are you hacking the network? 
+[2016-12-22 20:04:07] <okbel_twitter> nop
+[2016-12-22 20:04:35] <okbel_twitter> its to my local i dont want to go to some places and I'd like to be redirected :)
+[2016-12-22 20:30:12] <jenkynolasco11> okbel_twitter: well, I think that's more of a network topic there
+[2016-12-22 22:07:58] <StefanYohansson> okbel_twitter: yeah, you are looking for something like a MITM "attack" on your local network.  :p
+[2016-12-22 22:14:08] <StefanYohansson> you can write a node mitm proxy client and proxy your browser traffic through that proxy.. so when man in the middle proxy intercept something, it will redirect you.
+[2016-12-22 22:14:14] <StefanYohansson> okbel_twitter: 
+[2016-12-22 22:15:41] <StefanYohansson> like [<-LINK->] or [<-LINK->] 
+[2016-12-23 01:31:11] <okbel_twitter> I'll take a look.@StefanYohanssonthanks!
+--------------------------------------------------------------------------------------------------
+1 [2016-12-26T07:18:11] <manthu522> Hi Team, I am implementing a TCP socket connections using net module.. Here I am facing issue while receiving more data on the socket.on('data') event ...Issue is: Not able to get the data at a time , I am getting as chunks ??
+2 [2016-12-26T07:18:42] <manthu522> Is there any builtin lib to do this job?? Please help me here
+3 [2016-12-26T07:22:26] <manthu522> I got some help from stack overflow: [<-LINK->]
+--------------------------------------------------------------------------------------------------
+//First reply has no Q user
+[2016-12-27 15:24:04] <wzrd-clss> npm on windows cant seem to use a node_modules folder installed inside a vagrant shared folder. why is that?
+[2016-12-27 15:25:50] <wzrd-clss>  [<-LINK->] 
+[2016-12-27 20:18:48] <bojoer> wzrd-clss: which version are you running of npm?
+[2016-12-27 20:19:36] <bojoer> I've had same issue and solved this after reading up on similar issue on github. You need to change proxy settings within grunt also
+[2016-12-27 20:20:00] <bojoer> I'll look this up and paste the url to the solution
+[2016-12-27 20:20:41] <Davec0> wzrd-clss: 3.10.9
+[2016-12-27 20:21:25] <bojoer> wzrd-clss: take a look here
+--------------------------------------------------------------------------------------------------
+[2016-12-29 15:05:47] <igoramidzic> Building this app with node: [<-LINK->] Its almost complete :)
+[2016-12-29 15:25:45] <M-Hc0d3> igoramidzic: you fucking cunt.. you tried it
+[2016-12-29 15:26:40] <igoramidzic> M-Hc0d3: What? lol
+[2016-12-29 15:29:51] <igoramidzic> M-Hc0d3: Care to explain yourself?
+[2016-12-29 15:34:47] <M-Hc0d3> Nah mate. Just stop being a cunt. Nobody click on that link. He's gathering your information if you log into that fake website.
+--------------------------------------------------------------------------------------------------
+[2016-12-30 07:55:04] <sandipsubedi> has anyone here worked with Nodemailer before ?
+[2016-12-30 07:55:38] <Egoscio> I tinkered with it, yeah. Not thorough though, just using it in place of sendmail.
+[2016-12-30 07:56:32] <sandipsubedi> I am trying to send email using it. it gives status  code 250. and no error but I never receive the email.
+[2016-12-30 07:56:48] <sandipsubedi> I have no idea what's going on@EgoscioAny guesses ?
+[2016-12-30 07:56:55] <Egoscio> Mind sharing your code?
+[2016-12-30 07:58:27] <sandipsubedi> var transporter = nodemailer.createTransport({host: 'e31.ehosts.com',port: 465,secure: true, // use SSLauth: {user:'contact@quizcollections.com',pass: 'MY_PASSWORD'}}); [<-CODE->] 
+[2016-12-30 07:58:58] <sandipsubedi>  [<-CODE->] 
+[2016-12-30 07:59:35] <Egoscio> Just a quick remark, the "from" line has an unbalanced greater than sign. Not sure if that does much.
+[2016-12-30 08:00:22] <sandipsubedi> I will check real quick.
+[2016-12-30 08:00:37] <Egoscio> I wouldn't expect any miracles from such a thing, but sure.
+[2016-12-30 08:01:55] <sandipsubedi> Yeah. it didn't do anything
+[2016-12-30 08:02:12] <sandipsubedi> Do you want to see my log message. If that makes any sense to you ?
+[2016-12-30 08:03:07] <Egoscio> Uhh, any information could help, I guess. To be quite frank, I never used nodemailer in a production environment, so my advice to you can be quite limited when it comes to mail servers etc.
+[2016-12-30 08:03:19] <Egoscio> (if it's a problem regarding that aspect)
+[2016-12-30 08:03:56] <VMBindraban> M-Hc0d3: The site is no more :) heroku killed it
+[2016-12-30 08:04:49] <sandipsubedi> Egoscio: I have nothing to loose ! You never know 
+[2016-12-30 08:05:01] <sandipsubedi> {"accepted":["sandipsubedi@outlook.com","sandip.subedi27@gmail.com"],"rejected":[],"response":"250 OK id=1cMs7V-0008DM-I5","envelope":{"from":"contact@quizcollections.com","to":["sandipsubedi@outlook.com","sandip.subedi27@gmail.com"]},"messageId":"151ccce5-cf4e-d5e6-fe47-796db863cfa7@quizcollections.com"}
+[2016-12-30 08:11:01] <Egoscio> Hmm. Just tried to run locally. Didn't send... not using a mail server though, and pointing it to gmail, so I guess there's some security involved (if it's sending at all)
+[2016-12-30 08:11:45] <sandipsubedi> Yeah I was getting Auth issues both on Gmail and Outlook.
+[2016-12-30 08:12:10] <sandipsubedi> I have my website email account so i was using that . I can easily send email using the web portal from that website email.
+[2016-12-30 08:12:26] <sandipsubedi> When I use the credentials and SMTP information it doesn't work.
+[2016-12-30 08:12:37] <sandipsubedi> I will probably contact their technical support
+[2016-12-30 08:12:56] <sandipsubedi> Egoscio: Thank you so much for trying though
+[2016-12-30 08:13:06] <Egoscio> Hopefully you'll get some better results in doing so. Best of luck. I'll continue to fiddle with this though :P
+[2016-12-30 08:13:24] <Egoscio> haven't touched nodemailer in quite some time, pretty useful
+[2016-12-30 08:14:14] <sandipsubedi> Yeah it looks very promising. But I am guessing there is a firewall or something that is preventing it.
+[2016-12-30 08:14:33] <Egoscio> Probably. Your code looks fine to me.
+--------------------------------------------------------------------------------------------------
+[2016-12-30 10:22:53] <ghost~56e73c4e85d51f252ab8ca7c>  [<-LINK->] 
+[2016-12-30 10:22:56] <ghost~56e73c4e85d51f252ab8ca7c> This is my todo app Mongoose Schema:var todoSchema  = new mongoose.Schema({    title: String,    todoItem: [{        text: String,        completed: {type: Boolean, default: false}    }]});How can I add multiple "todoItem"From this kind of form?
+[2016-12-30 10:29:14] <ghost~56e73c4e85d51f252ab8ca7c> How to add more selecting same todo title
+[2016-12-30 10:30:12] <kailashyogeshwar85> use mongo $push operator for pushing to todoItem array
+[2016-12-30 10:31:35] <ghost~56e73c4e85d51f252ab8ca7c> can you give me a example code for this, I am very new to node, Kindly help
+[2016-12-30 10:32:31] <kailashyogeshwar85> Hemanshu: this will solve your problem [<-CODE->] 
+[2016-12-30 10:34:07] <Egoscio> There's a model for the schema, right?
+[2016-12-30 10:34:20] <ghost~56e73c4e85d51f252ab8ca7c> Yes
+[2016-12-30 10:35:59] <ghost~56e73c4e85d51f252ab8ca7c> var todoSchema  = new mongoose.Schema({    title: String,    todoItem: [{        text: String,        completed: {type: Boolean, default: false}    }]});var Todo = mongoose.model('Todo', todoSchema);
+[2016-12-30 13:21:10] <ghost~56e73c4e85d51f252ab8ca7c> kailashyogeshwar85: Thank You so much!!
+--------------------------------------------------------------------------------------------------
+[2016-12-30 17:37:47] <kevinludwig> does anyone know what prevents async/await from moving from behind the--harmonyflag?
+[2016-12-30 18:03:53] <ljharb> kevinludwig: a newer version of v8 being used in node
+[2016-12-30 18:05:55] <kevinludwig> does latest v8 have it not behind the--harmonyor is there still some open issue on the v8 side?
+[2016-12-30 18:11:43] <ljharb> kevinludwig: i don't know, i only use v8 through chrome and node, but i think they've fixed the issues that the current node v8 has
+[2016-12-30 18:12:00] <ljharb> you basically just have to wait and see. you should use babel regardless.
+[2016-12-30 19:30:54] <kevinludwig> ljharb: meh, I'm trying to avoid babel on the server side, I like the feature set node has. its just missing async/await and es6 import
+[2016-12-30 19:56:20] <ljharb> why?
+[2016-12-30 19:56:29] <ljharb> babel produces faster code, because old code is faster than new code.
+[2016-12-30 19:59:08] <kevinludwig> thats interesting, I guess. is it like 100% faster? Or am I jumping through hoops and penny pinching for 12%.
+[2016-12-30 19:59:57] <kevinludwig> usually the performance bottlenecks of my services are something external from my service itself. Like a data store or an external service that I have to call.
+[2016-12-30 20:46:56] <Egoscio> ljharb: I know this is true, but do you know if there are some benchmarks online?
+[2016-12-30 20:52:08] <ljharb> egoscio: i don't know. but perf is the least important reason to avoid it. they're horrific for code quality/maintainability/clarity.
+[2016-12-30 20:52:21] <ljharb> oh wait sorry, you're talking about babel not getters/setters
+[2016-12-30 20:52:23] <ljharb> getting my wires cross
+[2016-12-30 20:52:25] <ljharb> ed
+[2016-12-30 20:52:43] <Egoscio> Yeah, sorry. Should've mentioned that.
+[2016-12-30 20:52:57] <ljharb> i don't think there's benchmarks, no
+[2016-12-30 20:53:06] <ljharb> but in general, it's because new syntax hasn't had time to be optimized like old syntax has.
+[2016-12-30 20:54:53] <Egoscio> Ah, I see. Normally, you'd think the native way is the fastest way, but certainly not in this case... So newer versions of node that run old code are just as good as old versions of node, right?
+[2016-12-30 21:02:31] <ljharb> typically better. never worse.
+[2016-12-30 21:02:57] <Egoscio> Alright, cool. Thanks
+--------------------------------------------------------------------------------------------------
+[2016-12-31 17:40:57] <cdfairchild> Hi all.  I'm trying to install the latest version of nodejs on Ubuntu, and am having problems.  I've got the tar file (node-v6.9.2-linux-x64.tar.gz) copied to my Downloads directory ... but I'm not sure how to install it from there.  Any suggestions?
+[2016-12-31 17:42:04] <cdfairchild> By the way, I tried to install using NPM, but it seems to install an earlier version (4.2.6)
+[2016-12-31 17:49:43] <foxjazz> did you t ry apt-get?
+[2016-12-31 17:50:05] <foxjazz> sudo apt-get install lnodejs
+[2016-12-31 17:50:16] <foxjazz> sudo apt-get install nodejs
+[2016-12-31 17:51:14] <cdfairchild> I did, but it installs the same 4.2.6 version that I already have
+[2016-12-31 18:48:48] <SISheogorath> cdfairchild: check [<-LINK->] 
+[2016-12-31 19:16:37] <ljharb> don't use apt to install node.
+[2016-12-31 19:16:42] <ljharb> install from source, or use [<-LINK->] 
+[2016-12-31 19:16:45] <ljharb> cdfairchild: ^
+[2016-12-31 19:17:03] <ljharb> (and you can't install node with npm in a meaningful way)
+--------------------------------------------------------------------------------------------------
+[2017-01-02 10:51:42] <phoenisx> Hi... I am learning NodeJS from LearnYouNode.... There's a task in it called JugglingAsync, whose right code is [<-CODE->] While I am doing something exactly same, but my Answer is different, it doesn't work in sync - [<-CODE->] Please can someone tell me where the problem is
+[2017-01-03 04:44:32] <phoenisx> Hi... I am learning NodeJS from LearnYouNode.... There's a task in it called JugglingAsync, whose right code is [<-CODE->] While I am doing something exactly same, but my Answer is different, it doesn't work in sync - [<-CODE->] Please can someone tell me where the problem is
+[2017-01-03 05:17:09] <imVinayPandya> Shub1427: what is the error are getting???
+[2017-01-03 05:31:16] <phoenisx> Actually I was having trouble to print the response in sequence (in the order, the URLs were called).Anyways, found some help in HelpFrontEnd FreeCodeCamp Community... [<-CODE->] Anyways Thanks for ur reply @imVinayPandya
+[2017-01-03 05:32:45] <imVinayPandya> good@Shub1427
+--------------------------------------------------------------------------------------------------
+1 [2017-01-03T17:07:58] <IamManchanda> Yo
+--------------------------------------------------------------------------------------------------
+[2017-01-03 23:01:04] <timojarv> Dunno, I went with the web developer bootcamp on udemy, I was very happy with it and it was only 15
+[2017-01-03 23:01:15] <timojarv> Now doing advanced react and redux
+[2017-01-03 23:01:51] <AlexandreResende> hmm awesome...
+[2017-01-03 23:01:58] <AlexandreResende> is this bootcamp good ?
+[2017-01-03 23:06:51] <timojarv>  [<-LINK->] A great value for that kind of money, it goes through front end and back end.
+[2017-01-03 23:06:57] <timojarv> and right now it is only 10
+[2017-01-03 23:07:56] <AlexandreResende> awesome, thanks for sharing :D
+[2017-01-04 00:07:57] <mjago> timojarv: thanks also for the heads-up on that course
+[2017-01-04 00:37:57] <IvenOne> ad. everywhere
+[2017-01-04 00:38:10] <IvenOne> awesome
+--------------------------------------------------------------------------------------------------
+1 [2017-01-05T14:25:14] <mskutle> Is there a way to install the fs module independently from the whole node framework?
+2 [2017-01-05T14:25:23] <mskutle> “npm install fs” or something
+3 [2017-01-05T14:25:56] <bweston92> fsnot being the built in one?
+4 [2017-01-05T14:26:08] <mskutle> I want it to be the built in one
+5 [2017-01-05T14:26:20] <bweston92> Then it is always going to be in there
+6 [2017-01-05T14:26:27] <bweston92> Do not require fs in dependencies.
+7 [2017-01-05T14:26:39] <bweston92> You don't get what you expect
+8 [2017-01-05T14:26:41] <mskutle> well, I’m using JSPM for an Electron app and require(‘fs’) doesn’t work, so I was thinking of doing “jspm install npm:fs"
+9 [2017-01-05T14:26:53] <bweston92> npm fs: [<-LINK->]
+10 [2017-01-05T14:27:09] <bweston92> But please let me know when you solve as I am about to use Electron and will need file system access
+11 [2017-01-05T14:27:33] <mskutle> yeah I know that’s not the one I’m looking for.. basically I wanna know what its real name is
+12 [2017-01-05T14:27:43] <mskutle> (if it exists as its own package)
+13 [2017-01-05T14:28:59] <mskutle> I’ve used fs with an electron app before, you can do “var fs = require(‘fs)” just like any node app. I’m using Aurelia framework with this app, and it uses Systemjs and JSPM for package management. That’s what’s causing problems for me :/
+14 [2017-01-05T14:30:33] <bweston92> Ah ok, no idea sorry
+15 [2017-01-05T14:36:31] <mskutle> sure, thanks anyway :)
+--------------------------------------------------------------------------------------------------
+[2017-01-05 21:44:17] <Lorengamboa> Hello im making somekind of social network with nodejs. Is any1 interested in joinning?
+[2017-01-05 21:47:16] <gitKearney> Lorengamboa: how much you gonna pay me? :-p
+[2017-01-05 21:47:32] <Lorengamboa> gitKearney: its open code...
+[2017-01-05 21:47:36] <Lorengamboa> :D
+[2017-01-05 21:55:34] <ljharb> are you unaware that facebook exists?
+[2017-01-05 21:56:21] <jenkynolasco11> ^
+[2017-01-06 02:53:01] <igoramidzic> Lorengamboa: as long as I get half when it makes billions :)
+[2017-01-06 05:16:39] <mooshoe> yea ill join
+[2017-01-06 05:16:42] <mooshoe> how rude you guys are
+[2017-01-06 05:16:53] <mooshoe> itll take like 5 seconds of your life
+--------------------------------------------------------------------------------------------------
+[2017-01-06 05:56:10] <santosh> Take a time into look into this problem, code written in node with twitter API. [<-LINK->] 
+[2017-01-06 09:11:58] <santosh> Anybody here to help me?
+[2017-01-06 09:12:27] <Egoscio> Most likely so.
+[2017-01-06 09:14:03] <santosh> I have a noob problem related to Twitter API, I've wrote a twitter bot in node, here is link to my actual question: [<-LINK->] , and this is link to code: [<-LINK->] , please read the full description in first link..
+[2017-01-06 09:19:46] <Egoscio> I personally can't really say. Only used the twitter module for taking in data from a stream, not posting anything back... Maybe someone else here with some practical experiencing using the Twitter API might be able to help out.
+--------------------------------------------------------------------------------------------------
+1 [2017-01-06T13:51:40] <jerometea> Hi, on my website I want to display 5 items per page. Is it possible on DynamoDB to retrieve only 5 items if I go directly to the page 10 for instance ?
+--------------------------------------------------------------------------------------------------
+[2017-01-07 10:30:16] <Lorengamboa> does this mean i shuld never make the queries in the controllers?
+[2017-01-07 10:30:22] <Lorengamboa> idk if its a stupid question
+[2017-01-07 10:30:40] <Lorengamboa> but I feel its more confo to make them in the same layer of the models
+[2017-01-07 10:31:01] <Egoscio> idk tbh. i guess it\'s a matter of style... I don\'t use mongoose or mongodb anymore so I don\'t know any "recommended " style
+[2017-01-07 11:46:45] <egaleme> why don't you use mongodb?
+[2017-01-07 11:48:20] <egaleme> anyone tried nodaljs.com before?
+[2017-01-07 11:49:16] <Egoscio> I moved on to Postgres. I experienced database corruption a few times while using mongo, and it wasn't pretty.
+[2017-01-07 11:51:41] <egaleme> ok.Egoscio. now that's why i am moving to nodaljs.postgres built in.
+--------------------------------------------------------------------------------------------------
+[2017-01-12 22:31:18] <palodequeso> So I've been digging around, and I can't seem to find a planned features roadmap, so my question is, when is async/await supposed to drop?
+[2017-01-12 22:50:53] <Hesulan> palodequeso: async/await is supposed to land in v8 LTS in march, node.js won\'t get it right away, though it\'s already available behind the "--harmony" flag in node 7
+[2017-01-12 22:53:35] <palodequeso> ah, interesting, I didn't know it was available behind harmony, but March then, sweet
+[2017-01-12 22:53:40] <palodequeso> I'll plan rewrites accordingly haha
+[2017-01-12 23:08:57] <ljharb> don't use the harmony flag ever
+[2017-01-12 23:09:06] <ljharb> the async/await implementation behind the harmony flag has a ton of memory leaks and bugs
+[2017-01-12 23:09:23] <ljharb> the harmony flag is for broken features - if it was reliable in production, it'd be unflagged.
+[2017-01-12 23:19:40] <Hesulan> Harmony is for not-quite-production-ready features, horribly broken features get their own separate flags. It does have a bunch of memory leaks and bugs though, so don't use itin production.
+[2017-01-12 23:41:35] <ljharb> "production-ready" isn\'t a spectrum
+[2017-01-12 23:41:53] <ljharb> either way, the harmony flags are for testing v8. they're not meant for production use, and you're a bad person if you use them.
+--------------------------------------------------------------------------------------------------
+1 [2017-01-13T03:28:00] <foxjazz> dumb node question
+2 [2017-01-13T03:28:42] <foxjazz> initializing this: var arguments = {command: "",file: ""}
+3 [2017-01-13T03:29:33] <foxjazz> but then I loopo through an array and set the variables. but after the loop, in debug arguments seem to get set back to the initialzed values or are never changed
+4 [2017-01-13T03:34:16] <mayvn10> There's no dumb node question. Node is awesome.
+5 [2017-01-13T03:37:25] <foxjazz> I think I need to pass in the variable
+6 [2017-01-13T03:39:55] <foxjazz>  [<-CODE->]
+7 [2017-01-13T03:40:02] <foxjazz> why doesn't this work?
+8 [2017-01-13T03:42:52] <mayvn10> Im mobile and I can't see the right half of this code
+9 [2017-01-13T03:42:56] <mayvn10> What are the arguments?
+10 [2017-01-13T03:43:05] <mayvn10> I see Val and index
+11 [2017-01-13T03:44:32] <foxjazz>  [<-CODE->]
+12 [2017-01-13T03:45:01] <foxjazz> I just want to set the arguments object that's defined there
+13 [2017-01-13T03:45:05] <foxjazz> in this loop
+14 [2017-01-13T03:48:45] <jenkynolasco11> If you defined arguments outside (which in my  opinion is a bad way to name a variable due to the global arguments object from Function), why are you usingthis.arguments? Maybe it's not working cuz it's thinking it's theargumentsvariable from the function itself
+15 [2017-01-13T03:48:46] <Egoscio> foxjazz: thisis referring to the function's context, I think.
+16 [2017-01-13T03:49:45] <jenkynolasco11> Try naming it different from arguments (maybe use args, for example), and access it the normal way (args.command = val, etc)
+17 [2017-01-13T03:49:47] <foxjazz> well Iput taht in there because it didn't set it
+18 [2017-01-13T03:49:48] <jenkynolasco11> foxjazz:
+19 [2017-01-13T03:50:23] <foxjazz> I will name it myargs
+20 [2017-01-13T03:51:21] <Egoscio> Yeah, arguments is a reserved keyword.
+--------------------------------------------------------------------------------------------------
+1 [2017-01-13T10:44:34] <andy-kheng> Hello anyone knows how i can console log the progress of a createwritestream?
+2 [2017-01-13T11:09:53] <anchnk> andy-kheng: using writestream event handler ?
+--------------------------------------------------------------------------------------------------
+1 [2017-01-16T05:27:57] <theromie> (index):22 Error: (SystemJS) XHR error (404 Not Found) loading [<-LINK->] Error: XHR error (404 Not Found) loading [<-LINK->] at XMLHttpRequest.wrapFn [as _onreadystatechange] ( [<-LINK->] ) at ZoneDelegate.invokeTask ( [<-LINK->] at Zone.runTask ( [<-LINK->] ) at XMLHttpRequest.ZoneTask.invoke ( [<-LINK->]
+2 [2017-01-16T05:28:04] <theromie> I am getting this error
+3 [2017-01-16T05:36:39] <psbyron3> theromie: It looks like your server can't find your client
+4 [2017-01-16T05:36:58] <psbyron3> What is your filepath? Are you using express
+5 [2017-01-16T05:37:06] <theromie> ejs
+6 [2017-01-16T05:37:16] <theromie>  [<-CODE->]
+7 [2017-01-16T05:37:22] <theromie> this is my server.js
+8 [2017-01-16T05:37:49] <psbyron3> typically you would need to write './client' in the express.static line
+9 [2017-01-16T05:38:26] <psbyron3> How are your files structured? Do you have a client and server folder? And the server.js is within the server folder?
+10 [2017-01-16T05:38:41] <theromie> Error: Failed to lookup view "index.html" in views directory "C:\\Users\\Romil Lodaya\\Desktop\\node./client/views"
+11 [2017-01-16T05:39:55] <theromie>  [<-LINK->]
+12 [2017-01-16T05:40:04] <psbyron3> Okay awesome
+13 [2017-01-16T05:40:19] <psbyron3> So is your server.js in a folder? Or just within the root?
+14 [2017-01-16T05:40:38] <theromie> root
+15 [2017-01-16T05:41:07] <psbyron3> okay cool
+16 [2017-01-16T05:41:21] <psbyron3> What OS are you using btw?
+17 [2017-01-16T05:41:28] <theromie> Windows
+18 [2017-01-16T05:41:31] <psbyron3> Okay
+19 [2017-01-16T05:42:26] <theromie> i guess ts is not generating js file
+20 [2017-01-16T05:42:46] <psbyron3> I use mac so I don't know if there is a difference in filepath. But you are supposed to preface a filepath with './client' in MacOS.Now, it looks like you have everything in an app folder in client
+21 [2017-01-16T05:43:00] <psbyron3> Do you need to serve up 'client/app' instead of just client
+22 [2017-01-16T05:43:20] <theromie> app.use(express.static(path.join(__dirname, 'client/app')));
+23 [2017-01-16T05:43:26] <theromie> like this?
+24 [2017-01-16T05:43:35] <psbyron3> Yea, try that
+25 [2017-01-16T05:43:40] <theromie> ok
+26 [2017-01-16T05:44:07] <theromie> not working
+27 [2017-01-16T05:44:20] <psbyron3> You don't always have to use path.join as well. You can serve up with express.static()
+28 [2017-01-16T05:44:52] <psbyron3> Based off your error codes, it just looks like the files are quite connecting based off the filepath.
+29 [2017-01-16T05:47:32] <theromie>  [<-LINK->]
+30 [2017-01-16T05:49:35] <psbyron3> So one of my apps loads the client successfully by the line:```app.use(express.static('../client'));
+31 [2017-01-16T05:49:43] <psbyron3>  [<-CODE->]
+32 [2017-01-16T05:50:57] <psbyron3> The two dots represent climbing out a folder layer. My server.js is inside of a server folder. That server folder is housed by the root folder. The client is in that same layer, thus the two dots. I understand it's different for windows so I can't help with an exact translation.
+33 [2017-01-16T05:51:30] <theromie> should i create server folder?
+34 [2017-01-16T05:53:42] <psbyron3> It is a matter of preference. For me I always have a client folder and a server folder. I house my server.js along with the controllers, models, and db folders to properly route to the database. It isn't necessary but as your app complicates, it is nice to have
+35 [2017-01-16T05:55:20] <theromie> ok
+36 [2017-01-16T05:56:23] <psbyron3> In order to serve up your client properly, I recommend you check out the express documentation. Read up more on express.static, path.join etc. to get a better understanding of serving your apphttp://expressjs.com/Check out routing
+37 [2017-01-16T06:29:03] <theromie> psbyron3: no change same error
+38 [2017-01-16T19:13:39] <psbyron3> theromie: Are you typing localhost:3000/app/main.js into your URL? This is not how you access your js files. You need to use your html files. If you route it correctly, you should be able to view your index.html from localhost:3000. The js files need to be sourced through your index.html with a script tag, typically at the end of the <body>. You can't try to view the js file in your browser, rather it is not going to give you the result you are looking for
+39 [2017-01-16T19:19:34] <timojarv> theromie: The server address is different from the file system directories. You need to set up a route matching your request URL and execute the code when the route is requested
+--------------------------------------------------------------------------------------------------
+1 [2017-01-16T22:42:51] <ghetolay> Hi how can I implementation some primary execution queue to run severalsexec()?
+2 [2017-01-16T22:46:01] <ghetolay> well [<-LINK->] seems to be what I'm looking for
+--------------------------------------------------------------------------------------------------
+1 [2017-01-18T04:59:43] <Marc-Moeller> Hi anybody keen to help me with a twitter bot that tweets airfares ? I need to know how to access data that the api returns: [<-LINK->]
+2 [2017-01-18T04:59:54] <Marc-Moeller> How do I get the cost or city value for example ?
+3 [2017-01-18T05:02:37] <kailashyogeshwar85> Marc-Moeller: if its the json you can just parse response and access it using [<-CODE->]
+4 [2017-01-18T05:05:23] <Marc-Moeller> Hi@kailashyogeshwar85I believe it's json, do I need to specify the value of airport[0] ?
+5 [2017-01-18T05:06:04] <Marc-Moeller> currently I'm getting ```        console.log(util.inspect(data.response.trips.data.airport, { depth : 8 }));                                              ^TypeError: Cannot read property 'trips' of undefined    at C:\\Users\\sabrina\\Desktop\\YoutubeCode\\node2\\flight.js:35:47    at Request._callback (C:\\Users\\sabrina\\Desktop\\YoutubeCode\\node2\\node_modules\\qpx-client\\utils.js:18:17)    at Request.self.callback (C:\\Users\\sabrina\\Desktop\\YoutubeCode\\node2\\node_modules\\request\\request.js:186:22)    at emitTwo (events.js:106:13)    at Request.emit (events.js:191:7)    at Request.<anonymous> (C:\\Users\\sabrina\\Desktop\\YoutubeCode\\node2\\node_modules\\request\\request.js:1081:10)    at emitOne (events.js:96:13)    at Request.emit (events.js:188:7)    at IncomingMessage.<anonymous> (C:\\Users\\sabrina\\Desktop\\YoutubeCode\\node2\\node_modules\\request\\request.js:1001:12)    at IncomingMessage.g (events.js:291:16)```
+6 [2017-01-18T05:07:00] <kailashyogeshwar85> Marc-Moeller: it must be response.data
+7 [2017-01-18T05:07:57] <Marc-Moeller> response.data.trips.data.airport ?
+8 [2017-01-18T05:09:14] <kailashyogeshwar85>  [<-CODE->]
+9 [2017-01-18T05:11:01] <Marc-Moeller> ```
+10 [2017-01-18T05:11:10] <Marc-Moeller>  [<-CODE->]
+11 [2017-01-18T05:11:45] <Marc-Moeller> Can I use your code to replace the console log in the else function ?
+12 [2017-01-18T05:11:54] <kailashyogeshwar85> yes absolutely
+13 [2017-01-18T05:12:49] <kailashyogeshwar85> go step by step first response.data and then nest it again response.data.trips
+14 [2017-01-18T05:16:57] <Marc-Moeller> Sorry I'm not quite there yet.
+15 [2017-01-18T05:17:09] <Marc-Moeller> kailashyogeshwar85: could you do me a huge favor and add the code here: [<-LINK->]
+16 [2017-01-18T05:33:21] <kailashyogeshwar85> done@Marc-Moeller [<-LINK->]
+17 [2017-01-18T05:33:57] <Marc-Moeller> kailashyogeshwar85: you are awesome, thank you ! I will try it now
+18 [2017-01-18T05:38:35] <Marc-Moeller> kailashyogeshwar85: thanks buddy ! It works perfectly
+--------------------------------------------------------------------------------------------------
+[2017-01-19 05:59:09] <monanisa94_twitter> My gcc version is below than required for uWebSockets. Should I upgrade gcc or is there any other way ?
+[2017-01-19 05:59:44] <mitchell931993> gcc the compiler ?
+[2017-01-19 05:59:49] <monanisa94_twitter> Yeah
+[2017-01-19 06:00:01] <ljharb> you should probably upgrade gcc.
+[2017-01-19 06:00:09] <ljharb> but you don't need a binary module for websockets
+[2017-01-19 06:00:11] <ljharb> find a pure JS one
+[2017-01-19 06:00:32] <mitchell931993> Ah that makes sense, i was wondering what you needed a c compiler for nodejs
+[2017-01-19 06:00:54] <monanisa94_twitter> what you mean by pure js one jordan ?
+[2017-01-19 06:01:36] <monanisa94_twitter> I have socketio but need to change it to uws. Installed uws without any errors, but after that when running server.js, I got this error
+[2017-01-19 06:01:38] <monanisa94_twitter> Error: Compilation of WebSockets has failed and there is no pre-compiled binary available for your system. Please install a supported C++11 compiler and reinstall the module 'uws'.
+[2017-01-19 06:07:15] <monanisa94_twitter> mitchell931993: @ljharbhow can I do without binary ?
+[2017-01-19 06:07:56] <ljharb> actually maybe just usewd
+[2017-01-19 06:07:58] <ljharb> *ws
+[2017-01-19 06:08:09] <ljharb> altho [<-LINK->] works too
+[2017-01-19 06:08:44] <mitchell931993> Choosing another library would be a good idea. The purpose of using a package manager like  nopm is so that your dependancies are automatically managed. Using a module that requires a binary reduces that ease of use.
+[2017-01-19 06:09:30] <monanisa94_twitter> But I need to use uws, because its more scalable and faster
+[2017-01-19 06:09:42] <monanisa94_twitter> I have this atm;var socket = require('uws').Server;var express = require( 'express' );var http = require( 'http' );var app = express();var wss = new socket({ port: 50000 });
+[2017-01-19 06:10:28] <ljharb> why is it "more scalable and faster"
+[2017-01-19 06:10:49] <monanisa94_twitter> explained here [<-LINK->] 
+[2017-01-19 06:11:13] <garethmcc> monanisa94_twitter:  [<-ISSUE->] 
+[2017-01-19 06:12:40] <garethmcc> the result that seems to have worked there was to use npm cache clean, and set wsEngine to ws
+[2017-01-19 06:13:31] <monanisa94_twitter> Hmm, but I am nt using "wsEngine",  have this;var socket = require(\'uws\').Server;
+[2017-01-19 06:14:12] <monanisa94_twitter> on the installation requirements on uws, it says gcc version should be min 4.8, mine is 4.4 I think thats the problem ?
+[2017-01-19 06:17:09] <ljharb> so, you're just believing the readme of a project blindly telling you it's faster? :-)
+[2017-01-19 06:17:21] <ljharb> don't worry about what's more scalable than what you're using until you need to scale past it.
+[2017-01-19 06:17:24] <monanisa94_twitter> no, have more. Wait a sec
+[2017-01-19 06:17:45] <garethmcc> monanisa94_twitter: that sounds like the problem
+[2017-01-19 06:17:48] <garethmcc> try upgradng gcc
+[2017-01-19 06:17:56] <mitchell931993> I’d say unless its a client request, use what ever you’re more comfortable with
+[2017-01-19 06:18:30] <monanisa94_twitter> jordan:  [<-LINK->] look at the first answer
+[2017-01-19 06:18:58] <monanisa94_twitter> garethmcc: -bash: upgradng: command not found
+[2017-01-19 06:19:12] <garethmcc> i wasnt giving you a command to run
+[2017-01-19 06:19:18] <monanisa94_twitter> I dont have sudo or yum, is that a problem
+[2017-01-19 06:19:32] <mitchell931993> what OS are you using?
+[2017-01-19 06:19:42] <monanisa94_twitter> whats the command to check ?
+[2017-01-19 06:19:56] <mitchell931993> it’ll be what ever you installed on your machine
+[2017-01-19 06:20:13] <monanisa94_twitter> I have online web server from hosting company
+[2017-01-19 06:20:14] <mitchell931993> Like is it dbeian, ubuntu, mint. IE what version of linux have you installed
+[2017-01-19 06:20:16] <mitchell931993> ooh
+[2017-01-19 06:20:37] <mitchell931993> if its debian based, then tryapt-get update gcc
+[2017-01-19 06:20:37] <monanisa94_twitter> how can I check whether its ubuntu or debian
+[2017-01-19 06:20:47] <mitchell931993> but you might need sudo access
+[2017-01-19 06:20:53] <monanisa94_twitter> -bash: apt-get: command not found
+[2017-01-19 06:23:21] <mitchell931993> I’m not really sure about updating on any other platform.
+[2017-01-19 06:24:37] <monanisa94_twitter> ok lets forget updating gcc, what you meant by using pure js ?
+[2017-01-19 06:24:48] <monanisa94_twitter> not needing binary
+[2017-01-19 06:30:58] <mitchell931993> I think he’s just refering to using a different module
+[2017-01-19 06:32:54] <monanisa94_twitter> ok
+[2017-01-19 06:36:46] <monanisa94_twitter> anyone here using socketio here@mitchell931993
+--------------------------------------------------------------------------------------------------
+1 [2017-01-19T11:37:46] <anchnk> Is it possible to create an instance of anurlObjectdirectly or one should useurl.parsefor that purpose ? I was wondering if there is a way to build such object directly from each URL components (host, protocol...) rather than using a plain string for that purpose ?
+--------------------------------------------------------------------------------------------------
+1 [2017-01-19T13:28:36] <atodicebear> Can someone Help me to send a Result to the Client?The normal way I go is to respond with results [<-CODE->] But now Iam working withhttps://github.com/peteward44/node-svn-ultimateAnd the Functions are not giving a Normal Response as Return but inside itself [<-CODE->] How can I send the Data Result to my Client inside this svn Function?
+--------------------------------------------------------------------------------------------------
+1 [2017-01-23T12:18:40] <farukhkhan21_twitter> does nodejs requires access modifiers like other languages? private, protected, public? or if I create another module the functions and variables outside the range of exports is automatically private?
+2 [2017-01-23T12:23:18] <anchnk> Yes to the second statement
+3 [2017-01-23T12:24:27] <farukhkhan21_twitter> so no need different access modifiers r8?
+4 [2017-01-23T12:27:01] <anchnk> Right
+--------------------------------------------------------------------------------------------------
+1 [2017-01-23T21:16:57] <Kmakks> is anyone here ?
+2 [2017-01-23T21:20:01] <garethmcc> Just ask your question and if anyone is around that can help they will do so :)
+--------------------------------------------------------------------------------------------------
+1 [2017-01-24T02:26:34] <sheetalgiri> hi
+2 [2017-01-24T02:26:40] <sheetalgiri> anybody here?
+3 [2017-01-24T02:27:20] <d3x0r> many are; but usually respond to meaningful questions
+--------------------------------------------------------------------------------------------------
+1 [2017-01-24T11:05:47] <farukhkhan21_twitter> any tool to test TLS connections to server?
+2 [2017-01-24T11:54:35] <galvesribeiro> farukhkhan21_twitter: check this [<-LINK->]
+3 [2017-01-24T12:01:04] <farukhkhan21_twitter> was looking for any windows tool
+--------------------------------------------------------------------------------------------------
+1 [2017-01-25T06:36:27] <kailashyogeshwar85> how to add unique id to field declared as array in mongoose i know this can work if we define schema for array field but how can this be done without defining schema for array field [<-CODE->]
+--------------------------------------------------------------------------------------------------
+1 [2017-01-25T07:29:12] <farukhkhan21_twitter> Suppose I got two modules and one app entry point where all modules are loaded. How to check from module 2 that module 1 is loaded on the entry point or not
+2 [2017-01-25T08:55:07] <anchnk> Module are loaded as soon as you require them and usually you want to do that once at the top of your app entry point
+3 [2017-01-25T08:55:17] <anchnk> 1
+--------------------------------------------------------------------------------------------------
+1 [2017-01-26T11:42:02] <uxpaul> Hello everyone,I need your help !I’m trying to use dropbox api [<-LINK->] I have the list of file when I  get  but how I could have a link of this files for accessing to  ?Thanks ;)
+--------------------------------------------------------------------------------------------------
+1 [2017-01-26T13:41:10] <jruts> Hi there
+2 [2017-01-26T13:41:43] <jruts> Not sureifit is the right chat, but when should I be using arrow functions and when should I not?
+3 [2017-01-26T13:47:12] <VictorQueiroz> Arrow functions are made to preserve the parent context. So if you're inside a method of a class and need to access its context without creating a var self = this; variable, you should probably use arrow function@jruts
+4 [2017-01-26T13:48:18] <VictorQueiroz> also for quick expressions likeconst doSomeCalc = a => a * 10000
+--------------------------------------------------------------------------------------------------
+1 [2017-01-27T19:30:51] <Syntactual> is this the room to talk about contributing?
+--------------------------------------------------------------------------------------------------
+1 [2017-01-28T14:40:21] <steven-ossorio>  [<-CODE->]
+2 [2017-01-28T14:40:41] <steven-ossorio>  [<-CODE->]
+3 [2017-01-28T14:41:30] <steven-ossorio> I follow Colts lecture but ran into this problem and haven't got a clue why. Does someone see something that I'm missing within my code? all help would be appreciated.
+4 [2017-01-28T14:42:27] <Brotherhood2014> check function have property 'push'
+5 [2017-01-28T14:42:55] <Brotherhood2014> I think you don't exports it
+6 [2017-01-28T14:44:14] <steven-ossorio>  [<-CODE->]
+7 [2017-01-28T14:44:30] <steven-ossorio>  [<-CODE->]
+8 [2017-01-28T14:44:50] <steven-ossorio>  [<-CODE->]
+9 [2017-01-28T14:45:21] <steven-ossorio> Brotherhood2014: The push is within the seedDB function to the bottom.
+10 [2017-01-28T14:46:07] <steven-ossorio> Brotherhood2014: As for exports. I thought I did it right. module.exports is used to export the file (model) out into seedDB as it's called on the top. I also added it to app.js incase that was also an issue.
+11 [2017-01-28T14:58:24] <Brotherhood2014> your connection with mongodb is still live ?
+12 [2017-01-28T15:01:09] <steven-ossorio> Brotherhood2014: Yup. Would copy and past but it's seriously long.
+13 [2017-01-28T15:01:49] <Brotherhood2014> Can I show it on teamviewer
+14 [2017-01-28T15:01:53] <Brotherhood2014> ?
+15 [2017-01-28T15:02:33] <steven-ossorio> Sorry, what is teamviewer? if it'll help I won't mind showing it anywhere. Just trying to figure out how this problem occured.
+16 [2017-01-28T15:02:50] <steven-ossorio> garethmcc: Gist?
+17 [2017-01-28T15:03:22] <Brotherhood2014> ok you can upload it on github
+18 [2017-01-28T15:03:31] <Brotherhood2014> and I can help you debug
+19 [2017-01-28T15:03:43] <steven-ossorio> Okay. Give me a minute while I upload it.
+20 [2017-01-28T15:06:43] <steven-ossorio> Brotherhood2014:  [<-LINK->]
+21 [2017-01-28T15:06:54] <steven-ossorio> Brotherhood2014: Thank you for spending your time to help me with this.
+22 [2017-01-28T15:07:32] <Brotherhood2014> no problem
+23 [2017-01-28T15:07:33] <Brotherhood2014> :))
+24 [2017-01-28T16:31:23] <Brotherhood2014> ok
+25 [2017-01-28T16:31:32] <Brotherhood2014> I can hanle it
+26 [2017-01-28T16:39:19] <steven-ossorio> Brotherhood2014: Wait I'm confused. So it not suppose to be err first but instead last?
+27 [2017-01-28T16:40:07] <Brotherhood2014> it's simple
+28 [2017-01-28T16:40:32] <Brotherhood2014> you can check param into create function
+29 [2017-01-28T16:40:43] <steven-ossorio> Brotherhood2014: Just confused since in everything (including Colts video) it's always (err, varbiable)
+30 [2017-01-28T16:40:44] <Brotherhood2014> you can see it
+31 [2017-01-28T16:41:09] <Brotherhood2014> in Colts video he use node version ?
+32 [2017-01-28T16:41:34] <steven-ossorio> I believe so. The code I have is exactly what Colt used.
+33 [2017-01-28T16:42:00] <steven-ossorio> Although for some reason I ran into this error. I went back to all his videos multiple times but I don't see any difference to what I've written.
+34 [2017-01-28T16:42:00] <Brotherhood2014> becaues I never use like this
+35 [2017-01-28T16:42:27] <Brotherhood2014> don't believe that =.=
+36 [2017-01-28T16:42:44] <steven-ossorio> Interesting. I didn't know there was other alternatives when mentioning (err, variable). I thought that was the set to always be that way
+37 [2017-01-28T16:43:24] <steven-ossorio> Possibly should join C9 so I can access his documents to compare. Going to change it to the format you did and see what happens.
+38 [2017-01-28T16:44:47] <steven-ossorio> Brotherhood2014: Wow it worked. Thanks but now this just blew my mind haha
+39 [2017-01-28T16:45:57] <Brotherhood2014> wait
+40 [2017-01-28T16:46:15] <Brotherhood2014> I need a minute to check it
+41 [2017-01-28T16:46:39] <steven-ossorio> No problem. This is a learning curve for me. Since this is a first seeing them in reverse order.
+42 [2017-01-28T17:09:54] <steven-ossorio> aledoroshenko: Seems like I can't find it online as well. But from the results I'm getting it seems that -r may be an abbreviation of require
+43 [2017-01-28T17:11:11] <aledoroshenko> Yes it is, thanks!https://nodejs.org/api/cli.html#cli_r_require_module
+44 [2017-01-28T17:12:55] <steven-ossorio> aledoroshenko: np :)
+45 [2017-01-28T17:13:37] <steven-ossorio> aledoroshenko: Also thanks for the link. Saving it
+--------------------------------------------------------------------------------------------------
+1 [2017-01-28T22:54:06] <Nelty78> I'm starting a one-page application that will be 90% front-end. I will however need a small bit of back-end to safely store/retrieve data. Assuming my user is signed in using Google on the index page, and that the app sends a post/get request to another page (the back-end), will I be able to use the Google session on that back-end page to authenticate the request?
+2 [2017-01-28T23:35:40] <grantgeorge> Nelty78: yes. I recommend passportjs
+3 [2017-01-28T23:54:11] <Nelty78> Thank you@grantgeorge, I will look into it.
+
+--------------------------------------------------------------------------------------------------
+[2017-01-31 14:51:19] <ghost~57cbeee340f3a6eec0635807> Interesting question: Do you publish packages to NPM transpiled from ES6 -> ES5, or should the people transpile it themselves when using them in an ES5 environment (especially interesting for browser based packages)? What do you think?
+[2017-01-31 15:17:11] <jruts> Why would you make it harder for yourself than it needs to be?
+[2017-01-31 15:19:32] <ghost~57cbeee340f3a6eec0635807> jruts: I don't know. For me it's simpler to publish es6 and let the consumer transpile and optimize their bundle, but what's the right thing to do?
+[2017-01-31 15:24:18] <ghost~57cbeee340f3a6eec0635807> Ah, k, missunderstood that one 
+--------------------------------------------------------------------------------------------------
+[2017-01-31 17:36:23] <steven-ossorio> Hello everyone. If someone can please explain to me what's the difference between comment._id, comment.id and comment_id? I saw colt have used all three kinds so far and it has left people completely lost now on which convention to use in the future. I know in RoR I've always used comment.id so I thought in NodeJS it was conventional to to it as comment._id until he started adding the other two.
+[2017-01-31 17:36:33] <steven-ossorio> For all those who help me understand. Thank you in advance.
+--------------------------------------------------------------------------------------------------
+1 [2017-02-01T12:07:37] <mitchell931993> Hey guys, i’m having trouble figuring out why one of my routes arent firing for an app
+2 [2017-02-01T12:07:43] <mitchell931993> i’ve got these two lines
+3 [2017-02-01T12:07:43] <mitchell931993> router.get('/board/1/power/hour/2016-10-03/2016-10-03/*', (req, res) => {  res.send('testing');});router.get('board/:boardid/:type/:duration/:startdate/:enddate?', fetchBoardData);
+4 [2017-02-01T12:07:50] <mitchell931993> ‘’'router.get('/board/1/power/hour/2016-10-03/2016-10-03/*', (req, res) => {  res.send('testing');});router.get('board/:boardid/:type/:duration/:startdate/:enddate?', fetchBoardData);‘''
+5 [2017-02-01T12:08:10] <mitchell931993>  [<-CODE->]
+6 [2017-02-01T12:08:43] <mitchell931993> i’ve confirmed the firest function fires, but when i comment out, the second one does not fire, even thought it captures the exact smae data
+--------------------------------------------------------------------------------------------------
+[2017-02-02 04:47:56] <shengIsbored_twitter> why do people go for mean instead of lamp
+[2017-02-02 04:48:07] <shengIsbored_twitter> it seems similar to me
+[2017-02-02 04:49:06] <mitchell931993> i only really have familiarity with lamp. Remember that lamp itself is a combination of systems. Most people use lamp for php developement because it normally installs apache along side which then takes care of your php parsing.
+[2017-02-02 05:04:58] <garethmcc> Lamp stands for Linux, apache, php, mysql
+--------------------------------------------------------------------------------------------------
+1 [2017-02-03T05:10:04] <martinheidegger> Hello guys, I am looking for a leveldown implementation that stores in fs but locks per key and not per db.
+--------------------------------------------------------------------------------------------------
+[2017-02-03 19:19:36] <BossMode> hi
+[2017-02-03 19:20:22] <BossMode> I have this kind of JSON, { _id: 5894d5e4dfc0f3184bffbff8,ip: 'xxx.xxx.xxx.xxx',createdAt: 2017-02-03T19:17:56.401Z,'iv:':Binary {_bsontype: 'Binary',sub_type: 0,position: 16,buffer: <Buffer ec 64 9c bc e2 e0 c2 44 bc 2b a7 9b 26 7f 43 e2> } }
+[2017-02-03 19:20:37] <BossMode> How do I access 'iv' part from the result object?
+[2017-02-03 19:21:01] <BossMode> result.iv returns undefined, other things work fine, like result.CreatedAt
+[2017-02-03 19:29:31] <BossMode> Damn...[2017-02-03 19:34:52] <BossMode> How can I do it without serializer?
+[2017-02-03 19:35:01] <BossMode> I just wanna access the damn 'iv' Why is that in quotes???
+[2017-02-03 19:37:03] <Log-of-e> usually I set encoding to utf-8 for stream containing string. maybe there is something similarr for bson
+[2017-02-03 19:43:24] <MasiahX> you can  use the bracket notation
+[2017-02-03 19:44:00] <BossMode> you mean result['iv'] that didn't work
+[2017-02-03 19:45:17] <otroboe> The quotes have a:inside, maybe it's like thatresult['iv:']
+[2017-02-03 19:45:21] <BossMode> idk, even result[0] for example doens twork
+[2017-02-03 19:45:39] <BossMode> let me try
+[2017-02-03 19:46:41] <BossMode> that was it, thank otroboe
+--------------------------------------------------------------------------------------------------
+[2017-02-04 17:10:12] <c0debase> Hello World!
+[2017-02-04 17:10:32] <c0debase> I'm trying to '''npm install node-jsdom''' but getting the dreaded node-gyp rebuild error
+[2017-02-04 17:11:00] <c0debase> Failed at the contextify@0.1.15 install script 'node-gyp rebuild'.\nnpm ERR! Make sure you have the latest version of node.js and npm installed.\nnpm ERR! If you do, this is most likely a problem with the contextify package,\nnpm ERR! not with npm itself.
+[2017-02-04 17:11:30] <c0debase> im using nvm
+[2017-02-04 17:11:31] <d3x0r> there's an npm-debug.log ?
+[2017-02-04 17:11:59] <c0debase> just opened her up
+[2017-02-04 17:12:33] <c0debase> where should i paste it?
+[2017-02-04 17:13:47] <d3x0r> I wouldn't know if there's anything useful... uhmm..  searchign ofr 'paste code' there's a whole page of options
+[2017-02-04 17:16:15] <c0debase> ended up usingnpm install jsdom-no-contextifyas it appeared that this was the problem dependancy
+[2017-02-04 17:16:27] <c0debase> about to give it a whirl
+[2017-02-04 17:16:35] <c0debase> forget you contenxtify! whoever you are
+--------------------------------------------------------------------------------------------------
+1 [2017-02-07T11:37:36] <paulinfrancis> Hi all, I've just re-written the history of the project I'm working on to purge all remnants of  previously checked in node modules. I've also chosen to use yarn with an offline cache. The only snag is node-sass, which requires a binding. It's not a problem locally, where I have internet access, but the build server is not online, and is therefore not able to download the binding. Does anybody know if it's possible to cache vendor bindings somehow?
+--------------------------------------------------------------------------------------------------
+1 [2017-02-08T23:01:07] <neckron> hi there
+2 [2017-02-08T23:02:49] <neckron> i've just finished my first microservice, if  you want check it please [<-LINK->] thanks!
+--------------------------------------------------------------------------------------------------
+[2017-02-09 20:14:15] <okramovic> hi folks. im stuck with pretty basic problem. im trying to split my client script into modules, just to practice this problematics and approach. problem is i cant make it run on browser - im using plain ES5 and require method, but browser console says that require is not defined.. how do i make my little modules work in browser too?
+[2017-02-09 20:35:01] <d3x0r> okramovic: uhmm require.js ... smoothie... ?
+[2017-02-09 20:36:16] <okramovic> d3x0r: require i thought was basic method to work with modules of js, but i learned now that its ES6 feature so i ll go with some transpiller
+[2017-02-09 21:26:14] <d3x0r> okramovic: or something like webpack or browserify which would resolve the requires into a flat output file
+
+--------------------------------------------------------------------------------------------------
+[2017-02-10 15:38:04] <neunygph> Hello all
+[2017-02-10 15:45:08] <neunygph> Is it necessary to gzip a response while the request header already include 'gzip':true' or the response is already zipped?
+--------------------------------------------------------------------------------------------------
+[2017-02-10 23:28:57] <neunygph> hello
+[2017-02-10 23:29:35] <neunygph> can anyone let me know what are the use case for event emit and when do we need to remove the event listerner ?
+[2017-02-10 23:29:45] <neunygph> i'm new to event emitter
+--------------------------------------------------------------------------------------------------
+1 [2017-02-11T01:18:34] <AskYous> Can I tell NodeJS to log errors to a file? I can't see what error is bring thrown on my production environment.
+--------------------------------------------------------------------------------------------------
+[2017-02-11 02:45:06] <talonbragg> Hey can some body do thisnpm install --save mrnodeand tell me if it works
+[2017-02-11 02:45:06] <talonbragg> ?
+[2017-02-11 02:51:24] <dcstone09> talonbragg: yep it works
+[2017-02-11 02:54:45] <talonbragg> thanks@dcstone09appreciate it!
+--------------------------------------------------------------------------------------------------
+[2017-02-11 17:30:50] <talonbragg> Are you making a twitter bot with twit?
+[2017-02-11 17:32:13] <spences10> Yes@talonbraggI'm learning, I've made a few I just want to be able to make the code modular
+[2017-02-11 17:32:42] <talonbragg> Nice, I did that to learn some node with javascript. I am only 12 and I keep learning every day.
+--------------------------------------------------------------------------------------------------
+[2017-02-14 16:49:21] <MojtabaBhz_twitter> hey guys, I'm new in Node.js and webservice I wrote this program but it doesn't work. do you know where my mistake is?
+[2017-02-15 07:42:33] <MojtabaBhz_twitter> var guid = require('guid');var soap = require('soap');  var url = 'https://msproject.sd-c.de/PWA/_vti_bin/psi/statusing.asmx?wsdl';  var args = {sName: 'Testvorgang 1',                 projGuid: '1bbdf07f-9ee8-e611-8100-00155d0a1d05',                 taskGuid: guid.EMPTY,                 assnGuid: guid.create(),                 sumTaskGuid: '30bdf07f-9ee8-e611-8100-00155d0a1d05',                 dtStart: '2017-02-07T08:00:00',                 dtFinish: null,                 actWork: 1,                 fMilestone: false,                 fAddToTimesheet: true,                 fSubmit: false,                 sComment: ''};  soap.createClient('https://msproject.sd-c.de/PWA/_vti_bin/psi/statusing.asmx?wsdl', function(err, client) {client.MyFunction(args, function(err, result) {          console.log(result);      });  });  Hi guys,
+[2017-02-15 07:44:50] <MojtabaBhz_twitter> I wrote this program but I recieved this error ( can not read property MyFunction of undefined
+[2017-02-15 11:08:14] <mpereira13>  [<-CODE->] 
+[2017-02-15 11:08:51] <MojtabaBhz_twitter> Thank you 
+--------------------------------------------------------------------------------------------------
+[2017-02-16 18:30:30] <deostroll> Hello, can anyone confirm getting silent crashes when running on Windows 10. For an mve look here: [<-LINK->] 
+[2017-02-16 18:34:03] <kunalspathak> deostroll: , could you provide a config.json that is required in the repro?
+[2017-02-16 18:39:01] <deostroll> There is an example which reproduces issue towards the end with instructions...
+[2017-02-16 18:49:29] <kunalspathak> Tried the json.txt with 324418 characters and it works for me on Windows 10. May be try attaching windbg and share the call stack?
+--------------------------------------------------------------------------------------------------
+1 [2017-02-17T13:04:23] <jopcode> HI guys, i have this code
+2 [2017-02-17T13:05:16] <jopcode>  [<-CODE->]
+3 [2017-02-17T13:06:27] <jopcode>  [<-CODE->]
+4 [2017-02-17T13:07:10] <jopcode> but when i try print the result, this don't show me nothing(sorry for my bad english)
+5 [2017-02-17T13:07:20] <jopcode> any idea how to do that? :(
+6 [2017-02-17T13:17:05] <jopcode> }
+--------------------------------------------------------------------------------------------------
+[2017-02-17 21:32:39] <dariuszsikorski> yo, I have web server on nodejs (digital ocean droplet) and i would like to add SSL (https) certificate to it... do i have to install SSL on droplet and separate ssl certificate on Namecheap.com domain provider for my node app?
+[2017-02-17 22:43:25] <dragon788> nope, the domain provider doesn't care about the SSL, only users actually connecting to your site
+[2017-02-17 22:43:40] <dragon788> you'll need to setup the SSL via nginx or your web server
+[2017-02-17 22:43:54] <dragon788> LetsEncrypt has some good documentation around many servers
+[2017-02-17 23:52:21] <dudovcic> You'll have to do some work vis npm and node
+--------------------------------------------------------------------------------------------------
+[2017-02-19 14:03:43] <espython> hello folks  could you suggest a practical node.js book for building real web apps step by step
+[2017-02-19 15:17:05] <kriscard> Hi@espythonif you got a answer on this question can you share me also the name of the book please? Thanks in advance ;)
+[2017-02-19 15:30:33] <espython> kriscard: Node.js Essentials, Nodedotjs By Example, Practical Nodejs
+--------------------------------------------------------------------------------------------------
+1 [2017-02-19T20:21:11] <dariuszsikorski> hmm anyone using let's encrypt with their nodejs server?
+2 [2017-02-19T20:21:40] <dariuszsikorski> I'm not sure which path to declare when obtaining certificate with command:
+3 [2017-02-19T20:21:47] <dariuszsikorski> ./letsencrypt-auto certonly --webroot --webroot-path /var/www/YOUR_WWW_PATH/ --renew-by-default --email YOURMAIL@example.com --text --agree-tos -d YOURDOMAIN.com -d www.YOURDOMAIN.com
+4 [2017-02-19T20:22:21] <dariuszsikorski> i have nodejs servers running in ./root/somefolder/
+5 [2017-02-19T20:22:48] <dariuszsikorski> and nginx in completely different folder,
+6 [2017-02-19T20:23:00] <dariuszsikorski> which forwards port :80 to nodejs port :8080
+7 [2017-02-19T20:23:19] <dariuszsikorski> tough stuff for newbie like me
+8 [2017-02-19T20:51:24] <dariuszsikorski> omg, I'm dying
+9 [2017-02-19T20:51:27] <dariuszsikorski> - Congratulations! Your certificate and chain have been saved
+--------------------------------------------------------------------------------------------------
+1 [2017-02-20T05:20:27] <premchander> Hello folks... could you please suggest me to handle memory leak in node application?
+--------------------------------------------------------------------------------------------------
+[2017-02-22 16:42:15] <dudovcic> Anyone who is looking to work on something let me know if you're interested in collaborating on this League of Legends live stats info site: [<-LINK->] 
+[2017-02-22 16:50:01] <andythedandyone> do you have  it live somewhere for us  to check it out? if not could you ?
+[2017-02-22 16:50:14] <andythedandyone> qeqedenq: 
+[2017-02-22 16:50:23] <dudovcic> Sure, ill deploy it on heroku, give me few mins
+[2017-02-22 16:50:35] <dudovcic> But there's not so much to see, I recently started
+[2017-02-22 16:51:44] <dudovcic> Btw it won't work properly because there's no API key inside ( it's forbidden to share )
+[2017-02-22 16:52:02] <dudovcic>  [<-LINK->] 
+[2017-02-22 16:52:54] <andythedandyone> heroku has ENV's where you can set up api etc with no public access
+[2017-02-22 16:53:37] <dudovcic> How could I setup that env on it ?
+[2017-02-22 16:53:48] <dudovcic> WIth CLI or on the site ?
+[2017-02-22 16:54:04] <andythedandyone> both
+[2017-02-22 16:54:18] <andythedandyone> i rather command line, but you could do either one
+[2017-02-22 16:55:12] <andythedandyone> on website, config tab, then  config variables
+[2017-02-22 16:56:28] <dudovcic> Alright, found it
+[2017-02-22 16:57:50] <dudovcic> I deployed it from github, can I just push commits only to heroku ?
+[2017-02-22 16:58:08] <dudovcic> Without touching the code on github
+[2017-02-22 16:58:24] <andythedandyone> yes
+[2017-02-22 16:58:33] <dudovcic> How so ?
+[2017-02-22 16:58:41] <dudovcic> git push heroku master ?
+[2017-02-22 16:58:52] <andythedandyone> yep
+[2017-02-22 16:59:10] <andythedandyone> you have to have it setup on your cmd
+[2017-02-22 16:59:28] <dudovcic> I have it installed
+[2017-02-22 17:02:04] <dudovcic> Allright, got it now
+[2017-02-22 17:02:04] <dudovcic>  [<-LINK->] 
+[2017-02-22 17:02:53] <dudovcic> It just still shows JSON after Ajax call, I didn't do much front end there
+--------------------------------------------------------------------------------------------------
+[2017-02-22 21:29:30] <palodequeso> so is async/await supported out of the box with 7.6?
+[2017-02-22 21:29:45] <reesmanp> --harmony tags
+[2017-02-22 21:29:54] <palodequeso> gotcha
+[2017-02-22 21:30:08] <reesmanp>  [<-LINK->] 
+[2017-02-22 21:30:43] <palodequeso>  [<-CODE->] 
+[2017-02-22 21:30:50] <palodequeso> I get that :(
+[2017-02-22 21:31:16] <reesmanp> node --harmony-async-await
+[2017-02-22 21:31:44] <palodequeso> oh
+[2017-02-22 21:31:46] <palodequeso> I dumb
+[2017-02-22 21:32:06] <palodequeso> same error
+[2017-02-22 21:32:13] <palodequeso> and node -v reports 7.6
+[2017-02-22 21:32:15] <reesmanp> yeah, I didn't read it all lol
+[2017-02-22 21:32:29] <reesmanp> is your function an async function?
+[2017-02-22 21:33:00] <reesmanp> async () => await foo()
+[2017-02-22 21:33:04] <palodequeso>  [<-CODE->] 
+[2017-02-22 21:33:45] <reesmanp> result needs to be in an async function
+[2017-02-22 21:34:01] <palodequeso> oh
+[2017-02-22 21:34:46] <palodequeso> That worked, thanks!
+--------------------------------------------------------------------------------------------------
+[2017-02-23 02:24:43] <vish01> can anyone tell me from where should I start learning NodeJS?
+[2017-02-23 02:24:50] <vish01> I mean which website?
+[2017-02-23 15:25:17] <emeraldtea> vish01: there are some modules within nodejs you can try on c9.io , like how-to-npm and learnyounode
+
+--------------------------------------------------------------------------------------------------
+[2017-02-24 07:32:51] <SanketGuru> i have a dependency problem      i want to use winston logger  but one of my depency uses it as a local pacage ie it in node_module folde 2 level down how can i  import require it in root level files
+[2017-02-24 07:33:47] <SanketGuru> or please give me some link how node modules are loaded
+[2017-02-24 08:00:28] <sotayamashita> SanketGuru:  [<-LINK->] 
+[2017-02-24 08:09:07] <SanketGuru> thank you
+--------------------------------------------------------------------------------------------------
+[2017-02-26 21:21:26] <jtco1010> hello i have a beginner question - is this the right forum to ask it
+[2017-02-26 21:23:30] <jtco1010> well anyways- the question is - what is the size of the nodejs codebase compared to firefox rhino and chrome v8
+[2017-02-26 21:24:01] <jtco1010> and what makes up the differences in size. i am interested in reading through these codebases to better understand javascript implementations
+[2017-02-26 23:01:00] <ljharb> jtco1010: separate from the fact that "codebase size" doesn\'t correlate to anything meaningful, node uses v8 as a dependency, so node is "node + v8"
+[2017-02-26 23:01:05] <ljharb> also, rhino is long since obsolete
+[2017-02-27 01:27:32] <jtco1010> i guess i meant to say spidermonkey or something like that
+
+--------------------------------------------------------------------------------------------------
+[2017-02-27 14:20:54] <microworlds> Still want to ask, not figured it out yet. I thoughtres.json({...});is supposed to send data only and not refresh a page. But my page is refreshing after ending it withres.json({...})I need help please.
+[2017-02-27 14:21:13] <microworlds> When using jquery ajax
+[2017-02-27 14:31:02] <jenkynolasco11> How are you requesting the data?
+--------------------------------------------------------------------------------------------------
+[2017-03-01 13:11:36] <myuseringithub>  [<-CODE->]  [<-CODE->] Thanks
+[2017-03-01 15:02:01] <monanisa94_twitter> Damn nobody here answers. Always everybody ask :'(
+[2017-03-01 15:02:44] <myuseringithub> :'(
+[2017-03-01 15:03:01] <krishna-gara> :)
+[2017-03-01 15:05:43] <WORMSS> I don'tthinkyou can emit an event. But I guess you could output on the standard out, listen for certain phrases, and then dispatch an event.
+[2017-03-01 15:07:19] <WORMSS> I know you can get the "message" event from a parent to a child..
+[2017-03-01 15:07:51] <myuseringithub> Thanks nice worm, this is what I thought I need to do. But it looks like too much effort to put on, as I'm still learning Nodejs.
+[2017-03-01 15:08:15] <maggiesavovska> myuseringithub: : You might want to look at using the node module pm2 to manage your child processes
+[2017-03-01 15:08:31] <myuseringithub> Tried even attaching to globalprocessbut with no luck
+[2017-03-01 15:09:00] <maggiesavovska>  [<-LINK->] 
+[2017-03-01 15:09:18] <myuseringithub> I'll check it thanks
+[2017-03-01 15:09:57] <WORMSS> From Child:process.send({ foo: 'bar' });
+[2017-03-01 15:10:27] <myuseringithub> Okay and then I would just listen to it on parent
+[2017-03-01 15:10:40] <WORMSS>  [<-CODE->] n.on('message', (m) => {  console.log('PARENT got message:', m);});```
+[2017-03-01 15:11:27] <myuseringithub> I need to test that. Looks like it would work
+[2017-03-01 15:12:27] <WORMSS> This is using fork, rather than spawn. I am afraid I do not know the difference..And also remember to fire the send asynchronusly. otherwise you may not get the listener added in time
+[2017-03-01 15:13:21] <WORMSS> Let us know if it works.. As I am just guessing here..
+[2017-03-01 15:13:44] <myuseringithub> Okay just a moment
+[2017-03-01 15:13:46] <bweston92> WORMSS:  [<-LINK->] 
+[2017-03-01 15:14:29] <WORMSS> Thanks@bweston92, I just don't have time to look into it at the moment.
+[2017-03-01 15:15:21] <bweston92> Ok :p
+[2017-03-01 15:29:54] <myuseringithub> WORMSS: Thanks !!! Its working ! The message was passed from forked child process to the parent. Upon recieving the message executed some work on parent process.
+[2017-03-01 15:30:18] <WORMSS> That is great. Glad it worked.
+--------------------------------------------------------------------------------------------------
+1 [2017-03-02T20:37:31] <karann7> anybody wants to build a chrome extention?
+--------------------------------------------------------------------------------------------------
+[2017-03-03 18:11:38] <aaronbeall> Are there any practical examples of the "non-deterministic algorithm" of shrinkwrap causing issues? Its a problem Yarn solves, but I don\'t think I\'ve ever seen or even heard of it before
+[2017-03-03 18:29:58] <ljharb> aaronbeall: no, i've asked the yarn team many times and nobody has yet presented one concrete example where yarn is more deterministic than npm in a way that matters in practice.
+--------------------------------------------------------------------------------------------------
+[2017-03-04 19:23:51] <delirious44> hi, can someone explain to me node js. I feel it is just too hacky, everything depends on something else, it seems like a falling building. No base, or an useless base that doesnt satisfy the need of a developer in the area of backend programming. You either have to depende on all these packages or you cant program anything. Or maybe all of this is because i have just started to learn it
+[2017-03-04 19:48:15] <EmpireWorld> delirious44: The packages not a must have these are helpers to make your job easier.
+[2017-03-04 19:48:39] <EmpireWorld> But built-in packages are important like "fs" these are must have.[2017-03-04 20:32:04] <delirious44> EmpireWorld: Not really, how do you program a general website without express ? you gonna have to route everything long way
+[2017-03-04 21:31:39] <Bakrog> delirious44: what do you want to do and where are u stuck?
+[2017-03-04 21:49:41] <delirious44> Bakrog: Its not a specific problem, im just learning node and i dont like that it is so hacky, really dependent on open source modules for everything
+[2017-03-04 22:08:14] <jlaustill> delirious44: that isn't hacky, it is actually the entire point lol
+[2017-03-04 22:09:38] <delirious44> jlaustill: yeah it is hacky, otherwise it would be stand alone
+[2017-03-04 23:52:55] <jlaustill> delirious44: stand alone is an evil word, you obviously have a very different philosophy than the nodejs crowd on average 
+--------------------------------------------------------------------------------------------------

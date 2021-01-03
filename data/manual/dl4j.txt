@@ -1,0 +1,1240 @@
+[2017-01-05 06:38:58] <d4jnewbie> how to frame a network which reads paragraph and answer question from that?
+[2017-01-05 06:41:39] <tomthetrainer> d4jnewbie: Have you set up the examples and read trhough the code? Start there.
+[2017-01-05 06:42:14] <tomthetrainer>  [<-LINK->] 
+[2017-01-05 06:44:36] <d4jnewbie> i have done all these but this example doesn't statisfy my usecase.
+[2017-01-05 06:45:04] <d4jnewbie> got heldup how to proceed
+[2017-01-05 06:51:11] <AlexDBlack> d4jnewbie: question answering systems are alotmore complicated than most of our examples... you're going to have to research the deep learning literature and build it yourself
+[2017-01-05 07:09:25] <d4jnewbie> can you suggest  some steps to achieve question answering system from paragraph.
+[2017-01-05 07:24:22] <d4jnewbie> agibsonccc: can you suggest some steps to achieve question answering system from paragraph.
+[2017-01-05 07:25:16] <raver119> d4jnewbie: i’d suggest to go to arxiv.org as first step
+[2017-01-05 07:25:27] <raver119> your question doesn’t have simple answer
+--------------------------------------------------------------------------------------------------
+[2016-11-23 13:56:54] <vedina> could you point to an example /doc how to provide dataset with multiple labels  (e.g. RecordReaderDataSetIterator ). The dataset has several labels, each can be yes or no (1 /0) , multiple "yes" could be set.
+[2016-11-23 13:56:55] <raver120> vedina: Welcome! Here's a link to Deeplearning4j's Gitter Guidelines, our documentation and other DeepLearning resources online. Please explore these and enjoy! [<-LINK->] 
+[2016-11-23 14:28:12] <raver120> richgiomundo: Welcome! Here's a link to Deeplearning4j's Gitter Guidelines, our documentation and other DeepLearning resources online. Please explore these and enjoy! [<-LINK->] 
+[2016-11-23 15:21:44] <agibsonccc> vedina: the iterator does that out of the box
+[2016-11-23 15:21:51] <agibsonccc> You just specify the number of labels and you're set
+[2016-11-23 15:28:12] <raver120> hsali: Welcome! Here's a link to Deeplearning4j's Gitter Guidelines, our documentation and other DeepLearning resources online. Please explore these and enjoy! [<-LINK->] 
+--------------------------------------------------------------------------------------------------
+[2016-11-24 10:16:14] <relue> Is it possible to build a (standard) fully recurrent neural network with backpropagation through time in DL4J?
+[2016-11-24 10:16:29] <EdeMeijer> yes
+[2016-11-24 10:16:48] <relue> Because the documentation justs says something about lstm
+[2016-11-24 10:17:02] <EdeMeijer> oh, you mean non-lstm
+[2016-11-24 10:17:08] <EdeMeijer> hmm, not sure about that actually
+[2016-11-24 10:17:35] <agibsonccc> relue: we only do lstms
+[2016-11-24 10:17:43] <agibsonccc> and their bidirectional cousin
+[2016-11-24 10:19:10] <relue> Ok thanks :)
+[2016-11-24 10:19:13] <AlexDBlack> relue: 'vanilla' RNNs wouldn't be hard to implement, but we haven't needed them yet so haven't built them
+[2016-11-24 10:21:09] <relue> It shouldnt be too hard to implement that. It just needs the unfolding of rnn into an mlp and then do slightly modified BP
+[2016-11-24 10:22:09] <relue> But maybe deep rnn aren't suitable for practical use, just researching deep rnn for time series prediction
+[2016-11-24 10:23:32] <EdeMeijer> relue: LSTM is very useful for time series prediction too
+--------------------------------------------------------------------------------------------------
+[2016-11-28 01:38:19] <crockpotveggies> actually while we're on the topic, does remote UI reporting write to file or does the UI put the stats in memory?
+[2016-11-28 01:38:46] <AlexDBlack> crockpotveggies: defaults to in memory though, but you can use either
+[2016-11-28 01:38:48] <AlexDBlack> one sec
+[2016-11-28 01:39:00] <crockpotveggies> hmm, I wonder if that was the cause of my earlier problem
+[2016-11-28 01:39:24] <daredemo> crockpotveggies: I understand it that you can choose
+[2016-11-28 01:39:35] <daredemo> either memory or file
+[2016-11-28 01:39:47] <AlexDBlack>  [<-LINK->] 
+[2016-11-28 01:40:22] <crockpotveggies> public void enableRemoteListener(StatsStorageRouter statsStorage, boolean attach) {what does attach do?
+[2016-11-28 01:40:33] <AlexDBlack> to the UI
+[2016-11-28 01:40:44] <AlexDBlack> you don't actually have to display the data when collecting it
+[2016-11-28 01:40:53] <crockpotveggies> nifty
+[2016-11-28 01:41:25] <crockpotveggies> I assume a single storage can handle multiple training instances?
+[2016-11-28 01:41:39] <AlexDBlack> yep, that's the idea
+[2016-11-28 01:42:02] <AlexDBlack> currently all remote UI info will be posted to a single storage instance
+[2016-11-28 01:43:11] <crockpotveggies> good to know, that's going to save me a lot of headache :)
+--------------------------------------------------------------------------------------------------
+[2016-11-29 14:08:37] <dmmiller612> Hey guys, I have one last question around spark's word2vec implementation (newest version). Is there anyway to update existing weights, like the standalone word2vec version? For example, if I start with a corpus of 1 gb, then add 500 more mbs at a later time, can it do so without overwriting the existing vocab and inMemoryLookupTable? If not, is there a way to merge two lookup tables? (I know you can add vocab cache, but I don't see anything for the inMemoryLookupTable).
+[2016-11-29 14:13:27] <raver119> dmmiller612: there are methods for that, but problem isn't really a merge of two tables, but merge of two huffman trees.
+[2016-11-29 14:14:42] <dmmiller612> ah, I didn't seen anything that did that in the word2vec implementation. Is it apart of the nlp package?
+[2016-11-29 14:14:48] <agibsonccc> dl4j-spark-nlp
+[2016-11-29 14:14:52] <dmmiller612> thanks
+--------------------------------------------------------------------------------------------------
+[2016-11-30 02:24:49] <xuzhongxing> I have a question about how nd4j find the location of native .so files.  All native .so files are packaged into a nd4j-native-0.7.0-linux-x86-64.jar file. But when javacpp loads .so libraries, normally it needs java.library.path to find the .so libraries. But I didn't find this setting.  so I wonder how javacpp find the location of native .so files.
+[2016-11-30 02:32:28] <agibsonccc> xuzhongxing: it's based on the classpath
+[2016-11-30 02:32:53] <agibsonccc> javacpp has a loader class
+[2016-11-30 02:34:16] <xuzhongxing> But when I was trying a simple example of javacpp, it said UnsatisfiedLinkError. I have to set LD_LIBRARY_PATH to suppress it. I have the .so file on my classpath.
+[2016-11-30 02:43:10] <xuzhongxing> AlexDBlack: I figured it out: I need to include platform name in the directory in the jar file that contains the .so files.
+[2016-11-30 02:43:25] <xuzhongxing> Thanks for pointing me to the source code of javacpp
+[2016-11-30 02:45:39] <xuzhongxing> sorry, @ the wrong person.@agibsonccc
+--------------------------------------------------------------------------------------------------
+[2016-12-01 01:55:33] <gforman44> I thought someone at DL4J would like to know:  The PredictGenderTrain  dl4j example frequently does not learn/converge (~50% error through all epochs).   It seems to work reliably when I reduce the   learningRate = 0.005;//GF was .01      So, you might update source code.
+[2016-12-01 01:55:56] <agibsonccc> gforman44: pull request would be even better :D
+[2016-12-01 01:56:54] <gforman44> FYI: when it doesn\'t converge, it repeatedly gets:  "o.d.optimize.solvers.BaseOptimizer - Hit termination condition on iteration 0" errors.
+[2016-12-01 01:57:14] <gforman44> agibsonccc: Sorry, I'm not that sophisticated with GIT yet.
+[2016-12-01 01:57:42] <agibsonccc>  [<-LINK->] 
+[2016-12-01 01:58:01] <agibsonccc> doesn't hurt to learn :D it's only a few commands
+[2016-12-01 01:58:45] <agibsonccc>  [<-LINK->] 
+[2016-12-01 01:58:48] <agibsonccc> It's widely documented
+[2016-12-01 02:12:14] <gforman44> agibsonccc: OK, wow, I did it as a pull request.  That wasn't as hard as I thought.   You can quote me on that for future people.
+[2016-12-01 02:12:23] <agibsonccc> haha awesome
+[2016-12-01 02:12:28] <agibsonccc> congrats! :D
+[2016-12-01 02:12:56] <agibsonccc> Merged :D welcome to the world of open source
+[2016-12-01 02:13:14] <gforman44> This is awesome.
+[2016-12-01 02:13:24] <gforman44> Thanks for giving me a push, Adam.
+[2016-12-01 02:13:30] <gforman44> I mean a pull.
+[2016-12-01 02:13:34] <gforman44> Or whatever.
+[2016-12-01 02:13:35] <agibsonccc> heh
+--------------------------------------------------------------------------------------------------
+[2016-12-01 07:42:05] <akhodakivskiy> Is there an env variable that I can use to specify which BLAS to use (MKL vs openblas)?
+[2016-12-01 07:53:41] <saudet> akhodakivskiy: If MKL is in your library path, it will get used, but you can disable that by setting the java.library.path system property to an empty string
+[2016-12-01 07:55:11] <akhodakivskiy> like this? -Djava.library.path=""
+[2016-12-01 07:56:15] <saudet> Yes, that's one way
+[2016-12-01 07:59:58] <akhodakivskiy> Hm, doesn't quite work.
+[2016-12-01 08:01:30] <akhodakivskiy> works like this though -$ LD_LIBRARY_PATH="" java Main
+[2016-12-01 08:02:25] <akhodakivskiy> There was this bug with OpenBLAS:C  [libopenblas.so.0+0x29bbcf]  sgemm_otcopy+0xef- have you guys had a chance to fix it in master?
+[2016-12-01 08:02:48] <akhodakivskiy> I'm trying to compare MKL vs OpenBLAS performance in my case
+[2016-12-01 08:03:32] <saudet> Sure, it's only a build issue with OpenBLAS
+[2016-12-01 08:05:32] <saudet>  [<-LINK->] 
+[2016-12-01 08:10:56] <akhodakivskiy> So when I build from source - does the build also discover MKL automatically and link against it unconditionally?
+[2016-12-01 08:14:20] <akhodakivskiy> Does this happen when building libnd4j or nd4j?
+[2016-12-01 08:15:11] <agibsonccc> lib
+[2016-12-01 08:34:47] <akhodakivskiy> In my use case OpenBLAS is 3-4 times faster than MKL
+[2016-12-01 08:35:38] <raver119> surprising.
+[2016-12-01 08:37:19] <akhodakivskiy> Yeah..
+[2016-12-01 08:41:24] <akhodakivskiy> On another note I'm also playing with updating existing input INDArray instance instead of allocating it every time, and the version with in-place update is also 2-3 times faster, i.e. [<-CODE->] vs [<-CODE->]
+[2016-12-01 08:44:44] <akhodakivskiy> Would it be possible to have Nd4j reuse the same instances of INDArray instead of allocating them every time - while running activation?
+[2016-12-01 08:45:10] <raver119> that happens on cuda.
+[2016-12-01 08:45:13] <raver119> by default
+[2016-12-01 08:45:18] <raver119> not on cpu though
+[2016-12-01 08:45:25] <akhodakivskiy> Yeah, I'm talking about CPU
+[2016-12-01 08:45:37] <akhodakivskiy> That is while running the model in production
+--------------------------------------------------------------------------------------------------
+[2016-12-01 11:10:53] <benqua> perceptoid: are you going to open an issue for the dropout problem when using keras model? it would be great!
+[2016-12-01 11:19:13] <perceptoid> benqua: I'm doing some tests to learn more. If the problem is obvious feel free to open the issue - I can't describe it just yet.
+[2016-12-01 11:21:33] <benqua> perceptoid: the problem is not obvious for me (I don't know enough of the internal working of dl4j) but it seems it was for@raver119and@agibsonccc. Dropout has different meaning in keras and dl4j
+[2016-12-01 11:31:17] <agibsonccc> benqua: right ok :D
+[2016-12-01 11:31:22] <agibsonccc> that's a simple fix
+[2016-12-01 11:31:37] <agibsonccc> That's why I was telling him to just do something without dropout for now while@turambarfixes this
+[2016-12-01 12:12:28] <benqua> ok. so no need to open an issue to track it down?
+--------------------------------------------------------------------------------------------------
+[2016-12-02 10:18:00] <jvence> Good Morning (again!) Trying to run arbiter and trying to figure out how to create the DataProvider<DataSetIterator> from RecordReaderDataSetIterator. Trying  DataSetIterator dataTrain = new MultipleEpochsIterator(nTrainEpochs, new RecordReaderDataSetIterator(rr, 64)); but this is not splitting the dataset correctly. How to I create a  DataProvider from a RecordReaderDataSetIterator?
+[2016-12-02 10:18:46] <agibsonccc> jvence: you'd want to split the data yourself
+[2016-12-02 10:20:54] <agibsonccc> jvence:  [<-LINK->] 
+[2016-12-02 10:20:59] <agibsonccc> if you pre save the datasets you can use this
+[2016-12-02 10:21:17] <agibsonccc> There's also balance minibatches: [<-LINK->] 
+[2016-12-02 10:21:40] <jvence> agibsonccc: Can I use SplitTestAndTrain?
+[2016-12-02 10:21:47] <agibsonccc> not really
+[2016-12-02 10:21:52] <agibsonccc> unless you have the whole dataset in memory
+[2016-12-02 10:22:19] <agibsonccc> you could go through the iterator and randomly do split test train and save the results
+[2016-12-02 10:24:42] <jvence> agibsonccc: when training my model, I use  SplitTestAndTrain on a RecordReaderDataSetIterator (after applying NormalizerMinMaxScaler) to load the data. Does this not work?
+[2016-12-02 10:24:55] <agibsonccc> well so again
+[2016-12-02 10:25:03] <agibsonccc> you till have the problem of not having the whole dataset in memory
+[2016-12-02 10:25:15] <agibsonccc> you could do split test and train on the batches and concatneate
+[2016-12-02 10:25:40] <jvence> my batch size is the entire data set so I should be fine
+[2016-12-02 10:25:55] <agibsonccc> then yeah split test and train will work
+--------------------------------------------------------------------------------------------------
+//Talk about comparison of DL4J and caffe, the versions
+[2016-12-03 08:20:38] <raver119> last time i’ve checked dl4j vs caffe, it was 0.6.0 -> 0.7.0 transition, and time was pretty close.
+[2016-12-03 08:20:43] <agibsonccc> A lot can change in even 6 months
+[2016-12-03 08:20:47] <agibsonccc> We are pretty on par now
+[2016-12-03 08:20:56] <agibsonccc> I would run your own benchmark
+[2016-12-03 08:21:12] <agibsonccc> A 1 off paper will usually be biased towards research for 1
+[2016-12-03 08:21:20] <agibsonccc> for 2 tensorflow isn't the fastest
+[2016-12-03 08:21:24] <agibsonccc> but you see people using it anyways
+[2016-12-03 08:21:32] <raver119> for some things caffe was faster, for other dl4j was faster
+[2016-12-03 08:21:43] <agibsonccc> I would just give it a shot first
+[2016-12-03 08:22:14] <raver119> actually, any framework uses the same tools.
+[2016-12-03 08:22:16] <agibsonccc> we have a standard lenetmnist benchmark [<-LINK->] 
+[2016-12-03 08:22:19] <raver119> openmp for cpu
+[2016-12-03 08:22:20] <agibsonccc> right
+[2016-12-03 08:22:24] <agibsonccc> we have cudnn too
+[2016-12-03 08:22:28] <raver119> openblas/blas for blas
+[2016-12-03 08:22:31] <AlexDBlack> based on the "last visited" dates it was finished around april? which means 0.4-rc3.8 (6 releases ago, and before our major c++ backend rewrite)
+[2016-12-03 08:22:33] <raver119> cuda/cudnn for gpus
+[2016-12-03 08:22:37] <agibsonccc> right
+[2016-12-03 08:22:43] <agibsonccc> yeah that was when we had java
+[2016-12-03 08:22:46] <agibsonccc> not c++
+[2016-12-03 08:22:58] <raver119> so you can’t really expect huge time differences now
+[2016-12-03 08:23:13] <raver119> it’s +- the same time frames, so only ecosystem should matter
+--------------------------------------------------------------------------------------------------
+[2016-12-03 12:54:11] <woolfel> my original idea in 2003 was to build a robot that uses swarm technique to collaborative robots
+[2016-12-03 12:54:31] <woolfel> then have like a dozen of them working together to do fun stuff
+[2016-12-03 12:55:45] <woolfel> it's the reason I got a 3D printer
+[2016-12-03 12:55:46] <wmeddie> It'd be really awesome if you can get a dozen of them running rl4j
+[2016-12-03 12:55:57] <wmeddie> and just driving around.
+[2016-12-03 12:56:05] <wmeddie> Automatically avoiding eachother.
+[2016-12-03 12:56:36] <woolfel> one of the goals was to use CV to build racing robots that could drive around a track as fast as Mindstorm motors can go
+[2016-12-03 12:56:50] <woolfel> then people could have robot races
+[2016-12-03 12:57:12] <woolfel> they could train the robots, post their models to github and share
+[2016-12-03 12:57:37] <woolfel> instead of jumping right to that, I'm doing robot tag first
+[2016-12-03 12:59:08] <woolfel> it's more like a robot time trial though, Pi doesn't have enough juice for robots to race each other
+[2016-12-03 13:00:04] <wmeddie> Yeah.  Maybe if you had a bunch of robots connected to tegra x1s
+[2016-12-03 13:00:45] <wmeddie> "Data Loaded.  Vocabulary Size: 63674 Total lines: 40331236" Wow, that\'s not going to fit in RAM...
+[2016-12-03 13:01:36] <woolfel> haha... you refering to Nvidia's tegra... aren't those suckers still expensive
+[2016-12-03 13:02:01] <wmeddie> About $500ish was it?
+[2016-12-03 13:02:02] <woolfel> I'm thinking price range of under $30
+[2016-12-03 13:02:23] <woolfel> so that middle/high school kids and build them
+[2016-12-03 13:02:54] <woolfel> having them go to their parents and say "Mom, can I have 600 to build a cool robot that races around a track?"
+[2016-12-03 13:03:12] <woolfel> might get the response "sure, go get a job!"
+[2016-12-03 13:04:57] <wmeddie> True.  but plenty of kids play with gasoline RC cars and model airplanes that are in that range.
+[2016-12-03 13:05:55] <woolfel> true, I had rich friends that did that for a hobby in the 80's, but when they crashed them to pieces, their parents were pissed
+[2016-12-03 13:06:28] <woolfel> only the ones with jobs could keep racing, the rest stopped once their cars were toast
+[2016-12-03 13:08:03] <wmeddie> There are few hobbies as expensive as racing.
+[2016-12-03 13:08:32] <woolfel> like snow boarding :) that's a couple hundred each time
+--------------------------------------------------------------------------------------------------
+[2016-12-03 13:10:58] <PhavMakara_twitter> How can I make read data format .h5 (HDF5) into DataSetIterator? The data structure of my .h5 file is like this "/GroupA/Group*/(-DataSet1 -DataSet2 -DataSet3)". I can read it easily and assign it to NDArray but I dont how to assign it to DataSetIterator.
+[2016-12-03 13:14:26] <agibsonccc> PhavMakara_twitter: you can use the new javacpp based presets
+[2016-12-03 13:15:04] <agibsonccc>  [<-LINK->] 
+[2016-12-03 13:15:25] <agibsonccc> you would use that with dataset.load
+[2016-12-03 13:15:32] <agibsonccc> if you can do a chain of saves in to a file this should work :D
+[2016-12-03 13:16:49] <agibsonccc> What I would maybe consider doing if you can would be prepending an int and reading that in to represent the count of the number of datasets
+[2016-12-03 13:16:56] <agibsonccc> then you can just chain save and load calls
+[2016-12-03 13:21:55] <PhavMakara_twitter> Okay let me clarify your answer. You suggest me to chuck my own data without using DataSetIterator right? I never use that javacpp before. It probably takes me some time to really get what you suggest.
+[2016-12-03 13:22:27] <agibsonccc> PhavMakara_twitter: it's just java bindings for the c++ hdf5
+[2016-12-03 13:22:29] <agibsonccc> same api
+[2016-12-03 13:22:34] <agibsonccc> your goal is to basically get an input stream
+[2016-12-03 13:22:39] <agibsonccc> and an outputstream
+[2016-12-03 13:22:46] <agibsonccc> that you can write and read raw bytes from
+[2016-12-03 13:22:57] <agibsonccc> I just told you the binary format to use from there :D
+--------------------------------------------------------------------------------------------------
+1 [2016-12-05T11:08:29] <PhavMakara_twitter> Within class LenetMnistExample in deeplearning4j example package, when you train the model, how can you specify the input data label to fit the model? I only see you using model.fit(inputData) without specific the label with it.
+2 [2016-12-05T11:08:57] <raver119> DataSet contains input and label fields
+3 [2016-12-05T11:09:26] <PhavMakara_twitter> But if have separate dataset how can I combine them
+4 [2016-12-05T11:09:52] <PhavMakara_twitter> for example by dataset input is 3 dimension and output is 1 dimensional output
+5 [2016-12-05T11:22:31] <PhavMakara_twitter> Based on this link [<-LINK->] , Can I just declare it like this Dataset input = new Dataset(input,Label) while both input and label are NDArray with different dimension
+6 [2016-12-05T11:24:25] <AlexDBlack> input and label fields can be any INDArrays (that are appropriate for the network you are training, anyway)
+7 [2016-12-05T11:24:48] <AlexDBlack> and yes, you create it using that constructor
+8 [2016-12-05T11:29:59] <PhavMakara_twitter> Thank
+--------------------------------------------------------------------------------------------------
+1 [2016-12-06T12:05:16] <xuzhongxing> AlexDBlack: alex could you please explain the meaning of iteration number in the BasicRNNExample?
+2 [2016-12-06T12:09:53] <AlexDBlack> suppose you have 3 examples: A,B,C in a DataSetIterator.iterations(1): fit(DataSetIterator) does training like ABC.iterations(3): fit(DataSetIterator) does training like AAABBBCCC
+3 [2016-12-06T12:10:00] <AlexDBlack> usually .iterations(1) is what you want
+4 [2016-12-06T12:10:18] <AlexDBlack> that was an example contributed by the community fwiw
+5 [2016-12-06T12:11:28] <xuzhongxing> thank you.
+6 [2016-12-06T12:12:26] <xuzhongxing> So in that example, it is similar to the epoch parameter
+7 [2016-12-06T12:13:58] <AlexDBlack> if all data is in one DataSet object: then .iterations(x) and fitting for x epochs are identical
+8 [2016-12-06T12:14:20] <AlexDBlack> in general, similar to epochs, but different order
+9 [2016-12-06T12:14:45] <AlexDBlack> repeated order like that isn't usually a good idea
+10 [2016-12-06T12:18:53] <xuzhongxing> I see.
+11 [2016-12-06T12:20:50] <xuzhongxing> In what situation setting iterations > 1 makes sense?
+12 [2016-12-06T12:24:05] <AlexDBlack> not many, to be honest. full batch/dataset learning (usually only possible on very small data sets), andmaybeif data loading is very costly
+13 [2016-12-06T12:24:42] <xuzhongxing> I see
+--------------------------------------------------------------------------------------------------
+[2016-12-06 22:10:46] <StillNoNumber> Hey, sorry for interrupting you, but I got a quick question, wondering if someone can answer it... If I run the following line of code on a pretty large Nd4j array (no dl4j involved) with tons of negative infinity values in it, a lot of messages saying "Number: -Infinity" get logged. Is this intentional, and if so, why?BooleanIndexing.applyWhere(array, new Or(Conditions.isInfinite(), Conditions.isNan()), 10);Does not happen with this piece of code:BooleanIndexing.applyWhere(array, new Or(Conditions.isInfinite(), Conditions.isNan()), new StableNumber(StableNumber.Type.DOUBLE));Nd4j 0.7.1
+[2016-12-06 22:11:33] <raver119> StillNoNumber: probably just a bug, leaked debug messsage
+[2016-12-06 22:12:21] <raver119> StillNoNumber: i’ll check that right now
+[2016-12-06 22:12:29] <raver119> yes, because i’ve wrote that one
+[2016-12-06 22:12:31] <raver119> :)
+[2016-12-06 22:12:38] <StillNoNumber> raver119: Assumed so. Thanks anyway, should I file a report or something?
+[2016-12-06 22:12:58] <raver119> StillNoNumber: thanks, no need, i’m already opening nd4j
+[2016-12-06 22:13:05] <StillNoNumber> Alright :D
+[2016-12-06 22:13:25] <raver119> i mean - you’ve already reported it :)
+[2016-12-06 22:14:04] <StillNoNumber> yeah but you might prefer it if I report it somewhere so you can organize your to-do-list or whatever
+[2016-12-06 22:14:51] <StillNoNumber> raver119: Found it, line 238 in BooleanIndexing
+[2016-12-06 22:15:03] <StillNoNumber> in case you haven't yet
+[2016-12-06 22:15:04] <StillNoNumber> :P
+[2016-12-06 22:17:23] <raver119> StillNoNumber: it’ll also disable that spam :(
+--------------------------------------------------------------------------------------------------
+[2016-12-10 16:10:15] <daredemo> the autoencoder example is quite simple... so I have still plenty of questionsfirst of all, there are many types of autoencoders such as Denoising autoencoder, Sparse autoencoder, Variational autoencoder, Contractive autoencoder... which does DL4J support?do I need to do something special to make an autoencoder that is  Denoising autoencoder, Sparse autoencoder, Variational autoencoder or Contractive autoencoder?
+[2016-12-10 16:27:21] <raver119> variational autoencoder now available at current master
+[2016-12-10 16:27:55] <raver119> alex merged it few days ago
+[2016-12-10 16:36:35] <daredemo> nice!
+[2016-12-10 16:43:40] <JosephCatrambone> daredemo: There are small special things for each of the subtypes of autoencoders.  Sparse has a penalty (usually L1) which encourages sparse activation in the inner-most hidden layer.  Denoising adds noise on the input and attempts to reconstruct a noise free output.  Variational autoencoders instead learn a mean and standard deviation instead of an explicit internal state, then randomly generate a hidden state from those values and reconstruct.
+[2016-12-10 16:44:04] <JosephCatrambone> Of the bunch, denoising is perhaps the easiest to train, since you just had to do train(myExamples + noise, myExamples)
+[2016-12-10 16:48:26] <daredemo> JosephCatrambone: I know the differences in the autoencoders. just wondering how to implement them in DL4J (for example the L1 stuff that you mentioned)
+[2016-12-10 16:48:47] <JosephCatrambone> Ah.  Sry.  I misunderstood.
+[2016-12-10 16:49:24] <JosephCatrambone> In this respect, I can't really help.  I'm here for the ND4j stuff.  ;)
+[2016-12-10 16:49:56] <daredemo> I mean, I know, but I don't know the exact math behind them
+[2016-12-10 16:50:09] <daredemo> 'tiz OK :D
+--------------------------------------------------------------------------------------------------
+[2016-12-12 10:00:22] <bogdanteleaga> agibsonccc: actually, can I use a different backend, that's software based and not using native stuff?
+[2016-12-12 10:00:52] <AlexDBlack> we don't have a pure java backend, no. it'd be too slow
+[2016-12-12 10:01:04] <agibsonccc> no...I mean this just shouldn't be a problem
+[2016-12-12 10:01:05] <agibsonccc> and...that
+[2016-12-12 10:01:38] <agibsonccc> I mean javacpp hasn't been that big of a problem
+[2016-12-12 10:01:50] <bogdanteleaga> I really don't understand what's going on
+[2016-12-12 10:01:53] <bogdanteleaga> I looked inside javacpp
+[2016-12-12 10:01:58] <bogdanteleaga> it seems to be using java.io.tmpdir
+[2016-12-12 10:02:04] <agibsonccc> have you hit the debugger with Loader?
+[2016-12-12 10:02:15] <agibsonccc>  [<-LINK->] 
+[2016-12-12 10:02:19] <bogdanteleaga> but I don't get how it's going to /private when tmpdir point to /var
+[2016-12-12 10:02:34] <agibsonccc>  [<-LINK->] 
+[2016-12-12 10:03:15] <agibsonccc> File an issue on javacpp with as much information as you can get
+[2016-12-12 10:03:31] <agibsonccc> this just sounds like sam needing to update the docs
+[2016-12-12 10:05:17] <bogdanteleaga>  [<-CODE->] this is the whole output btw
+[2016-12-12 10:05:35] <bogdanteleaga> it doesn't really say where the error actually occurs
+[2016-12-12 10:05:54] <agibsonccc> file an issue on nd4j there then
+[2016-12-12 10:06:03] <agibsonccc> give as much detail as you can
+[2016-12-12 10:06:36] <bogdanteleaga> alright
+[2016-12-12 10:06:38] <bogdanteleaga> thanks for the help
+[2016-12-12 10:06:44] <raver119> bogdanteleaga: please add your pom.xml there
+[2016-12-12 10:08:14] <bogdanteleaga> I guess what I'm confused about here is what does it actually try to load? Should the computer already have a libnd4j?
+[2016-12-12 10:08:42] <bogdanteleaga> Or does it gather some native ops and puts them in a .dylib and then tries to load from it?
+[2016-12-12 10:09:19] <agibsonccc> It usually loads it from an extracted internal jar
+[2016-12-12 10:09:35] <agibsonccc> like I said just file an issue
+[2016-12-12 10:09:47] <agibsonccc> saudet: will get back to you
+[2016-12-12 10:09:50] <agibsonccc> he wrote the code
+[2016-12-12 10:09:52] <agibsonccc> javacpp isn't third party
+[2016-12-12 10:09:59] <agibsonccc> we control and support this too
+--------------------------------------------------------------------------------------------------
+1 [2016-12-15T14:47:46] <royee17> Word2Vec: I have 2 words as vector representations. After I averaged them, I have one vector representation. How do I lookup the table with the vector representation?
+2 [2016-12-15T14:48:21] <raver119> the same way
+3 [2016-12-15T14:48:25] <raver119> wordsNearest
+4 [2016-12-15T14:48:31] <raver119> it accepts vectors as well as words
+5 [2016-12-15T14:51:13] <royee17> raver119: where can I find a decent documentation containing all the functions relevant to Word2Vec?Thanks!
+6 [2016-12-15T14:51:23] <raver119> in javadoc
+7 [2016-12-15T14:51:49] <raver119>  [<-LINK->]
+--------------------------------------------------------------------------------------------------
+//Follow-Up Question of MNISTAnomalyExample
+[2016-12-17 04:32:17] <thewzhang> downloaded the most recent deeplearning4j/examples. The following occurs when I run the examples if they are related to mnist. Not sure if this is a known issue or not.o.d.b.MnistFetcher - Downloading mnist...Exception in thread "main" java.io.EOFException: Unexpected end of ZLIB input stream    at java.util.zip.InflaterInputStream.fill(InflaterInputStream.java:240)    at java.util.zip.InflaterInputStream.read(InflaterInputStream.java:158)    at java.util.zip.GZIPInputStream.read(GZIPInputStream.java:117)    at java.io.FilterInputStream.read(FilterInputStream.java:107)    at org.apache.commons.io.IOUtils.copyLarge(IOUtils.java:1792)    at org.apache.commons.io.IOUtils.copyLarge(IOUtils.java:1769)    at org.deeplearning4j.util.ArchiveUtils.unzipFileTo(ArchiveUtils.java:150)    at org.deeplearning4j.base.MnistFetcher.downloadAndUntar(MnistFetcher.java:83)    at org.deeplearning4j.datasets.fetchers.MnistDataFetcher.<init>(MnistDataFetcher.java:65)    at org.deeplearning4j.datasets.iterator.impl.MnistDataSetIterator.<init>(MnistDataSetIterator.java:65)    at org.deeplearning4j.datasets.iterator.impl.MnistDataSetIterator.<init>(MnistDataSetIterator.java:43)    at org.deeplearning4j.examples.feedforward.anomalydetection.MNISTAnomalyExample.main(MNISTAnomalyExample.java:70)
+[2016-12-17 04:34:38] <AlexDBlack> thewzhang: that's just a network connection problem
+[2016-12-17 04:35:06] <AlexDBlack> try again, and if necessary, delete the MNIST directory in your home directory
+[2016-12-17 04:39:30] <thewzhang> AlexDBlack: , thank you! I removed the MNIST directory and now it is working. Do not feel that it is a network connection problem.
+[2016-12-17 04:42:33] <AlexDBlack> it was most likely caused by a network connection issue while downloading
+[2016-12-17 04:47:40] <thewzhang> thanks, Alex. MNISTAnomalyExample worked and MLPMnistTwoLayerExample is working.
+[2016-12-17 04:48:50] <AlexDBlack> great
+[2016-12-17 06:00:08] <thewzhang> Hi@AlexDBlack, one question regarding  the MNISTAnomalyExample: when outputting the Worst(High Rec. Err) digits (or called outliers), are they correctly recognized ? In other words, they are recognized as ground-truth digits, but have large reconstruction error.
+[2016-12-17 06:04:20] <AlexDBlack> anomaly detection and classification are different tasksthere is no "correctly recognized" in anomaly detection
+[2016-12-17 06:07:37] <thewzhang> the output Worst(High Rec. Err) digits are considered as anomalies/outliers?
+[2016-12-17 06:08:11] <AlexDBlack> yes
+[2016-12-17 06:11:47] <thewzhang> if this is to demo a simple autocoder, it is fine. But if it is to demo the accuracy of the model, it is inadequate -- many outliers do not look like outliers.
+[2016-12-17 06:16:26] <daredemo> thewzhang: the autocoder doesn\'t know what "outlier" means
+[2016-12-17 06:17:50] <daredemo> it is an example of using the values from the autoencoder to proximate what WE would consider outliers
+[2016-12-17 06:18:35] <thewzhang> daredemo: , got it, thanks!
+[2016-12-17 06:31:56] <AlexDBlack> also: anomaly detection using a variational autoencoder should perform better... variational autoencoders will be available next release [<-ISSUE->] 
+--------------------------------------------------------------------------------------------------
+[2016-12-21 12:42:45] <daredemo> I\'m reading about the rnn stuff and it says "It is not possible to change the number of examples between calls of rnnTimeStep"
+[2016-12-21 12:44:39] <daredemo> I'm trying to understand this: to make a prediction, I need the previous state, but if I call rnnClearPreviousState(), this clears the previous... which now allows me to use any number of examples I want... but because previous state was cleared... this means that I'm back in the beginning?
+[2016-12-21 12:46:48] <daredemo> let's say I have daily data, and I do at first 2 examples (days) at a time... after some time I've reached say Thursday and could predict Friday, but if I do rnnClearPreviousState(), then I'm back to Monday?
+[2016-12-21 12:47:55] <AlexDBlack> it's pretty uncommon that you want to predict the next steps of some number of time series,andstart predicting for a new time series at the same time
+[2016-12-21 12:48:11] <AlexDBlack> it gets hard to track, too
+[2016-12-21 12:48:25] <AlexDBlack> in principle: you can manually set the state
+[2016-12-21 12:48:43] <AlexDBlack> it's just arrays, and adding more examples means a larger dimension 0 for the state
+[2016-12-21 12:49:09] <AlexDBlack> I mean is performance so critical that you really need to do that?
+[2016-12-21 12:49:19] <AlexDBlack> if not, I'd suggest keeping them separate
+[2016-12-21 12:52:42] <daredemo> AlexDBlack: I'm not yet even trying to optimize, I'm not sure what it is doing or supposed to be doing... for example, if I do single step, then I get next day, right? if I do say 2 examples/days, then I predict the day after tomorrow? or still just tomorrow?
+[2016-12-21 12:53:30] <AlexDBlack> have you read this? [<-LINK->] 
+[2016-12-21 12:54:04] <AlexDBlack> and the javadoc? [<-LINK->] 
+[2016-12-21 12:54:56] <daredemo> that's exactly what I'm reading (not yet the javadoc though)
+[2016-12-21 12:55:44] <daredemo> so 3 examples would mean tomorrows prediction in 3 locations?
+[2016-12-21 12:56:16] <AlexDBlack> right, if you feed in an array with size(0) == 3, then that's just a batched prediction for 3 separate examples
+[2016-12-21 12:56:32] <AlexDBlack> works exactly the same way as a training minibatch or standard forward pass in that respect
+[2016-12-21 12:56:45] <daredemo> OK, got it now
+[2016-12-21 12:56:53] <daredemo> thanks@AlexDBlack
+[2016-12-21 12:56:58] <AlexDBlack> sure, np
+[2016-12-21 13:09:44] <daredemo> more questions about rnn: using masks, the examples on the webpage talk about input and output masks but only show one layer... is the input mask for only the rnn output layer? or is that for the first/input layer even if you have other non-rnn layers before it?
+--------------------------------------------------------------------------------------------------
+[2016-12-21 14:10:24] <daredemo> still struggling to grasp the concepts to design a RNN networklet\'s say I wanted to detect motions/swipes on "touch pad" that consists of n x n sensors that record the state at a given interval. The users obviously do not make the motions identically, including the speeds might be different. So, now I have two questions:1) should I use a single n x n conv layer as input? or should I use some mega large input that contains all the n x n frames until the slowest motion is completed?2) if I used just single n x n as input, how should the training labeling be done? logically it seems that the label should be when the motion is completed, that is in the end, but should the other frames from the first to the last frame also be labeled the same?
+[2016-12-21 14:16:50] <Paranaix> daredemo: You could use a CNN to obtain a single vector representation and then feed that into an RNN. Another approach I think of is to capture touchpad "activation" in a single matrix and let them decay with each timestep, so that most recent values will be 1 and old values will be close to zero and then apply a CNN to that single matrix. The problem with tihs approach is that you would need to detect start and end (maybe with another net?)
+[2016-12-21 14:24:31] <daredemo> Paranaix: "You could use a CNN to obtain a single vector representation", could you elaborate on this? do you mean by this that would build input layer that is m frames deep? [m x n x n] if my frame is [n x n ]? because this seems a bad idea, as it would require a lot of computing each step. some kind of hidden Markov model would be preferred, when I would only need to know the previous state, not m previous states
+[2016-12-21 14:25:59] <Paranaix> daredemo: [n x n] -- CNN --> [m x 1] ---> RNN
+[2016-12-21 14:27:24] <daredemo> Paranaix: so that\'s my "1)" with single [n x n] input?
+[2016-12-21 14:27:54] <Paranaix> Yes but with an RNN afterwards
+[2016-12-21 14:28:11] <Paranaix> Or did you mean that?
+[2016-12-21 14:28:30] <daredemo> of course, the beginning of my question implied that I'm doing RNN :D
+[2016-12-21 14:35:27] <daredemo> but if I use the [ n x n ] input, I\'m then struggling with the "2)": how do I label my data?when the finger touches the middle of the touch pad, it could then move anywhere, up down left right; so it would seem strange to label it as "up" even if it is part of "up" motion... or should I? or should those intermediate steps be all classified as "meh?" :D or some intermediate classifier like "doing up" and only the end would be "up"?
+[2016-12-21 14:38:07] <daredemo> in other words, in the sequence of "up", should I classify the first frame also as "up" for training?
+--------------------------------------------------------------------------------------------------
+[2016-12-21 19:48:38] <hakmesyo> so what is your advice for efficient gpu computing so that may be we may get one in the future?
+[2016-12-21 19:49:02] <agibsonccc> Get a titan if you can
+[2016-12-21 19:49:08] <agibsonccc> That's the baseline
+[2016-12-21 19:49:32] <agibsonccc> Either that or a high end gaming laptop with 1 of the new gtx cards
+[2016-12-21 19:49:36] <raver119> xx70 gpu
+[2016-12-21 19:49:44] <raver119> that's lowest end efficient for math
+[2016-12-21 19:49:47] <raver119> 970
+[2016-12-21 19:49:48] <raver119> 1070
+[2016-12-21 19:49:50] <raver119> etc
+[2016-12-21 19:49:53] <raver119> and everything above
+[2016-12-21 19:50:10] <raver119> xx60 gpus are cheaper, but significantly slower
+[2016-12-21 19:50:19] <raver119> below xx60 - not even worth using usually
+[2016-12-21 19:50:39] <raver119> i.e. 940/945 gpus etc
+[2016-12-21 19:51:17] <hakmesyo> what about this [<-LINK->] 
+[2016-12-21 19:51:17] <raver119> titan is the best from consumer gpus
+[2016-12-21 19:51:48] <hakmesyo> is it also a good one?
+[2016-12-21 19:51:55] <raver119> yep, that's fantastic titan gpu
+[2016-12-21 19:52:05] <raver119> yes, best of consumer-grade gpus at this moment
+[2016-12-21 19:53:23] <hakmesyo> ok if we buy this can we feel the improvements substantially in the gpu computing for machine learning?
+[2016-12-21 19:54:17] <raver119> i guess you need to do some reading
+[2016-12-21 19:54:22] <raver119> gpus are not magic black boxes
+[2016-12-21 19:54:28] <raver119> on big tasks they shine
+[2016-12-21 19:54:33] <raver119> on small tasks they suck
+[2016-12-21 19:54:42] <hakmesyo> i see
+[2016-12-21 19:55:11] <raver119> i.e. on my pc with gtx 1070 gpu in single gpu mode, cuda is faster then cpu somewhere around x3-x4
+[2016-12-21 19:55:16] <raver119> on that example you was running
+[2016-12-21 19:55:28] <raver119> with higher dimensions - difference gets higher
+[2016-12-21 19:55:36] <raver119> but it's also possible to get difference smaller
+[2016-12-21 19:56:10] <hakmesyo> yes
+[2016-12-21 19:57:01] <raver119> if you'll scroll up chat, you'll see some guy today had issues with small rnn model, which were not fast enough on gpu
+[2016-12-21 19:57:07] <raver119> like 5-7 hours ago
+[2016-12-21 19:57:15] <raver119> gpus are not magic boxes :)
+[2016-12-21 19:57:21] <raver119> they have own pro's and con's
+[2016-12-21 19:58:09] <raver119> so nobody will be able to say will you benefit or not, without detailed knowledge of the problems you're going to work with
+--------------------------------------------------------------------------------------------------
+[2016-12-21 22:42:31] <AlexDBlack> daredemo: "the webpage talk about input and output masks but only show one layer... is the input mask for only the rnn output layer? or is that for the first/input layer even if you have other non-rnn layers before it?"output mask is used only with RnnOutputLayerinput mask really only applies if you have one or more dense layers before your RNN layers, as say tanh(0 x weights + bias) != 0 in general... for RNN layers only, it\'s equivalent to just setting the masked inputs to 0 anyway. So strictly speaking, you don\'t need input mask for RNN-only networks (but we have no way of knowing that at data loading time)
+[2016-12-21 23:16:55] <daredemo> AlexDBlack: only dense layers? not in case of CNN?
+[2016-12-21 23:24:55] <AlexDBlack> daredemo: honestly? we probably should have it for CNNs as well... but I don't think it's in there currently
+[2016-12-21 23:28:35] <daredemo> AlexDBlack: I'm just asking questions :D I know nothing :D trying to figure the RNN part out, but probably won't have any meaningful training data before next week
+[2016-12-21 23:31:50] <AlexDBlack> daredemo:  [<-ISSUE->] fyi
+[2016-12-21 23:32:32] <AlexDBlack> araymer: can't access that (I've requested access though)
+[2016-12-21 23:32:38] <araymer> I'm trying to achieve that same results, but on a pixel by pixel basis using local features.I had some success with a FF network and probably could've gotten more by playing with the dataset, but I wanted to see if I could get comparable/better results with a different network architecture.
+[2016-12-21 23:36:13] <araymer> Odd, link sharing is on. You should have access
+[2016-12-21 23:39:19] <araymer> I sent it to you. Drive is acting all kinds of strange today.
+[2016-12-21 23:43:07] <AlexDBlack> thanksok, so looking at that: I'd probably use a multi-dimensional RNN for that [<-LINK->] 
+--------------------------------------------------------------------------------------------------
+1 [2017-01-05T12:40:29] <borjka> Guys help please. I don't understand what each gate in LSTM architecture produce. Is it a number or a vector? If I'm not wrong  sigmoid function ALWAYS produces only one number in range from 0 to 1. Or it is possible that every gate produces target vector that was obtained by applying sigmoid function to each element of  input vector?
+2 [2017-01-05T12:42:12] <AlexDBlack> each gate produces a single number in range 0 to 1. you have 4 gates per LSTM unit, and multiple units per LSTM layer
+3 [2017-01-05T12:44:33] <fahman> Is number of units == LSTM.nOut(numberUnits) of layer actually?
+4 [2017-01-05T12:45:16] <borjka> so every LSTM block produces number and not a vector?
+5 [2017-01-05T12:46:48] <AlexDBlack> fahman: yes
+6 [2017-01-05T12:47:46] <borjka> by LSTM block I mean LSTM unit
+7 [2017-01-05T12:47:53] <AlexDBlack> borjka: yes, it's the same as any other RNN (or, any other network in general) - each unit gives a single output/number
+8 [2017-01-05T12:48:04] <AlexDBlack> it's all vectorized for implementation though, across all units
+9 [2017-01-05T12:49:32] <borjka> really thank you! everything became so clear
+--------------------------------------------------------------------------------------------------
+[2017-01-06 09:31:53] <ptah23> hello, in MNIST for experts example I can see pretrain called on builder
+[2017-01-06 09:32:06] <ptah23> what kind of pretraining will be used if it is set to true
+[2017-01-06 09:33:06] <raver119> Pretraining is special option for autoencoders/rbms
+[2017-01-06 09:34:24] <ptah23> can I use it to pretrain conv net weights using RBM automatically?
+[2017-01-06 09:41:58] <ptah23> I should be clearer: I want to do pretraining using RBM and then transfer the weights to conv net before starting backprop. will Builder.pretrain(true) do that for me?
+--------------------------------------------------------------------------------------------------
+[2017-01-07 09:10:52] <xywen4buct> My computer does not have a GPU. Is it possible for me to build the whole project locally?
+[2017-01-07 09:11:19] <agibsonccc> See 2nd comment: [<-ISSUE->] 
+[2017-01-07 09:12:18] <xywen4buct> That means "Building the CUDA Backend" is not necessary?
+[2017-01-07 09:12:33] <agibsonccc> as long as you skip it you don't have to
+[2017-01-07 09:12:39] <agibsonccc> Is there a reason you're building from source though?
+[2017-01-07 09:12:48] <agibsonccc> You know you don't need to right?
+[2017-01-07 09:14:03] <xywen4buct> I want to change the loss function.
+[2017-01-07 09:14:17] <agibsonccc> You can add a custom one without compiling nd4j though
+[2017-01-07 09:14:49] <xywen4buct> for some special reasons.
+[2017-01-07 09:14:51] <agibsonccc>  [<-ISSUE->] 
+[2017-01-07 09:15:09] <agibsonccc> It doesn't matter what they are :D there's an example right there of how to do it without compiling dl4j
+[2017-01-07 09:15:10] <xywen4buct> Our model is very special
+[2017-01-07 09:15:20] <agibsonccc> You can also do custom layers
+[2017-01-07 09:17:09] <xywen4buct> is there some instructions I can follow?
+[2017-01-07 09:17:20] <agibsonccc> on what? custom layers?
+[2017-01-07 09:17:27] <xywen4buct> yes
+[2017-01-07 09:17:36] <agibsonccc> Again - pleaselisten to mewhen I sayfile an issuewith what you're missing :D
+[2017-01-07 09:17:45] <agibsonccc> We have examples
+[2017-01-07 09:17:50] <agibsonccc> if you want step by step tutorials tell us what
+[2017-01-07 09:17:57] <agibsonccc> We have a dedicated person who does that stuff
+[2017-01-07 09:17:58] <agibsonccc> they read issues
+[2017-01-07 09:18:18] <agibsonccc>  [<-LINK->] 
+[2017-01-07 09:18:19] <xywen4buct> custom layers and custom  loss functions
+[2017-01-07 09:18:20] <agibsonccc> We have basics
+[2017-01-07 09:18:27] <agibsonccc> the readme.me is right there for it
+[2017-01-07 09:18:30] <agibsonccc> readme.md*
+[2017-01-07 09:18:35] <agibsonccc> if you want more then tell us
+[2017-01-07 09:18:42] <xywen4buct> okay
+--------------------------------------------------------------------------------------------------
+[2017-01-07 20:59:33] <fahman> Has anyone used COSINE_PROXIMITY as a loss function for outputs and if yes, for what use case?
+[2017-01-07 23:05:59] <AlexDBlack> fahman: re: cosine proximity - I've never used it (but yes, it's all tested/gradient checked)... was built partly for our keras import functionalitybut I believe this is one application: [<-LINK->]  [<-LINK->] (compare eq 3 vs the comments of the mathematical form in the code comments)
+[2017-01-07 23:07:28] <fahman> Yes I thought I could use it to loss compare word embeddings, but somehow I cant manage to set other hyperparameters. I get always NaN as score
+[2017-01-07 23:07:36] <fahman> Gonna check the paper
+[2017-01-07 23:10:32] <AlexDBlack> and re: masking arrays -@eralyhas explained it well... just to reiterate: the net always outputs something at each time step, even with maskingyou can use this to manually zero them if you want: [<-LINK->] during training we use the mask to set the errors (loss function gradients) to 0 - the network's predictions are thus ignored for those time steps
+[2017-01-07 23:11:50] <fahman> Ye@eraly's explanation was good, didn't realized the masking worked that way but its perfectly fine
+--------------------------------------------------------------------------------------------------
+[2017-01-10 06:34:17] <indsak> im stuck after reading in the data..like how to pass the data to a CNN..any input into that.
+[2017-01-10 06:35:16] <AlexDBlack> well, do you have DataSet objects yet?
+[2017-01-10 06:35:31] <AlexDBlack> that's why I was saying use CSVRecordReader + RecordReaderDataSetIterator
+[2017-01-10 06:35:35] <AlexDBlack> then it's pretty straightforward
+[2017-01-10 06:36:20] <indsak> ok. i wil try that..can i get back if i have any problem ?
+[2017-01-10 06:37:42] <AlexDBlack> sure. start with this: [<-LINK->] then adapt it based on my earlier comments (delimiter, regression, etc)
+[2017-01-10 06:38:44] <indsak> ok..thank you.. i was following that example to read in the data. I wil explore further and wil try. Thank you
+--------------------------------------------------------------------------------------------------
+[2016-11-21 19:30:25] <benqua> Hi. Is there a place for deeplearning pre-trained model (not only model, but weights)? I am looking for a way to use pre-trained VGG16 in dl4j. Any pointer?
+[2016-11-21 22:36:45] <nyghtowl> benqua: We don't have weights yet. The plan is to add that to: [<-LINK->] when we do
+--------------------------------------------------------------------------------------------------
+[2016-11-24 05:11:12] <dan-lind> is there anything in datavec thta would help me create separate feature/label files, like the ones used in the UCI classification example, or will I have to create them "manually" for my own time series?
+[2016-11-24 05:20:42] <agibsonccc> dan-lind: you'd have to do that manually but if you have a vision for how such a feature would work feel free to file an !issue
+[2016-11-24 05:20:54] <agibsonccc> something like that wouldn't be out of the scope of datavec
+
+--------------------------------------------------------------------------------------------------
+[2016-11-27 00:54:39] <TrentWDB> anyone know what would be a common cause of multiLayerNetwork.output() returning NaN?
+[2016-11-27 00:54:40] <raver120> TrentWDB: Welcome! Here's a link to Deeplearning4j's Gitter Guidelines, our documentation and other DeepLearning resources online. Please explore these and enjoy! [<-LINK->] 
+[2016-11-27 01:06:30] <crockpotveggies> if you head to the tuninghelp room I think there's some peeps who can get more intimate with your problem
+[2016-11-27 01:06:34] <crockpotveggies> !tuningroom
+[2016-11-27 01:06:34] <raver120> Accuracy is low or network isn't learning? Start by reading [<-LINK->] and [<-LINK->] 
+[2016-11-27 01:13:21] <TrentWDB> thanks guys
+--------------------------------------------------------------------------------------------------
+[2016-11-28 18:41:57] <iw876> hi,
+[2016-11-28 18:12:12] <mrseven7seven> Good Evening.
+[2016-11-28 18:44:08] <raver119> mrseven7seven: @iw876guys, just go straight to your questions. no need to wait till someone replies to your abstract "hi!"
+[2016-11-28 18:44:24] <raver119> you'll get answers faster this way :)
+[2016-11-28 18:45:02] <iw876> how to get an image (with rank 4) in a RBM? (channels = 1) my first idea is to flat dimensions 3 and 4 to form img_heigth*img_width columns, bad idea?
+[2016-11-28 18:46:18] <raver119> rbm kinda expects vector as input
+[2016-11-28 18:46:25] <raver119> so just flatten your images
+[2016-11-28 18:46:40] <raver119> there's method available for that, Nd4j.toFlattened()
+[2016-11-28 18:47:11] <iw876> ok, thanks
+--------------------------------------------------------------------------------------------------
+[2016-12-01 16:00:25] <someonedeep> is it somehow possible to reverse engineer the filename from an instance in a DataSetIterator?
+[2016-12-01 16:00:37] <someonedeep> filename of video/image etc.
+[2016-12-01 16:10:55] <EdeMeijer> someonedeep: yes, you have to enable meta data tracking and then you can get it from the DataSets
+--------------------------------------------------------------------------------------------------
+1 [2016-12-02T08:07:26] <xuzonghan> HI How to run deeplearning4J on hadoop by using mapreduce? Is there any examples?
+2 [2016-12-02T08:09:28] <raver119> there’s none, mr isn’t supported anymore
+3 [2016-12-02T08:09:33] <raver119> spark is the way to go
+4 [2016-12-02T08:09:58] <agibsonccc> xuzonghan: we had it at 1 point but no one was willing to pay for it
+5 [2016-12-02T08:10:05] <raver119> it was supported earlier, but ^^^
+6 [2016-12-02T08:10:12] <agibsonccc> we have salaried engineers working on dl4j
+7 [2016-12-02T08:10:20] <agibsonccc> if something is a maintenance burden we cut it
+8 [2016-12-02T08:10:29] <agibsonccc> we did that with spark.ml too
+9 [2016-12-02T08:10:31] <agibsonccc> same thing
+10 [2016-12-02T08:10:42] <agibsonccc> maintaining 2 versions of spark wasn't good for us
+11 [2016-12-02T08:12:42] <xuzonghan> OK, I will switch to spark too :)
+--------------------------------------------------------------------------------------------------
+[2016-12-03 03:55:06] <dan-lind> did I just dream that there were AWS AMIs available for dl4j? Can't find any
+[2016-12-03 03:55:28] <dan-lind> Perhaps it's just not in my region
+[2016-12-03 04:44:05] <agibsonccc> dan-lind: we don't have anything up to date up there - we do have the docker containers though: [<-LINK->] 
+--------------------------------------------------------------------------------------------------
+//Topic 1: the definition of getLayer()
+[2016-12-12 00:28:56] <truevines> Where is "getLayer()" method defined in the code base?  In the class MultiLayerNetwork, the method "init()" calls a method "conf.getLayer()" but I can\'t find where that method is define.  IntelliJ told me that it was not able to resolve that symbol.  What did I do wrong? [<-CODE->] 
+[2016-12-12 00:31:39] <AlexDBlack> truevines: it's a lombok method
+[2016-12-12 00:31:49] <AlexDBlack>  [<-LINK->] 
+[2016-12-12 00:32:12] <AlexDBlack> basically: the@Dataand@Getterannotations at the top of the class
+[2016-12-12 00:32:31] <AlexDBlack> you'll need the lombok plugin for intellij too, if you are messing with source
+[2016-12-12 00:33:56] <truevines> AlexDBlack: Thanks, Alex.
+
+//Topic 2: make/build the dl4j code base using IntelliJ
+[2016-12-12 01:45:17] <truevines> A further question.  I could not make/build the dl4j code base using IntelliJ.  For example, I tried to make the deeplearning4j-nn module, and received the follow error message:
+[2016-12-12 01:46:33] <agibsonccc> truevines: did you follow the buildinglocally guide?
+[2016-12-12 01:46:48] <agibsonccc> That gives an end to end description of the setup
+[2016-12-12 01:46:56] <truevines> Error:(22, 35) java: package org.nd4j.linalg.api.ndarray does not existError:(33, 31) java: cannot find symbolsymbol:   class INDArraylocation: class org.deeplearning4j.util.SummaryStatistics
+[2016-12-12 01:47:22] <truevines> But I could build the dl4j-examples with no issues.
+[2016-12-12 01:47:23] <agibsonccc> You cant just import dl4j
+[2016-12-12 01:47:30] <agibsonccc> Its a 4 repo project
+[2016-12-12 01:47:33] <agibsonccc> Well duh
+[2016-12-12 01:47:41] <agibsonccc> Thats maven central ;)
+[2016-12-12 01:47:47] <agibsonccc> Big difference
+[2016-12-12 01:48:01] <agibsonccc> Seems like you skipped reading half of the docs :/
+[2016-12-12 01:48:19] <agibsonccc>  [<-LINK->] 
+[2016-12-12 01:48:25] <agibsonccc> Go through this first
+[2016-12-12 01:48:34] <truevines> Sorry about that.  I thought I could just download the codebase and build it.
+[2016-12-12 01:48:40] <truevines> Thanks for the information.
+[2016-12-12 01:48:41] <agibsonccc> We dont have snapshots yet so you neef yo setup c code :D
+[2016-12-12 01:49:01] <agibsonccc> I appreciate the effort but dl4j isnt just 1 codebase
+[2016-12-12 01:49:14] <agibsonccc> Wee bit more complex than that :D
+[2016-12-12 01:49:39] <truevines> Thanks.
+--------------------------------------------------------------------------------------------------
+[2016-12-13 07:22:11] <crockpotveggies> saudet: I did investigate that first but it seems that it doesn't really perform a sliding window, and then I'd have to convert each window to an indarray anyways which scares me
+[2016-12-13 07:34:50] <saudet> crockpotveggies: well, it's kind of limited in what it can do, but it's fast
+--------------------------------------------------------------------------------------------------
+[2016-12-14 07:52:53] <AllenWGX> Anyone can help see my question mentioned before? I set the iteration score listener. In 0.6.0, I can get the "INFO" of the iteration scores. But In 0.7.1, there is no such score INFO although I set the listener as well.
+[2016-12-14 07:53:31] <agibsonccc> AllenWGX: nothing changed thete
+[2016-12-14 07:53:33] <agibsonccc> There
+[2016-12-14 07:53:46] <agibsonccc> The only thing it would be is your logging
+[2016-12-14 07:53:58] <agibsonccc> Check the commit logs yourself if you want
+[2016-12-14 07:55:38] <AllenWGX> ok, I will check then.
+[2016-12-14 08:14:57] <raver119> ChaoyingWu: i can't get what's your problem. could you please explain what's your actual problem?
+--------------------------------------------------------------------------------------------------
+[2016-12-14 12:43:21] <saurabhgangurde> I want to take compressed output from hidden layer of autoencoder.Some one suggested to use feedforward method for that but I'm not able to implement that.Pls help
+[2016-12-14 12:54:50] <AlexDBlack> saurabhgangurde: literally theres' nothing else to do other than use feedforward... that gives you activations, which is exactly what you are asking for
+[2016-12-14 13:01:27] <saurabhgangurde> AlexDBlack: MultiLayerConfiguration conf = new NeuralNetConfiguration.Builder().seed(seed).iterations(iterations).optimizationAlgo(OptimizationAlgorithm.STOCHASTIC_GRADIENT_DESCENT).list().layer(0, new DenseLayer.Builder().nIn(numInputs).nOut(256).build()).layer(1, new DenseLayer.Builder().nIn(256).nOut(128).build()).layer(2, new DenseLayer.Builder().nIn(128).nOut(64).build()).layer(3, new DenseLayer.Builder().nIn(64).nOut(128).build()).layer(4, new DenseLayer.Builder().nIn(128).nOut(256).build()).layer(5, new OutputLayer.Builder(LossFunctions.LossFunction.MSE).activation("sigmoid").nIn(256).nOut(520).build()).pretrain(false).backprop(true).build(); 
+--------------------------------------------------------------------------------------------------
+[2016-12-15 09:28:16] <raver120> qq95538: Welcome! Here's a link to Deeplearning4j's Gitter Guidelines, our documentation and other DeepLearning resources online. Please explore these and enjoy! [<-LINK->] 
+[2016-12-15 09:30:16] <qq95538> thank you, raver120, I am reading deeplearning4j.org/quickstart, your advice is so kind.
+--------------------------------------------------------------------------------------------------
+[2016-12-19 16:32:39] <bikashg> Ok, the crux of my question lies here : DataSetIterator trainIter = new DataSetIterator(trainingDataSet,miniBatchSize); gives me compile error DataSetIterator is abstract, can't be instantiated
+[2016-12-19 16:32:50] <bikashg> So, I was willing to know what should I implement
+[2016-12-19 16:33:22] <agibsonccc> bikashg: How can I help someone who ignores me? :D
+[2016-12-19 16:33:28] <agibsonccc> You ignore me and our docs
+[2016-12-19 16:33:32] <agibsonccc> Not sure what else I can do for you here
+[2016-12-19 16:33:32] <bikashg> :)
+[2016-12-19 16:33:43] <agibsonccc> DataSetIterator is an interface
+[2016-12-19 16:33:48] <agibsonccc> I'm not sure what else you expect
+[2016-12-19 16:33:58] <agibsonccc> I'm telling you exactly how to make your life easy
+[2016-12-19 16:34:17] <agibsonccc> You will  end up rewriting half the stuff we already did for you in recordreaderdatasetiterator
+[2016-12-19 16:34:45] <agibsonccc> We forced it to be 1 iterator for a reason
+[2016-12-19 16:34:59] <agibsonccc> we decoupled parsing logic from dataset handling and ndarray creation
+[2016-12-19 16:35:10] <agibsonccc> there's 1 billion reasons why that's a good idea
+[2016-12-19 16:36:11] <agibsonccc>  [<-LINK->] 
+[2016-12-19 16:36:13] <agibsonccc> 150 lines of code
+[2016-12-19 16:36:20] <agibsonccc> This looksreally hard
+[2016-12-19 16:36:37] <agibsonccc> I mean no offense here I'm just not understanding what the resistance is
+[2016-12-19 16:36:41] <agibsonccc> We already did the work for you
+[2016-12-19 16:37:21] <bikashg> OK, I will get started with reading DataVec. The only "resistance" is that my Input is not a CSV and on first sight, it seemed to me that the only supported format was CSV
+--------------------------------------------------------------------------------------------------
+[2016-12-20 08:38:37] <yuimo123> INDArray myArr = Nd4j.create(flat,shape,'c');    what does 'c' represent?
+[2016-12-20 08:38:58] <yuimo123> and what is the difference between 'c' and 'f'?
+[2016-12-20 08:39:29] <yuimo123> is there any material about this?
+[2016-12-20 08:40:21] <kepricon>  [<-LINK->] 
+[2016-12-20 08:40:22] <kepricon> see this
+[2016-12-20 08:41:48] <raver119> yuimo123: it's general concept, C-ordering and Fortran ordering of elements within linear buffer
+[2016-12-20 08:41:55] <raver119> aka Column-major and Row-major
+[2016-12-20 08:42:04] <yuimo123> yes , i know. 'c' is c order ,and 'f' is f order
+[2016-12-20 08:42:30] <raver119> why asked then?
+[2016-12-20 08:42:36] <raver119> :)
+[2016-12-20 08:42:38] <kepricon> yuimo123: see [<-LINK->] 
+[2016-12-20 08:43:20] <yuimo123> thanks.
+[2016-12-20 08:44:52] <yuimo123> raver119: i am read the examples of nd4j, and i saw this. just ask
+--------------------------------------------------------------------------------------------------
+[2016-12-20 17:08:52] <Oscarlight> Hi, everyone! I wanna to implement some missing functions in deeplearning4j (for example the multiplication operation in ElementWiseVertex). Is there a recommended way to do? Thank you!
+[2016-12-20 17:08:53] <raver120> Oscarlight: Welcome! Here's a link to Deeplearning4j's Gitter Guidelines, our documentation and other DeepLearning resources online. Please explore these and enjoy! [<-LINK->] 
+--------------------------------------------------------------------------------------------------
+[2016-12-22 05:54:58] <jageshmaharjan> Anyone, implemented the word2vec and plot in a tsne graph .
+[2016-12-22 06:15:27] <agibsonccc> jageshmaharjan:  [<-LINK->] this is how you save tsne coordinates given a vector
+[2016-12-22 06:15:49] <agibsonccc>  [<-LINK->] shows how our UI works
+[2016-12-22 06:20:14] <agibsonccc> jageshmaharjan: actually looking at the new UI..it looks we may need to implement the new tsne yet
+[2016-12-22 06:20:20] <agibsonccc> Mind filing an !issue?
+[2016-12-22 06:20:21] <raver120> For DL4J issues, click 'New Issue' at [<-LINK->] - for ND4J, use [<-LINK->] instead
+[2016-12-22 06:21:01] <jageshmaharjan> agibsonccc: ,  i ran the former example before, but when i ran the later example, it consumes too much resource and my system stop responding. :( .Thank you, I will try on different machine, i was in doubt before whether i was doing something silly. :))
+[2016-12-22 06:21:02] <raver120> jageshmaharjan: Welcome! Here's a link to Deeplearning4j's Gitter Guidelines, our documentation and other DeepLearning resources online. Please explore these and enjoy! [<-LINK->] 
+[2016-12-22 06:21:21] <agibsonccc> yep
+--------------------------------------------------------------------------------------------------
+1 [2016-12-24T21:18:44] <hakmesyo> i have still problem with understanding the batchsize. Let me explain, if i have 100 rows in train set and if i set batch size=100  means what? or setting batchsize=1 whta are the differences? i really still dont understand.
+2 [2016-12-24T21:19:04] <agibsonccc> K
+3 [2016-12-24T21:19:09] <agibsonccc> So I'm going to ask you read a book now :D
+4 [2016-12-24T21:19:15] <agibsonccc>  [<-LINK->]
+5 [2016-12-24T21:19:27] <hakmesyo> ok
+6 [2016-12-24T21:19:29] <agibsonccc>  [<-LINK->]
+7 [2016-12-24T21:19:35] <agibsonccc> Go through this chapter and come back
+8 [2016-12-24T21:19:52] <agibsonccc> If you still have questions then we can talk
+9 [2016-12-24T21:20:02] <agibsonccc> I'm biased but I also wrote a !book
+10 [2016-12-24T21:20:07] <hakmesyo> thanks you very much
+11 [2016-12-24T21:20:16] <agibsonccc> More basic questions are answered in depth in the textbook
+12 [2016-12-24T21:20:33] <hakmesyo> ok
+--------------------------------------------------------------------------------------------------
+[2016-12-26 09:04:25] <hakmesyo> Hi, how can i avoid score value being NaN during training? I think reporting NaN is undesired. Am i correct?
+[2016-12-26 09:04:37] <agibsonccc> !tuning
+[2016-12-26 09:04:51] <agibsonccc> err raverbot broke again
+[2016-12-26 09:04:56] <agibsonccc>  [<-LINK->] 
+[2016-12-26 09:04:57] <raver119> !tuning
+[2016-12-26 09:04:58] <raver120> Accuracy is low or network isn't learning? Start by reading [<-LINK->] and [<-LINK->] 
+[2016-12-26 09:05:06] <raver119> hmmm
+[2016-12-26 09:05:19] <agibsonccc> If you want help from us prove to me your read our tuning docs first :D
+[2016-12-26 09:05:22] <EdeMeijer> raverbot only acknowledges the real raver
+[2016-12-26 09:05:27] <agibsonccc> hahahaha
+[2016-12-26 09:05:29] <agibsonccc> !tuning
+[2016-12-26 09:05:30] <raver120> Accuracy is low or network isn't learning? Start by reading [<-LINK->] and [<-LINK->] 
+[2016-12-26 09:05:32] <agibsonccc> eff you
+[2016-12-26 09:05:33] <agibsonccc> anyways :D
+[2016-12-26 09:05:40] <agibsonccc> nah just flaky
+[2016-12-26 09:05:47] <hakmesyo> ok
+[2016-12-26 09:05:52] <agibsonccc> hakmesyo: go through those steps [2016-12-26 09:05:53] <hakmesyo> :)
+[2016-12-26 09:06:01] <agibsonccc> from there do a dump on everything from the UI screenshots
+[2016-12-26 09:06:12] <raver119> just bot gets disconnected from gitter sometime, and if something being sent during reconnect - message will be ignored :(
+[2016-12-26 09:06:16] <agibsonccc> to your hyper parameters and what you've tried
+[2016-12-26 09:06:32] <hakmesyo> ok
+--------------------------------------------------------------------------------------------------
+[2016-12-29 10:15:49] <ambarishpande> where can i find resources to understand how dl4j works interally?
+[2016-12-29 10:25:44] <AlexDBlack> depends what you are looking for... it's a huge projectare you trying to implement a new type of neural network or something?
+--------------------------------------------------------------------------------------------------
+[2016-12-30 14:10:35] <v-mostafapour> hi
+[2016-12-30 14:10:36] <raver120> v-mostafapour: Welcome! Here's a link to Deeplearning4j's Gitter Guidelines, our documentation and other DeepLearning resources online. Please explore these and enjoy! [<-LINK->] 
+[2016-12-30 14:11:45] <v-mostafapour> I would like to use this code in java eclipse instead of  IntelliJ
+[2016-12-30 14:11:46] <v-mostafapour>  [<-LINK->] 
+[2016-12-30 14:11:57] <agibsonccc> v-mostafapour: there's nothing stopping you
+[2016-12-30 14:11:59] <agibsonccc> learn m2eclipse
+[2016-12-30 14:12:10] <agibsonccc> We won't support you if something hits a wall though
+[2016-12-30 14:12:19] <agibsonccc> We just don't use it
+[2016-12-30 14:12:31] <agibsonccc> So we can't really help with troubleshooting weird edge cases
+[2016-12-30 14:12:40] <agibsonccc> Beyond that follow traditional tutorials on the internet
+[2016-12-30 14:12:51] <agibsonccc> We aren't anything unique as long as you're using a build system
+[2016-12-30 14:14:42] <v-mostafapour> thanks
+--------------------------------------------------------------------------------------------------
+[2017-01-01 09:33:47] <CubeMaster007> I'm having trouble trying to run an example project in Eclipse using Maven. How should I set the Maven project's launch configuration?
+[2017-01-01 09:33:48] <raver120> CubeMaster007: Welcome! Here's a link to Deeplearning4j's Gitter Guidelines, our documentation and other DeepLearning resources online. Please explore these and enjoy! [<-LINK->] 
+[2017-01-01 10:02:48] <agibsonccc> There is nothing to set o_0
+[2017-01-01 10:03:45] <agibsonccc> If you are having problems it is likely related to being new to m2eclipse
+--------------------------------------------------------------------------------------------------
+1 [2017-01-05T07:45:46] <bhomass> I am looking at the tsne and word2vec example. The code in TSNEStandardExample runs but does not plot anything at the end. The documentation on [<-LINK->] shows different code, ending in vec.lookupTable().plotVocab(tsne); which does not match what's in TSNEStandardExample. How do I get a plot of the result?
+2 [2017-01-05T07:48:25] <raver119> bhomass: there’s 2 options: either render to UIServer, or save to file as csv
+--------------------------------------------------------------------------------------------------
+[2017-01-05 08:49:43] <yuimo123>  [<-LINK->] 
+[2017-01-05 08:49:46] <yuimo123> agibsonccc: hi, my computer config is i3 cpu, and 8G ram. but when i runthis example of  Word2VecSentimentRNN, it keeps in this state for a long time. does that mean my computer config not enough?
+[2017-01-05 08:50:02] <raver119> yes
+[2017-01-05 08:50:08] <raver119> ram isn’t enough
+[2017-01-05 08:50:08] <agibsonccc> "i3"?
+[2017-01-05 08:50:18] <raver119> nvm cpu, ram is an issue here
+[2017-01-05 08:50:19] <yuimo123> yes
+[2017-01-05 08:50:20] <agibsonccc> That will take forever to run anythin g:D
+[2017-01-05 08:50:24] <agibsonccc> ram too though
+[2017-01-05 08:50:43] <raver119> i bet pc is swapping :)
+[2017-01-05 08:50:53] <yuimo123> i asked u before, and you said you have run this in your lap, and it's 8G too ,hh
+[2017-01-05 08:51:09] <agibsonccc> Well it\'s "possible"
+[2017-01-05 08:51:12] <agibsonccc> doesn't mean it's ideal :D
+[2017-01-05 08:51:40] <raver119> adam’s laptop is slightly more then 8g :)
+[2017-01-05 08:51:54] <agibsonccc> My travel laptop is 24GB
+[2017-01-05 08:52:01] <yuimo123> ok, maybe i should get a better pc
+--------------------------------------------------------------------------------------------------
+[2017-01-05 08:52:43] <robertlee2k> but Adam,  I have 1 million records (each has 10 time series), so that means I have to create 1 million files with 10 record in each . I don't think it is a good choice ....
+[2017-01-05 08:59:23] <EdeMeijer> That's what I do too (for other reasons) and it gives me just a few hundred files (batches of 150 examples)
+[2017-01-05 09:00:18] <EdeMeijer> (note that I need multiple files for a single example, multiple inputs and outputs, but that shouldn't matter otherwise)
+[2017-01-05 09:05:29] <robertlee2k> thanks Ede, I will try that
+--------------------------------------------------------------------------------------------------
+[2017-01-05 20:49:19] <bhomass> I am trying to look into dl4j core source so I figure out how to use UiConnectionInfo. mvn download sources does not seem to work. is dl4j core source available?
+[2017-01-05 20:50:23] <bhomass> it would be helpful if someone at least put up a example that displays a plot on UiSever from beginning to end
+[2017-01-05 20:51:28] <bhomass> otherwise, its time to give up
+[2017-01-05 20:51:29] <raver119> bhomass: i’ve posted you a link few hours ago
+[2017-01-05 20:52:25] <raver119> link to repo
+[2017-01-05 20:52:26] <raver119>  [<-LINK->] 
+[2017-01-05 20:52:35] <raver119> and download sources work as well
+[2017-01-05 20:53:00] <raver119> it’s kinda requirement
+[2017-01-05 20:53:01] <bhomass> ok, thank you
+[2017-01-05 20:53:05] <raver119> it’s right there at maven
+--------------------------------------------------------------------------------------------------
+[2017-01-10 06:59:29] <mansiisnam> hi i use autoencoder to do feature processing. i get the model. but i find the input vector[0.000001, 0.3, 0.1143, 0.1786, 0.0, 0.0, 0.0, 1.0, 0.1257]is converted[0.00, 0.30, 0.11, 0.18, 0.00, 0.00, 0.00, 1.00, 0.13]by this methodINDArray features = Nd4j.create(featureData);if i want to keep more decimal what should I do?
+[2017-01-10 07:00:08] <AlexDBlack> it's just formatting on toString
+[2017-01-10 07:00:15] <AlexDBlack> check with getDouble if you want
+[2017-01-10 07:02:13] <mansiisnam> ok thanks, i will try
+--------------------------------------------------------------------------------------------------
+[2017-01-10 10:19:34] <romeokienzler> raver119: @agibsoncccOne Q. Today evening in my talk I'm planning to state that DL4J is the only FW capable of training NN in Jeff Dean Style Parameter Averaging on ApacheSpark (+ GPU support +support for all sorts of NN topologies) Is this correct? IMHO TensorFrames doesn't support parallel Parameter Averaging , correct?
+[2017-01-10 10:19:49] <agibsonccc> yup
+[2017-01-10 10:19:56] <agibsonccc> so tensorframes only allows ETL
+[2017-01-10 10:20:09] <agibsonccc> The main thing it had going for it was the catalyst compiler for tensorflow ops
+[2017-01-10 10:20:25] <agibsonccc> Italsohasn't seem a commit since august
+[2017-01-10 10:21:19] <agibsonccc> We also support configuring everything from a spark job
+[2017-01-10 10:21:31] <agibsonccc> Tensorframes for their JNI support used javacpp (which we maintain)
+[2017-01-10 10:22:21] <agibsonccc> So main differences: Community and Distributed
+[2017-01-10 10:23:27] <romeokienzler> Thanks a lot@agibsonccc
+[2017-01-10 10:23:31] <agibsonccc> sure :D
+[2017-01-10 10:28:17] <AlexDBlack> also tensorframes is based on dataframes, so no variable length data (images, time series etc) afaik
+[2017-01-10 10:44:30] <agibsonccc> right
+--------------------------------------------------------------------------------------------------
+1 [2017-01-10T13:46:52] <anandundavia> Hi! I wanted to know what exactly the score of ScoreIterationListener specify? Is it the value cost function ? Because what I understand is the lower the score the better. So is it the cost function value or something else ?
+2 [2017-01-10T13:47:06] <agibsonccc> anandundavia: yes cost
+3 [2017-01-10T13:47:10] <agibsonccc> usually for a given batch
+4 [2017-01-10T13:47:36] <anandundavia> Okay thank you! :)
+--------------------------------------------------------------------------------------------------
+1 [2016-11-28T10:04:01] <yilaguan> When producing feature maps for convolution layer from previous pooling layer, to  my understanding, it's a full connection between all feature maps in pooling layer and one in convolution layer. Is this the groundtruth?
+2 [2016-11-28T10:05:09] <yilaguan> It is according to " [<-LINK->] "
+--------------------------------------------------------------------------------------------------
+[2016-11-28 10:32:24] <mohanad96> Hi guys how are you
+--------------------------------------------------------------------------------------------------
+1 [2016-12-01T14:13:17] <volkanagun> How to get Layer instance of a specific vertex in ComputationGraph from custom BaseInputPreProcessor...
+2 [2016-12-01T14:13:18] <volkanagun> ?
+3 [2016-12-01T14:15:50] <volkanagun> I want to simply reach the weights of a layer (vertex) from another layer (vertex) during training...
+--------------------------------------------------------------------------------------------------
+1 [2016-12-10T15:17:13] <bogdanteleaga> hey, I'm trying to import a model from keras, which seems to be working, but I don't really understand how to include the json and hdf file in the output jar. I put them in a resources folder that's a resource root and they are present at the root of the jar file, but I get a no file found exception
+--------------------------------------------------------------------------------------------------
+1 [2016-12-20T04:58:28] <awongBisco> I\'m trying to use the video Classification example and have created a directory with mp4 videos (videos created with JavacV FFmpegFrameRecorder.setCodec(avcodec.AV_CODEC_ID_H264) When I try to run the videoclassification, I receive Here is the stacktrace:  Exception in thread "main" java.lang.RuntimeException: java.lang.NullPointerExceptionat org.datavec.codec.reader.CodecRecordReader.loadData(CodecRecordReader.java:126)at org.datavec.codec.reader.CodecRecordReader.sequenceRecord(CodecRecordReader.java:89)at org.deeplearning4j.datasets.datavec.SequenceRecordReaderDataSetIterator.nextMultipleSequenceReaders(SequenceRecordReaderDataSetIterator.java:259)at org.deeplearning4j.datasets.datavec.SequenceRecordReaderDataSetIterator.next(SequenceRecordReaderDataSetIterator.java:164)at org.deeplearning4j.datasets.datavec.SequenceRecordReaderDataSetIterator.next(SequenceRecordReaderDataSetIterator.java:146)at org.deeplearning4j.datasets.datavec.SequenceRecordReaderDataSetIterator.next(SequenceRecordReaderDataSetIterator.java:33)at org.deeplearning4j.examples.recurrent.video.VideoLSTMTest.main(VideoLSTMTest.java:135)at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)at java.lang.reflect.Method.invoke(Method.java:498)at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147)Caused by: java.lang.NullPointerExceptionat org.jcodec.api.specific.AVCMP4Adaptor.updateState(AVCMP4Adaptor.java:51)at org.jcodec.api.specific.AVCMP4Adaptor.decodeFrame(AVCMP4Adaptor.java:38)at org.jcodec.api.FrameGrab.getNativeFrame(FrameGrab.java:251)at org.jcodec.api.FrameGrab.getFrame(FrameGrab.java:239)at org.datavec.codec.reader.CodecRecordReader.loadData(CodecRecordReader.java:119)... 11 more
+2 [2016-12-20T04:59:34] <awongBisco> is there an mp4 codec that is recommended, or will any of the mp4 codec options suffice?
+--------------------------------------------------------------------------------------------------
+1 [2016-12-22T09:13:54] <scne> I try to use  MatlabRecordReader but I can't understand how it works, anybody can explain me please?
+--------------------------------------------------------------------------------------------------
+1 [2017-01-07T15:47:26] <ptah23> i spotted a pretrain boolean parameter in configuration
+2 [2017-01-07T15:48:04] <ptah23> does this turn on Greedy Layer-Wise Unsupervised Pretraining for FFNN/RNN/CNN?
+--------------------------------------------------------------------------------------------------
+1 [2016-11-29T02:50:06] <liulhdarks> Is the parameter "learningRateScoreBasedDecayRate" the same as learningRateDecayPolicy(LearningRatePolicy.Score).lrPolicyDecayRate ?
+--------------------------------------------------------------------------------------------------
+1 [2016-12-06T19:18:15] <Angelus1383> Hi guys, with Deeplearning4J can I reproduce the results achieved articles about artistic style transfer? I found several implementation on Tensorflow (e.g. [<-LINK->] ). Is there any similar example or tutorial also for Deeplearning4j?
+--------------------------------------------------------------------------------------------------
+[2016-12-08 04:28:25] <kuluofenghun> I am trting to load a saved keras model, and the backend is tensorflow. My environment is eclipse, java 1.8, CPU. this is my code:https://gist.github.com/kuluofenghun/581c8be86031bbe28112a3b91eb66214.js and this is my pom filehttps://gist.github.com/kuluofenghun/8fcdcaebffb84bd0b8a8b07afb662b40.jsBut it failed.  the error information is :Exception in thread "main" java.lang.NoClassDefFoundError: org/nd4j/shade/jackson/core/type/TypeReferenceI also try to use the git source. there is the same error in the deeplearning4j-modelimport project:The import org.nd4j.shade.jackson.core.type.TypeReference cannot be resolvedThe import org.nd4j.shade.jackson.databind.ObjectMapper cannot be resolvedHow to solve this question?
+[2016-12-08 04:35:32] <kuluofenghun> AlexDBlack: I have correct my pom file and remove the  nd4j-jackson in my pom filebut the error is stillException in thread "main" java.lang.NoClassDefFoundError: org/nd4j/shade/jackson/core/type/TypeReferenceI also tried the git source of dl4j, the are the same error in the project deeplearning4j-modelimport:The import org.nd4j.shade.jackson.core.type.TypeReference cannot be resolved
+--------------------------------------------------------------------------------------------------
+1 [2017-01-05T02:30:44] <Bren077s> I have a quick question about [<-LINK->] : Why is the prefetchBuffer set to 24 by default when the javadocs on prefetchBuffer says it should generally be the same as the number of workers? 24 seems really high with only 4 workers
+--------------------------------------------------------------------------------------------------
+[2016-11-21 10:40:28] <app86> Hi Guys
+[2016-11-21 10:41:08] <app86> I've realized that my /tmp folder gets filled with tons of 'restoreXXXX' files, that I guess come from the use of the ModelSerializer.restoreMultiLayerNetwork(path) function.
+[2016-11-21 10:41:16] <app86> Is there a way to regulate that?
+[2016-11-21 10:41:55] <agibsonccc> app86: we can look in to that - could you file an !issue ?
+[2016-11-21 10:41:55] <raver119> shouldn’t be.
+[2016-11-21 10:42:07] <raver119> i usually call deleteOnExit
+[2016-11-21 10:42:12] <raver119> but i’ll look into that now
+[2016-11-21 10:42:36] <raver119> ah
+[2016-11-21 10:42:39] <raver119> that’s not me
+[2016-11-21 10:42:47] <raver119> that’s probably earlystopping you use there?
+[2016-11-21 10:43:06] <app86> I used early stopping for the trainning, yes
+[2016-11-21 10:43:09] <raver119> right
+[2016-11-21 10:43:11] <raver119> do as adam said
+[2016-11-21 10:43:13] <raver119> file an issue
+[2016-11-21 10:43:19] <app86> Ok
+[2016-11-21 10:45:13] <raver119> just file an issue, and we’ll sort it out after release hits. it’s not really a big deal anyway
+[2016-11-21 10:47:49] <app86> Ok.
+--------------------------------------------------------------------------------------------------
+[2016-11-22 14:00:54] <liulhdarks> I want to solve the conflict, can I load libgomp from jars by modify nd4j's source code?
+[2016-11-22 14:03:06] <liulhdarks> if don't care the system, how to use javacpp load library from specify path before load from /usr/lib64
+[2016-11-22 14:03:43] <agibsonccc> Wouldn't setting LD_PRELOAD work?
+[2016-11-22 14:03:55] <raver119> try building libnd4j from sources?
+[2016-11-22 14:04:08] <raver119> in worst case you'll just remove few pragmas
+[2016-11-22 14:04:16] <raver119> probably around declare simd
+[2016-11-22 14:05:48] <saudet> liulhdarks: JavaCPP does that by default, something else is loading system libraries
+[2016-11-22 14:07:21] <liulhdarks> wether I can remove the gomp from platform.preload in the linux-x86_64-nd4j.properties
+[2016-11-22 14:10:11] <saudet> but yes, like@agibsoncccsays using LD_LIBRARY_PATH and/or LD_PRELOAD should force whatever to use what you want ;)
+[2016-11-22 14:15:04] <liulhdarks> ok I go to have try,  thank you
+--------------------------------------------------------------------------------------------------
+[2016-11-24 01:27:53] <FlyingPiggyKing> I have question, I checkout the tag version "deeplearning4j-0.7.0" from git hub yesterday, after import it into IDEA and resolve maven dependencies, I still see there are many code error, have I missed something?
+[2016-11-24 01:28:09] <agibsonccc> FlyingPiggyKing: wait what?
+[2016-11-24 01:28:16] <agibsonccc> Are you trying to build from source?
+[2016-11-24 01:28:23] <agibsonccc> No where in our docs do we tell you to do that :D
+[2016-11-24 01:28:29] <agibsonccc> Use maven central please
+[2016-11-24 01:28:52] <agibsonccc> dl4j has 4 projects including c code you need to build from source
+[2016-11-24 01:28:57] <agibsonccc> I wouldn't suggest trying that
+[2016-11-24 01:29:02] <agibsonccc> Especially if you're new
+[2016-11-24 01:29:45] <FlyingPiggyKing> I just want to dig into the code, see how it works, but I see many code error, like some function is missing...
+[2016-11-24 01:29:57] <agibsonccc> FlyingPiggyKing: yeah don't do that
+[2016-11-24 01:29:59] <agibsonccc> like at all
+[2016-11-24 01:30:02] <agibsonccc> use intellij to download the source
+[2016-11-24 01:30:11] <agibsonccc> and run it in the debugger if you want to do that
+[2016-11-24 01:30:25] <agibsonccc> otherwise you have to build from source
+[2016-11-24 01:30:37] <agibsonccc> Like I said you have to build 4 projects to even get to dl4j
+[2016-11-24 01:30:41] <agibsonccc> You sound completely new to a lot of this
+[2016-11-24 01:30:47] <agibsonccc> I wouldn't suggest digging in unless you have to
+[2016-11-24 01:31:02] <agibsonccc> Of course you'r going to have errors
+[2016-11-24 01:31:08] <agibsonccc> You need to build the other libraries first
+[2016-11-24 01:31:31] <agibsonccc> Don't do it unless you have a compelling reason to
+[2016-11-24 01:31:36] <agibsonccc> if you want to just explore don't clone dl4j
+[2016-11-24 01:32:13] <AlexDBlack> FlyingPiggyKing: you can view the source from intellij using the maven release, just ctrl+b on the various classes, and you can read through them therewithout the headaches associated with  building from source :)
+[2016-11-24 01:32:58] <FlyingPiggyKing> AlexDBlack: so you mean let idea to decompile the code from the jar?
+[2016-11-24 01:33:08] <AlexDBlack> no, not decompile. download sources
+[2016-11-24 01:33:16] <agibsonccc> FlyingPiggyKing: I already said the source is in maven central
+[2016-11-24 01:33:16] <AlexDBlack> those are on maven central too
+[2016-11-24 01:33:18] <FlyingPiggyKing> AlexDBlack: ok, got
+[2016-11-24 01:33:31] <FlyingPiggyKing> let me try
+[2016-11-24 01:44:46] <FlyingPiggyKing> yes, it work for some of the class, like MultiLayerNetwork.java, I can click on the link on the top bar of IDEA, it can download it, while for some class like MultiLayerConfiguration.class, seems like the class is inconsistent with the downloaded source code.
+[2016-11-24 01:45:24] <agibsonccc> FlyingPiggyKing: intellij is usually weird about that I wouldn't pay too much attention to it
+[2016-11-24 01:45:50] <agibsonccc> That's usually because of source code comments and the like
+[2016-11-24 01:46:05] <AlexDBlack> it might also be lombok annotation maybe, expanded in binaries but not source?
+[2016-11-24 01:46:12] <AlexDBlack> anyway, not a concern really
+[2016-11-24 01:54:21] <FlyingPiggyKing> there some minor error in the source code, like the logger declaration is missing, I see@Slf4j, this maybe the reason
+[2016-11-24 01:54:43] <agibsonccc> FlyingPiggyKing: that's lombok like alex mentioned
+[2016-11-24 01:55:13] <FlyingPiggyKing> got it, very thanks!
+--------------------------------------------------------------------------------------------------
+[2016-11-24 05:18:41] <gguogguo11> agibsonccc: how can I use wordVectors in seq2seq?                                                                       input_word.put(new INDArrayIndex[]{NDArrayIndex.point(i), NDArrayIndex.all(), NDArrayIndex.point(j)}, vector );     the error:org.nd4j.linalg.api.buffer.BaseDataBuffer$2 cannot be cast to org.bytedeco.javacpp.DoublePointer
+[2016-11-24 05:21:18] <agibsonccc> gguogguo11: Could you give a full stack trace? I know you can't use gist in china so please use tool.lu if possible
+[2016-11-24 05:21:33] <agibsonccc> Screenshots aren't usually good either
+[2016-11-24 05:21:38] <agibsonccc> Tough to look at
+--------------------------------------------------------------------------------------------------
+[2016-11-24 23:59:37] <KonceptGeek> AlexDBlack: is there a way to calculate how much time it would take for Word2Vec to fit on some data?
+[2016-11-25 00:00:08] <KonceptGeek> or even monitor what's going on?
+[2016-11-25 00:11:29] <KonceptGeek> The reason why I am asking is because it has been more than 1 hour 20 minutes since the last log entry of  "Starting vocabulary building..." and 1 hour since it finished iterating over the data. PS: There were 58754 sentences for training the model
+[2016-11-25 00:34:20] <AlexDBlack> KonceptGeek: with a small data set like that, it shouldn't take longyou can add a VectorsListener instance to track progress... it should also log plenty of infobtw, what version of dl4j are you using? and what backend?
+[2016-11-25 00:35:47] <KonceptGeek> AlexDBlack: DL4J 0.7.0 with nd4j-native
+[2016-11-25 00:38:53] <KonceptGeek> There's Factorie and JSAT
+[2016-11-25 00:39:24] <KonceptGeek> both of them are regularly updated
+[2016-11-25 00:41:58] <AlexDBlack> KonceptGeek: I'd suggest asing@raver119about the word2vec performance issues (he should be online in about 6 hours maybe?)fwiw it should be significantly faster than 0.6.0, and your data isn't largefeel free to open an issue though with details and configuration - that might make things easier for us
+[2016-11-25 00:47:13] <KonceptGeek> Sure@AlexDBlack. BTW, each sentence is a pretty big (almost a complete email/document) so that could possibly be slowing things down. And it's running on an 8core CPU.
+--------------------------------------------------------------------------------------------------
+//Talk about configuration documents
+[2016-11-29 14:00:11] <Marcteen> Hi, there. I am new to dl4j and trying to run it on an spark on yarn cluster. Is there any configuration to do with the cluster? I cannot find any document about it.
+[2016-11-29 14:00:32] <agibsonccc> Marcteen:  [<-LINK->] 
+[2016-11-29 14:00:37] <agibsonccc> not sure how you missed this :D
+[2016-11-29 14:01:02] <agibsonccc> we mention yarn and the like right in there
+[2016-11-29 14:01:06] <agibsonccc> including the memory configuration
+[2016-11-29 14:01:21] <agibsonccc> our !examples have spark in them as well
+[2016-11-29 14:01:21] <raver120> Our latest examples available here: [<-LINK->] 
+[2016-11-29 14:03:50] <Marcteen> agibsonccc: Thanks. I did notice that page but only find the guidance about application programming. I mean what exactly I need to do to give the cluster the right environment for running dl4j on spark? Such as the dependencies issue.
+[2016-11-29 14:04:08] <agibsonccc> It's just a spark job really
+[2016-11-29 14:04:15] <agibsonccc> It's nothing different than what you already do
+[2016-11-29 14:04:23] <agibsonccc> dl4j-spark is all you need
+[2016-11-29 14:04:28] <agibsonccc> you can look at our examples for that stuff
+
+//Talk about Maven Dependency
+[2016-11-29 14:10:56] <Marcteen> agibsonccc: You are so kind. Actually I am not very familiar with Maven. I build an Maven project with idea and add dl4j-spark to pom like<dependency>\n      <groupId>org.deeplearning4j</groupId>\n      <artifactId>dl4j-spark_${scala.compat.version}</artifactId>\n      <version>${dl4j.version}</version>\n    </dependency>And them I write an scala object which is a copy from dl4j-example with spark. After idea complete the dependency resolving, all the class need jar seems not ready for import(such as org.deeplearning.nn.xxx). Should I add some extra dependency such as dl4j-core?(I found it in pom of dl4j-example)
+[2016-11-29 14:11:52] <agibsonccc> have you tried just following our quick start and importing the exampels as is?
+[2016-11-29 14:13:28] <Marcteen> oops I made mistakes..hhh
+[2016-11-29 14:16:34] <Marcteen> agibsonccc: Is it ok if I just copy the dependencies from the dl4j-spark-exmaple to my own application pom?
+[2016-11-29 14:17:50] <agibsonccc> more or less should have everything
+[2016-11-29 14:17:54] <agibsonccc> I would try to learn maven though
+[2016-11-29 14:18:00] <agibsonccc> at least learn how to interpret what you're reading
+[2016-11-29 14:18:06] <agibsonccc> so you don't make a mistake
+[2016-11-29 14:21:50] <Marcteen> agibsonccc: Thanks for your reply. Discussion always help.
+--------------------------------------------------------------------------------------------------
+//Talk about training speed of DL4J
+[2016-12-03 08:17:04] <Lancer66> Hi, I want to use DL4J to train my model, but my big concern is about training speed. I just read an article [<-LINK->] , seems DL4J is kinda slow. I am wondering whether this article is misleading somehow?
+[2016-12-03 08:18:50] <agibsonccc> Lancer66: that stuff is always out of date
+[2016-12-03 08:18:54] <agibsonccc> I would run your own benchmark
+[2016-12-03 08:19:23] <raver119> Lancer66: all that stuff changes each and every release
+[2016-12-03 08:19:31] <agibsonccc> When was the paper even written? o_0
+[2016-12-03 08:20:05] <Lancer66>  [<-LINK->] 
+[2016-12-03 08:20:06] <raver120> Lancer66: Welcome! Here's a link to Deeplearning4j's Gitter Guidelines, our documentation and other DeepLearning resources online. Please explore these and enjoy! [<-LINK->] 
+[2016-12-03 08:20:28] <Lancer66> October 2016? not sure
+[2016-12-03 08:20:34] <agibsonccc> hmm..may
+[2016-12-03 08:23:28] <agibsonccc> Run your own benchmark
+[2016-12-03 08:23:59] <agibsonccc> If you do make sure to pre save the data: [<-LINK->] 
+[2016-12-03 08:24:11] <Lancer66> OK, I will try to find out
+--------------------------------------------------------------------------------------------------
+[2016-12-08 16:47:38] <cgravier> Hi, I am willing to contribute to deeplearning4j-nlp-parent module, especially I am interested in allowing custom windows.Currently, DL4J implements sliding windows of given context size. I want to provide a factory for windows, and therefore an interface for Windows, so that one can provide its own implementation of a window. Is there any suggestion to bootstrap me / traps to avoid in the design of how DL4J handles windows please ?
+[2016-12-08 16:48:10] <agibsonccc> cgravier: I worked on a previous implementation of this
+[2016-12-08 16:48:14] <agibsonccc> you're talking nlp right?
+[2016-12-08 16:48:36] <cgravier> agibsonccc: Yes I am :)
+[2016-12-08 16:48:50] <agibsonccc>  [<-LINK->] 
+[2016-12-08 16:48:54] <agibsonccc> Poke around in here
+[2016-12-08 16:49:03] <agibsonccc> see also the files in the same directory
+[2016-12-08 16:49:07] <agibsonccc> if you can improve on it please do
+[2016-12-08 16:49:45] <agibsonccc> We haven't used this in a while so I would LOVE seeing some updates to this
+[2016-12-08 16:49:49] <agibsonccc> even a rewrite is fine
+[2016-12-08 16:49:53] <cgravier> Thanks, I'll check the files and I'm glad I asked :)
+[2016-12-08 16:49:54] <agibsonccc> the unit tests might be helpful though
+[2016-12-08 16:50:10] <agibsonccc> yeah  I implemented this back in the days of yore
+[2016-12-08 16:50:17] <agibsonccc> definitely needs some attention :D
+[2016-12-08 16:50:28] <cgravier> Yes, I think I could be best to fork master and try to reintroduce the changes and modify at the same time for improvment if any
+[2016-12-08 16:50:35] <agibsonccc> I originally used this for moving window MLP stuff
+[2016-12-08 16:50:36] <cgravier> I am convinced it does 0;-)
+[2016-12-08 16:50:56] <agibsonccc> thanks for contributing happy to answer questions about the older impl
+[2016-12-08 16:52:08] <cgravier> Well, that's me who is thankful :) I'll will explore the links and see how things goes
+--------------------------------------------------------------------------------------------------
+[2016-12-13 06:35:15] <gks141270> agibsonccc: , Can you look at the GenderDetection example code that I uploaded few days back for your review? Please let me know if I need to add more useful information into it to make it compatible with dl4j-examples.
+[2016-12-13 06:36:58] <agibsonccc> gks141270: I merged it already?
+[2016-12-13 06:37:04] <agibsonccc> Did you do another commit?
+[2016-12-13 06:37:42] <gks141270> No, I didn't. Is it available in dl4j-examples now?
+[2016-12-13 06:38:18] <agibsonccc>  [<-LINK->] 
+[2016-12-13 06:39:05] <gks141270> Oh..
+[2016-12-13 06:39:13] <gks141270> Great. I am happy to see it
+--------------------------------------------------------------------------------------------------
+[2016-12-13 21:15:09] <enache2004> I made an app with dl4j and I want to deploy it on weblogic which is installed on a linux machine
+[2016-12-13 21:15:30] <agibsonccc> enache2004: should be straightforward what are you running in to?
+[2016-12-13 21:15:43] <enache2004> it complains about java.lang.UnsatisfiedLinkError: no jnind4j in java.library.path
+[2016-12-13 21:15:54] <agibsonccc> just use nd4j-native-platform then?
+[2016-12-13 21:16:07] <agibsonccc> make sure your dependencies are up to date too
+[2016-12-13 21:16:35] <enache2004> I use a previous version of dl4j 3.9
+[2016-12-13 21:16:47] <agibsonccc> O_O
+[2016-12-13 21:16:57] <agibsonccc> yup we've had 5-6 releases since then?
+[2016-12-13 21:17:00] <agibsonccc> maybe more
+[2016-12-13 21:17:01] <enache2004> I would like to test it that version because everything was fine on my machine
+[2016-12-13 21:17:10] <enache2004> I know..sorry
+[2016-12-13 21:17:15] <agibsonccc> we aren't liable for versions before this
+--------------------------------------------------------------------------------------------------
+[2016-12-14 14:41:50] <enache2004> I still don't know why I get this: Warning: class 1 was never predicted by the model.
+[2016-12-14 14:42:35] <daredemo> again, can you confirm that you had class 1 in your test set?
+[2016-12-14 14:42:36] <enache2004> I verified each step and my training data path seems ok
+[2016-12-14 14:42:49] <enache2004> yes..i have two folders
+[2016-12-14 14:42:51] <enache2004> is face
+[2016-12-14 14:42:52] <enache2004> no face
+[2016-12-14 14:42:52] <raver119> enache2004: track your data input pipeline. there were many changes there.
+[2016-12-14 14:43:33] <enache2004>  [<-CODE->] 
+[2016-12-14 14:43:54] <daredemo> enache2004: how about the model params? anything funky there?
+[2016-12-14 14:44:08] <enache2004> for nueral net ?
+[2016-12-14 14:44:14] <daredemo> yes
+[2016-12-14 14:44:18] <enache2004> everything is the same
+[2016-12-14 14:44:21] <enache2004> that's strange
+[2016-12-14 14:44:43] <enache2004> switching to 3.9 and works perfect
+[2016-12-14 14:45:46] <enache2004> this is my model
+[2016-12-14 14:46:29] <raver119> enache2004: please don't do that
+[2016-12-14 14:46:31] <raver119> use !gist
+[2016-12-14 14:46:32] <raver120> To use gist: paste your code/exception/large output log into [<-LINK->] , click 'Create Secret Gist' and paste URL link here
+[2016-12-14 14:46:53] <enache2004> I like how is formatting :D
+[2016-12-14 14:46:53] <enache2004> ok
+[2016-12-14 14:47:10] <enache2004>  [<-LINK->] 
+[2016-12-14 14:48:29] <raver119> aha, another change applied is xavier weight init
+[2016-12-14 14:48:35] <raver119> originally it was wrong
+[2016-12-14 14:48:39] <raver119> now it's fixed
+[2016-12-14 14:48:47] <raver119> original implementation is called XAVIER_LEGACY
+[2016-12-14 14:49:02] <raver119> .weightInit(WeightInit.XAVIER) <----- this thing
+[2016-12-14 14:50:11] <enache2004> so ...I will changed to ?
+[2016-12-14 14:50:15] <enache2004> legacy?
+[2016-12-14 14:51:01] <enache2004> the other think that I noticed is StandardScaler which is deprecated
+[2016-12-14 14:51:18] <enache2004> could this change my results ?
+[2016-12-14 14:52:04] <raver119> not sure what was changed for StandardScaler...
+[2016-12-14 14:52:32] <raver119> i mean it's just new implementation available, but don't know what was wrong with original
+[2016-12-14 14:53:21] <enache2004> I don't know what to follow
+[2016-12-14 14:54:08] <enache2004> to spend time to check if the latest version of dl4j has the native libraries fixed for linux
+[2016-12-14 14:54:28] <enache2004> or to keep my 3.9 version and investigate the part with java.library.path
+--------------------------------------------------------------------------------------------------
+[2016-12-15 10:38:34] <CHemauer> Hello everyone ! Im also new to DL4J, tried some stuff, read about it and really like it :) . But what im currently struggling with is how to enable multi label data input in DL4J (an useful example would be tag prediction from an image) . For inputs with a single label i used the PathLabelGenerator, which was fine. Since Google and reading the docs did not help much (apart from redirecting to gitter :P ), i decided to ask here.
+[2016-12-15 10:48:54] <EdeMeijer> Funny, someone else asked a very similar question a while ago about predicting multiple classes
+[2016-12-15 10:49:28] <EdeMeijer> I think the only way is to take the n classes with the highest probabilities after the softmax step
+[2016-12-15 10:49:50] <EdeMeijer> Maybe have a threshold on minimum probability and take all the classes with at least that probability
+[2016-12-15 10:50:50] <EdeMeijer> But I take it you want to assign multiple labels to examples during training time. No idea how that would work honestly.
+[2016-12-15 10:51:14] <EdeMeijer> Except maybe copying the examples that have multiple labels, one copy for every label you want to associate it with
+[2016-12-15 10:52:42] <CHemauer> Do you mean using a PathLabelGenerator and having a path for each of the labels?
+[2016-12-15 10:55:43] <AlexDBlack> CHemauer: I can't think a clean way to do that with the current built-in functionalityopen a github issue in datavec with your use case (i.e., where the labels are coming from - flat CSV? Map<URI,?>, etc) and we'll see what we can do
+[2016-12-15 10:55:55] <AlexDBlack>  [<-LINK->] 
+[2016-12-15 10:56:42] <CHemauer> Ok thanks for the fast replies!
+--------------------------------------------------------------------------------------------------
+[2016-12-16 01:08:28] <araymer> Is there an easy way to feed submats into a FFN and act on the parent image based on the prediction without having to write to disk?All the examples just show iterator examples. Do I have to manually write out the submats to create a DataSet/iterator?
+[2016-12-16 01:08:47] <agibsonccc> araymer: are you talkign about with using javacv?
+[2016-12-16 01:08:57] <araymer> Yes
+[2016-12-16 01:09:09] <agibsonccc> You may want to look at NativeImageLoader
+[2016-12-16 01:09:15] <agibsonccc> which wraps javacv
+[2016-12-16 01:09:19] <agibsonccc> Have you seen that already?
+[2016-12-16 01:09:30] <araymer> No, I'll take a look. Thanks
+[2016-12-16 01:09:53] <agibsonccc> araymer:  [<-LINK->] 
+--------------------------------------------------------------------------------------------------
+[2016-12-21 20:17:02] <anchitkolla> Hi I am having a little bit of trouble setting up all of the dependencies for spark. With this import line: import org.deeplearning4j.spark.impl.paramavg.ParameterAveragingTrainingMaster;
+[2016-12-21 20:17:03] <raver120> anchitkolla: Welcome! Here's a link to Deeplearning4j's Gitter Guidelines, our documentation and other DeepLearning resources online. Please explore these and enjoy! [<-LINK->] 
+[2016-12-21 20:17:22] <agibsonccc> anchitkolla: make sure all your dl4j versions are the same first of all
+[2016-12-21 20:17:28] <agibsonccc> You saw our !examples right?
+[2016-12-21 20:17:29] <raver120> Our latest examples available here: [<-LINK->] 
+[2016-12-21 20:17:38] <agibsonccc> Those has the pom.xmls you need
+[2016-12-21 20:17:54] <agibsonccc> Usually it'sjustdl4j-spark
+[2016-12-21 20:18:01] <agibsonccc> with the right scala version
+[2016-12-21 20:18:10] <agibsonccc> dl4j-spark_2.10 or dl4j-spark_2.11
+[2016-12-21 20:20:02] <anchitkolla> yeah all of my spark import statements work except for that line. I am getting cannot resolve "paramavg". I will look more into that. Thanks Adam.
+--------------------------------------------------------------------------------------------------
+[2017-01-02 22:35:05] <rmuchev> Hello there... Happy New Year :) It a pleasure to be here. I started playing with DL4J and must say that it is awesome... I have a small problem running the deeplearning4j\\examples\\userInterface\\UIExample.java. It runs perfectly in InteliJ, but when I open [<-LINK->] I can see only the text. In browser console I see:
+[2017-01-02 22:35:06] <raver120> rmuchev: Welcome! Here's a link to Deeplearning4j's Gitter Guidelines, our documentation and other DeepLearning resources online. Please explore these and enjoy! [<-LINK->] 
+[2017-01-02 22:35:10] <rmuchev> Uncaught ReferenceError: $ is not definedat overview:249
+[2017-01-02 22:35:21] <rmuchev> Uncaught ReferenceError: renderOverviewPage is not definedat overview:257
+[2017-01-02 22:35:46] <rmuchev> never-ending error log
+[2017-01-02 22:35:50] <raver119> rmuchev: what browser you're using?
+[2017-01-02 22:35:57] <rmuchev> latest Chrome
+[2017-01-02 22:36:00] <rmuchev> but same on IE
+[2017-01-02 22:36:22] <raver119> interesting
+[2017-01-02 22:36:32] <rmuchev> tried clearing cache and cookies
+[2017-01-02 22:36:33] <raver119> can you please check your network log in browser
+[2017-01-02 22:36:39] <raver119> to see if there's failed downloads
+[2017-01-02 22:36:51] <raver119> it sounds like some scripts were failed to load
+[2017-01-02 22:37:49] <rmuchev> yes, probably jquery
+[2017-01-02 22:40:27] <rmuchev> same on Firefox
+[2017-01-02 22:41:13] <raver119> sounds like network issue, sorry
+[2017-01-02 22:41:19] <raver119> out of our control atm
+[2017-01-02 22:41:41] <raver119> however, in next release we're going to use local copies for those scripts
+[2017-01-02 22:42:24] <rmuchev> I can switch to diggerent network (4g) and try
+[2017-01-02 22:42:32] <rmuchev> different*
+[2017-01-02 22:43:06] <raver119> sure
+[2017-01-02 22:43:14] <raver119> but we're kinda know that it works :)
+[2017-01-02 22:43:21] <raver119> so it's definitely something on your side
+[2017-01-02 22:43:41] <rmuchev> should I mvn clean install again?
+[2017-01-02 22:43:53] <raver119> how that going to help your network connectivity?
+[2017-01-02 22:44:23] <raver119> issue is your browser, which can't download scripts from jquery (or some other) cdn
+[2017-01-02 23:05:52] <rmuchev> I think the problem is that it tries to fetch the resources (css  and js) from assets folder
+[2017-01-02 23:05:53] <rmuchev>  [<-LINK->] 
+[2017-01-02 23:06:06] <rmuchev> this does not really exists
+[2017-01-02 23:06:22] <rmuchev> it should try to fetch them from CDN
+[2017-01-02 23:21:44] <rmuchev> Yep, if you check deeplearning4j-ui-resources-0.7.2.jar you will see that it is totally unalingned with the examples...
+[2017-01-02 23:22:29] <rmuchev> raver119: it wont work on your machine either
+[2017-01-02 23:39:01] <teptep> Hi@rmuchev, just run the example and tried with Chrome and FF...both seem to work for me.
+[2017-01-02 23:39:52] <teptep> Graphs are shown and the browser console is empty
+[2017-01-02 23:43:57] <rmuchev> Hi@teptepThank you! Are you using v0.7.2 or other?
+[2017-01-02 23:52:44] <teptep> I just pulled the example repository of DL4J via github and imported it in Eclipse as a Maven project. Worked fine for me.
+--------------------------------------------------------------------------------------------------
+1 [2017-01-03T13:48:03] <rmuchev> Hi, one quick question :)
+2 [2017-01-03T13:48:15] <rmuchev> you run UIExample from IntelliJ Idea
+3 [2017-01-03T13:48:19] <rmuchev> as Java application
+4 [2017-01-03T13:48:29] <rmuchev> or Maven something?
+5 [2017-01-03T13:48:49] <agibsonccc> what do you mean?
+6 [2017-01-03T13:49:11] <rmuchev> I open the UIExample.java file
+7 [2017-01-03T13:49:26] <rmuchev> all good
+8 [2017-01-03T13:49:32] <rmuchev> I go run as Java application
+9 [2017-01-03T13:49:48] <rmuchev> or I need to do do something like maven package?
+10 [2017-01-03T13:50:18] <agibsonccc> Run as java application
+11 [2017-01-03T13:50:50] <rmuchev> ok, tnx!
+--------------------------------------------------------------------------------------------------
+[2017-01-05 08:42:25] <robertlee2k> Thanks Alex. Actually my data are stored in a database , and I planed to  load and convert them to CSV files so that I could use D4J built-in DataIterator, but it is not feasible to create a million files , so I am wondering there are other built-in methods for this  :)
+[2017-01-05 08:43:10] <raver119> if you have data in database, why would you need csv?
+[2017-01-05 08:43:38] <agibsonccc> Because we don't have a JDBC record reader yet?
+[2017-01-05 08:43:38] <agibsonccc> :D
+[2017-01-05 08:44:17] <raver119> but he can read his data on his own, and just pass it via one of existing DataSetIterators that take jvm-originated data?
+[2017-01-05 08:44:21] <raver119> we have bunch of those
+[2017-01-05 08:44:58] <robertlee2k> I was just trying to follow the tutorial . you know , I am new to D4J , so I am not familiar with how to create a custom DataSetIterator , so I started from the tutorial
+[2017-01-05 08:46:25] <agibsonccc> right but JDBC straight from the source would be more straightforward :D
+[2017-01-05 08:46:55] <robertlee2k> Is there any sample for loading data from database and put into RNN  ?@raver119@agibsonccc
+[2017-01-05 08:46:59] <agibsonccc> CSV is also the best tested
+--------------------------------------------------------------------------------------------------
+1 [2017-01-05T19:07:58] <bhomass> have you got a code example which simply has working code for tsne plot on word2vec output?
+2 [2017-01-05T19:08:09] <bhomass> the document only has snippet
+3 [2017-01-05T19:08:10] <raver119> code for?
+4 [2017-01-05T19:08:15] <raver119> for single method call?
+5 [2017-01-05T19:08:25] <bhomass> and the TSNEStandardExample.java does not plot
+6 [2017-01-05T19:08:41] <raver119> i’ve already pointed you to method you need
+7 [2017-01-05T19:08:46] <bhomass> like TSNEStandardExample.java, except one that actually put up a plot
+8 [2017-01-05T19:08:48] <raver119> there’s nothing more needed from you
+9 [2017-01-05T19:09:12] <bhomass> so you don't have such an example code
+--------------------------------------------------------------------------------------------------
+[2017-01-05 19:09:53] <Tostino> So I was having trouble finding out what that int array that used to be returned for that old getGameScreen even was, there was no info about it on their site, so it\'s a little hard for me to figure out what I should do to get it into the correct format.  So I tried just converting to an int array (because that\'s what it expects) but it\'s complaining about "Mis matched lengths"
+[2017-01-05 19:10:27] <Tostino> do I need to scale it somehow so it's equal size?
+[2017-01-05 19:11:52] <raver119> i can’t read your mind, sorry. give full exception as !gist please :)
+[2017-01-05 19:11:53] <raver120> To use gist: paste your code/exception/large output log into [<-LINK->] , click 'Create Secret Gist' and paste URL link here
+[2017-01-05 19:14:02] <Tostino> Will do, one sec. Appreciate the patience.
+[2017-01-05 19:19:55] <Tostino>  [<-LINK->] 
+[2017-01-05 19:20:27] <Tostino> Oh shoot, my bad I used public. Won't do that again.
+[2017-01-05 19:20:51] <raver119> that doesnt matters
+[2017-01-05 19:20:52] <raver119> so
+[2017-01-05 19:21:06] <Tostino> exception is at the bottom
+[2017-01-05 19:21:07] <raver119> one thing looks like a hint
+[2017-01-05 19:21:18] <raver119> i guess your byte[] length is 1440000
+[2017-01-05 19:21:43] <raver119> and expected int[] length is  is 360000
+[2017-01-05 19:22:04] <raver119> which is 1440000 / 4 (sizeof int)  = 360000
+[2017-01-05 19:22:34] <raver119> what their documentation says? :)
+[2017-01-05 19:24:27] <Tostino>  [<-LINK->] 
+[2017-01-05 19:25:19] <Tostino> not crazy specific there
+[2017-01-05 19:25:30] <bhomass> InMemoryLookupTable.plotVocab needs UIConnection argument. where do I find examples for that?
+[2017-01-05 19:27:11] <Tostino> just says it's a byte array is all, and the previous api was just returning an int[] when you called getGameScreen() (no longer there), but I can't find any info on what that was either
+[2017-01-05 19:33:07] <Tostino> raver119: So that 1440000 number is = to the number of pixles in an 800x600 image, which is the resolution i'm running the game
+[2017-01-05 19:33:34] <raver119> aha
+[2017-01-05 19:33:56] <raver119> so that’s probably rl4j expects lower resolution?
+[2017-01-05 19:34:48] <Tostino> possible... I didn't touch the resolution though so that'd be strange
+[2017-01-05 19:35:43] <Tostino> I suppose I could step through and figure out where that 36000 number is coming from
+[2017-01-05 19:36:41] <raver119> from line 72
+[2017-01-05 19:36:51] <raver119> observationSpace = new ArrayObservationSpace<>(new int[]{game.getScreenHeight(), game.getScreenWidth(), 3});
+[2017-01-05 19:37:47] <raver119> i guess those options should be pr propagated to dl4j level
+[2017-01-05 20:08:57] <Tostino> raver119: Okay, was having workspace issues... back at it now.  So the issue is that the ind array is totally different for what you said it's expecting there, and the screen_buffer
+[2017-01-05 20:10:35] <Tostino> what it's expecting is a shape of 800,600, 3 in an ndarray
+[2017-01-05 20:11:04] <Tostino> what it's getting is a 1,360000
+--------------------------------------------------------------------------------------------------
+[2017-01-06 13:51:44] <xtuyaowu> [ERROR] Failed to execute goal org.apache.maven.plugins:maven-enforcer-plugin:1.4.1:enforce (enforce-default) on project dl4j-examples: Some Enforcer rules have failed. Look above for specific messages explaining why the rule failed. -> [Help 1]
+[2017-01-06 13:51:46] <raver120> xtuyaowu: Welcome! Here's a link to Deeplearning4j's Gitter Guidelines, our documentation and other DeepLearning resources online. Please explore these and enjoy! [<-LINK->] 
+[2017-01-06 13:57:11] <agibsonccc> xtuyaowu: what are you trying to do?
+[2017-01-06 13:57:19] <agibsonccc> You shouldn't get that by default. What did you modif?
+[2017-01-06 13:57:46] <agibsonccc> aktaios:  [<-LINK->] 
+[2017-01-06 13:57:55] <raver119> i feel "building from source" attempt...
+[2017-01-06 13:58:06] <agibsonccc> probably :D
+[2017-01-06 13:58:15] <agibsonccc> I see "dl4j-examples" though
+--------------------------------------------------------------------------------------------------
+[2017-01-09 02:53:52] <bleuosun> I'm training a dnn + cnn model. The F1 score is around 50. But there are some warning that some classes are never predicted.
+[2017-01-09 02:55:39] <bleuosun> i did a quite check. I guess that there are around 50% of training data is labeled as type A. There are 5 types.
+[2017-01-09 02:56:10] <bleuosun> shall i create the dataset which is perfect balanced for 5 types?
+[2017-01-09 02:56:52] <agibsonccc> What do you mean "dnn + cnn" model?
+[2017-01-09 02:57:03] <agibsonccc> If you trained a conv net say that in plain english :D
+[2017-01-09 02:57:15] <agibsonccc> Beyond that yes, minibatches should always be balanced
+[2017-01-09 02:57:36] <agibsonccc> The intuition for minibatch learning comes from statistics
+[2017-01-09 02:57:57] <agibsonccc> If you have a minibatch it should ideally be as close to representative of your whole population as possible
+[2017-01-09 02:58:30] <bleuosun> I mean danse layer + cnn. I used wrong word, i guess....
+[2017-01-09 02:58:35] <agibsonccc> The reason I ask about your model, is because batch size largely depends on dimensions of the data and kind of problem as well as number of labels
+[2017-01-09 02:58:40] <agibsonccc> Then say "conv net" :D
+[2017-01-09 02:59:22] <agibsonccc> so depending on how big your images are you could be like mnist where 1k is a good idea (small dimensions) or 32/64 like imagenet
+[2017-01-09 02:59:44] <agibsonccc> the label distribution will come down to batch size
+[2017-01-09 02:59:56] <bleuosun> Ok. I merged a csv data and image data 100x100 pixel
+[2017-01-09 02:59:56] <agibsonccc> but as evenly distributed as you can get would be better
+[2017-01-09 03:00:08] <agibsonccc> make sure to check our !tuning guide
+[2017-01-09 03:00:09] <raver120> Accuracy is low or network isn't learning? Start by reading [<-LINK->] and [<-LINK->] 
+[2017-01-09 03:01:52] <bleuosun> I read it, but want to learn more, for example about batch balancing
+[2017-01-09 03:02:05] <bleuosun> thanks for the answer
+--------------------------------------------------------------------------------------------------
+[2017-01-09 12:59:40] <djKooks> Hello~just 1 question
+[2017-01-09 13:00:06] <djKooks> How can I contribute to document translation
+[2017-01-09 13:00:08] <djKooks> ?
+[2017-01-09 13:00:25] <raver119> you’re welcome :)
+[2017-01-09 13:00:30] <agibsonccc> First of all - thank you for even offering.
+[2017-01-09 13:00:32] <agibsonccc> What language?
+[2017-01-09 13:00:34] <djKooks> I hope to contribute korean translation
+[2017-01-09 13:00:39] <agibsonccc> oh my god yes
+[2017-01-09 13:00:49] <agibsonccc> so it's just github pages
+[2017-01-09 13:01:15] <agibsonccc>  [<-LINK->] 
+[2017-01-09 13:01:19] <agibsonccc> Here's our korean docs right here
+[2017-01-09 13:01:33] <agibsonccc> 1 thing that would be IMMENSELY helpful would be if you could even just update our quickstart
+[2017-01-09 13:01:40] <djKooks> Before contributing on code, I thought I need to review dl4j project. Translating will be good to study.
+[2017-01-09 13:01:49] <djKooks> Oh sure.
+[2017-01-09 13:01:54] <agibsonccc> kepricon: is our engineer in korea
+[2017-01-09 13:01:57] <agibsonccc> so he can review
+[2017-01-09 13:02:18] <agibsonccc> we have 2 people there and little time :D so ANY help we can get is amazing
+[2017-01-09 13:02:30] <agibsonccc> Have you saw our korean channel?
+[2017-01-09 13:02:55] <agibsonccc>  [<-LINK->] 
+[2017-01-09 13:03:11] <agibsonccc> Feel free to ask questions there as well on wording and the like
+[2017-01-09 13:05:00] <djKooks> Thanks for help!
+--------------------------------------------------------------------------------------------------
+[2017-01-11 09:41:46] <daredemo> I have a brain freeze about recurrent nets... All I'm trying to do is to evaluate a test set that is a timeseries data... and I can't figure out how to do it? do I have to feed the data one by one?
+[2017-01-11 09:42:21] <daredemo> because if I try to do it the "normal" way I get mismatch in label and predicted dimensions
+[2017-01-11 09:42:52] <AlexDBlack> using the Evaluation class?
+[2017-01-11 09:42:58] <AlexDBlack> you want evalTimeSeries for that
+[2017-01-11 09:43:15] <daredemo> oh
+[2017-01-11 09:43:17] <AlexDBlack> for the net, just use .output(INDArray features)
+[2017-01-11 09:44:05] <daredemo> let me digest this for a moment
+[2017-01-11 09:45:08] <AlexDBlack>  [<-LINK->] 
+[2017-01-11 09:45:11] <AlexDBlack> actually, just do that
+[2017-01-11 09:45:32] <AlexDBlack> MultiLayerNetwork.evaluate(DataSetIterator) if you can
+[2017-01-11 09:47:46] <perceptoid> Facing a bit of strange issue. When using cuda-8.0 backend and using the StatsListener (for web ui), I get (very) different score results than native backend. Removing the stats listener gives expected output. [<-LINK->] Baffled at the fact that a listener can affect the result.
+[2017-01-11 09:48:46] <daredemo> AlexDBlack: something is still going wrong, let me clean up my code and post it as gist
+[2017-01-11 09:49:20] <AlexDBlack> perceptoid: "score at iteration" is the ScoreIterationListener fyi
+[2017-01-11 09:49:34] <AlexDBlack> so if you remove the StatsListener you'll still get that output
+[2017-01-11 09:49:41] <AlexDBlack> you're saying the scores actually change if you do that?
+[2017-01-11 09:50:27] <daredemo> !gist
+[2017-01-11 09:50:28] <raver120> To use gist: paste your code/exception/large output log into [<-LINK->] , click 'Create Secret Gist' and paste URL link here
+[2017-01-11 09:50:33] <perceptoid> I know it sounds crazy, but it seems to be the case
+[2017-01-11 09:51:25] <daredemo> what I'm trying to do is recurrent with one input and with 4 classes: [<-LINK->] 
+[2017-01-11 09:52:11] <AlexDBlack> perceptoid: can you open an !issue with details of your network configuration, hardware, etc?I've used the stats listener extensively with both CPU and CUDA and haven't seen anything like that before...
+[2017-01-11 09:52:12] <raver120> For DL4J issues, click 'New Issue' at [<-LINK->] - for ND4J, use [<-LINK->] instead
+[2017-01-11 09:52:53] <daredemo> and this is the error I get: Labels and predicted have different shapes: labels=[1, 4, 1024], predicted=[1024, 4]
+[2017-01-11 09:53:30] <AlexDBlack> daredemo: ah, use an RnnOutputLayer, not an OutputLayer
+[2017-01-11 09:54:33] <daredemo> AH!
+[2017-01-11 09:55:33] <daredemo> AlexDBlack: thanks a million
+[2017-01-11 09:55:39] <AlexDBlack> sure, np
+--------------------------------------------------------------------------------------------------
+[2016-11-28 10:43:44] <rahulahuja16> raver119: Let me train a new model in 0.7.0 and test it out once... if that fails too I will share the models and file an issue
+[2016-11-28 10:44:05] <raver119> just post configurations you have, i'll do it faster :)
+[2016-11-28 10:44:20] <raver119> i know where to look there :)
+[2016-11-28 10:46:12] <rahulahuja16> raver119:  [<-LINK->]
+[2016-11-28 10:46:42] <raver119> how big is corpus? is it sentences or documents?
+[2016-11-28 10:47:10] <raver119> documents = set of sentences. i.e. text file.
+[2016-11-28 10:47:54] <rahulahuja16> documents
+[2016-11-28 10:48:00] <raver119> amazing, thanks
+[2016-11-28 10:48:54] <raver119> how big is it? how many documents, and what's average size of single document in bytes?
+[2016-11-28 10:50:27] <rahulahuja16> We have 3 different models  : 1 with 2 lakhs docs, 1 with 32k docs and last one with 476 docs... all have average 10-12 sentencesa
+[2016-11-28 10:50:59] <raver119> lakhs <- what's that word means?
+[2016-11-28 10:51:15] <rahulahuja16> 0.2 mil
+[2016-11-28 10:51:38] <raver119> aha, thanks.
+--------------------------------------------------------------------------------------------------
+[2016-11-28 19:51:14] <Ettrai> Hello, what happened to this page?
+[2016-11-28 19:51:14] <Ettrai>  [<-LINK->] 
+[2016-11-28 19:51:17] <raver120> Ettrai: Welcome! Here's a link to Deeplearning4j's Gitter Guidelines, our documentation and other DeepLearning resources online. Please explore these and enjoy! [<-LINK->] 
+[2016-11-28 20:00:06] <nyghtowl> Ettrai: there has been work to update the documents and that page was pulled. How did you get that link?
+[2016-11-28 20:00:25] <tomthetrainer> Ettrai: that page was out of date, what page linked you to that?
+[2016-11-28 20:00:54] <tomthetrainer> echo.
+[2016-11-28 20:01:31] <tomthetrainer> Ettrai: also, what did you need to know about our architecture?
+[2016-11-28 21:36:58] <Ettrai> nyghtowl: @tomthetrainerI just used the search engine and a link provided in a paper. What I was trying to figure out is the parallelization strategies you are using
+[2016-11-28 21:38:55] <nyghtowl> Ettrai: what is the paper you were looking at?
+[2016-11-28 21:40:33] <Ettrai> nyghtowl: it's from a double blind review so I cannot disclose it, sorry about that
+[2016-11-28 21:41:00] <nyghtowl> No problem - more just trying to understand where these links still exist
+[2016-11-28 21:41:17] <Ettrai> sure
+[2016-11-28 21:42:33] <nyghtowl> Regarding the parallelization strategy, we apply the batch training approach where we divide the gradient updates by the batch size
+[2016-11-28 21:45:14] <Ettrai> Thank you@nyghtowl. I am trying to figure out those strategies given that I am new to neural networks but not new to parallel programming
+[2016-11-28 21:49:43] <raver119> Ettrai: are you wondering about parallelism model for computations then?
+[2016-11-29 00:15:12] <Ettrai> raver119: I think that's what I am looking for. It would be nice to get the idea of how you carry on this computation, reduce, and so on
+--------------------------------------------------------------------------------------------------
+[2016-12-02 14:14:39] <treo> internal maven is just convenience
+[2016-12-02 14:16:36] <treo> dl4j isn't that slow in a vm... using linux in a vm on windows it sometimes even outperforms the host
+[2016-12-02 14:16:51] <agibsonccc> huh
+[2016-12-02 14:16:55] <agibsonccc> linux > windows I assume?
+[2016-12-02 14:17:02] <treo> right
+[2016-12-02 14:17:04] <wmeddie> That sometimes happens.
+[2016-12-02 14:17:26] <treo> my point is that putting it in a vm isn't usually a huge performance cost
+[2016-12-02 14:17:28] <wmeddie> The opposite is also true sometimes.  Chrome is faster inside a VM running windows on a Linux host.
+[2016-12-02 14:17:37] <wmeddie> Especially CPU bound stuff.
+[2016-12-02 14:17:47] <wmeddie> Once you start doing IO though.
+[2016-12-02 14:18:11] <treo> I find that on SSDs it's pretty good
+--------------------------------------------------------------------------------------------------
+[2016-12-07 12:24:25] <thhart> I learn some examples from named directories, unfortunately I only can see the indexes of the labels but not its names where loaded from, are these persisted in the model somewhere or do I have to care of it in the learning stage when loaded via FileSplit?
+[2016-12-07 12:24:56] <agibsonccc> thhart: that's where the record meta data comes in
+[2016-12-07 12:30:40] <thhart> agibsonccc: But metadata I know for the datasets during learning, is there also metadata to store within a model for the labels?
+[2016-12-07 12:30:59] <agibsonccc> thhart: you'd have to track that yourself
+[2016-12-07 12:31:13] <agibsonccc> we are working on a more integrated pipeline api that will allow this to be a bit less opaque
+[2016-12-07 12:31:20] <agibsonccc> if you have any ideas for features feel free to open an issue
+--------------------------------------------------------------------------------------------------
+1 [2016-12-10T01:26:30] <chrisvnicholson> @/allwe're planning on building Keras bindings for DL4J. Is anyone in this thread interested in and available for contributing (part-time, remote) to that? if so, pls DM me...
+--------------------------------------------------------------------------------------------------
+[2016-12-16 01:45:35] <yuimo123> raver120: is there any chinese edition of this book?
+[2016-12-16 01:45:49] <agibsonccc> raver120 is a bot :D
+[2016-12-16 01:45:56] <agibsonccc> we are translating it to mandarin with oreilly
+[2016-12-16 01:45:59] <agibsonccc> but it won't be out for a while
+[2016-12-16 01:46:33] <agibsonccc> If you want more information add me on wechat
+[2016-12-16 01:46:35] <agibsonccc> agibsonccc
+[2016-12-16 01:46:36] <yuimo123> ok
+[2016-12-16 01:46:40] <agibsonccc> I can point you in the right direction
+[2016-12-16 01:46:46] <agibsonccc> we have a wechat presence
+[2016-12-16 01:46:48] <agibsonccc> we also do a lot of business in china
+[2016-12-16 01:46:50] <yuimo123> thanks a lot
+[2016-12-16 01:49:06] <yuimo123> i begin to learn dl4j for a little days, and  have lots of questions to ask.  thanks for your patiences
+[2016-12-16 01:51:10] <AllenWGX> wechat?the Chinese IM tool from Tecent?@agibsonccc
+[2016-12-16 01:52:49] <agibsonccc> Yes I use wechat
+[2016-12-16 01:52:57] <agibsonccc> actively
+[2016-12-16 01:53:05] <agibsonccc> I was just in china for all of november :D
+[2016-12-16 01:53:07] <agibsonccc> I live in asia
+[2016-12-16 01:53:49] <agibsonccc> I spoke here just recently: [<-LINK->] 
+--------------------------------------------------------------------------------------------------
+[2016-12-23 06:21:56] <1151738113> hellow!
+[2016-12-23 06:21:57] <raver120> 1151738113: Welcome! Here's a link to Deeplearning4j's Gitter Guidelines, our documentation and other DeepLearning resources online. Please explore these and enjoy! [<-LINK->]
+--------------------------------------------------------------------------------------------------
+[2016-12-23 06:56:41] <sunilkumartc> Hi Adam
+[2016-12-23 06:56:59] <sunilkumartc> how is it going?
+[2016-12-23 06:57:18] <agibsonccc> sunilkumartc: late in san francisco :D I'm passing out in a few
+[2016-12-23 06:57:49] <sunilkumartc> I know.Its day in Bangalore,India
+[2016-12-23 06:58:06] <agibsonccc> yup I usually live in japan
+[2016-12-23 06:58:08] <agibsonccc> I'm used to time zones
+[2016-12-23 06:58:21] <agibsonccc> 1 of those things :D
+[2016-12-23 06:58:41] <agibsonccc> Anyways - have a good "day" feel free to ask questions, my colleagues are awake
+[2016-12-23 06:59:12] <sunilkumartc> Cool.will do.
+--------------------------------------------------------------------------------------------------
+[2017-01-03 12:36:22] <markWZX> raver119: I just tried to change "<artifactId>nd4j-native</artifactId>" to "<artifactId>nd4j-native-platform</artifactId>", but it doesn\'t work. It\'s also that error. can\'t find jniopenblas.dll
+[2017-01-03 12:36:43] <agibsonccc> Give us a !gist of the full stack trace then
+[2017-01-03 12:36:44] <raver120> To use gist: paste your code/exception/large output log into [<-LINK->] , click 'Create Secret Gist' and paste URL link here
+[2017-01-03 12:36:56] <raver119> and add output of java —version please
+[2017-01-03 12:39:37] <markWZX> java version "1.8.0_111"Java(TM) SE Runtime Environment (build 1.8.0_111-b14)Java HotSpot(TM) 64-Bit Server VM (build 25.111-b14, mixed mode)
+[2017-01-03 12:39:51] <agibsonccc> yeah we'll need your full error
+[2017-01-03 12:41:34] <markWZX>  [<-LINK->] 
+[2017-01-03 12:41:58] <agibsonccc> ahh
+[2017-01-03 12:42:05] <agibsonccc> add javacv as a dependency
+[2017-01-03 12:42:26] <agibsonccc>  [<-CODE->] 
+[2017-01-03 12:43:54] <markWZX> I 'll try it.
+[2017-01-03 12:58:39] <markWZX> aha.. The fact is that it also doesn't work...the same error.
+[2017-01-03 12:59:05] <agibsonccc> your error is definitely opencv related
+[2017-01-03 12:59:08] <agibsonccc> look at it
+[2017-01-03 12:59:27] <agibsonccc> oh wait
+[2017-01-03 12:59:33] <agibsonccc> I was looking at opencv :D
+[2017-01-03 12:59:37] <agibsonccc> I read that as opencv not openblas
+[2017-01-03 12:59:40] <agibsonccc> that's a bit weird
+[2017-01-03 12:59:43] <agibsonccc> my bad
+[2017-01-03 13:00:16] <agibsonccc> if openblas isn't statically linked it might need to be installed? hm
+[2017-01-03 13:00:16] <markWZX> ...
+[2017-01-03 13:00:21] <agibsonccc> I'm not sure what the deal is on windows
+[2017-01-03 13:00:26] <agibsonccc> Yeah my bad :D let's move on here
+[2017-01-03 13:00:38] <agibsonccc> sorry we've ran in to that before
+[2017-01-03 13:00:41] <agibsonccc> pretty common cause
+[2017-01-03 13:01:05] <agibsonccc> usually people  need to install opencv in order to use it, it looks like something similar here
+[2017-01-03 13:02:37] <agibsonccc> AlexDBlack: what have you had to do?
+[2017-01-03 13:02:56] <agibsonccc> markWZX: Installing openblas here: [<-LINK->] and putting this folder on your path should work
+[2017-01-03 13:03:28] <markWZX> OK.
+[2017-01-03 13:03:33] <agibsonccc> Also if you don\'t know what I\'m talking about with "linking" you should at least vaguely know what that is
+[2017-01-03 13:03:56] <agibsonccc> Look, I can tell you're kinda impatient with this, but native stuff is more or less always like this on windows :D
+--------------------------------------------------------------------------------------------------

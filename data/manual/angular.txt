@@ -1,0 +1,889 @@
+[2017-06-23 11:08:13] <broweratcognitecdotcom> I just use the boostrap 3 css. I'mnot really satisfied with the current state of any of the libs
+[2017-06-23 11:11:15] <notsonotso> it's a problem with many ng wrappers. Often one-man shows that are maintained for a year or two before they start to rot.
+[2017-06-23 11:11:37] <notsonotso> And even with maintained packages, they tend to lag
+--------------------------------------------------------------------------------------------------
+[2016-12-15 20:51:19] <2goatduo> /aot
+[2016-12-15 21:01:06] <2goatduo> has anyone successfully done aot build following [<-LINK->] ?
+[2016-12-15 21:04:00] <Toxicable> or use the cli
+[2016-12-15 21:08:16] <2goatduo> I was using angular-cli to do aot, then realized that it can't be trusted yet
+[2016-12-15 21:08:29] <piq9117> 2goatduo: there some versioning incompatibilities to watch out for
+[2016-12-15 21:08:55] <Toxicable> @2goatduowhy not?
+[2016-12-15 21:09:29] <2goatduo> Toxicable:  [<-LINK->]
+[2016-12-15 21:10:12] <Toxicable> 2goatduo: I dont get it
+[2016-12-15 21:22:35] <2goatduo> Toxicable: ng build --aotis doing alot of work, and hiding alot of detail, such as handling of scss files.  I can't easily do an aot build withngc, as suggested here: [<-LINK->] .  Andng build --aotwas succeeding when I had not specified a main.ts with ngfactory bootstrap.   Andngccompile failed on stuff whenng build --aotdidn't, like templates accessing private members of associated classes.
+[2016-12-15 21:24:06] <DzmitryShylovich> 2goatduo:  [<-LINK->]
+[2016-12-15 21:24:49] <2goatduo> DzmitryShylovich: thanks, but I've been there before
+--------------------------------------------------------------------------------------------------
+1 [2016-11-22T03:22:47] <adamgarcia4> Hello, can anyone help me figure out how to bundle my Angular 2 app into a 'bundle.js' file to be put onto heroku and served from an express server?
+2 [2016-11-22T03:23:37] <piercers> adamgarcia4: The CLI makes that pretty easy. Otherwise one of the Angular seeds and their build steps might be a good place to start.
+3 [2016-11-22T03:24:27] <adamgarcia4> piercers: I started a project from scratch, following one of the Udemy courses.  Would you suggest that I port everything over to the CLI folder structure?
+4 [2016-11-22T03:27:09] <piercers> adamgarcia4: You might not need to go that far. I’m just pointing out those other options as inspiration. If your code is in TypeScript, it shouldn’t be too difficult to port it over if it came down to that.
+5 [2016-11-22T03:40:12] <adamgarcia4> Pardon my inexperience.  hmm, does the angular cli webpack support being able to run an express server?
+6 [2016-11-22T03:40:22] <Toxicable> yes
+7 [2016-11-22T03:41:37] <adamgarcia4> Alright, time to port my project over to the angular cli!  Wish me luck
+--------------------------------------------------------------------------------------------------
+1 [2016-11-22T07:07:53] <mkazlauskas> Hi guys, I'm trying to bootstrap an Angular2 app inside shadowdom. Shadowdom v1 doesn't have /deep/ so I don't think I can use selector. Is there any way to pass an actual HTMLElement for the entrypoint?
+2 [2016-11-22T07:19:42] <mkazlauskas> I assume that should be possible with platform-browser
+--------------------------------------------------------------------------------------------------
+1 [2016-11-22T12:14:50] <mildfuzz> Can I create a dummy component in my TestBed from a raw template string in order to test my directive?
+2 [2016-11-22T12:24:31] <mildfuzz>  [<-CODE->] but it points to internals
+3 [2016-11-22T12:25:00] <mildfuzz> which doesn't seem like a good idea. How can I produce components in this way without using angular internals?
+--------------------------------------------------------------------------------------------------
+[2016-11-22 12:52:10] <PhotoPaul>  [<-CODE->]  [<-CODE->] 
+[2016-11-22 12:52:34] <PhotoPaul> can I somehow inject Math object to use inside my template?
+[2016-11-22 12:54:54] <DzmitryShylovich>  [<-CODE->] 
+[2016-11-22 13:01:28] <PhotoPaul> DzmitryShylovich: I got it to work as you explained, thank you!
+[2016-11-22 13:18:23] <n00dl3> PhotoPaul: creating a pipe is more elegant
+[2016-11-22 13:19:38] <PhotoPaul> n00dl3: You are right, but this is already part of a 3 piece pipe so I thought of keeping it simple. Maybe if I need to use it again I will convert it into a pipe
+--------------------------------------------------------------------------------------------------
+1 [2016-11-22T14:36:45] <andreasadk> How can I delay showing my "loading-screen" to only show if the Observable takes more than x ms to return a result?
+--------------------------------------------------------------------------------------------------
+1 [2016-11-22T15:16:28] <ChrisGrant> Hi all. Anyone had an error like this before when trying to load a route?"uncaught (in promise): Error: loading chunk" 10 failedonly seeing it on IE9, works on everything else as far as I know.
+--------------------------------------------------------------------------------------------------
+[2016-11-22 16:13:14] <Matteoo7> Hi guys! I just got out of HTML, CSS and some basic Javascript. I'm now studying AngularJS. There are topics on $http and route resolvers which I don't get. I was wondering if I need background on some backend stuff, nodeJS perhaps, to understand $http/route resolvers better?
+[2016-11-22 16:14:04] <alxhub> Matteoo7: also, are you familiar with the concept of client-side routing in a SPA?
+[2016-11-22 16:14:34] <Matteoo7> alxhub: nope. not yet at least. what do you recommend?
+[2016-11-22 16:15:15] <alxhub> Matteoo7: , well,$httpsuggests you're talking about Angular1. This is the Angular2 chat.
+[2016-11-22 16:15:48] <alxhub> So you could head over to the Angular1 gitter at [<-LINK->] and ask the awesome folks there.
+[2016-11-22 16:15:57] <Matteoo7> alxhub: ah, yes. I better move to the other side of the chat room. Thanks though!
+[2016-11-22 16:16:31] <alxhub> And also, if you're sticking with Angular1, [<-LINK->] will help you understand client-side routing and resolve a little better.
+[2016-11-22 16:16:47] <alxhub> Or you could decide to do the Angular2 tutorial instead: [<-LINK->]
+[2016-11-22 16:16:57] <alxhub> Up to you :)
+[2016-11-22 16:19:09] <Matteoo7> alxhub: all very helpful resources! Im going to go through client-side routing first and the whole angular1 before checking out angular2. Surely, it'll be ofsomehelp when I get to angular2 :)
+[2016-11-22 16:19:47] <alxhub> Eh, actually, they're sufficiently different that it's better to go straight to Angular2.
+[2016-11-22 16:21:16] <Matteoo7> oh
+[2016-11-22 16:21:21] <Matteoo7> ohhhhhh
+[2016-11-22 16:22:32] <Matteoo7> alxhub: thank you, if i'm going to save time, it's going to be because of you! Thank you for your time, very much appreciated. I guess I'll be off with Angular2 now
+--------------------------------------------------------------------------------------------------
+[2016-12-12 16:31:37] <jjstreet> noted.
+[2016-12-12 16:32:04] <jjstreet> Chrome 54.0.2840 (Windows 10 0.0.0) DndItem should have original position styling after mouse up FAILED\n[1]     Expected '' to equal null.
+[2016-12-12 16:32:21] <jjstreet> i know why that test failed
+[2016-12-12 16:32:30] <jjstreet> its still set toposition: absolute
+[2016-12-12 16:32:53] <jjstreet> but what i dont understand is why jasmine thinks the position is a blank string?
+[2016-12-12 16:33:50] <jjstreet>  [<-CODE->] 
+[2016-12-12 16:34:52] <jjstreet> doesn't seem right to me that it would be blank
+[2016-12-12 16:36:27] <jjstreet> when i remove the positioning, the test passes
+[2016-12-12 16:40:52] <jjstreet> having to do this kinda sucks :( [<-CODE->] 
+[2016-12-12 16:41:32] <daddyschmack> Are you sure the test browser is going to have the same layout as a user browser?  (Just my guess@jjstreet)
+[2016-12-12 16:41:47] <jjstreet> are you asking me?
+[2016-12-12 16:42:12] <alxhub> Are you styling a custom element,@jjstreet?
+[2016-12-12 16:42:50] <jjstreet> \'<div [dndItem]="item"></div>\'is the template for the item im styling
+[2016-12-12 16:43:00] <jjstreet> so im grabbing that div
+[2016-12-12 16:43:10] <alxhub> Ahh. Yeah, not the problem I was thinking of then.
+[2016-12-12 16:43:31] <jjstreet> im not sure i understand your question@daddyschmack
+[2016-12-12 16:43:43] <jjstreet> im use chrome as the browser used by jasmine
+[2016-12-12 16:44:17] <jjstreet> wonder if i hit another bug withDebugElement
+[2016-12-12 16:44:47] <daddyschmack> jjstreet: , I’m just guessing, if you are using the native element, it may not layout the same way in the jasmine plugin renderes, but I’m not sure.. It really is just a guess.
+[2016-12-12 16:45:05] <jjstreet> but what do you mean by layout?
+[2016-12-12 16:45:10] <jjstreet> im just changing styles
+[2016-12-12 16:45:13] <jjstreet> and checking styles
+[2016-12-12 16:46:26] <daddyschmack> oh, I thought since you’re moving things around with element offset height and element offset width.. that might have caused some kind of issue with the “native element” But again, I’m just pulling this out of my butt.  If you drop a debugger in there, what do you see?
+[2016-12-12 16:47:09] <jjstreet> i was just remarking on how its not ideal to be accessing native element properties in my directive thats all
+[2016-12-12 16:47:27] <jjstreet> i dont have any problems yet with offsetHeight and offsetWidth
+[2016-12-12 16:47:32] <daddyschmack> jjstreet: , I’m not criticizing!
+[2016-12-12 16:47:44] <jjstreet> lol i never said you were
+--------------------------------------------------------------------------------------------------
+[2016-11-26 09:42:01] <Toxicable> Soooo apparently Im terrible at codingAnyone got some suggestions at how to Transform a nested tree
+[2016-11-26 09:43:04] <Toxicable> like from data models into database modelsit's the thing I was working on this morning, question has multiple questions
+[2016-11-26 09:43:27] <Toxicable> :/
+[2016-11-26 09:43:45] <lazarljubenovic> you're using relational database?
+[2016-11-26 09:43:46] <Toxicable> basically like a .map() but... with a tree
+[2016-11-26 09:44:10] <Toxicable> Yeah, but it can be represented in models, just need to get it to the right ones
+[2016-11-26 09:44:24] <lazarljubenovic> that's exactly why we have mongodb
+[2016-11-26 09:44:32] <lazarljubenovic> so we don't need a strict schema
+[2016-11-26 09:44:38] <lazarljubenovic> migrate.
+[2016-11-26 09:44:39] <Toxicable> well even then, i'd still have the same issue
+[2016-11-26 09:44:47] <lazarljubenovic> no you wouldn't you'd just save the json
+[2016-11-26 09:44:56] <lazarljubenovic> save JSON.stringify of your tree in a database cell
+[2016-11-26 09:45:01] <Toxicable> I need to get it to models that have things like, created by, created at, other ID's and what not
+[2016-11-26 09:46:27] <lazarljubenovic>  [<-CODE->] 
+[2016-11-26 09:48:39] <Toxicable> what I mean is my UI is giving me something like [<-CODE->] but it needs to be [<-CODE->] 
+[2016-11-26 09:49:09] <DzmitryShylovich>  [<-LINK->] hero is undefined during renderingdoes anybody have an idea how to solve it?
+[2016-11-26 09:49:15] <Toxicable> the count is for multiplying it out btw, so if it's 3 I need to make 3 copies of that one
+--------------------------------------------------------------------------------------------------
+1 [2016-11-28T08:12:27] <MitchZA> Morning everyone. Hope everyone had a good weekend.
+2 [2016-11-28T08:13:08] <MitchZA> Does anyone  use ng-bootstrap/ng-bootstrap modal component?
+--------------------------------------------------------------------------------------------------
+[2016-11-30 09:38:44] <Toxicable> Hey guys, so i'm trying to use SignalR with my App but im having trouble getting it setup. The issue is that if I put some code to init the connection in my index.html file then it works fineIf I put that same code in my component the variable it's trying to access is undefined, i've tried putting it in a NgZone.run and doing it awhile after the app starts up but it's always undefined [<-CODE->]  [<-CODE->]
+[2016-11-30 09:45:07] <Toxicable>  [<-LINK->] and I just did it in a plunkr for that and it worked fine >.> I don't see what local stuff im running could break this
+--------------------------------------------------------------------------------------------------
+[2016-11-30 18:20:35] <vincentpalita> Hi, quick question: I am trying to find the parentNode of an element contained in a component. The last parentNode is the first child of the component. I want to catch the component as the parentNode. Do you know how to do this?
+[2016-11-30 18:20:58] <vincentpalita> I forgot to mention that this is outside of angular.
+--------------------------------------------------------------------------------------------------
+1 [2017-01-04T16:31:39] <brendanjerwin> hey all. I’m trying to get myself rolling with ng2 and am having a problem with my unit tests. used the cli to make a project, added a module (angular material) and got it working in my hello-world. But, when I run my tests withng testI getError: Template parse errors:\n    'md-card' is not a known element:I imagine my unit test environment isnt loading the module, but I just dont know wher eto go to fix that situation… any guidance?
+2 [2017-01-04T16:47:50] <michaelpwilson> brendanjerwin: it sounds like you haven't imported angular material into your test
+3 [2017-01-04T16:47:51] <michaelpwilson>  [<-LINK->]
+--------------------------------------------------------------------------------------------------
+1 [2016-12-02T02:57:37] <mijofr> The PreloadAllModules strategy you can use - how does it deal with modules that are only called in the routes of nested modules?
+2 [2016-12-02T02:59:01] <mijofr> For example, my app lazyloads the store module, and that lazyloads the cart module, so there's no direct reference to cart in the base app routes. Will the compilation stage cascade it all down so that preloading will preload both?
+--------------------------------------------------------------------------------------------------
+1 [2016-12-03T02:25:38] <bradysterling> Rob I've been studying your writings lately. Huge help for me getting organized. Thanks!
+--------------------------------------------------------------------------------------------------
+1 [2016-12-22T10:25:23] <manish7singh> I am working with forms... but if the form is too large then covers the whole page...Any suggestions on how to control the design layout?
+2 [2016-12-22T10:25:27] <manish7singh>  [<-LINK->]
+--------------------------------------------------------------------------------------------------
+[2016-12-03 18:06:41] <lihaibh> Does anyone has good library for rxjs + socket.io?
+[2016-12-03 18:22:03] <lihaibh> how can i disconnect from a websocket automatically when no component using it in the dom?
+[2016-12-03 18:22:29] <lihaibh> i dont want to hold many websockets because its resource consuming
+[2016-12-03 18:22:40] <lihaibh> or atleast thats what i think it is, correct me if im wrong
+[2016-12-03 18:23:08] <lihaibh> i want kind of lazy usage of websockets is it possible?
+[2016-12-03 18:52:54] <babeal> lihaibh: use the websocket subject in rxjs or wrap your websocket into an observable and share it
+[2016-12-03 18:53:23] <lihaibh> and how would i know when to disconnect?
+[2016-12-03 18:54:23] <babeal> when all subscribers unsubscribe then the dispose function will be executed as long as you “share” it.  I think share has been removed so you would need to run .publishReplay(1).refcount().
+[2016-12-03 18:55:45] <lihaibh> publishReplay? not regular 'publish'?
+[2016-12-03 18:55:51] <babeal> I had to implement an operator that delayed the dispose though, because since changing routes will destroy the components before the new ones are created and the websocket connection will be torn down.
+[2016-12-03 18:56:30] <babeal> It’s to share only 1 version of the websocket
+--------------------------------------------------------------------------------------------------
+[2016-12-03 20:43:12] <lazarljubenovic> what's the barcode scanner thingy? :(
+[2016-12-03 20:43:40] <robwormald> somebody asked earlier if they could scan barcodes in html5
+[2016-12-03 20:43:46] <lazarljubenovic> i mean, what do i point at the camera? a usual barcode?
+[2016-12-03 20:53:35] <lazarljubenovic> works pretty well here [<-LINK->] so i guess it's something with plunker not displaying the green squiggly lines
+[2016-12-03 20:56:16] <Toxicable> Are we meant to scan barcodes with it?
+[2016-12-03 20:56:30] <Toxicable> tried it on my phone and it uses my front camera lol
+[2016-12-03 20:56:50] <lazarljubenovic> yeah it works for some stuff i have on desk by shoing green lines but doesn't recognize it as a barcode
+[2016-12-03 20:57:06] <lazarljubenovic> works when pointing to site's logo (talking about my link above, not the plunker)
+[2016-12-03 20:57:22] <lazarljubenovic> probably those locales and commy stuff as rob said :)
+[2016-12-03 20:59:44] <Toxicable> ok well now it's using the back one but im not seeing naything come up either
+--------------------------------------------------------------------------------------------------
+[2017-01-19 08:51:31] <tomreinartz90> Hi all
+[2017-01-19 08:52:53] <tomreinartz90> we are having some issues with translations in our application as we have multiple sources of XLF that we want to inject.Is there an option to change the format from xlf to JSON or some other easy to parse in the frontend value?
+
+--------------------------------------------------------------------------------------------------
+[2016-12-04T10:34:16] <mythz> How can Inject Router,ActivatedRoute - it'sundefinedin my Compontent's constructor. I've read we should register ROUTER_PROVIDERS but that doesn't seem to exist in latest angular2, what should I be registering instead?
+[2016-12-04 10:54:23] <mythz> can't find an example on plunkr that uses the new router, everything uses ROUTER_DIRECTIVES, e.g: [<-LINK->] is there anything that replaces it?
+[2016-12-04 10:54:56] <DzmitryShylovich> mythz:  [<-LINK->] 
+[2016-12-04 10:55:19] <mythz> DzmitryShylovich: thx, checking it out
+--------------------------------------------------------------------------------------------------
+[2017-01-13 17:23:45] <hardyrz> Hi guys, i'm having problems with the zone.js. I can't catch an error because there is no catch after the try in zone.js code. Can someone help me, please? [<-CODE->] 
+[2017-01-13 17:24:30] <DzmitryShylovich> what are u trying to accomplish?@hardyrz
+[2017-01-13 17:24:44] <alxhub> Won't the error be caught in the inner try/catch?
+[2017-01-13 17:25:09] <hardyrz> The thing is that is catching one error and throwing another
+[2017-01-13 17:25:13] <alxhub> It'll only be re-thrown from there if the zone'shandleErrorfunction returns true.
+[2017-01-13 17:25:51] <hardyrz> Yes, it is returning true
+[2017-01-13 17:26:02] <alxhub> Then that's why it's being re-thrown.
+[2017-01-13 17:26:52] <hardyrz> So, how I can catch it?
+[2017-01-13 17:27:09] <hardyrz> Because with a simple try/catch i'm not able
+[2017-01-13 17:28:03] <hardyrz> DzmitryShylovich: I want to catch an error in my application but that piece of code is not allowing me. [<-CODE->] 
+--------------------------------------------------------------------------------------------------
+1 [2016-12-05T20:34:47] <foxjazz> I have drowned, and found heaven
+2 [2016-12-05T20:35:42] <kirbygit> foxjazz: @intellixI know angular pretty damn hard
+--------------------------------------------------------------------------------------------------
+[2016-12-06 11:50:52] <npx> has flatmap been removed from rxjs?
+[2016-12-06 11:51:05] <DzmitryShylovich> nope
+[2016-12-06 11:51:11] <DzmitryShylovich> u need to import it
+[2016-12-06 11:52:31] <npx> DzmitryShylovich: well i canot find it o.o
+--------------------------------------------------------------------------------------------------
+1 [2016-12-06T12:19:18] <matthewhaworth> Could anyone spare 5 minutes to talk through some ideal angular structure perhaps in private? I could paste it here but I don't want to spam the channel
+--------------------------------------------------------------------------------------------------
+1 [2016-12-06T14:49:29] <broweratcognitecdotcom> Hello
+--------------------------------------------------------------------------------------------------
+[2016-12-11 08:50:48] <Toxicable> off topic: any used AMP ?
+[2016-12-11 08:51:11] <DzmitryShylovich> only awp
+[2016-12-11 08:51:23] <lazarljubenovic> seriously though, how'd you handle it?
+[2016-12-11 08:51:31] <DzmitryShylovich> handle what?
+[2016-12-11 08:51:38] <Toxicable> erm, awp?
+[2016-12-11 09:02:11] <robwormald> Toxicable: yes on AMP
+[2016-12-11 09:02:18] <robwormald> i'm experimenting with AMP + universal
+[2016-12-11 09:02:51] <Toxicable> Oh so it actually works with Angular?
+[2016-12-11 09:03:02] <DzmitryShylovich> Toxicable: lol u don't know what is awp?
+[2016-12-11 09:03:07] <Toxicable> nope
+[2016-12-11 09:04:21] <ishitatsuyuki> AMP
+[2016-12-11 09:04:26] <ishitatsuyuki> Accelerated mobile pages
+[2016-12-11 09:04:37] <ishitatsuyuki> Take out your smartphone, Google "AMP"
+[2016-12-11 09:04:39] <Toxicable> awp
+[2016-12-11 09:06:17] <robwormald> Toxicable: AMP pages can't run any JS in the browser
+[2016-12-11 09:07:00] <Toxicable> robwormald: Yeah that's what I thought, then I realized that's probably why you said + universal  :D
+--------------------------------------------------------------------------------------------------
+[2017-01-13 11:36:25] <achimha> I have a problem with a form validator directive that I created, it seems to not get executed [<-CODE->] The validator looks as follows: [<-CODE->] 
+[2017-01-13 11:47:37] <achimha> Also I noticed that Angular does not error out when I add an unknown attribute to a tag in my template
+[2017-01-13 11:48:29] <achimha> according to the docs it should error on unknown attributes: [<-LINK->] 
+--------------------------------------------------------------------------------------------------
+[2017-01-18 18:51:31] <gargtushar> Hello Friend
+[2017-01-18 18:51:37] <gargtushar> Hello all
+[2017-01-18 18:51:42] <gargtushar> I need help
+[2017-01-18 18:51:57] <gargtushar> I am using trackBy in ngFor
+[2017-01-18 18:52:43] <gargtushar> but the variables defined in constructor are not accessible in trackBy function
+[2017-01-18 18:52:47] <gargtushar> please help me
+[2017-01-18 18:53:04] <gargtushar> DzmitryShylovich: please help me
+[2017-01-18 18:54:27] <DzmitryShylovich> gargtushar: why do u need the variables defined in constructor inside trackBy?
+[2017-01-18 18:54:31] <ShadowManu> gargtushar: why not set those variables somewhere in your class? Then, in thetrackByfunction, you can refer them withthis.property.
+[2017-01-18 18:54:59] <gargtushar> they are also not available here
+[2017-01-18 18:55:42] <gargtushar> <li #key class = "dropdown"  *ngFor="let children of list.children_data, trackBy: getdetails; let i = index;" >{{children.name}}</li>
+[2017-01-18 18:56:23] <gargtushar> export class NavlistComponent  implements OnInit { @Input() list: any;   a : any;   childList : any;   arry : any;   constructor(private elRef:ElementRef, public magentoservice : MagentoApiService) { }   ngOnInit() {   } [<-CODE->] }
+[2017-01-18 18:56:50] <gargtushar> I need to hit the service in the trackBy function
+[2017-01-18 18:57:06] <DzmitryShylovich> wut
+[2017-01-18 18:58:22] <gargtushar> i want to hit a http get request in the track by on the basis of ID of children and returns is details to dislay
+[2017-01-18 18:59:18] <ShadowManu> if I understood correctly, you don't use trackBy to make requests. RT wut.
+[2017-01-18 18:59:22] <Toxicable> gargtushar: whyyyyy?
+[2017-01-18 18:59:32] <Toxicable> trackBy cant resolve async functions
+[2017-01-18 18:59:39] <Toxicable> and it shouldn't at all
+[2017-01-18 19:00:02] <DzmitryShylovich> u should stop watching anime really
+[2017-01-18 19:01:28] <Toxicable> gargtushar: I refusu ti believe that, you can query for their ID afterwards but not before?
+[2017-01-18 19:01:30] <gargtushar> please tell me how to make that accessible in trackBy function
+[2017-01-18 19:02:53] <gargtushar> but i am unable to pass extra params to this function
+[2017-01-18 19:02:58] <gargtushar> how can i pass
+[2017-01-18 19:03:17] <Toxicable> gargtushar: how can you pass what?
+[2017-01-18 19:03:24] <DzmitryShylovich> gargtushar: hope u are trolling :)
+[2017-01-18 19:04:12] <gargtushar> I want that magentoservice variable inside trackBy function
+--------------------------------------------------------------------------------------------------
+[2016-12-25 18:33:50] <jordic> Working on the Pythagoras tree for Ng... Trying to get the maximum performance..
+[2016-12-25 18:35:09] <jordic> I'm around a frame rate of 20fps.. (but the cycle version is around 40fps. )
+[2016-12-25 18:35:34] <jordic> The main problem is the recursive component.. that executes too many things..
+1 [2016-12-25T18:59:43] <DzmitryShylovich> seems like inferno has the best performance
+2 [2016-12-25T19:04:34] <DzmitryShylovich> I don’t know why. Maybe all that type checking from TypeScript adds runtime overhead after transpiling?:)
+3 [2016-12-25T19:05:54] <DzmitryShylovich> Now this… this was smooth on my machine. Maybe it just feels smooth because I looked at it right after the Angular version, but damn.
+4 [2016-12-25T19:05:58] <DzmitryShylovich> nice post
+5 [2016-12-25T19:13:31] <jordic> DzmitryShylovich: this is the part i don't like...
+6 [2016-12-25T19:13:56] <jordic> because the teropa version is not reactive... and really is slow... just try it... clonning...
+7 [2016-12-25T19:13:57] <Toxicable> camelCaseToDashCase taking 7% of the execution time lol
+8 [2016-12-25T19:17:29] <karthikkp> Toxicable:  [<-LINK->]
+9 [2016-12-25T19:19:17] <jordic> Also try it with AOT because there is performance improvement
+10 [2016-12-25T19:20:11] <Toxicable> jordic: where did you record the fps?
+11 [2016-12-25T19:20:32] <Toxicable> im looking at timeline and it looks like im getting 4fps when it's moving around
+12 [2016-12-25T19:20:37] <jordic> With chrome.. you have the FPS monitor on rendering tab
+13 [2016-12-25T19:20:57] <Toxicable> rendering tab?
+14 [2016-12-25T19:21:40] <jordic> Is near console an animations
+15 [2016-12-25T19:23:19] <Toxicable> I don't have a tab called rendering or animations
+16 [2016-12-25T19:23:51] <jordic>  [<-LINK->]
+17 [2016-12-25T19:24:00] <jordic> You need to enable it.. Thought with right mouse button
+18 [2016-12-25T19:24:57] <Toxicable> ah got it
+--------------------------------------------------------------------------------------------------
+1 [2016-12-12T22:15:51] <TheeRFG> Does anyone know where I can go to get help with angular2 and the jasmine testing framework?
+2 [2016-12-12T22:18:02] <TheeRFG> I'm trying to create a jasmine test that makes sure console.log is called in my app.component's ngOnInit my code is here but that doesn't seem to work
+3 [2016-12-12T22:19:12] <TheeRFG> more specifically it says "Expected spy log to have been called." so I guess it just hasn\'t....
+--------------------------------------------------------------------------------------------------
+1 [2016-12-12T23:26:55] <pmulac> Reactive forms Question:  What's the best way to handle conditional validation?  Say you have two radio buttons, and selecting one displays a subform with required fields.  If the other radio button is selected, then the form's validity should not consider the (hidden) subform's validity.  So far I've considered: [<-CODE->] Both of these are ugly, but #1 seems like a better approach to me.  Anyone else deal with this?
+--------------------------------------------------------------------------------------------------
+1 [2016-12-15T15:20:50] <edwinharly> Has anyone here completed Deborah Kurata\'s "Getting started with Angular" course on Pluralsight ????
+--------------------------------------------------------------------------------------------------
+1 [2016-12-15T19:51:43] <maartentibau> Hi guys.. long time no see
+--------------------------------------------------------------------------------------------------
+1 [2016-12-11T18:57:54] <DirkWolthuis> Hi guys, strange problem. Using firebase I making a chatbot app. In the oninit cycle I subscribe to the input-observable but first push a welcome message to the firebase list observable. But somehow when I start sending input the items will show up before the welcome message. Is a subscribe function handled first or something?
+2 [2016-12-11T18:58:21] <DirkWolthuis>  [<-CODE->]
+--------------------------------------------------------------------------------------------------
+1 [2016-12-16T05:41:26] <harshpatel79> Hi Folks,can  anyone  looks into this issue and help me outhttp://stackoverflow.com/questions/41177558/angular-2-nested-routing-for-two-level
+--------------------------------------------------------------------------------------------------
+1 [2016-12-16T10:09:39] <thbt> is it possible to use lazy loading for sub routes ? (eg ModuleA is lazy loaded from app-routing.module, and ModuleB is lazy loaded from module-a-routing.module)
+--------------------------------------------------------------------------------------------------
+1 [2016-12-16T11:44:55] <nunofreitasbotelho> Morning everyone
+--------------------------------------------------------------------------------------------------
+[2016-12-16 14:32:50] <win8it> Hi,I have an input text to enter the date.if the user enters m/d/yyyy eg:1/3/2016 How to add 0 to the date to be mm/dd/yyyy eg: 01/03/2016??
+[2016-12-16 14:34:06] <ericmartinezr> "format date javascript" -> google
+[2016-12-16 14:34:39] <noamichael> win8it: You can listen to a change event on the input and then format the date in the component
+[2016-12-16 14:34:52] <DzmitryShylovich>  [<-ISSUE->] flash mob :)
+[2016-12-16 14:35:13] <ericmartinezr> lol
+[2016-12-16 14:37:41] <DzmitryShylovich> disable minification
+[2016-12-16 14:39:08] <win8it> Hi,I have an input text to enter the date.if the user enters m/d/yyyy eg:1/3/2016How to add 0 to the date to be mm/dd/yyyy eg: 01/03/2016??
+[2016-12-16 14:39:36] <ericmartinezr> "format date javascript" -> google
+[2016-12-16 14:40:01] <DzmitryShylovich> deja vu
+[2016-12-16 14:40:07] <ericmartinezr> yeah, lol
+[2016-12-16 14:40:11] <ericmartinezr> a glitch in the matrix
+[2016-12-16 14:41:43] <win8it> noamichael: Thanks, How to format the Date I am beginnerIs there a method get or set day or month?
+[2016-12-16 14:42:31] <ericmartinezr> _: @
+[2016-12-16 14:43:20] <noamichael> win8it:  [<-LINK->]
+[2016-12-16 14:43:25] <ericmartinezr>  [<-LINK->]
+[2016-12-16 14:44:28] <DzmitryShylovich> win8it: u are looking for [<-ISSUE->] but it's not impelmented yet
+[2016-12-16 14:45:06] <DzmitryShylovich> gl Eric :)
+[2016-12-16 14:45:30] <ericmartinezr> ;_;
+[2016-12-16 14:47:32] <win8it> Thanks@noamichael,@ericmartinezrand@DzmitryShylovich
+--------------------------------------------------------------------------------------------------
+[2016-12-17 17:05:51] <jesmith17> So I am trying to follow the guide laid out in [<-LINK->] , but I don’t understand where the “User” interface file fits in.
+[2016-12-17 17:40:01] <jesmith17> i agree that line isn’t needed. But mine fails saying the this.myForm element isn’t defined
+[2016-12-17 17:40:11] <jesmith17> And when I run it live I get no errors, just a blank page
+[2016-12-17 17:41:07] <DzmitryShylovich> @jesmith17this.myForm element isn’t definedu need to define it before actually using
+[2016-12-17 17:41:09] <DzmitryShylovich> just add
+[2016-12-17 17:41:31] <DzmitryShylovich>  [<-CODE->]
+[2016-12-17 17:41:38] <DzmitryShylovich> before constructor declaration
+[2016-12-17 17:42:54] <jesmith17> I did in mine. But I still get a blank form when I run it via “ng serve"
+[2016-12-17 17:43:00] <jesmith17> And no errors in the console at all
+[2016-12-17 17:43:31] <jesmith17> Just trying to find out why the plunker worked but doesn’t when run for real. Hoping I am missing something small
+[2016-12-17 17:44:23] <DzmitryShylovich> do u have;at the end of the lines?
+[2016-12-17 17:49:06] <jesmith17> my last attempt literally copied and pasted his code directly
+[2016-12-17 17:50:08] <jesmith17> I then added in the necessar declaration for the myForm: FormGroup object
+[2016-12-17 17:50:08] <DzmitryShylovich> ok...
+[2016-12-17 17:54:16] <jesmith17> it feels like I am just missing one little thing, but I can’t track down what it is as I don’t get any console errors to help
+[2016-12-17 17:56:25] <jesmith17> Added a console.log to both the construtor and the ngOnInit methods, and neither fires
+[2016-12-17 17:56:49] <DzmitryShylovich> did u add your component
+[2016-12-17 17:56:57] <DzmitryShylovich> on the page at all?
+[2016-12-17 17:57:27] <DzmitryShylovich> may be incorrect seelctor?
+[2016-12-17 17:58:13] <jesmith17> I thought that as well, but selector is fine as it showed the template driven form before I added the reactive stuff
+[2016-12-17 18:01:22] <nikhildhankani> have you imported ReactiveFormsModule ?
+[2016-12-17 18:02:18] <jesmith17> I did. I think I found it, and it was a stupid error on my side. I had added this new component as a new route, and while I had tested the routing before addig in the reactive stuff, I had missed that the URL had gotten reset, so it was calling the wrong component.
+[2016-12-17 18:03:44] <jesmith17> rookie mistake on my part. Thanks for the help everyone.
+--------------------------------------------------------------------------------------------------
+[2016-12-18 00:27:31] <kiokotzu> hello, my pipe not filter
+[2016-12-18 00:27:50] <kiokotzu>  [<-LINK->] 
+[2016-12-18 00:28:10] <kiokotzu>  [<-LINK->] 
+[2016-12-18 00:31:21] <Toxicable> what's the error?@kiokotzu
+[2016-12-18 01:33:12] <kiokotzu> Toxicable: 43/5000It goes empty, but when I type there if you search
+[2016-12-18 01:38:18] <Toxicable> kiokotzu: what? I don't know what you mean by thatwhat's the error? or if you cant explain the error can you reproduce in a plunkr
+[2016-12-18 01:47:47] <kiokotzu> Toxicable: Sorry for my english, I'm trying to do this in angular 2
+[2016-12-18 01:47:54] <kiokotzu>  [<-LINK->]
+[2016-12-18 01:49:25] <Toxicable> kiokotzu: oaky so can you reproduce your error in a plunkr [<-LINK->]
+[2016-12-18 01:56:17] <kiokotzu> vale
+--------------------------------------------------------------------------------------------------
+[2016-12-18 16:20:02] <SkyNetDZ> Hi ,everyBody
+[2016-12-18 16:20:14] <intellix> hiii doctor nick
+[2016-12-18 16:20:18] <SkyNetDZ> can you help  me in this code !
+[2016-12-18 16:20:25] <intellix> is that a question or a statement
+[2016-12-18 16:20:31] <SkyNetDZ>  [<-LINK->] 
+--------------------------------------------------------------------------------------------------
+[2016-12-19 00:55:38] <jxxcarlson> How do you access the previous state in ngrx?
+[2016-12-19 00:56:53] <derekkite> jxxcarlson: previous? as in the one before you changed it? you would have to log it somewhere.
+[2016-12-19 00:57:48] <jxxcarlson> derek: Cool, I will do that
+[2016-12-19 01:17:09] <bonnici> i thought you could use [<-LINK->] to do "time travelling"
+[2016-12-19 01:17:24] <bonnici> never done it myself though
+[2016-12-19 01:38:36] <admosity> oops i can't read@bonnicijust said that
+--------------------------------------------------------------------------------------------------
+[2016-12-19 10:13:28] <dgorobopec> Hi everyone i am facing some difficulties described here : [<-LINK->] . If anyone as the time to try to answer my question i would really appreciate it thank you very much.
+[2016-12-19 10:16:37] <NejcZdovc>  [<-LINK->] @dgorobopecwe were discussing this an hour ago, as far as I can tell you can do only html templates with i18n, so I would suggest ng2-translate if you need ts code as well
+--------------------------------------------------------------------------------------------------
+1 [2016-12-19T10:14:45] <broweratcognitecdotcom> Good morning
+2 [2016-12-19T10:16:23] <broweratcognitecdotcom> I know this is the angular gitter, but is anyone using webpack? The webpack gitter seems to be dead
+3 [2016-12-19T10:27:23] <emilaasa> broweratcognitecdotcom: yeah a lot of people are using webpack here
+4 [2016-12-19T10:27:31] <emilaasa> What do you want to know?
+5 [2016-12-19T10:28:17] <broweratcognitecdotcom> emilaasa: Is it possible to open your web app hosted on another machine using webpack-dev-server ?
+11 [2016-12-19T10:29:20] <broweratcognitecdotcom> emilaasa: I can't open my app in firefox on my machine when it is being hosted by webpack-dev-server on another machine
+12 [2016-12-19T10:30:23] <broweratcognitecdotcom> basically, I followed the angular quick start which uses system.js. Then I converted my project to use webpack. it builds. I can start it, but I can't access it
+13 [2016-12-19T10:33:08] <emilaasa> Hmm. I havent run in to that use case. =)
+14 [2016-12-19T10:33:56] <broweratcognitecdotcom> emilaasa: You are developing and looking at your app on the same machine I guess?
+15 [2016-12-19T10:34:17] <broweratcognitecdotcom> "scripts": {\n    "build": "webpack",\n    "start": "webpack-dev-server --port 3000 --hot"\n  },
+16 [2016-12-19T10:34:32] <broweratcognitecdotcom> Can you please show me this part of your package.json?
+17 [2016-12-19T10:34:33] <emilaasa> Yeah, and using a real http server to deploy it to CI env
+18 [2016-12-19T10:40:05] <emilaasa> Not too dissimilar from that repo, except quite a bit less features
+19 [2016-12-19T10:41:28] <broweratcognitecdotcom> emilaasa: Ya, I'm trying not to use 'mighty' examples but just get something simple working.
+20 [2016-12-19T10:41:58] <broweratcognitecdotcom> but thanks, i'll look closely at that see if I can find something
+21 [2016-12-19T10:46:57] <broweratcognitecdotcom> emilaasa: so are you using webpack-dev-server at all?
+22 [2016-12-19T10:48:32] <broweratcognitecdotcom> ```> webpack-dev-server --port 3000 --corshttp://localhost:3000/webpack-dev-server/webpack result is served from /content is served from /nas5/brower/sandbox/camera_calibration```
+23 [2016-12-19T10:49:18] <broweratcognitecdotcom> I've tried [<-LINK->] and [<-LINK->] and [<-LINK->] and [<-LINK->] and I get nuttin. Just gets aborted.
+--------------------------------------------------------------------------------------------------
+[2016-12-19 19:18:17] <AlexZan> Where can I find more info on the Angular 4 router, I am creating a tutorial which is due for release in Q2 2017, so it makes sense that I try to work with it now, if possible
+[2016-12-19 19:19:00] <DzmitryShylovich>  [<-LINK->] 
+[2016-12-19 19:20:18] <AlexZan> DzmitryShylovich: was that for me? If that covers the angular 2 router, will that not be different than the angular 4 router if the purpose of Angular 4 is the router version 4?
+[2016-12-19 19:21:09] <DzmitryShylovich> AlexZan:  [<-LINK->]
+--------------------------------------------------------------------------------------------------
+1 [2017-02-03T20:13:58] <Agi-Developer> diff b/w angular and angular2
+2 [2017-02-03T20:15:56] <DzmitryShylovich> angular4
+3 [2017-02-03T20:17:56] <DzmitryShylovich> [checked] is an angular event
+4 [2017-02-03T20:18:35] <Agi-Developer> some times angular 2 documentation so confused pls answer
+5 [2017-02-03T20:19:29] <DzmitryShylovich> agilanshanthi:  [<-LINK->]
+6 [2017-02-03T20:20:14] <DzmitryShylovich> agilanshanthi:  [<-LINK->]
+--------------------------------------------------------------------------------------------------
+1 [2017-01-08T14:34:04] <stefmabo> Hello friends.Can you help me to resolve a problem with how to build nested model-driven forms?Here is the plunker [<-LINK->] The problem is when is try to embedded a third form control.
+2 [2017-01-08T14:34:17] <stefmabo> I try*
+--------------------------------------------------------------------------------------------------
+[2016-12-19 12:09:52] <PEsteves8> Why did the documentation left out the whole unsubscribing from route params subscription from the docs. And yet still includes phrases such as "we\'ll feed the Observable directly into our template using the AsyncPipe, which will handle unsubscribing from the Observable for us when the component is destroyed" or "The router offers a Snapshot alternative that gives us the initial value of the route parameters. We don\'t need to subscribe or unsubscribe. It\'s much simpler to write and read:"
+[2016-12-19 12:10:22] <PEsteves8> These lead one to believe that subscription should be done. But the removal of any reference about that (unlike previously) would indicate that unsubscribing onDestroy is no longer necessary
+[2016-12-19 12:15:06] <DzmitryShylovich> PEsteves8: mm because u don't need to unsubscribe from it?
+[2016-12-19 12:20:19] <PEsteves8> I appreciate your response, but I feel you didn\'t really read what I asked. Why does the documentation include expressions like "the AsyncPipe, which will handle unsubscribing from the Observable for us" and "a Snapshot alternative that gives us the initial value of the route parameters. We don\'t need to subscribe or unsubscribe."
+[2016-12-19 12:20:29] <PEsteves8> if unsubscription it not needed anyway?
+[2016-12-19 12:20:53] <PEsteves8> Why refer that snapshot alternative and async pipe make it unnecessary to unsubscribe, if that what it already happens anyway
+[2016-12-19 12:21:22] <PEsteves8> (maybe I wasn't clear before, sorry)
+[2016-12-19 12:21:46] <DzmitryShylovich> PEsteves8: file an issue on [<-LINK->] if something is not clear for u. we do not write docs
+[2016-12-19 12:22:15] <DzmitryShylovich> snapshot is a plain object
+[2016-12-19 12:22:28] <DzmitryShylovich> this is why u don't need to subscibe/unsubscribe
+[2016-12-19 12:22:32] <DzmitryShylovich> it's not even possible
+[2016-12-19 12:23:20] <DzmitryShylovich> and u don't need to unsubscribe from route observables in general
+[2016-12-19 12:23:38] <DzmitryShylovich> because every component has it's own instance of ActivatedRoute
+[2016-12-19 12:26:12] <PEsteves8> Right... I know you don't right docs. But I was hoping you were able to help out understanding angular's features. I know that you don't unsubscribe snapshot, that's pretty easy to understand. My point is, why the emphasis on the wonders of using methods that allows to skip unsubscribing, if that already happens?
+[2016-12-19 12:27:14] <PEsteves8> And I\'m just going to assume that that emphasis shouldn\'t be there and that it\'s a bit misleading. and "We don\'t need to subscribe or unsubscribe", could be changed to just "We don\'t need to subscribe"
+[2016-12-19 12:27:41] <PEsteves8> *write docs
+[2016-12-19 12:28:39] <DzmitryShylovich> file an issue on https://github.com/angular/angular.io/issuesand they will explain/change it better
+[2016-12-19 12:29:33] <PEsteves8> ok
+[2016-12-19 12:31:29] <dklmuc> PEsteves8: they emphasize it, because it is important... For me it's absolutly clear and logical
+[2016-12-19 12:34:17] <dklmuc> base rule is: when you subscribe then you also need to unsubscribe... all other thins are exceptions from that rule
+[2016-12-19 12:35:28] <PEsteves8> dklmuc: Ah yes. But I was told here that router params unsubscribe is done anyway on component destruction, without any need to do it explicitly using the onDestroy hook.
+[2016-12-19 12:39:52] <dklmuc> PEsteves8: really? that's new for me...
+[2016-12-19 12:42:05] <PEsteves8> dklmuc: I was told that here, after I asked why the recommendation to unsubscribe using the onDestroy hook was removed from the docs. But I still feel a bit confused from the things I just asked a couple of minutes ago.
+[2016-12-19 12:45:20] <dklmuc> PEsteves8: confusion always depends who you ask...
+[2016-12-19 14:03:56] <PEsteves8> I'll just focus more on the docs repo for things like these
+[2016-12-19 14:10:39] <dklmuc> PEsteves8: the skill level of some people is really high, but their level of social skills is exactly the opposite...
+[2016-12-20 18:13:39] <PEsteves8> dklmuc: In case you\'re interested, regarding the whole router params unsubscribing thing from yesterday, I finally got clarification here: [<-LINK->] Summarizing: "I see your point. Not having to unsubscribe was a virtue of snapshot. Now it isn\'t. Not having to subscribe remains a snapshot virtue. I\'ll update prose accordingly." :D
+--------------------------------------------------------------------------------------------------
+1 [2016-12-20T20:25:46] <elliott-beach> ilennert: I'm trying to deploy this repo. [<-LINK->] , using the tasknpm run tscto output directory dist, but how do I configure this for use with, say, firebase?  The build process does not copy node_modules, so I get this error when I try to runhttp-server .in thedistdirectory:Failed to load resource: the server responded with a status of 404 (Not Found)
+2 [2016-12-20T20:33:31] <ilennert> e-beach: , your missing a few things here.  It looks like your bootstrapping as you would if you were using Webpack (the recommended way) but you don't have any webpack stuff in your package.json or repo.  Please allow me to recommend this video, it will answer all your questions! [<-LINK->]
+3 [2016-12-20T20:37:50] <elliott-beach> ilennert: Thanks!
+4 [2016-12-20T20:59:20] <jordic> ilennert:  [<-LINK->] This there is a presentations about ngrx. Also, if you want a more big example: [<-LINK->]
+--------------------------------------------------------------------------------------------------
+[2016-12-16 19:23:23] <josephliccini>  Hey guys,
+I am on my team spearheading the transition to Angular 2. One of the questions the team keeps asking me is 'What happened to the [<-CODE->] one time binding operator in our templates?' I know online I saw people built solutions to this in JS in their components, but is this something that is relevant for Angular 2? Does it have the same perf benefits as it did in angular 1?
+[2016-12-16 19:38:59] <ericmartinezr> josephliccini: I can\'t say for sure, but I think the "most equivalent" option is ChangeDetectionStrategy.OnPush (assuming I understand what one-time binding operator did in ng1)
+[2016-12-16 19:39:03] <ericmartinezr> You can read this too [<-LINK->] 
+[2016-12-16 19:41:03] <ericmartinezr> And this@josephliccini [<-LINK->] 
+[2016-12-16 19:42:47] <josephliccini> ericmartinezr: thanks! I will read these.  I believe Angular 1 one-time binding was so you could write data to the template, but then not have it check for updates in change detection later.  That is, once angular set the value in the template, it would not update it later.
+--------------------------------------------------------------------------------------------------
+1 [2016-12-21T04:14:31] <Ranguro> Is it normal that if I change of view in my app, a validator gets triggered multiple times?
+--------------------------------------------------------------------------------------------------
+[2016-11-21 23:27:18] <ByMiles> someone awake?
+[2016-11-21 23:30:59] <ByMiles>  [<-CODE->] this dont works,  but I need to press the to vars row and col into the component cell
+[2016-11-22 00:07:40] <ByMiles> bonnici: any idea for me?
+[2016-11-22 00:09:01] <bonnici> let cellrow of round.cells; let cellindex = index;
+[2016-11-22 00:09:10] <bonnici> let cellcol of cellrow; let rowindex = index;
+[2016-11-22 00:09:24] <bonnici> or the other way around
+[2016-11-22 00:09:43] <bonnici>  [<-LINK->] 
+[2016-11-22 00:10:00] <ByMiles> oh yeah nice, i try
+[2016-11-22 00:16:45] <ByMiles> bonnici:  [<-CODE->] 
+[2016-11-22 00:17:09] <alxhub> ByMiles: have you done the Tour of Heroes introductory tutorial?
+[2016-11-22 00:17:10] <ByMiles> like this? somewhere might be a bug, still not working
+[2016-11-22 00:17:31] <ByMiles> yes i looked it up
+[2016-11-22 00:17:45] <alxhub> Have you gone through it though, and followed along and built the ToH app?
+[2016-11-22 00:18:15] <ByMiles> i buid two nother tutorials from youtube^^
+[2016-11-22 00:18:44] <ByMiles> problem for me they always only handle textdata
+[2016-11-22 00:19:22] <alxhub> What's the actual error that you're getting?
+[2016-11-22 00:19:48] <ByMiles> no errror in compilor, but the side is "loading..."
+[2016-11-22 00:20:54] <ByMiles> i think the row [<-CODE->] 
+[2016-11-22 00:21:01] <ByMiles> is not correct
+[2016-11-22 00:21:41] <ByMiles> in the component cell i have@inputrow: number
+[2016-11-22 00:26:35] <alxhub> You're right that's not correct.
+[2016-11-22 00:27:21] <alxhub> That's why I suggested doing Tour of Heroes. You need some practice with the data binding syntax.
+[2016-11-22 00:27:41] <alxhub> And reading the error messages that you're getting.
+[2016-11-22 00:27:53] <ByMiles> there is no errormessage
+[2016-11-22 00:28:07] <ByMiles> :(
+[2016-11-22 00:28:53] <ByMiles> and on the ToH is no example with two variables in one component
+[2016-11-22 00:30:52] <alxhub> The error is probably in your browser javascript console.
+[2016-11-22 00:31:23] <ByMiles> [URL= [<-LINK->] ]
+[2016-11-22 00:31:37] <ByMiles> thats the way it looks without this row
+[2016-11-22 00:32:42] <alxhub> Bindings use normal HTML attribute syntax
+[2016-11-22 00:33:02] <alxhub> <tag [binding]="expression" attribute="constant value" (event)="listener($event)">
+[2016-11-22 00:33:16] <alxhub> Note the space after<tagand the quotes around expressions and values
+[2016-11-22 00:34:42] <ByMiles> when i understand this right, this line helped me more than 2 hours reading and reading...
+[2016-11-22 00:34:44] <ByMiles> let me try
+[2016-11-22 00:37:57] <ByMiles> alxhub: no it says: "attributs are not allowed here"
+[2016-11-22 00:38:22] <ByMiles> but that exactly what i want to do, i want to set an attribute...
+[2016-11-22 00:38:54] <alxhub> ByMiles: , have you seen Plunker? [<-LINK->] 
+[2016-11-22 00:39:05] <alxhub> See if you can reproduce your problem there.
+[2016-11-22 00:44:28] <ByMiles> now it works, i think ;)
+[2016-11-22 00:48:40] <ByMiles> alxhub: are you still out there? i need a hint. Its harder then thougt to switch from java fx to angular...
+[2016-11-22 00:50:41] <ByMiles> depending on 2 booleans i want to hide or color a circle or draw another one. do you have a hint in which way i should think?
+
+--------------------------------------------------------------------------------------------------
+[2016-12-22 11:40:26] <fplini> Hi all, could I ask here for support about Angular 2?
+[2016-12-22 11:44:11] <ghetolay> fplini: just ask and you'll see :)
+[2016-12-22 11:46:45] <fplini> I\'m developing an angular 2 app. So essentialy, if I run the app with "ng serve" all works fine, if I refresh the page (for example [<-LINK->] ) it works fine and angular recognizes the right route. The problem occurs when I build the app in a war and deploy it on wildfly with a different context path (ex. /myapp). At this point the routing navigation works fine but if I refresh the page I receive a "Not found error". My base href on index.html is <base href="."> I also tried with <base href="./myapp"> but in this case angular try to look for the resources under [<-LINK->] and not under [<-LINK->] Anyone have any idea on how to fix it?
+[2016-12-22 11:48:03] <AlpBilgin> I think the base href should really be just /
+[2016-12-22 11:48:12] <AlpBilgin> ./
+[2016-12-22 11:48:13] <DzmitryShylovich> fplini: try<script>document.write(\'<base href="\' + document.location + \'" />\');</script>
+[2016-12-22 11:48:59] <fplini> DzmitryShylovich: yes with this script it works fine but when I refresh I received a "not found" error
+[2016-12-22 11:49:32] <DzmitryShylovich> path/hash location strategy?
+[2016-12-22 11:50:47] <fplini> Uhm.. If I add the hash the refresh is ok but ng2 doesn't recognize the route and redirects on  home but the url is broken.. let me explain better with an example
+[2016-12-22 11:51:01] <gargtushar> I want to discuss the same issue which I posted on github
+[2016-12-22 11:51:06] <alsami> fplini: add this to your appmodules providers [<-CODE->] 
+[2016-12-22 11:53:25] <fplini> my url is [<-LINK->] if I refresh the page I get a not found error. Instead if i go on [<-LINK->] the app goes on the home and the new url is [<-LINK->] 
+[2016-12-22 11:53:36] <fplini> SamiAl90: I'm going to try with this code ;)
+[2016-12-22 11:54:42] <DzmitryShylovich> fplini: what location strategy do u use?
+[2016-12-22 11:54:48] <DzmitryShylovich> default one?
+[2016-12-22 11:54:55] <fplini> yes default
+[2016-12-22 11:55:02] <fplini> (without hash)
+[2016-12-22 11:55:15] <DzmitryShylovich> fplini: u need to configure your server to return index.html for all angular routes
+[2016-12-22 11:55:45] <fplini> I'm only set the context root path in the jboss-web.xml to make available the app under the right path
+[2016-12-22 11:55:49] <DzmitryShylovich> I'm serious
+[2016-12-22 11:56:11] <DzmitryShylovich> fplini:  [<-LINK->] 
+[2016-12-22 11:57:29] <fplini> DzmitryShylovich: thanks I'm going to check it and try a lot. I'll come back later :)
+
+--------------------------------------------------------------------------------------------------
+1 [2016-12-22T13:36:50] <achimha> is there a great up to date angular-cli hello world git repo that can be forked?
+--------------------------------------------------------------------------------------------------
+1 [2016-12-22T14:32:35] <elvisbegovic> how subscribe on  each ngModel changes on template driven form ?
+--------------------------------------------------------------------------------------------------
+[2016-12-23 21:13:06] <seekheart> I was hoping to see examples of how people shape the data and in what they store that data in (class/interface?)
+[2016-12-23 21:13:35] <Toxicable> Interface
+[2016-12-23 21:13:52] <Toxicable> Don't use classes to transfer data
+[2016-12-23 21:14:57] <Toxicable> Use map to transform your data
+[2016-12-23 21:33:50] <Toxicable> Thanks*
+--------------------------------------------------------------------------------------------------
+//Part 1: Effectiveness of styles.scss
+[2016-11-22 22:53:02] <etsuo> Newbie question: why would it be that my styles.scss file’s variables wouldn’t be available to a component? I’m getting “undefined variable” even though the variable is declared in my top level style.scss file.
+[2016-11-22 22:53:42] <jjstreet> etsuo: you need to import the styles.scss in to the components style sheet
+[2016-11-22 22:53:52] <jjstreet> or you need to add it to the styleUrls
+[2016-11-22 22:54:19] <etsuo> jjstreet: where’s the styleUrls?
+[2016-11-22 22:55:00] <jjstreet>  [<-CODE->] 
+[2016-11-22 22:55:43] <etsuo> Oh…. i see… so it doesn’t get imported top level? like in the index.html?
+[2016-11-22 22:55:57] <jjstreet> scss is a preprocessed language
+[2016-11-22 22:56:19] <jjstreet> so you can't import them into html like any other css file
+[2016-11-22 22:56:21] <etsuo> right, but I would have expected style.scss to be compiled down to style.css that’s the global style
+[2016-11-22 22:56:44] <jjstreet> right
+[2016-11-22 22:57:01] <jjstreet> but variables in that file aren't magically available to other scss files
+[2016-11-22 22:57:09] <jjstreet> you have to import that styles.scss file into them
+[2016-11-22 22:57:25] <etsuo> OOOOO i get it… thanks@jjstreet
+[2016-11-22 23:04:37] <etsuo> sorry, so I tried:styleUrls: [\'../styles.scss\', \'./app.component.scss’]andng set defaults.styleExt scssbut I’m still gettingUndefined variable: "$colors”when I try to access the $colors variable defined in the styles.sass file that’s meant for global styles… :/?
+[2016-11-22 23:05:06] <jjstreet> etsuo: try doingimportin the app.component.scss file
+[2016-11-22 23:07:35] <etsuo> jjstreet: that did the trick… thanks
+[2016-11-22 23:07:43] <jjstreet> etsuo: np
+
+//Part 2: Reference of styles.scss
+[2016-11-22 22:57:09] <jjstreet> you have to import that styles.scss file into them
+[2016-11-22 22:57:29] <daddyschmack> jjstreet: , Yes, but you could also do it via the #reference I think.  However, I am using the@ViewChilddecorator too
+[2016-11-22 22:57:52] <jjstreet>  [<-CODE->] 
+[2016-11-22 22:58:05] <jjstreet> you can see i import my mixin for headers
+[2016-11-22 22:58:06] <daddyschmack> like in this case:<select  name="shipment_origin" id="shipment_origin" #shipmentOrigin formControlName="origin" [(ngModel)]="shipment.origin"  (ngModelChange)="changed($event,form.controls)">\n          <option [selected] disabled value="">Please Select a Location</option>\n          <option [disabled]="location.airportCd === shipment.destination.airportCd"  *ngFor="let location of stationLocations"  [ngValue]=\'location\'>\n            {{location.airportCd}} -- {{location.city}}, {{location.stateProvinceCd}} {{location.zip}} ({{location.phone}})\n          </option>\n        </select>
+[2016-11-22 22:58:42] <daddyschmack> robwormald: , check me on this. but the #reference is a shortcut to get access to a control
+[2016-11-22 22:59:18] <jeserkin> robwormald: quick q about router. I'm a bit confused regarding lazyloading. I've seen how it needs to be written, but I haven't actually tested it yet. I've seen, that I'm passing in a location of submodule with child routes, but end result is just minified JavaScript, that doesn't have any module loader(if I understand correctly). So how does this lazyloading work on that level then?
+[2016-11-22 23:00:01] <jjstreet> daddyschmack: not sure whats different about that use
+[2016-11-22 23:00:11] <robwormald> daddyschmack: #ref is just a way to get a reference to a bit of a template
+[2016-11-22 23:00:16] <robwormald> (controls included)
+[2016-11-22 23:00:21] <daddyschmack> OH, and in the case of that control.. we are binding to an object, not a value.. And so, for some reason, the default value is NOT displayed until I manually go back in after the service finishes and set the selected Index to 0
+[2016-11-22 23:00:21] <jjstreet> you aren't using the #shipmentOrigin in the template
+[2016-11-22 23:00:35] <jjstreet> the only way to get access to it in a component is to query for it
+[2016-11-22 23:00:41] <daddyschmack> jjstreet: , what@robwormaldsaid
+[2016-11-22 23:00:52] <robwormald> still not clear why you need to do that ?
+[2016-11-22 23:01:16] <jjstreet> yea... not too clear on what you are explaining :(
+[2016-11-22 23:01:50] <jjstreet> by querying i meant using a decorator like@ViewChild
+[2016-11-22 23:02:20] <jjstreet> you can't magically have this.shipmentOrigin refer to#shipmentOriginin the template without the decorator
+[2016-11-22 23:02:22] <daddyschmack> LOL,  you said you coudn’t access an element via a #ref.. And you can..
+[2016-11-22 23:02:39] <jjstreet> it sounded like you were doing it without the decorator
+[2016-11-22 23:02:46] <jjstreet> thats what i was disagreeing with
+[2016-11-22 23:03:01] <robwormald> if your initial reaction is "touch the native element"
+[2016-11-22 23:03:05] <robwormald> its almost certainly wrong
+[2016-11-22 23:03:58] <jjstreet> except for getting information likeoffsetWidthandoffsetHeight:D
+[2016-11-22 23:04:09] <jjstreet> since that info is platform specific
+[2016-11-22 23:04:18] <robwormald> jeserkin: dont quite understand your question
+[2016-11-22 23:05:22] <jjstreet> i may have been wrong about the adding it to the styleUrls part
+[2016-11-22 23:05:45] <jjstreet> regular CSS files work that way, but scss probably doesnt since its more of a scss specific thing and not angular
+[2016-11-22 23:06:01] <daddyschmack> Okay, it’s just a shortcut to the underlying dom element
+[2016-11-22 23:06:13] <daddyschmack> (native DOM element)
+[2016-11-22 23:06:28] <jjstreet> daddyschmack: it can be i suppose
+[2016-11-22 23:06:44] <jjstreet> it all depends on what you query for
+[2016-11-22 23:07:06] <jjstreet> you could query for a component, or for a directive or for an elementref or templateref
+[2016-11-22 23:07:12] <jjstreet> anyways
+[2016-11-22 23:07:14] <jjstreet> im out for the night
+[2016-11-22 23:07:18] <jjstreet> catch you all later
+[2016-11-22 23:07:34] <daddyschmack> let’s talk more tomorrow.  maybe i’m confused..   i’ll mock something up for you
+[2016-11-22 23:07:53] <jjstreet> daddyschmack: sure id like to see a mock up
+[2016-11-22 23:08:13] <jjstreet> i feel like we are talking about the same things so its a matter finding the right language we both understand
+[2016-11-22 23:08:16] <jjstreet> peace!
+[2016-11-22 23:29:16] <daddyschmack> jjstreet: , forking Rob’s plunker.  look at teh input an the button, and open a log [<-LINK->]
+--------------------------------------------------------------------------------------------------
+[2016-12-28 06:29:26] <SudeepTavarkhed_twitter> Hello.
+[2016-12-28 06:29:40] <SudeepTavarkhed_twitter> can anyone help me with pwa using angular 2
+[2016-12-28 06:32:22] <Toxicable> pwa's are still experimental
+[2016-12-28 06:32:35] <Toxicable> I doubt anyone will know anything about them
+[2016-12-28 06:34:56] <SudeepTavarkhed_twitter> Okay. Thank you@Toxicable.
+--------------------------------------------------------------------------------------------------
+1 [2016-12-28T14:28:33] <macdasi> Can  service implementing CanActivate receive param ? I want my route guard to check according to some param ...`canActivate: [ AuthGuard .. . some param ],
+2 [2016-12-28T14:37:17] <derekkite> macdasi: it would have access to the router params
+--------------------------------------------------------------------------------------------------
+[2016-12-30 14:39:37] <frankspin89> Guys any idea how to solve this error? [<-CODE->] error: Property 'uid' does not exist on type '{}'.
+[2016-12-30 14:40:18] <ericmartinezr> cast 'res' to your object
+[2016-12-30 14:40:21] <DzmitryShylovich> .then((res: any) => {
+[2016-12-30 14:40:23] <frankspin89> (res : any) is not working, and
+[2016-12-30 14:40:52] <ericmartinezr> it should
+[2016-12-30 14:41:03] <ericmartinezr> frankspin89: 
+--------------------------------------------------------------------------------------------------
+1 [2017-01-02T13:58:45] <maxime1992> is it a good idea to.share()on a selector with ngrx ? I think it is but thinking of any downside ... ?
+--------------------------------------------------------------------------------------------------
+1 [2017-01-02T17:53:30] <zedz01> Guys, how should I call my async validator?
+2 [2017-01-02T17:56:08] <zedz01> I've got a service which looks like this: [<-CODE->]
+3 [2017-01-02T17:56:29] <zedz01> and I call just simply this way
+4 [2017-01-02T17:56:42] <zedz01>  [<-CODE->]
+5 [2017-01-02T17:57:17] <zedz01> But the input always invalid
+6 [2017-01-02T18:44:36] <wKoza> zedz01: why do you use new Promise ? You can use toPromise() operator ...
+--------------------------------------------------------------------------------------------------
+[2017-01-03 06:45:19] <foxjazz> I have ngOnInit setup in my component. but when I send the component data via@Inputhow do I get a function to fire?
+[2017-01-03 06:46:08] <foxjazz> ngOnInit only happens once so it is sort of irrelavent
+[2017-01-03 07:08:59] <2f4f4f> ngOnChanges
+[2017-01-03 07:11:10] <2f4f4f> What's OnChanges for?
+[2017-01-03 07:12:12] <Toxicable>  [<-LINK->] 
+[2017-01-03 07:12:41] <Toxicable> it's not
+[2017-01-03 07:13:07] <Toxicable> foxjazz:  [<-LINK->] 
+--------------------------------------------------------------------------------------------------
+//Topic 1
+1 [2017-01-03T21:44:02] <ellipizle> I have used some many jquery codes in an app, i am beginning to feel guilty of an unknown crime
+2 [2017-01-03T21:44:15] <ellipizle> do i have anything to worry about
+3 [2017-01-03T21:44:27] <Toxicable> you don't be platform agnostic anymore
+4 [2017-01-03T21:44:40] <Toxicable> so no Universal, no Mobile, no Desktop
+7 [2017-01-03T21:45:53] <ellipizle> Toxicable: was that for me
+8 [2017-01-03T21:46:00] <Toxicable> Ellipizle: yup
+9 [2017-01-03T21:47:21] <ellipizle> so what's the equivalent of  this$('#myModal').modal('hide')
+10 [2017-01-03T21:48:22] <Toxicable> Ellipizle: what do you mean? that's using jquery
+11 [2017-01-03T21:48:40] <Toxicable> and boostrap
+
+//Topic 2
+12 [2017-01-03T21:48:47] <Toxicable> which Angular itself knows nothing of
+13 [2017-01-03T21:49:53] <ellipizle> going back to@Toxicable  do you know how i can close a  boot strap modal in ts ?
+14 [2017-01-03T21:50:32] <ellipizle> i mean how can one do that in angular
+15 [2017-01-03T21:50:38] <ellipizle> close an open modal
+17 [2017-01-03T21:53:13] <Toxicable> Ellipizle: for things like modals I'd suggest using something like [<-LINK->]
+--------------------------------------------------------------------------------------------------
+[2016-12-04 15:03:04] <alexisinwork> hey ,all!I have problem with downloading local csv file.I have a cli project and my file in src folder.I have next template: [<-CODE->] But it just doesn't work. Any ideas?
+[2016-12-04 15:04:29] <intellix> I don't think angular-cli serves files from /src directly, put them into assets, as it gets copied over during serve/build
+--------------------------------------------------------------------------------------------------
+1 [2017-01-05T09:43:49] <WebDevMR> Hey guys what is the best way to add scripts to my component? My end goal is to have my header.component become static after certain scroll height is reached
+2 [2017-01-05T09:43:54] <WebDevMR> I'm using angular-cli
+3 [2017-01-05T09:46:09] <WebDevMR> It's not every page that I want this to happen only in certain pages
+--------------------------------------------------------------------------------------------------
+1 [2017-01-05T19:46:47] <sinedsem> Is there any way of preserving component state when leaving for another route?
+2 [2017-01-05T19:46:58] <sinedsem> I know one - using service
+3 [2017-01-05T19:47:07] <DzmitryShylovich> sinedsem: RouteReuseStartegy
+4 [2017-01-05T19:47:08] <damienwebdev> Redux
+5 [2017-01-05T19:47:25] <robwormald> use a service
+6 [2017-01-05T19:48:17] <Toxicable> sinedsem: A service can be an easy way to do this, otherwise some implementation of state management like ngrx/Store or Redux
+7 [2017-01-05T19:49:38] <sinedsem> 2 votes for service and 1 vote for one more poorly documented thing - routeReuseStrategy
+8 [2017-01-05T19:49:50] <DzmitryShylovich> services are boring :)
+9 [2017-01-05T19:50:15] <Toxicable> oh if we're voting i'd vote for ngrx/Store
+10 [2017-01-05T19:50:18] <DzmitryShylovich> it depends on yor use case
+11 [2017-01-05T19:50:44] <Toxicable> ^ and your knowledge of flux architecture
+12 [2017-01-05T19:51:00] <2f4f4f> use jquery
+13 [2017-01-05T19:51:09] <sinedsem> I would like to save all variable's values and scroll positions
+14 [2017-01-05T19:51:49] <sinedsem> currently I use service [<-CODE->]
+15 [2017-01-05T19:52:19] <sinedsem> and this list grows every day, and it scares me a little
+16 [2017-01-05T19:52:42] <Toxicable> why not just have 1 object?
+17 [2017-01-05T19:53:59] <DzmitryShylovich> sinedsem: take a look at all options and decided what fits  better
+18 [2017-01-05T19:58:29] <sinedsem> Toxicable: im really very close to it =)
+19 [2017-01-05T19:58:52] <bastienJS> sinedsem: improving the docs?  P
+20 [2017-01-05T19:59:18] <sinedsem> bastienJS: having one object
+21 [2017-01-05T19:59:39] <bastienJS> ah
+--------------------------------------------------------------------------------------------------
+1 [2017-01-13T00:47:37] <nanomoffet> Are there any known issues with ngIf rendering on IE? I have a really simple ngIf that just checks a boolean that gets flipped by a function in the component. Works great everywhere except IE.
+--------------------------------------------------------------------------------------------------
+1 [2017-01-10T11:28:27] <tuomasi> Hello there! I am trying to write some tests for a component which is using the ng2-bootstrap's DropdownModule and ButtonModule. I have placed both modules in the spec's imports array However, I'm getting the following error message: Can't bind to 'isOpen' since it isn't a known property of 'div'Any suggestions on what to do here?
+2 [2017-01-10T11:30:24] <DzmitryShylovich> tuomasi: did u import DropdownModule and ButtonModule?
+3 [2017-01-10T11:30:36] <DzmitryShylovich> in your test module
+4 [2017-01-10T11:31:10] <tuomasi> Ah, I thought I did, but I wrote 'import' instead of 'imports'...sorry and thanks! :)
+5 [2017-01-10T11:31:53] <lazarljubenovic> your IDE should handle that
+6 [2017-01-10T11:32:10] <lazarljubenovic> also you should've seen compilation errors from ts :)
+7 [2017-01-10T11:34:23] <tuomasi> Nope, there was no such message. Otherwise I probably would not have come here :P
+--------------------------------------------------------------------------------------------------
+1 [2017-01-10T12:30:12] <urrang> Trying to get modules working properly in our app. Currently stuck at our collection of pipes, gathered in a PipeModule. If I import the module in multiple other modules that use the pipes I get an error sayingFooPipe is part of the declaration of 2 modules: PipeModule and PipeModule. If I only import it in our AppModule I get errors saying angular cant find the pipe. Am I missing something obvious here? o.O
+2 [2017-01-10T12:33:19] <dklmuc> urrang: did you export in PipeModule and only import in the other modules?
+3 [2017-01-10T12:34:13] <urrang> PipesModule has declarations & exports for the different pipes, everywhere else its just an import of PipesModule form what I can tell (/project search can find)
+4 [2017-01-10T12:34:15] <Martin_Ocando_twitter> urrang: you dont need to import the pipe in all modules, only in the appmodule
+5 [2017-01-10T12:34:42] <urrang> Thats what I figured, but I seem to be getting errors now saying the pipes cannot be found
+6 [2017-01-10T12:34:43] <Martin_Ocando_twitter> imports: [..., PipesModule]
+7 [2017-01-10T12:34:51] <Martin_Ocando_twitter> ohh
+8 [2017-01-10T12:36:16] <dklmuc> had also problems with pipes but can't remember ^^
+9 [2017-01-10T12:36:34] <dklmuc> (good that you can say now "it was last year) ;-)
+10 [2017-01-10T12:37:12] <urrang> If its not anything obvious I probably just need to dig deeper in our clusterfuck of modules. Kind of hard fixing a huge project when all examples have one root module that imports one other module with a single component
+11 [2017-01-10T12:37:49] <dklmuc> but I also have my custom pipes as providers in my sharedModule... really no idea why
+12 [2017-01-10T12:37:55] <urrang> But generally importing a module multiple places should not be a problem then? Or should you only have to import the shared modules in your root module, and it will in theory work everywhere?
+13 [2017-01-10T12:38:21] <Martin_Ocando_twitter> in the app module do:declarations: [...PIPES,]
+14 [2017-01-10T12:39:14] <urrang> Mkay, so no module for the pipes then?
+15 [2017-01-10T12:39:16] <urrang> Worth a shot
+16 [2017-01-10T12:39:30] <Martin_Ocando_twitter> i have a module : SharedModule
+17 [2017-01-10T12:39:34] <dklmuc> me2
+18 [2017-01-10T12:39:41] <Martin_Ocando_twitter> and have all pipes, serices
+19 [2017-01-10T12:39:49] <Martin_Ocando_twitter> services*
+20 [2017-01-10T12:39:51] <urrang> And you only import that at the top, then its available everywhere?
+21 [2017-01-10T12:40:07] <Martin_Ocando_twitter> and I import the SharedModule in the App Module
+22 [2017-01-10T12:40:33] <Martin_Ocando_twitter> and the sharedmodule inside imports in appmodule
+23 [2017-01-10T12:41:34] <urrang> Alright, then im on the right path at least. Thanks!
+24 [2017-01-10T12:42:09] <Martin_Ocando_twitter> The ngmodule anotation in SharedModule looks like: [<-CODE->]
+25 [2017-01-10T12:44:22] <dklmuc> urrang: give it a shot to also add your Pipes toproviders:in your PipeModule
+26 [2017-01-10T12:45:02] <dklmuc> if I remove them from there, I also get an error in my feature modules which are using them
+27 [2017-01-10T12:46:57] <urrang> dklmuc: I'll look into that, thanks a lot!
+--------------------------------------------------------------------------------------------------
+1 [2017-01-10T17:05:41] <tuomasi> Hey guys! Are there any best practices (rough estimates, opinions whatever) in terms of how big components should be? When is a component too large? How can one refactor code so that the code becomes easier to test?
+--------------------------------------------------------------------------------------------------
+[2016-12-20 13:41:24] <chrillewoodz> I've got an array of objects, and I've got an issue where something works if I unshift a new object into the array, but if I push an object then it doesn't work. Because I'm guessing that the array isn't being redrawn in the same way when I push. Is there any way to force a redraw so it behaves the same for unshift and push?@DzmitryShylovich Any idea?
+[2016-12-20 13:42:49] <DzmitryShylovich> chrillewoodz: u should create a new array instead of mutating
+[2016-12-20 14:37:44] <chrillewoodz> shared
+[2016-12-20 14:42:34] <chrillewoodz>  [<-CODE->]  [<-CODE->] But I can't get it to work, what should the expression be?
+[2016-12-20 14:43:24] <DzmitryShylovich> it's not ng content
+[2016-12-20 14:44:22] <chrillewoodz> I know
+[2016-12-20 14:44:42] <chrillewoodz> You can't check childNodes of a template tag?
+[2016-12-20 14:47:40] <ghetolay> chrillewoodz: Well I guess it depends onoptionso you could checkoption?
+[2016-12-20 14:48:26] <chrillewoodz> option is just an object in a loop so can't base it on that because that is always there
+[2016-12-20 14:49:20] <ghetolay> chrillewoodz: when is thisoptionContent.childNodes.length < 2true ?
+[2016-12-20 14:51:48] <chrillewoodz> ghetolay: idk.. it seems to be counting things that aren't even in my template as childnodes..
+[2016-12-20 14:52:39] <ghetolay> chrillewoodz: ok not what I meant, when should your span with the ng If appear ?
+[2016-12-20 14:53:29] <chrillewoodz> I know it's not what you meant I was just making an obvervation, the span should appear when there is no custom content provided via the template tag
+[2016-12-20 14:53:49] <chrillewoodz> i.e I do not do<comp><template>my content</template></comp>@ghetolay
+[2016-12-20 14:54:54] <ghetolay> so this depends of thetemplateRefused ?
+[2016-12-20 14:55:48] <chrillewoodz> I guess
+[2016-12-20 14:55:54] <chrillewoodz> I'm not really familiar with using templateRef
+[2016-12-20 14:57:19] <ghetolay> when there is no custom content provided via the template tag does this happens because some template have custom content and other don't, or does your template has some kind of ngIf and will sometimes have a custom component and sometimes don't
+[2016-12-20 14:58:01] <chrillewoodz> sometimes the component will have custom content, and sometimes it should default to something
+[2016-12-20 14:58:36] <ghetolay> what is that "sometimes\'" based upon
+[2016-12-20 14:59:18] <chrillewoodz> If you want custom content, but I think I've solved it by using hidden instead of ngif
+--------------------------------------------------------------------------------------------------
+[2016-12-12 15:04:00] <losorio2015_twitter> @losorio2015_twitterHello guys, when I consult an observable, it emits me 2 timesThe first obsevable emptyAnd the second observable with date.How can I avoid it, just ask me 2 times?I just want you to consult me, the observable date@Dorusbefore you modifiy them (or just dont modify)https://files.gitter.im/ngrx/store/1q9N/blob
+[2016-12-12 15:07:30] <losorio2015_twitter> I consult my observable state, with the operator select ()
+[2016-12-12 15:08:23] <robwormald> make a plunker. screenshots don't help anyone diagnose anything
+[2016-12-12 15:13:30] <losorio2015_twitter> @robwormald , I am only consulting my state, observable, with this lineThis.sub1 = this.store.select (fromRoot.getDocumentDialog);And I am emitting 2 times the observable.
+[2016-12-12 15:13:33] <losorio2015_twitter> I'm using the project, from the official app exampleHttps://github.com/ngrx/example-app
+[2016-12-12 15:15:16] <losorio2015_twitter> When I use the first () operator, it emits only once the observable one, but I get the observable void:This.sub1 = this.store.select (fromRoot.getDocumentDialog) .firts ()
+[2016-12-12 15:16:11] <robwormald> again. make a plunker. it is impossible to diagnose your code with you explaining it line by line, or posting screenshots
+[2016-12-12 15:18:45] <losorio2015_twitter> I understand,@robwormald, I'm going to try to make a plunker
+[2016-12-12 15:19:58] <robwormald> here's a starter [<-LINK->]
+[2016-12-12 15:20:45] <losorio2015_twitter> thank
+--------------------------------------------------------------------------------------------------
+1 [2016-12-01T23:00:46] <daddyschmack> Okay Gentlemen,  We have a button that doesn’t get enabled until certain required fields are not ng-invalid and not ng-pristine.. We have to go there and manually update those fields to trigger the button to become active.  HOWEVER, we populate these select controls with VALID values on the ngInit event.  Why are they not being set to valid and touched then?
+--------------------------------------------------------------------------------------------------
+1 [2017-01-17T20:18:57] <fobaz> cmon guys, it's such a simple question: how to show component by calling service function?
+--------------------------------------------------------------------------------------------------
+//Topic 1
+1 [2017-01-18T11:11:57] <RicardoVaranda>  [<-LINK->]
+2 [2017-01-18T11:12:09] <RicardoVaranda> Am I doing something wrong here or is this a bug o.O
+3 [2017-01-18T11:23:38] <bboehm86> RicardoVaranda: depends.. what are you trying to do? If it\'s about thatvalue="{{food.name}}".. that\'s a bug, already fixed, merged, but not released yet
+4 [2017-01-18T11:28:32] <RicardoVaranda> bboehm86: Thanks thats exactly what I was referring to :)
+
+//Topic 2
+5 [2017-01-18T11:29:07] <RicardoVaranda> Would you mind linking the PR?
+--------------------------------------------------------------------------------------------------
+[2016-12-03 15:59:04] <DirkWolthuis>  [<-CODE->] Why does mij startAnimation() function fire when the message.animationState is set to the 'first' state?
+[2016-12-03 15:59:26] <DirkWolthuis>  [<-CODE->]
+[2016-12-03 16:04:17] <ghetolay> are you sure it's not changing
+[2016-12-03 16:04:35] <ghetolay> like it has a default value and you're setting a different value right after
+[2016-12-03T16:11:52] <DirkWolthuis> maybe because im setting the value to inactive
+[2016-12-03T16:12:19] <DirkWolthuis> If i go from null -> active
+[2016-12-03T16:13:16] <ghetolay> if you're setting the value to inactive it shouldn't because you don't have transition that ends with inactive
+[2016-12-03T16:13:19] <jordic> it goes from opacity 0.5 to opacity 1
+[2016-12-03T16:13:39] <jordic> without any transition, because you have not set it...
+[2016-12-03T16:14:17] <DirkWolthuis> ghetolay: indeed, but even if the state is null, the done function fires
+[2016-12-03T16:14:39] <jordic> on animation state null is also a transition... form void => inactive
+[2016-12-03T16:15:43] <DirkWolthuis> how can i set it up so that the done event does not fire?
+[2016-12-03T16:16:20] <DirkWolthuis>  [<-CODE->]
+[2016-12-03T16:16:31] <DirkWolthuis> because this is not working
+[2016-12-03T16:17:32] <ghetolay> jordic: you sure the callback is always called ? even for non-defined animation ?
+[2016-12-03T16:17:51] <DirkWolthuis> or can i sepicify on what transition the done event fires?
+[2016-12-03T16:17:55] <jordic> not sure if is a feature or a bug ... but is the only way of explaining the situation...
+[2016-12-03T16:18:43] <jordic> perhaps you can check the event... I think it contains this kind of information...
+[2016-12-03T16:19:21] <DirkWolthuis> Sure, so pass the event to a function
+[2016-12-03T16:19:30] <jordic> The callbacks receive an AnimationTransitionEvent which contains useful properties such as fromState, toState and totalTime.
+[2016-12-03T16:19:33] <DirkWolthuis> okay i can try that
+[2016-12-03T16:21:40] <DirkWolthuis>  [<-LINK->]
+[2016-12-03T16:21:47] <DirkWolthuis> You were right
+[2016-12-03T16:22:57] <ghetolay> ok learned something
+[2016-12-03T17:48:50] <DirkWolthuis> ghetolay: your idea to use a different array to store animation states worked!
+[2016-12-03T17:49:13] <DirkWolthuis> the ngFor loop animates one message at a time.
+[2016-12-03T17:49:19] <ghetolay> DirkWolthuis: well you seem to look surprised
+[2016-12-03T17:49:33] <DirkWolthuis> No not at all. Just gratefull
+[2016-12-03T17:49:39] <ghetolay> :)
+[2016-12-03T17:49:49] <ghetolay> glad I could help
+[2016-12-03T17:49:55] <DirkWolthuis> thanks!
+[2016-12-03T17:50:17] <ghetolay> my day was not completely wasted
+[2016-12-03T17:50:57] <DirkWolthuis> Maybe i will use my new knowlegde to make a blogpost or something
+[2016-12-03T17:54:29] <jordic> DirkWolthuis: as animation idea, this is perhaps more hacky... [<-LINK->]
+[2016-12-03T19:04:31] <DirkWolthuis> jordic: need to read more about observables to fully understand your example. But I think my solutions is pretty safe.
+--------------------------------------------------------------------------------------------------
+[2017-01-18 20:02:16] <hazmah0> Hello! If I have this code<my-component (click)="onClick()"></my-component>, is there any way to programatically remove the event listener after the first event? Or something similar to jQuery.one() where the handler is executed at most once per element?
+
+--------------------------------------------------------------------------------------------------
+[2016-12-03 21:47:15] <BenjaminHofstetter> hi all
+[2016-12-03 21:48:07] <Toxicable> Morning
+[2016-12-03 21:49:22] <BenjaminHofstetter> is there a way to avoid the first router transition? I am using universal and the server renders the view. When the browser side angular kicks in. It starts with a transition animation. This look strange because universal already rendered the view.
+--------------------------------------------------------------------------------------------------
+1 [2017-01-19T09:08:17] <sayedrakib> Hello, I am new in A2. I am trying to develop an app where users fill the search form and click search button , it sends request to API to get results. This search form is in one component and I want to display the search result in another component on the same web page. How can I make so that when I click search button in "searchform" component, the result will be displayed in "results" component ? I have searchservice to handle the http request. How can i make connection with search button to trigger to load the result lists in result component ?
+2 [2017-01-19T09:15:43] <ngmgit> @sayedrakib If your components are siblings then try to send event to the parent component to initialize the results to some variable say <srch_results> and using the bindings for the results component set one to get <srch_results>  and do what ever you want with that data in your results component.You can do it via services, Observables too.But if the results is a child component then you can do it directly thinking a bit will give you the sol.And for more on this read about component interacion cookbook on angular 2 website.https://angular.io/docs/ts/latest/cookbook/component-communication.html
+--------------------------------------------------------------------------------------------------
+1 [2017-01-21T15:22:08] <hungerregnuh> ergh, i feel like a dummy for asking, but in my templates i wrote [@someInput]="something" for the life of me i can\'t remember why i put the @ in, what\'s @ do?
+2 [2017-01-21T15:24:16] <hungerregnuh> doh! i remember now nvm :D
+--------------------------------------------------------------------------------------------------
+1 [2017-01-21T18:04:24] <achimha> why does one shipngccompiled sources with a component for AoT, i.e. why make thecompileddirectory part of the repository?
+--------------------------------------------------------------------------------------------------
+[2017-01-23 06:19:07] <aminsmartsense> Hello I am used ngDatepicker.. that datepicker I have put in modal(pop up). when I am closed modal that time I want to date value clear. anyone help me please?
+[2017-01-23 09:18:11] <aminsmartsense> Toxicable: Can you help me please?
+[2017-01-23 09:18:31] <Toxicable> I have no idea
+[2017-01-23 09:18:52] <aminsmartsense> Ohk thanks 
+--------------------------------------------------------------------------------------------------
+1 [2017-01-23T14:52:08] <geekrumper> hi all, is there a way to configure the currency pipe to use single quotes instead of commas?{{310000.004 | currency:\'CHF\':true:\'1.2-2\'}}will result to "CHF310,000.00" but I need "CHF310\'000.00"
+2 [2017-01-23T15:38:33] <geekrumper> any ideas, anyone??? hi all, is there a way to configure the currency pipe to use single quotes instead of commas?{{310000.004 | currency:\'CHF\':true:\'1.2-2\'}}will result to "CHF310,000.00" but I need "CHF310\'000.00"
+3 [2017-01-23T15:45:31] <dklmuc> geekrumper: make a custom pipe which extends the currency pipe
+4 [2017-01-23T15:48:15] <geekrumper> thanks@dklmuc... not so funny@DzmitryShylovich;)
+5 [2017-01-23T15:49:03] <geekrumper> no context, but I know what you mean a second pipe which transforms comas to quotes...
+--------------------------------------------------------------------------------------------------
+1 [2017-01-23T19:49:49] <SuccessStefan_twitter>  [<-CODE->]  [<-CODE->]  [<-CODE->]  [<-CODE->] Any ideas ? Can i use a service for this?
+2 [2017-01-23T19:50:36] <lazarljubenovic> yes
+3 [2017-01-23T19:50:45] <DzmitryShylovich> no
+4 [2017-01-23T19:50:54] <SuccessStefan_twitter> yes or no :)
+5 [2017-01-23T19:50:57] <lazarljubenovic> try it
+6 [2017-01-23T19:51:01] <DzmitryShylovich> lazarljubenovic: 3 days left
+7 [2017-01-23T19:51:31] <lazarljubenovic> DzmitryShylovich: i knoooow i can't wait ._.
+8 [2017-01-23T19:52:19] <DzmitryShylovich> y
+--------------------------------------------------------------------------------------------------
+[2017-01-24 14:04:00] <henriquecustodia> HI guys,  I'm using angular-cli beta.26 and when I try to build my porject usingng build --prod --aot --base-href /frontdesk2/I get the stacktraceERROR in vendor.7e4f12f39ba998306173.bundle.js from UglifyJs\nSyntaxError: Unexpected token: name (isLastCharLower) [vendor.7e4f12f39ba998306173.bundle.js:50363,5]Have someone idea about it?
+[2017-01-24 14:09:30] <henriquecustodia>  [<-CODE->] 
+[2017-01-24 14:09:58] <cacogr> so... it seems in AoT you can't useuseValuein a provider  if the value isn't known in compile time
+[2017-01-24 14:10:27] <JimLynchCodes> Hmm. So you are saying instead of putting the component startup logic right in ngOnInit, put some subscribing-to-store block in ngOnInit so that the initialization logic can go in that subscribe block and therefore won't get fired until the store is ready?
+[2017-01-24 14:10:30] <cacogr> but the compiler doesn't complain and you get anullin runtime
+[2017-01-24 14:11:55] <henriquecustodia> I'll moving this questionn to angular cli group
+[2017-01-24 14:12:02] <henriquecustodia> thanks
+--------------------------------------------------------------------------------------------------
+1 [2017-01-26T01:42:37] <AaronHood> any ideas why I\'m not getting "Only initialized variables and constants can be referenced because the value of this variable is needed by the template compiler" when I updated ng?
+2 [2017-01-26T01:50:29] <AaronHood> DzmitryShylovich: has some comments mentioning that it's AOT?
+--------------------------------------------------------------------------------------------------
+[2017-01-28 10:14:46] <aminsmartsense> Hello Guys please help me in md2-select... How to one value by default active?
+[2017-01-28 10:16:49] <DzmitryShylovich> create credits.json file :)
+[2017-01-28 10:17:47] <aminsmartsense> DzmitryShylovich: Can you tell me please how to set by default active in md2-select?
+[2017-01-28 10:21:01] <bergben> aminsmartsense: never used it but logic would say just set<md2-select [(ngModel)]="item" [...]and the item should be the active one pre-defined if you have the options<md2-option *ngFor="let i of items" [...]
+[2017-01-28 10:21:58] <aminsmartsense> But I am Designer so I want to add only static data like this
+[2017-01-28 10:22:00] <aminsmartsense> <md2-select placeholder="By status"><md2-option [value]="active">Active</md2-option><md2-option [value]="suspended">Suspended</md2-option></md2-select>
+[2017-01-28 10:22:32] <aminsmartsense> I want to set Active by default selected
+[2017-01-28 10:22:59] <aminsmartsense> bergben: 
+[2017-01-28 10:24:34] <bergben> I don't think it's supposed to work like that
+[2017-01-28 10:26:44] <aminsmartsense> No one variable are used in component file.
+[2017-01-28 10:27:03] <aminsmartsense> <md2-select placeholder="By status"><md2-option [value]="1">Active</md2-option><md2-option [value]="0">Suspended</md2-option></md2-select>
+[2017-01-28 10:27:21] <aminsmartsense> now how to set by default active?@lazarljubenovic
+[2017-01-28 10:28:02] <lazarljubenovic> what's md2?
+[2017-01-28 10:35:08] <aminsmartsense> If \'md2-option\' is an Angular component and it has \'ngModel\' input, then verify that it is part of this module.\nIf \'md2-option\' is a Web Component then add "CUSTOM_ELEMENTS_SCHEMA" to the \'@NgModule.schemas\' of this component to suppress
+[2017-01-28 10:35:47] <aminsmartsense> DzmitryShylovich: What I should write in component file?
+[2017-01-28 10:40:57] <aminsmartsense> {{mobile.mobileNo}}
+[2017-01-28 10:48:23] <aminsmartsense> DzmitryShylovich: @lazarljubenovicnot working
+[2017-01-28 10:48:43] <lazarljubenovic> aminsmartsense: what is md2-option
+[2017-01-28 10:48:52] <aminsmartsense> yes..
+[2017-01-28 10:48:55] <lazarljubenovic> lol
+[2017-01-28 10:49:05] <aminsmartsense> I want to set by default active
+[2017-01-28 12:08:25] <aminsmartsense> How to open md2-datepicker on tab key press?
+[2017-01-28 12:23:32] <aminsmartsense> anyone know md2-datepicker open event?
+[2017-01-28 12:24:10] <lazarljubenovic> use official material lib
+[2017-01-28 12:24:19] <lazarljubenovic>  [<-LINK->] 
+[2017-01-28 12:36:03] <aminsmartsense> There are no method in material  lib how to open md2-datepicker@lazarljubenovic
+[2017-01-28 12:36:16] <lazarljubenovic> aminsmartsense: so what doi  do about that
+[2017-01-28 12:36:20] <lazarljubenovic> i dropped my wizard hat
+[2017-01-28 12:37:27] <aminsmartsense> I mean if you have any solution about on that
+[2017-01-28 13:04:52] <aminsmartsense> Any one know md2-datpicker open event?
+--------------------------------------------------------------------------------------------------
+[2016-12-27 22:52:30] <DzmitryShylovich> robwormald: compiler providers are not available for the app [<-LINK->] is this intentional?
+[2016-12-28 02:18:24] <robwormald> DzmitryShylovich:  [<-LINK->] 
+--------------------------------------------------------------------------------------------------
+[2017-01-28 21:36:59] <mike-morr> I am confused by this, and is probably a misunderstanding on my part. but how is it possible to not support 2.1?   When I add angular to my project, aren't I just consuming the javascript and typings?  How is it possible for Angular TS to conflict with mine?
+
+--------------------------------------------------------------------------------------------------
+[2017-01-30 22:33:10] <Toxicable> who saying that?
+[2017-01-30 22:33:14] <Toxicable> Ill have a word to them
+[2017-01-30 22:33:54] <DzmitryShylovich> Toxicable:  [<-LINK->]
+[2017-01-30 22:33:57] <DzmitryShylovich> listening
+[2017-01-30 22:34:24] <Toxicable> DzmitryShylovich: I was doing work, didn't see that
+[2017-01-30 22:34:30] <Toxicable> I did see the doc on it though
+[2017-01-30 22:34:49] <robwormald> Toxicable: checked about the bot - in theory we're happy to do it, but gitter is a little eager with permissions (it gets write access to repos) so have to be careful. looking into it.
+[2017-01-30 22:40:06] <Toxicable> robwormald: Oh awesome, again thanks for looking into it. That totally makes sense about permissions since they don\'t really have a "proper" outlet for doing bots
+[2017-01-30 22:40:31] <Toxicable> And hot dam, I didn't realize how expensive slack was, that's insane
+--------------------------------------------------------------------------------------------------
+[2017-01-28 21:13:00] <GuskiS> mlc-mlapis: Nope, nothing. Just updated angular2 and rxjs stopped working :(
+[2017-01-28 21:16:33] <GuskiS> I'm going to ask again here,  I tried to upgrade angular from 2.4.2 to 2.4.5 but now I keep gettingTS2339: Property 'map' does not exist on type 'Observable<Response>'errors even if I haveimport 'rxjs/add/operator/map';set. Any ideas?
+[2017-01-28 21:33:06] <derekkite> GuskiS: did you change the typescript version?
+[2017-01-28 21:33:45] <GuskiS> yes, from 2.1.4 to 2.1.5, but I switched back and same result
+[2017-01-28 21:34:02] <Toxicable> GuskiS: Angular dosent support 2.1 yet
+[2017-01-28 21:34:19] <JefferyHus> stay withe angular typescript version
+[2017-01-28 21:35:19] <derekkite> "typescript": "^2.0.10"
+[2017-01-28 21:35:38] <derekkite> without the ^
+[2017-01-28 21:35:46] <JefferyHus> when you try to upgrade any dependency  make sure other libraries are using the latest or the version you are upgrading to
+[2017-01-28 21:36:29] <Toxicable> Angular dosent support 2.1 yet
+[2017-01-28 21:37:18] <Toxicable>  [<-ISSUE->] 
+[2017-01-28 21:37:42] <Toxicable> 2.1 had a breaking change
+[2017-01-28 21:37:44] <GuskiS> But it was working with 2.1.4, why is that?
+[2017-01-28 21:37:51] <Toxicable> therefore Angular cant upgrade without a breaking change
+[2017-01-28 21:38:04] <Toxicable> being 4.0
+[2017-01-28 21:38:05] <Toxicable> Therefore it wont be in till the next Major version
+[2017-01-28 21:38:43] <Toxicable> GuskiS: I don't know but Angular still dosn't support it
+[2017-01-28 21:38:58] <JefferyHus> yeah it may work but once you go deep in coding you will start seeing exceptions
+[2017-01-28 21:39:22] <GuskiS> Toxicable: also this repo is using 2.1.5 [<-LINK->] 
+[2017-01-28 21:39:32] <Toxicable> @GuskiSI don't know but Angular still dosn't support it
+[2017-01-28 21:39:38] <Toxicable>  [<-ISSUE->] 
+[2017-01-28 21:42:25] <JefferyHus> GuskiS: to know why check the TS 2.1 DOCS and see the changes
+[2017-01-28 21:42:46] <JefferyHus> compare it with what angular is supporting then you will know the problems you are getting and why
+[2017-01-28 21:46:50] <GuskiS> switched to typescript 2.0.10 - 183 errors :(
+--------------------------------------------------------------------------------------------------
+1 [2017-02-02T19:54:43] <vishalgajjar> Hi All, I need to have a tabs in my app. each tab will load its own component. so there would be parent component which will have 3 tabs and each tab will load its own component when user clicks on it. any solution to achieve this ?
+2 [2017-02-02T19:55:01] <HauntedSmores> vishalgajjar: Exactly what you just said lol
+3 [2017-02-02T19:55:13] <HauntedSmores> Just make the tabs with routerLinks
+4 [2017-02-02T19:55:23] <HauntedSmores> and a <router-outlet> underneath
+5 [2017-02-02T19:56:18] <vishalgajjar> HauntedSmores: there is already one router-outlet in the application so how to target the child router-outlet.?
+6 [2017-02-02T19:57:30] <HauntedSmores> vishalgajjar: You may need to structure your app a little differently. You cant have more than one router outlet in a single component
+7 [2017-02-02T19:58:47] <HauntedSmores> vishalgajjar: Lets say you have Component A with its child component, Component B, which will hold the tabs
+8 [2017-02-02T19:59:46] <HauntedSmores> vishalgajjar: Then you have one <router-outlet> that pulls in your top level components. INSIDE component A you have another <router-outlet> That pulls in and routes to your different tabs
+--------------------------------------------------------------------------------------------------
+1 [2017-02-03T05:00:42] <geeky77_twitter> when i run tsc and  will it look for tsconfig.json in the current as well as all parent folders till the root folder of the applicaton ??
+2 [2017-02-03T05:02:53] <derekkite> geeky77_twitter:  [<-LINK->]
+--------------------------------------------------------------------------------------------------
+1 [2017-02-02T19:51:58] <kai-iak> Hi guys, is anyone here able to answer or give me a hint what's going on with my angular2 app?  Details are posted here: [<-LINK->]
+--------------------------------------------------------------------------------------------------

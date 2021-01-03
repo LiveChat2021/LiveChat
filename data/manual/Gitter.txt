@@ -1,0 +1,607 @@
+1 [2016-11-21T02:33:15] <Aaawesomealex> How would I run the program C++? (the simplest way) There are so many programs for one language. If someone can pm me to help me step by step itd be greatly appreciated
+--------------------------------------------------------------------------------------------------
+[2016-11-21 09:51:26] <alexanderjulo> Is there actually anyone from gitter doing support here at all?
+[2016-11-21 12:06:05] <MadLittleMods> alexanderjulo: Fix underway [<-ISSUE->] 
+[2016-11-21 12:09:54] <MadLittleMods>  November 20, 2016 1:46 AM @RationalCoding There is no disable link to turn off the theme changes.You can toggle between light and dark http://blog.gitter.im/2016/11/17/join-the-dark-side/
+[2016-11-21 12:11:04] <MadLittleMods>  [<-LINK->] @lc-softYou can't set individual avatars for rooms but you can change the avatar for your community by clicking the avatar in the chat header at the top and browseing for the desired file
+[2016-11-21 14:00:47] <alexanderjulo> MadLittleMods: thanks!
+[2016-11-21 18:22:45] <dragon788> it appears that non-favorites in the All Conversations list aren't maintaining their sort if you "refresh" the webpage or close and reopen
+[2016-11-21 18:23:34] <MadLittleMods> dragon788: non-favourites don't maintain a manual drag and drop sort. Youcansort them kinda but not supported
+[2016-11-21 18:35:35] <dragon788> ahhh, ok
+[2016-11-21 18:35:52] <dragon788> guess I'll have to make my favorites list huge then :)
+
+--------------------------------------------------------------------------------------------------
+1 [2016-11-21T19:33:59] <grahamperrin> Anyone, please: how doesstagingrelate toNext? I have the bookmarklet to toggle  but when Next is enabled I can't see [<-LINK->] .
+2 [2016-11-21T19:35:43] <grahamperrin> More generally, when I toggle off (away from Next), I don't see any change in the GUI but the appearanceisconsiderably different from what I recall of things a few weeks ago.
+3 [2016-11-21T19:36:56] <grahamperrin> grahamperrin: toggles on again … there's the green NEXT indicator but apart from that indicator, I can't see the difference between off and on.
+4 [2016-11-21T19:38:17] <mydigitalself> At the moment there's no difference between the two. If an issue is closed, its generally in full production.
+5 [2016-11-21T19:39:37] <grahamperrin> OK@mydigitalselfwith [<-ISSUE->] as an example, I see no scroll bar for search results. Do you?
+6 [2016-11-21T19:40:16] <mydigitalself> Dunno, on mobile and my laptop battery is dead and left my charger at the office
+7 [2016-11-21T19:40:56] <mydigitalself> If you don't see it, comment on the issue with details on your platform, could be os/browser specific.
+8 [2016-11-21T19:42:20] <grahamperrin> Firefox 49.0 (loaded with extensions) on TrueOS Desktop, which tracks FreeBSD-CURRENT. I'll start the browser in safe mode and review. Back in five.
+9 [2016-11-21T19:48:05] <mydigitalself> Yeah... that's not an environment we test on, so wouldn't be surprised if it was platform specific bug.
+10 [2016-11-21T19:48:43] <grahamperrin> OK, now there's a (terribly faint) scroll bar. Maybe an extension conflict :(
+11 [2016-11-21T19:50:48] <grahamperrin> Still in safe mode, the bar appears only if the left menu is toggled to 'make the space for results persistent'beforea search is performed.
+12 [2016-11-21T19:51:37] <grahamperrin> And if search results are not cleared before that toggle, then (still) there's no scroll bar.
+13 [2016-11-21T19:51:42] <grahamperrin> grahamperrin: clears search results
+14 [2016-11-21T19:52:22] <grahamperrin> Still no scroll bar for search results. Weird.
+15 [2016-11-21T20:04:09] <grahamperrin> Now with Chromium, and just one extension (LastPass). Still no scroll bar.
+16 [2016-11-21T20:25:37] <grahamperrin> Now back to normal mode for Firefox, loaded with extensions.The problem persists and (fingers crossed) I have a workaround that's good in both Chromium and Firefox:zoom in [<-CODE->]
+--------------------------------------------------------------------------------------------------
+1 [2016-11-22 06:25:53] <zacts> hi
+2 [2016-11-22 06:26:33] <zacts> The one missing feature of Gitter I would like to see is the ability to search through room history
+3 [2016-11-22 06:26:44] <zacts> I see this: [<-ISSUE->] 
+4 [2016-11-22 06:26:58] <zacts> I wonder how long it might be before we see this feature implemented?
+5 [2016-11-22 06:27:24] <zacts> other than that I prefer gitter over slack
+6 [2016-11-22 10:27:59] <mydigitalself> zacts: you can search the current room, not across rooms. use the search icon to the left.
+7 [2016-11-22 15:34:02] <zacts> mydigitalself: Nice, thanks! re: searching chat room history
+--------------------------------------------------------------------------------------------------
+1 [2016-11-22T07:16:03] <ghost~5826a72ed73408ce4f354d4f> discourse has slack chat plugin ... is there nay plans for gitter plugin for same?
+--------------------------------------------------------------------------------------------------
+1 [2016-11-22 13:48:55] <Mikaela> Mikaela: wishes the reactions came to GitHub mobile web and API too so it didn't need remembering what to on desktop and it could be clicked in Octodroid which is also missing subscribing thanks to API not having it
+2 [2016-11-22 13:49:59] <mydigitalself> Mikaela: it's available in preview via the API
+3 [2016-11-22 13:50:00] <mydigitalself>  [<-LINK->] 
+4 [2016-11-22 13:50:04] <mydigitalself> look below the payload
+5 [2016-11-22 13:51:25] <Mikaela> I mean subscribe to email notifications
+6 [2016-11-22 13:53:43] <mydigitalself> wishes the reactions came to GitHub mobile web and API tooyou said exactly that
+7 [2016-11-22 13:53:58] <mydigitalself> and then went on to say more about subscriptions in the API
+8 [2016-11-22 13:54:14] <mydigitalself> and i'm saying that reactions is coming to the API and you can preview it
+9 [2016-11-22 13:54:38] <Mikaela> Sorry, I confused, that could probably be thrown to octodroid tracker
+--------------------------------------------------------------------------------------------------
+1 [2016-11-22 14:02:40] <divyanshdubey> Hey there everyone ... is there any group on gitter that discus about c or c++?
+2 [2016-11-22 14:21:44] <mydigitalself> divyanshdubey: pleasedo notcreate new communities and randomly add people you don't know into them. you are welcome to share a link ingitterHQ/developersto your new community, but what you just did is not cool.
+--------------------------------------------------------------------------------------------------
+1 [2016-11-22 15:13:10] <leni1> Hello. How do you scroll up or down in a room?
+2 [2016-11-22 15:13:27] <TheDiamondYT1> leni1: Mouse wheel or the scroll bar on the right of the chat
+3 [2016-11-22 15:13:44] <leni1> TheDiamondYT1: using a touchpad :P
+4 [2016-11-22 15:14:03] <leni1> No keyboard shortctuts?
+5 [2016-11-22 15:14:15] <leni1> Like using the up or down arrows or something?
+6 [2016-11-22 15:14:18] <TheDiamondYT1> Pg Up and Pg Down work
+7 [2016-11-22 15:14:41] <leni1> Yes... That's what I was looking for. Thank you
+8 [2016-11-22 15:14:57] <leni1> TheDiamondYT1: thanks
+9 [2016-11-22 15:15:24] <TheDiamondYT1> Anyway, why not use this its possible on a touchpad
+--------------------------------------------------------------------------------------------------
+1 [2016-11-22 17:40:38] <abhisekp>  I see a box in Windows 7 Starter 32b SP1
+2 [2016-11-22 17:42:55] <viluon> That's the glorious XboX
+3 [2016-11-22 17:43:09] <abhisekp> ah! :D
+4 [2016-11-22 17:43:10] <viluon> Please talk to Micro$oft about that@abhisekp
+5 [2016-11-22 17:44:32] <dragon788> abhisekp: that is likely a UTF/unicode character that your current browser/font selection doesn't understand
+6 [2016-11-22 17:44:59] <dragon788> iirc Windows Starter didn't have all the language packs available that Home/Pro/Enterprise did
+7 [2016-11-22 17:46:12] <abhisekp> hmm... ok.. thanks@dragon788 :D
+--------------------------------------------------------------------------------------------------
+1 [2016-11-22T18:00:38] <MadLittleMods>  [<-LINK->] @abhisekpLooks like it doesn't like the emoji [<-LINK->]
+2 [2016-11-22T18:00:52] <MadLittleMods> TheDiamondYT1: ^^   [<-LINK->]
+--------------------------------------------------------------------------------------------------
+1 [2016-11-22 20:05:13] <raniesantos> if i delete my message on gitter does it stay on other people's threads?
+2 [2016-11-22 20:05:22] <abhisekp> no
+3 [2016-11-22 20:05:30] <raniesantos> thanks
+4 [2016-11-23 00:19:08] <dragon788> raniesantos: I think the only place the message will exist is if somebody was subscribed to instant notifications via email on a channel
+--------------------------------------------------------------------------------------------------
+1 [2016-11-23 16:00:47] <matrixbot> @lok:matrix.orgAnyone from operator?
+2 [2016-11-23 16:42:43] <mydigitalself> What for?
+3 [2016-11-23 16:45:11] <ghost~5826a72ed73408ce4f354d4f> Its Matrix bot?
+4 [2016-11-23 16:46:05] <matrixbot> @lok:matrix.orgWant to see how to route gitter channel to  Matrix
+5 [2016-11-23 16:46:09] <matrixbot> @lok:matrix.orgMike Bartlett (Gitter):
+--------------------------------------------------------------------------------------------------
+1 [2016-11-24 03:22:10] <Saeven> what’s required to make the markdown badges work?
+2 [2016-11-24 03:22:23] <Saeven> simply a link to one or more repos?
+3 [2016-11-24 03:22:54] <Saeven> in my dreamworld, I’d have /Circlical (5813fc7bd73408ce4f31955f) and a bunch of MD badges in my repos that lead to it
+4 [2016-11-24 03:23:18] <Saeven> but it seems the repo is associated to community, and not to room?
+5 [2016-11-24 03:23:25] <MadLittleMods> Because you are trying to create a community for a repo on your personal user, your only option is to create a community based on theSaeven/zf3-circlical-userrepo and keep theLobbyroom.
+6 [2016-11-24 03:23:40] <Saeven> I’d easily move the repo to the org
+7 [2016-11-24 03:23:56] <MadLittleMods> You can have a badge for any room. It's just that the share modal only shows the template for public rooms associated with a repo  [<-LINK->] 
+8 [2016-11-24 03:25:06] <Saeven> so, I should create rooms within Circlical/ and then handcraft the badges into the markdown
+9 [2016-11-24 03:25:26] <Saeven> and when the day comes, I delete those two other communities to soothe my OCD
+10 [2016-11-24 03:25:26] <MadLittleMods>  That would work
+11 [2016-11-24 03:25:51] <Saeven> alright, sorry to be so daft.  I did look for documentation a priori! ;)
+12 [2016-11-24 03:25:53] <MadLittleMods> I can delete the others now, [<-LINK->] and [<-LINK->] 
+13 [2016-11-24 03:26:05] <Saeven> oh man.     thank you
+14 [2016-11-24 03:27:15] <MadLittleMods> done 
+15 [2016-11-24 03:27:29] <Saeven> thanks a ton man
+--------------------------------------------------------------------------------------------------
+1 [2016-11-25T04:58:56] <Crljules> Where can I go to buy an encoder?
+2 [2016-11-25T05:01:24] <Crljules>  [<-LINK->]
+3 [2016-11-25T07:02:52] <abhisekp> Crljules: e-shop
+--------------------------------------------------------------------------------------------------
+[2016-11-27 02:35:42] <jermbone1000_twitter> Hi I'm new to the community. It's nice to be here, I am just starting to work with Linux any advice would be greatly appreciated
+[2016-11-27 15:31:35] <ghost~5826a72ed73408ce4f354d4f> jermbone1000_twitter: check BSD systems 
+
+--------------------------------------------------------------------------------------------------
+1 [2016-11-27 18:17:14] <anddam> hello
+2 [2016-11-27 18:18:08] <anddam> I'm using gitter's irc gateway and from the irc client I don't see an user that's actually on channel and is talking with me
+3 [2016-11-27 18:18:44] <anddam> he is not in the nickname list, i tried disconnecting from irc.gitter.im and connecting again to no avail
+4 [2016-11-27 18:19:23] <anddam> the user is signed in using a twitter account, I haven't had any issue (that I noticed) with github-signed users
+5 [2016-11-27 18:19:36] <anddam> can anyone check this and confirm it's an issue of the irc service?
+6 [2016-11-27 21:15:46] <pdurbin> I think from IRC you only see people connected from IRC in the nick list.
+7 [2016-11-28 00:23:44] <josepagan> hello does anyone know how to install the gitter app with manjaro/arch?
+8 [2016-11-28 04:23:46] <abhisekp> pdurbin: AFAIK only top 32 people are shown in IRC
+9 [2016-11-28 07:38:51] <anddam> abhisekp: why?
+10 [2016-11-28 07:39:41] <abhisekp> idk... gitter devs would know the reason
+11 [2016-11-28 15:04:28] <pdurbin> oh, ok
+--------------------------------------------------------------------------------------------------
+[2016-11-28 16:38:02] <matrixbot> MikaelaEric Eastwood (Gitter): the link doesn't work on Gitter mobile client. And IIRC I tested a few days ago if the bridge was working here or not as one message got missed and got to conclusion that it worked and apologised for testing explaining what I was doing and where one could possibly get more information if they were interested.
+[2016-11-28 16:53:01] <abhisekp> matrixbot: you should use@usernameto mention a user.
+[2016-11-28 16:53:26] <matrixbot> MikaelaAbhisek Pattnaik (Gitter): what is the username?
+[2016-11-28 16:53:32] <matrixbot> Mikaelaposted an image:
+[2016-11-28 16:54:13] <abhisekp> 
+[2016-11-28 16:55:40] <abhisekp> MadLittleMods:  [<-LINK->] Even admins are unable to remove users which are created by some other admins for a private org. room.
+[2016-11-28 16:57:44] <abhisekp> matrixbot: what kind of chat client is that?   [<-LINK->] It doesn't show the usernames.My username isabhisekp
+[2016-11-28 16:59:02] <abhisekp> matrixbot: You can mention me using@abhisekp
+[2016-11-28 17:00:25] <abhisekp> That client looks great though 
+--------------------------------------------------------------------------------------------------
+1 [2016-11-29 17:25:14] <sriranganathan> Hello everyone. I am new to gitter. I created a new private chat room today. When I try to add someone It results in a "Forbidden" message. The user I am trying to add has already made the membership of the organization public and has already allowed private access for the organization. Can someone help me 
+2 [2016-11-29 17:27:13] <MadLittleMods> @sriranganathan hmm, it sounds like you have taken the correct steps so far. The room is based on a private repo?You mentioned "has already allowed private access for the organization"(could be interpreted as the third party access org setting) but has the user granted private repo scope? http://i.imgur.com/VKSgK5D.png
+3 [2016-11-29 17:29:55] <sriranganathan> MadLittleMods: Thank you for the prompt reply. I will ask him to check this 
+--------------------------------------------------------------------------------------------------
+1 [2016-11-30T06:27:45] <serapath> MadLittleMods: hey... regarding the chat and transferring of messages. maybe thats good enough. Because i guess i can add/invite all the learners to the new channel easily. If in addition, the old channel is being deleted or forwards to the new one, thats fine. But i guess i still need to write tosupport@gitter.im?
+--------------------------------------------------------------------------------------------------
+1 [2016-11-30 18:47:00] <Bluscream>  [<-LINK->] 
+2 [2016-11-30 18:47:01] <Bluscream> Almost invisible ...
+3 [2016-11-30 18:48:49] <Bluscream> Are there something like DMCA's or name claims for communities?
+4 [2016-11-30 18:52:59] <mydigitalself> @BluscreamDMCA has no relevance for community names. DMCA is specifically for content violations where circumvention of rights management is being distributed such as PirateBay, KAT (closed as a result of a DMCA case & arrest), Popcorn Time etc...It criminalizes production and dissemination of technology, devices, or services intended to circumvent measures (commonly known as digital rights management or DRM) that control access to copyrighted works.if there's a name violation that's infringing on a trademark infringement a legal precedent would need to be established if the use is happening beyond Gitter. if the use is unique to Gitter, evidence of a registered trademark and infringement would need to be established.
+5 [2016-11-30 18:53:55] <Bluscream> ah thanks ok i was afraid i can't claim my company's name
+6 [2016-11-30 18:54:44] <mydigitalself> you'd have to have an internationally recognised EU trademark
+7 [2016-11-30 18:55:09] <Bluscream> okay, the error message seems pretty neat btw..
+8 [2016-11-30 18:55:24] <mydigitalself> like we don't even havetwitter.com/gitter- tough luck for us
+9 [2016-11-30 18:55:52] <Bluscream> The red mark doesn't tell me much :(
+10 [2016-11-30 18:55:59] <mydigitalself> you should normally see a tooltip
+11 [2016-11-30 18:56:31] <mydigitalself>  [<-LINK->] <--- that's basically preventing you from using that URL
+12 [2016-11-30 18:56:53] <Bluscream> oh it checks for taken github user/org names?
+13 [2016-11-30 18:56:55] <mydigitalself> can maybe try something like adquardHQ as your url
+14 [2016-11-30 19:22:58] <Bluscream> Is there a special reason why there is no alpha channel allowed in upload avatars?
+15 [2016-11-30 19:23:20] <Bluscream> That makes all avatars look ugly with the dark design
+16 [2016-11-30 19:50:56] <MadLittleMods> Bluscream: Alpha channel is just fine but we put a white box behind avatars so that avatars coming from GitHub still look nice and readable
+17 [2016-11-30 19:51:32] <Bluscream> Is that some css magic?
+18 [2016-11-30 19:52:16] <MadLittleMods>  background-color: #ffffff;
+19 [2016-11-30 19:55:39] <Bluscream> Yeah but i ask myself in which css file
+20 [2016-11-30 19:58:34] <Bluscream> Clipboard is not enabled in hosted mode. Please inspect using chrome://inspectREEE xD
+21 [2016-11-30 20:00:01] <Bluscream>  [<-CODE->] 
+22 [2016-11-30 20:00:14] <Bluscream> There we go
+23 [2016-11-30 20:44:34] <Bluscream> MadLittleMods: there must be more
+24 [2016-11-30 20:45:52] <Bluscream> Original:Gitter:
+25 [2016-11-30 20:51:04] <Bluscream>  [<-CODE->] atleast enough to get most of the images transparent :)
+26 [2016-11-30 21:06:59] <Bluscream> this won't ever work xD
+27 [2016-11-30 21:07:11] <Bluscream>  [<-LINK->] 
+28 [2016-11-30 21:08:11] <Bluscream>  [<-CODE->] 
+--------------------------------------------------------------------------------------------------
+1 [2016-11-30 21:12:42] <grahamperrin> Does anyone use Gitter in more than tab with Firefox?
+2 [2016-11-30 21:22:40] <MadLittleMods> grahamperrin: What is happening?
+3 [2016-11-30 21:25:17] <grahamperrin> MadLittleMods:  [<-LINK->] mismatches between URL and content. Risks arising include: chat that's intended to be private, inadvertently posted to a public room (it happened to me a day or so ago).
+4 [2016-11-30 21:28:11] <MadLittleMods> grahamperrin: Either [<-ISSUE->] or [<-ISSUE->] 
+5 [2016-11-30 21:30:23] <grahamperrin> More than [<-ISSUE->] ; the symptoms persist long after state is restored. Refresh, refresh, refresh and so on and the mismatch persists.
+6 [2016-11-30 21:32:21] <MadLittleMods> grahamperrin: So [<-LINK->] extension issue?
+7 [2016-11-30 21:33:55] <grahamperrin> No, there's safe mode above in [<-LINK->] and in the screen recording that's mentioned there.
+8 [2016-11-30 21:36:27] <grahamperrin> effects can include apparent search failures e.g. as shown at https://discourse.trueos.org/t/-/110/8
+9 [2016-11-30 21:37:18] <MadLittleMods> grahamperrin: Definitely want to to tackle [<-ISSUE->] to see how that changes things
+10 [2016-11-30 21:37:47] <grahamperrin> 
+11 [2016-11-30 21:42:29] <grahamperrin> Re: investigation [<-LINK->] if Firefox behaviour is proper (andglancingat the shot of Google Chrome in [<-ISSUE->] , Iassumethat itisproper), then maybe someone will have the rather thankless task of tooth-combing for areas where caching should/must be disallowed.
+12 [2016-11-30 21:47:59] <grahamperrin> … and on that potentially depressing note (sorry!) I'll say goodnight ~~~~
+13 [2016-11-30 21:51:28] <grahamperrin> ^ hint: that example of anapparentsearch failure is in fact, on very close inspection, a mismatch between the URL/Lobbyand the room/lumina… both the title bar and the tab are strong indications that the writer is in one room when in fact, the writing is elsewhere.
+14 [2016-11-30 21:58:19] <grahamperrin> … and when in the Lobby at an?at=URL, both the title bar and the tab are diminished to a generic 'Gitter'; a more distinctive title e.g. 'TrueOS lobby' would be appropriate.
+--------------------------------------------------------------------------------------------------
+1 [2016-12-01 11:47:59] <joeblew99> Basic question !! How can i setup gitter so it ONLY gives me notifications for where i am mentioned ?? I want to set this globally for all my gitters
+2 [2016-12-01 13:36:42] <mydigitalself> joeblew99: go to notification settings,  in any room, click onConfigure Defaultschange it toMutedone.
+3 [2016-12-01 14:25:37] <dragon788> per what@mydigitalselfsaid you can also apply that as the default to all rooms after setting it for one, or at least there is a link there@joeblew99
+4 [2016-12-01 16:23:44] <joeblew99> mydigitalself: thanks. have done and that and see if its less chatty :)
+--------------------------------------------------------------------------------------------------
+1 [2016-12-01 15:31:02] <craigchilled> I am stuck . <p>   I have to Chang colour  to p element tex  can any 1 help please
+2 [2016-12-01 17:02:05] <MadLittleMods>  [<-LINK->] @craigchilledThis room is for Gitter support, not general technical support. Please read the welcome message when joining a room and take note of the room description/topic in the chat header at the top. After fixing up your question, [<-LINK->] , you should try [<-LINK->] 
+--------------------------------------------------------------------------------------------------
+1 [2016-12-02 09:07:44] <engradeelnayyar> any one  give me wordpress slideR>?
+2 [2016-12-02 14:00:06] <MadLittleMods> engradeelnayyar: This room is for Gitter support, not general technical support. Please read and adhere to the welcome message you see when joining rooms and the room description/topic at the top in the chat header. Google will be your best bet to compare options
+--------------------------------------------------------------------------------------------------
+1 [2016-12-02 15:41:41] <grahamperrin>  [<-LINK->] 
+2 [2016-12-02 15:42:04] <grahamperrin> Mixture of public and private content. Ew.
+3 [2016-12-02 15:42:31] <mydigitalself> grahamperrin: on [<-LINK->] do you havechat-cacheenabled?
+4 [2016-12-02 15:42:48] <grahamperrin>  [<-LINK->] 
+5 [2016-12-02 15:44:18] <grahamperrin> Yep Mike I do. Until today I never had a private conversation apparently mixed with public content.
+6 [2016-12-02 15:44:47] <mydigitalself> yeah, i've seen that happen before withchat-cachewhich is why it's not ready for prime-time
+7 [2016-12-02 15:45:06] <mydigitalself> i'd turn it off
+8 [2016-12-02 15:45:08] <grahamperrin> AFAIR this incident occurred after Firefox automatically restored tabs.
+9 [2016-12-02 15:45:40] <mydigitalself> also, what time zone are you in? trying to establish when thatengradeelnayyarpinged you
+10 [2016-12-02 15:45:52] <mydigitalself> as i've warned him not to DM people
+--------------------------------------------------------------------------------------------------
+1 [2016-12-03 00:10:07] <michaelneale> Hey would it ever be possible that IRC access could be allowed to not require signup (for non private rooms, perhaps as opt in?)
+2 [2016-12-03 01:17:11] <pdurbin> like freenode
+3 [2016-12-03 01:17:22] <michaelneale> yes
+4 [2016-12-03 01:17:30] <michaelneale> exactly like freenode
+5 [2016-12-03 01:17:41] <michaelneale> of course, I do also use freenode, but everyone loves gitter more
+6 [2016-12-03 01:19:58] <pdurbin> Really? I like Gitter a lot but I think I'll always have a soft spot for freenode. I especially like the public logging of channels Gitter does, which is something that freenode doesn't have or even encourage by default.
+7 [2016-12-03 01:20:13] <michaelneale> me too - but for smoething I am working on gitter works better
+8 [2016-12-03 01:24:39] <pdurbin> I wouldn't mind having some sort of bridge from Gitter to my freenode channel, which I already have public logging for. I would consider my logs to be canonical. I wouldn't care if Gitter logs the channel as well. It's more about having an easy way for people to jump into the channel and start talking.
+9 [2016-12-03 01:25:03] <michaelneale> We tried sameroom.io which is close - but makes it come through one user, which is odd.
+10 [2016-12-03 01:27:52] <pdurbin> Yeah, I haven't quite been satisfied with the user experience so far. For now, I just stook up an instance of Shout so people have an easy way to connect to the freenode channel from a web browser. No freenode captcha, no having to think about which channel to join. You just pick a username and start talking. Works pretty well.
+11 [2016-12-03 01:34:46] <pdurbin> The user experience of the various "sync freenode and Gitter" solutions, I mean.
+12 [2016-12-03 01:53:26] <pdurbin> I guess the "coming through as one user" problem is sort of mentioned as "Neither IRC nor Gitter provide an impersonation API for posting messages with a different author name" at [<-LINK->] 
+--------------------------------------------------------------------------------------------------
+1 [2016-12-04 12:54:37] <khanh2003> Hello everyone!Is there any kind of sandbox room for me to test gitter's Markdown?Also I don't really like Gitter's Unread indicator and at slash all mentions as it force me to read messages that are unrelated to me.
+2 [2016-12-04 12:57:21] <grahamperrin>  [<-LINK->] found by clicking the globe icon at the head of the page
+3 [2016-12-04 12:58:53] <grahamperrin> khanh2003: are you using a web browser?
+4 [2016-12-04 13:00:49] <khanh2003> grahamperrin: oh it is not really obvious to new users. showing list of rooms when going to gitter.im homepage is better [my-2-cents]
+5 [2016-12-04 13:06:37] <grahamperrin> MadLittleMods: and team, observe this pale green indication long after the post was read by me:
+6 [2016-12-04 13:06:48] <grahamperrin>  [<-LINK->] 
+7 [2016-12-04 13:10:06] <grahamperrin> Maybe caused by (i) browsing away from this room then simply (ii) back, without (iii) actively reloading the page. I'll test whether it's reproducible with Firefox with a new profile.
+8 [2016-12-04 13:13:58] <khanh2003> grahamperrin: you are right.
+9 [2016-12-04 13:14:59] <grahamperrin> khanh2003: did you use Firefox in safe mode? Or with a new (clean) profile?
+10 [2016-12-04 13:20:47] <khanh2003> grahamperrin: i tried. it is reproducible.I am the person who open issues but never Pull Request
+11 [2016-12-04 13:21:52] <grahamperrin> LOL. Reproducible in with Firefox in safe mode?
+--------------------------------------------------------------------------------------------------
+1 [2016-12-05 08:02:28] <AnriKo> Khalian: @apottrthank I try
+2 [2016-12-05 13:27:16] <arronio_twitter> Hello! Is there a ‘Manage Account’ interface by any chance? If not, is there functionality to ‘Sign Out’ of my Twitter-linked gitter account and use GitHub for authorization instead? Thanks!
+3 [2016-12-05 13:29:25] <arronio_twitter> (Within the OS X app itself)
+4 [2016-12-05 13:33:52] <mydigitalself> arronio_twitter: on the OS X app, the menubar bar icon (next to your system clock, wifi settings etc…) has a signout option. you can then sign in with GitHub, this will effectively create a new account.
+5 [2016-12-05 13:35:21] <arronio_twitter> mydigitalself: Oh dang, of course, I hid that! Thanks :)
+--------------------------------------------------------------------------------------------------
+1 [2016-12-05 13:47:51] <Bluscream> How to make a room invite only afterwards?
+2 [2016-12-05 13:55:02] <mydigitalself> Bluscream: you can't change the room type after you've created it
+3 [2016-12-05 13:55:29] <Bluscream> So i have to delete and recreate the whole room? :/
+4 [2016-12-05 13:55:38] <Bluscream> That's not very user-friendly
+5 [2016-12-05 13:56:24] <mydigitalself> it's just not something that's implemented yet
+6 [2016-12-05 13:56:55] <mydigitalself> i can count on one hand the number of times it's been requested, and i don't have an abnormally large number of fingers ;)
+7 [2016-12-05 14:24:11] <MadLittleMods>  [<-LINK->] @BluscreamCreate a new issue [<-LINK->] 
+--------------------------------------------------------------------------------------------------
+1 [2016-12-05 14:50:49] <burning-monk> is gitter blocking to show site information?
+2 [2016-12-05 14:51:56] <MadLittleMods> burning-monk: Can you ask that in another way? I don't quite understand what you are asking about
+3 [2016-12-05 14:53:23] <burning-monk> normally in firefox there is the option at the left of the address bar to show page information
+4 [2016-12-05 14:54:17] <MadLittleMods> burning-monk: We aren't blocking it. It works for me in Chrome and Firefox
+5 [2016-12-05 14:54:47] <burning-monk> ok then I guess it's an issue with my browser
+--------------------------------------------------------------------------------------------------
+1 [2016-12-05T22:02:25] <ThomasPrioul> Hi people, I love Gitter, coming from Slack. But what's really annoying is that "eyeballs" indicator. It was much clearer and more reliable in Slack which used a connection indicator. This issue [<-ISSUE->] ( [<-ISSUE->] ) was opened like two years ago, any news on an improved indicator? Thanks :)
+2 [2016-12-05T22:04:06] <ThomasPrioul> I also experience the same as [<-ISSUE->]
+--------------------------------------------------------------------------------------------------
+1 [2016-12-05 23:01:07] <julisan1> Hello world! Just joining now. Looking forward to learning a bunch from y'all!
+2 [2016-12-05 23:01:56] <MadLittleMods> julisan1: Perhaps you meant to go to [<-LINK->] - Just curious, how did you end up in this room (retrace steps)?
+3 [2016-12-05 23:07:50] <julisan1> MadLittleMods: , I guess you're right.
+4 [2016-12-05 23:08:36] <MadLittleMods>  [<-CODE->] Still curious on how you got into this room after signing in if you can remember
+5 [2016-12-05 23:16:20] <julisan1> MadLittleMods: , I was trying out suggestions provided to me by freecodecamp
+6 [2016-12-05 23:16:45] <MadLittleMods> julisan1: Can you expand or link what you mean by suggestions?
+7 [2016-12-06 04:12:54] <abhisekp> @MadLittleMods @julisan1 I guess these suggestions?
+--------------------------------------------------------------------------------------------------
+1 [2016-12-06T18:32:57] <engradeelnayyar> any one know how to make popup ?
+2 [2016-12-06T18:34:10] <engradeelnayyar> a
+3 [2016-12-06T18:35:25] <dragon788> engradeelnayyar: Perhaps you meant to go to [<-LINK->]
+--------------------------------------------------------------------------------------------------
+1 [2016-12-07 01:42:40] <jbcebe-seekers> Hi everyone
+2 [2016-12-07 01:43:18] <jbcebe-seekers> what is the best way to share a list of rooms with my development team?
+3 [2016-12-07 01:44:19] <jbcebe-seekers> i was looking for a way to share my profile with them... hoping it would show the list of rooms i joined or starred
+4 [2016-12-07 04:26:12] <MadLittleMods> jbcebe-seekers: It has been mentioned internally before but there isn't a way to share a list outside of linking a community home [<-LINK->] 
+5 [2016-12-07 08:23:56] <jbcebe-seekers> MadLittleMods: thanks Eric, how would you use the community home for that purpose?
+6 [2016-12-07 08:24:51] <jbcebe-seekers> do you mean... just share the URL by some other mean outside Gitter?
+7 [2016-12-07 08:26:00] <jbcebe-seekers> for example in GitHub or Twitter... you could see who I am following, which repo I starred
+8 [2016-12-07 08:26:50] <jbcebe-seekers> I wished there was something similar... so I can show other ppl which chat room i'm in  :)
+9 [2016-12-07 08:27:07] <jbcebe-seekers> or which one i starred
+--------------------------------------------------------------------------------------------------
+1 [2016-12-07 10:15:00] <davidleeuk> Hi - is there a way to change the logo image for a community?
+2 [2016-12-07 11:40:40] <mydigitalself> davidleeuk: click on the big version of it in the header when you are in a room in that community
+3 [2016-12-07 11:55:43] <davidleeuk> mydigitalself: tried that... nothing happens :'(
+4 [2016-12-07 11:56:08] <mydigitalself> are you an admin of the community?
+5 [2016-12-07 11:56:20] <davidleeuk> Yep - I set it up
+6 [2016-12-07 11:58:32] <mydigitalself> davidleeuk: recently? what's the url of the community?
+7 [2016-12-07 11:58:59] <davidleeuk>  [<-LINK->] 
+8 [2016-12-07 11:59:46] <mydigitalself> and when you're in [<-LINK->] and you click on the logo at the top, nothing happens?
+9 [2016-12-07 11:59:50] <mydigitalself> (not on the home page)
+10 [2016-12-07 12:00:58] <davidleeuk> That's correct - I can see the link cursor but nothing happens
+11 [2016-12-07 12:01:03] <davidleeuk> On chrome and IE
+--------------------------------------------------------------------------------------------------
+1 [2016-12-07 19:51:21] <mwpastore> Hi folks, I’m having trouble creating a community for one of my GitHub repos (mwpastore/sinja). It shows a red exclamation mark next to my repo name, but hovering over it doesn’t reveal any additional information. Hovering over “Next” shows a  tooltip icon; I can click on “Next” anyway but it takes me back to the initial create a new community screen with no further error messages. I’ve tried in Safari and in the Gitter app for macOS, and I’ve confirmed that my repo is not marked private and the name is not taken ( [<-LINK->] returns a 404 page). Any suggestions?
+2 [2016-12-07 19:59:20] <mwpastore> It looks like maybe the name is too short
+3 [2016-12-07 20:00:58] <MadLittleMods> mwpastore: It should show a tooltip with the error if you try to submit with next button or when focused in that input. It is probably a conflict with [<-LINK->] so you need to adjust the slug/URI
+4 [2016-12-07 20:01:50] <mwpastore> a-ha, there’s a user named sinja
+5 [2016-12-07 20:02:00] <mwpastore> yeah, it’s not showing any tooltips or errors or anything
+6 [2016-12-07 20:04:10] <mwpastore> welp, that settles it. thanks@MadLittleMods!
+--------------------------------------------------------------------------------------------------
+1 [2016-12-08 15:50:58] <dragon788> is there an easy way to reference another channel without the full gitter.im URL? or is that the best way?
+2 [2016-12-08 15:53:56] <mydigitalself> that's the only way
+3 [2016-12-08 15:55:11] <dragon788> ok, makes sense since # gives you tightly integrated GitHub issues/PRs so it wouldn't work for a channel name
+--------------------------------------------------------------------------------------------------
+1 [2016-12-08 16:14:33] <amberj> Hey
+2 [2016-12-08 16:15:00] <amberj> How can I give admin permissions for a gitter organization to one more user ?
+3 [2016-12-08 16:15:52] <amberj> I can see a "Permissions" option in every room's settings, but I want to give admin rights to this user organization-wide
+4 [2016-12-08 16:18:24] <mydigitalself> amberj: what do you see at the bottom left of that modal?
+5 [2016-12-08 16:20:27] <amberj> "Edit community permission".. yup this is what I was looking for. Thanks@mydigitalself
+6 [2016-12-08 16:20:42] <mydigitalself> 
+7 [2016-12-08 16:20:55] <mydigitalself> just add them as extra admins if the community is linked to a GitHub org
+--------------------------------------------------------------------------------------------------
+1 [2016-12-08 19:18:21] <mapukhakis_twitter> Good afternoon. Is there a way to Mark all messages (in a room) as read?
+2 [2016-12-08 19:19:50] <ricardobaeta> Type "/" and look at the bottom :)
+3 [2016-12-08 19:20:37] <mapukhakis_twitter> Ah- so easy. Thanks :)
+--------------------------------------------------------------------------------------------------
+1 [2016-12-09 21:23:49] <grahamperrin> MadLittleMods: and colleagues, has anyone else reported sporadic search failures? For example, around one minute ago, seekingwebhooksin this room found nothing and there appeared a notification about communication issues.
+2 [2016-12-09 21:26:27] <grahamperrin> A second search for the same word found some matches, and there reappeared the notification. Subsequent searches for the same word found nothing, and there reappeared the notification. For example:
+3 [2016-12-09 21:26:39] <grahamperrin>  [<-LINK->] 
+4 [2016-12-09 21:28:39] <MadLittleMods> @grahamperrin Please refrain from pinging people directly. Anyone here can help you.It is a problem I noticed a while back and is caused by some limits we are hitting with the version of elasticsearch we are on atm iirc.troupe/gitter-webapp#2133
+gitterHQ/gitter#1528
+5 [2016-12-09 21:30:18] <grahamperrin> Apologies Eric. I'm already subscribed to [<-ISSUE->] but had not imagined the symptoms going beyond searches for usernames.
+6 [2016-12-09 21:32:53] <MadLittleMods> Just any query that could hit the timeout
+7 [2016-12-09 21:33:15] <MadLittleMods> Thefrom:xxxsyntax is a more involved query that reproduces the problem often
+8 [2016-12-09 21:35:19] <grahamperrin>  [<-ISSUE->] page not found if attempt to open the issue in GitHub; and pointing at the link in this chat does not always reveal an outline of the issue in the pop-up.
+9 [2016-12-09 21:35:34] <MadLittleMods> grahamperrin: Internal issue for my own reference
+10 [2016-12-09 21:37:38] <grahamperrin> Ah OK. So I guess that GitHub can allow a limited view of internal issues, yes?  (Or did you make the issue private a few seconds ago?)
+11 [2016-12-09 21:38:14] <MadLittleMods> grahamperrin: nope. It is just a private repo
+12 [2016-12-09 21:40:57] <grahamperrin> Hmm, I did see the content of that issue (did have access) a few times when pointing at the first of your two bullet pointed links at [<-LINK->] above.
+13 [2016-12-09 21:43:02] <MadLittleMods> grahamperrin: Screenshots if you can reproduce again please.
+--------------------------------------------------------------------------------------------------
+1 [2016-12-09T22:05:29] <Guaby> Hello I'm new. But I have a question about Git.  Can I ask these type of questions here?
+2 [2016-12-09T22:05:52] <MadLittleMods> Guaby: This room is for Gitter support. You can try [<-LINK->]
+--------------------------------------------------------------------------------------------------
+[2016-12-10 01:54:20] <lydatech> almost daily running firefox if i leave gitter running I get an error that a script is not running correctly. Then I have to stop it and restart gitter. The script ishttps://cdn02.gitter.im/_s/7136ee1/js/vendor.js:9is this a known bug?
+[2016-12-10 20:20:39] <lydatech>  [<-LINK->] 
+[2016-12-10 20:21:09] <lydatech> image to followup on the above question
+[2016-12-10 21:09:52] <geekyi> lydatech: never got that error for me on firefox 51.0b6 win 10 64bit. Then again, I don't usually run for over a day. Pressingdebug scriptand finding more details about the error might help?
+--------------------------------------------------------------------------------------------------
+1 [2016-12-10T06:56:34] <selfagency> our repo was converted from a personal repo to an organizational repo— how can we update our gitter to point to the new repo?
+--------------------------------------------------------------------------------------------------
+1 [2016-12-10T13:33:26] <severus-tux> Hello guys :D
+2 [2016-12-10T13:36:27] <severus-tux> I need some help from any admin!. I had created this account : [<-LINK->] , which was associated with the github account severustux. But later I deleted the linked github account and opened the account  "severus-tux" and this is the one I am currently using ( [<-LINK->] ) . I would like to delete my old gitter account  ( [<-LINK->] ) but I cannot login to it as I have completely deleted the linked github account. Could someone help me ?
+--------------------------------------------------------------------------------------------------
+1 [2016-12-10T14:02:45] <engradeelnayyar> i want to know how can download a website text?
+2 [2016-12-10T14:23:49] <grahamperrin> engradeelnayyar: with respect, that's not a Gitter support question. Please seek answers in a more appropriate area; you're likely to find the question asked, and answered, at [<-LINK->] 
+--------------------------------------------------------------------------------------------------
+[2016-12-10 16:09:39] <grahamperrin> Archives here [<-LINK->] and elsewhere no longer work.
+[2016-12-10 21:06:06] <geekyi> grahamperrin: archives working for me.. maybe fixed since you asked
+[2016-12-10 22:04:53] <grahamperrin> Best map present but no heat, no presence of archived content
+[2016-12-10 22:05:15] <grahamperrin> Heat map
+[2016-12-10 22:52:48] <geekyi> Works for me, I can see the "heat", the green coloured blocks; can also browse archives. No errors in console?
+[2016-12-11T08:56:47] <grahamperrin>  [<-CODE->]
+[2016-12-11T09:10:26] <grahamperrin> That was from reproduction of a cold and empty heat map with an almost new Firefox profile on FreeBSD-based TrueOS Desktop; nothing other than LastPass installed. Since then I have reproduced the problem with Firefox on Android for both [<-LINK->] and [<-LINK->]
+[2016-12-11T09:13:00] <grahamperrin> Now with TrueOS Desktop I see what's expected, maybe thanks to a Control-F5 reload without cached content).
+[2016-12-11T09:16:43] <grahamperrin> Android, now:https://gitter.im/gitterHQ/gitter/archives/all looks OK, maybe thanks to a reload
+[2016-12-11T09:17:07] <grahamperrin> grahamperrin: closes the test instance of Firefox
+[2016-12-11T09:19:26] <grahamperrin>  [<-LINK->]
+[2016-12-11T09:20:18] <grahamperrin> Attention to the notifications. I suspect that this problem will not occur if I use WebKit-based QupZilla …
+[2016-12-11T09:39:00] <grahamperrin> My suspicion was wrong. Screen recording to follow.
+[2016-12-11T09:46:07] <grahamperrin>  [<-LINK->]
+[2016-12-11T10:21:04] <grahamperrin> A recording of the problem in GNOME Web. One of two linked archive pages (both opened before I began recording) was cold and empty until, whilst recording, I reloaded the page:
+[2016-12-11T10:21:14] <grahamperrin>  [<-LINK->]
+[2016-12-11T10:27:17] <grahamperrin> chat-cache was unexpectedly enabled. I'm certain that this preference was not set by me, because I was warned that the feature causes problems:
+[2016-12-11T10:27:31] <grahamperrin>  [<-LINK->]
+[2016-12-11T11:52:31] <grahamperrin> Maybe the problem affecting some views of archives falls under "any query that could hit the timeout"
+[2016-12-11T21:47:03] <geekyi> @grahamperrinhttps://gitter.im/trueos/Lobby/archives/all remains cold and empty after ten or more consecutive reloads.yep I'm having problem as #1528 i.e. network issues, it seems specific to that room. I'm on chrome; not using gitter.next
+--------------------------------------------------------------------------------------------------
+1 [2016-12-13T18:22:43] <AlexandreBonneau> Hey, I'm trying to add the github repository activity to the gitter autoNumeric channel, but as a collaborator (with write access to the official repo), I only see my own repo and forks. Why is that?
+2 [2016-12-13T21:12:49] <MadLittleMods> AlexandreBonneau:  [<-LINK->] and I assume you want activity from [<-LINK->] - You would need to have admin permissions to add a webhook. Because it is a repo on another user, they might need to add it themselves because there isn't any third party application access like on an org.You could setup a custom webhook integration and give them the URL to add in the GitHub interface
+3 [2016-12-14T04:19:44] <AlexandreBonneau> MadLittleMods: ok thank you
+--------------------------------------------------------------------------------------------------
+1 [2016-12-14T08:45:41] <TheCodingMeatball> does anyone know anything about performance testing?
+2 [2016-12-14T09:50:23] <grahamperrin> Performance of Gitter? If it's not a Gitter support question, please ask elsewhere. Thanks.
+--------------------------------------------------------------------------------------------------
+1 [2016-12-14T11:26:35] <intellix> just my monthly moan that rooms should be open by default:Went to: [<-LINK->] Thought, I have an issue, wanna discuss it, so I change URL to: [<-LINK->] - 404.... now what?
+2 [2016-12-14T11:28:07] <mydigitalself> intellix: don't understand the issue - public is the default permission when creating a room
+3 [2016-12-14T11:28:36] <intellix> the issue is 404 when renaming a github repository URL to gitter, because the owner hasn't opted into creating a room: [<-ISSUE->]
+--------------------------------------------------------------------------------------------------
+1 [2016-12-14T17:16:13] <Maxels88> I am having an issue where I either leave, or type /leave in a channel, and as soon as a message is posted to the channel it pops back up in my conversations list
+2 [2016-12-14T20:22:14] <grahamperrin> Maxels88: the web interface, yes? Do you use GitterNextand if so, is chat-cache enabled?
+3 [2016-12-14T20:23:09] <Maxels88> grahamperrin: I think I figured it out. I stumbled on some irc interface and had that hooked up. leaving the channels on my irc client seem to have stopped the auto rejoins
+4 [2016-12-14T20:23:41] <Maxels88> thanks for the follow up though
+--------------------------------------------------------------------------------------------------
+1 [2016-12-15T01:49:31] <selfagency> My Github repo moved to a new owner but Gitter is still pointing to issues and whatnot at the old URL. Is there a way to update this without having to create a new Gitter from scratch?
+2 [2016-12-15T15:04:26] <selfagency> trying again: My Github repo moved to a new owner but Gitter is still pointing to issues and whatnot at the old URL. Is there a way to update this without having to create a new Gitter from scratch?
+3 [2016-12-15T15:13:11] <mydigitalself> selfagency: @MadLittleModsmay be able to help
+4 [2016-12-15T18:06:03] <MadLittleMods> selfagency: Send a message tosupport@gitter.imwith the URL of the old and new GitHub repo along with the URL of the Gitter room. Make sure the new owner already has a community on Gitter we can move it to
+5 [2016-12-15T18:23:51] <selfagency> MadLittleMods: done
+
+--------------------------------------------------------------------------------------------------
+1 [2016-12-16T00:28:45] <NonaSuomy> how do you trigger text correct s/word/repacewiththis ?
+2 [2016-12-16T00:29:16] <NonaSuomy> I tried just typing that on the next comment but it didn't work
+3 [2016-12-16T00:29:48] <NonaSuomy> s/work/workie
+4 [2016-12-16T00:31:56] <NonaSuomy>  [<-LINK->]
+5 [2016-12-16T00:35:23] <dragon788> note the trailing slash on the second word
+6 [2016-12-16T00:35:45] <dragon788> vim/sed syntax is s/badword/replaceword/(magic gitter doesn't have)
+7 [2016-12-16T00:36:18] <dragon788> appears to be could be straight up busted
+8 [2016-12-16T00:36:45] <dragon788> and you can only edit 1 message back, not within a whole block
+9 [2016-12-16T00:37:03] <dragon788> not busted, because 'appears to be' was "also" before :)
+10 [2016-12-16T00:39:43] <NonaSuomy> this is a testicle
+11 [2016-12-16T00:39:56] <NonaSuomy> nice it worked thank you
+12 [2016-12-16T00:46:39] <NonaSuomy> damn it doesn't work in the IRC portal just in the browser gitter :/
+13 [2016-12-16T02:58:57] <dragon788> Yeah, in IRC you just receive the messages from gitter so you see the pre edit and edited texts
+14 [2016-12-16T02:59:16] <dragon788> And I think replies are pretty much immediate the same way
+15[2016-12-16T05:23:58] <grahamperrin> you can only edit 1 message backI have not noticed that restriction.
+16 [2016-12-16T13:12:50] <dragon788> grahamperrin: when using the s/word/fix/ syntax
+17 [2016-12-16T13:13:08] <dragon788> Otherwise it's a 5 minute window
+--------------------------------------------------------------------------------------------------
+[2016-12-16 13:17:59] <felixfbecker> Has anyone had the issue of all fonts being italic?
+[2016-12-16 13:18:04] <felixfbecker> Using Edge
+[2016-12-16 13:18:11] <felixfbecker> It only happens on one of my machine
+[2016-12-16 13:18:22] <felixfbecker> Clearing cache, signing out etc nothing helped
+[2016-12-16 13:19:19] <dragon788> Sounds like a font/style override in your browser, all sites or just one?
+[2016-12-16 13:20:05] <felixfbecker> Only Gitter
+[2016-12-16 13:20:29] <felixfbecker>  [<-LINK->] 
+[2016-12-16 13:20:54] <felixfbecker> And it started totally out of nowhere
+[2016-12-16 13:20:59] <felixfbecker>  [<-ISSUE->] 
+[2016-12-16 13:25:20] <mydigitalself> that it only happens on one computer and we've heard no other reports of it, would lead me to believe it's something specific with your setup
+[2016-12-16 13:26:57] <mydigitalself> does Edge have multiple profiles and does it happen on the same machine in another browser <--- that would actually be interesting, i have a theory
+[2016-12-16 13:28:04] <mydigitalself> which is, we use Source Sans font, but we also look for a local version of it before going out to the web for a web font. andmaybeyou have a corrupt local version of source sans on your machine where the regular style is somehow italic
+[2016-12-16 13:28:15] <mydigitalself> can you check your installed fonts?
+[2016-12-16 13:29:15] <mydigitalself> you can also try inspect and go down to.fonts-loaded bodyclass and removeSourceSansLocal
+[2016-12-16 13:37:50] <mydigitalself> felixfbecker: 
+[2016-12-16 13:57:40] <felixfbecker> let me check
+[2016-12-16 13:58:19] <felixfbecker> it works fine in Chrome
+[2016-12-16 13:58:35] <felixfbecker> I heard some other user had the same problem
+[2016-12-16 13:59:22] <felixfbecker> Removing SourceSansLocal does not solve it
+[2016-12-16 13:59:51] <cbj4074> What is the "calculated" CSS that is being applied to the text?
+[2016-12-16 13:59:53] <mydigitalself> try removing any of the other ones one at a time from left to right
+[2016-12-16 13:59:55] <felixfbecker> removing source-sans-pro fixes it
+[2016-12-16 14:00:20] <felixfbecker> So now it isfont-family: Source Sans Pro,-apple-system,Roboto,pt sans,calibri,sans-serif;
+[2016-12-16 14:00:41] <felixfbecker> But the font looks different now than in Chrome
+[2016-12-16 14:01:31] <mydigitalself> source-sans-prois the web font - so somehow your browser is displaying/loading italic in place of regular
+[2016-12-16 14:02:21] <felixfbecker> Okay, so I went to fontsquirrel and installed Source Code Pro
+[2016-12-16 14:02:37] <felixfbecker> Now only the chat box is italic, the chat and chat rooms not anymore
+[2016-12-16 14:04:23] <felixfbecker> I don't see any network requests for the font
+[2016-12-16 14:05:54] <mydigitalself> i can see why, the intput text area for some reason doesn't have the local fall-back font
+[2016-12-16 14:06:20] <felixfbecker> But still, there is an issue when the user does not have the font downloaded
+[2016-12-16 14:12:56] <mydigitalself> i still don't understand why Edge is displaying italics - doesn't happen on your other machine, same OS/Edge versions?
+[2016-12-16 18:13:11] <felixfbecker> hm actually my other machine is on stable, while this one is on Insiders. But I don't think that is the problem, because it appeared out of nowhere and I was on Insiders before already
+[2016-12-16 18:21:42] <cbj4074> Just eavesdropping here... I wouldn't necessarily assume that Microsoft isn't modifying the OS without your explicit knowledge or consent.
+[2016-12-16 18:21:49] <cbj4074> So "out of nowhere" may not apply here.
+[2016-12-16 22:44:54] <dragon788> is there a reason the gist preview box doesn't get scrollbars when embedded vs how GitHub's own embed URLs work eg on a blog?
+--------------------------------------------------------------------------------------------------
+1 [2016-12-16T22:44:54] <dragon788> is there a reason the gist preview box doesn't get scrollbars when embedded vs how GitHub's own embed URLs work eg on a blog?
+2 [2016-12-17T01:41:41] <pdurbin> Is it a bug or a feature that it looks to people that I read at Gitter messages immediately because I use irc.gitter.im? This came to my attention at [<-LINK->]
+3 [2016-12-17T01:43:14] <pdurbin> all*
+4 [2016-12-17T01:59:47] <dragon788> "feature" I think, as you also get to read people's messages instantly and when they make edits it sends a new message to your client rather than "fixing" the old one, so you can see everybody's dirty minds :D
+--------------------------------------------------------------------------------------------------
+1 [2016-12-17T08:41:53] <srimanipandey> hey there campers..... i think there is a bug blocking my progress. I am stuck on the 'Create a Set of Radio Buttons' where I've worte the following code:<input type="text" placeholder="cat photo URL" required><lable>     <input type="radio" name="indoor-outdoor">Indoor</lable><lable><input type="radio" name="indoor-outdoor">Outdoor</lable><button type="submit">Submit</button></form>Please help.
+2 [2016-12-17T11:02:50] <mydigitalself> srimanipandey: wrong room
+--------------------------------------------------------------------------------------------------
+1 [2016-12-17T11:31:11] <grahamperrin>  [<-LINK->] suggests four, not three, ` characters for blocks of code. Is that a typo?
+2 [2016-12-17T11:51:07] <mydigitalself> grahamperrin: yip - thanks. corrected.
+3 [2016-12-17T12:19:16] <grahamperrin> Thanks. I deleted my comment there.
+4 [2016-12-17T12:19:49] <grahamperrin> For reference, but not worth making an issue of at this time (QupZilla here is not the most recent version):
+5 [2016-12-17T12:21:22] <grahamperrin>  [<-LINK->]
+6 [2016-12-17T12:22:49] <grahamperrin> After the event I browsed back and realised that whilst double-clicking to select text within a title, I had inadvertently clicked a 'CREATE TOPIC' button:
+7 [2016-12-17T12:23:01] <grahamperrin>  [<-LINK->]
+8 [2016-12-17T13:47:49] <mydigitalself> that doesn't look normal at all, does it look like that in other browsers?
+9 [2016-12-17T13:48:01] <mydigitalself> like FireFox?
+10 [2016-12-17T14:15:21] <grahamperrin> Not reproducible with Firefox. With regard to QupZilla, see the postscript to [<-ISSUE->]
+11 [2016-12-17T14:32:50] <grahamperrin> Appearances are very unpredictable, worse, in [<-LINK->] 4.14.10 but (again) that's probably an outdated version.
+12 [2016-12-17T14:33:25] <grahamperrin> I don't use Konqueror (I launched it out of curiosity), I do sometimes use QupZilla.
+--------------------------------------------------------------------------------------------------
+1 [2016-12-18T09:00:56] <TetianaKhomko> Hi,  guys!  Please,  help me to know how i could add cufon in my project..  Maybe someone can share with me different tutorials or links to educational materials with this topic?
+2 [2016-12-18T10:59:55] <grahamperrin> Is the project Gitter-related?  If it's not a Gitter support question, please ask elsewhere. Thanks.
+3 [2016-12-18T13:10:37] <pdurbin> There's a "community" link at [<-LINK->]
+--------------------------------------------------------------------------------------------------
+1 [2016-12-19T07:08:48] <grahamperrin> For some users at some computers where drag and drop is attempted, this notification from gitter.imError Uploading File. Could not find a bored instance. No responsive uploaders
+2 [2016-12-19T07:12:40] <grahamperrin> Compare (a) my https://gitter.im/trueos/Lobby?at=585734d8d99b1dd03d2d211e and my post a few hours later in the same room and the subsequent report from @Mystified1234 with (b) my https://gitter.im/trueos/troubleshooting?at=5857863f61e516c1578e1edb good result at an adjacent notebook with a superior connection to the Internet.@Mystified1234 what's your geolocation? And please share output from [<-CODE->]
+3 [2016-12-19T07:13:26] <grahamperrin>  [<-CODE->]
+4 [2016-12-19T07:27:33] <grahamperrin> Incidentally@Mystified1234if noise or multiplicity is a concern, you have the option of joining this roomand thendeclining all notifications; the preferences icon, top right, alongside your avatar.
+5 [2016-12-19T07:28:43] <Mystified1234> grahamperrin: Thx Bro.
+6 [2016-12-19T07:32:28] <grahamperrin> np
+7 [2016-12-19T07:42:40] <grahamperrin> Speed test result at a notebook that dragged and dropped without difficulty: [<-LINK->]
+--------------------------------------------------------------------------------------------------
+1 [2016-12-21T02:24:55] <jv110> Hell-O's
+--------------------------------------------------------------------------------------------------
+// Part 1: paste images
+1 [2016-12-22T18:26:09] <arunkumar413> can we have an option to upload images so that users can share screenshots
+2 [2016-12-22T18:36:48] <cbj4074> arunkumar413: You can already paste or drag images into the chat.
+3 [2016-12-22T19:11:40] <grahamperrin> cbj4074: thanks, paste does not have the required effect when the copy is from within e.g. Eye of MATE Image Viewer, I see now that it works when copied from e.g. GIMP.
+4 [2016-12-22T19:12:26] <MadLittleMods> grahamperrin: Depends on how the OS and your browser interprets things. Not very standard
+5 [2016-12-22T19:13:51] <cbj4074> grahamperrin: Sure, no prob... sounds like it can be finnicky!
+// Part 2: questions not about bitter
+1 [2016-12-26T08:46:44] <nids_nitesh_twitter> function wordBlanks(myNoun, myAdjective, myVerb, myAdverb) {  var result = "";  // Your code below this line// Your code above this line  return result;}// Change the words here to test your functionwordBlanks("dog", "big", "ran", "quickly");
+2 [2016-12-26T08:46:57] <nids_nitesh_twitter> HElp
+3 [2016-12-26T08:53:53] <grahamperrin> nids_nitesh_twitter: if not related to support for Gitter, please seek help elsewhere. This room is dedicated to Gitter. Thanks.
+--------------------------------------------------------------------------------------------------
+1 [2016-12-26T17:49:38] <giddensjms> Hi Glitter
+--------------------------------------------------------------------------------------------------
+1 [2016-12-27T17:34:37] <indonogakusei> hello
+2 [2016-12-27T17:36:32] <indonogakusei> @ProProgrammer  can you notice any bug in the  html here<!DOCTYPE html><html><head>  <!--All attachments go here-->  <link rel="text/stylesheet" href="css/bootstrap.min.css">  <link href="text/javascript" href="css/bootstrap-theme.min.css"></head><body><nav id="myNav" class="navbar navbar-default ">  <div class="container-fluid">    <div class="navbar-header">      <a href="#" class="navbar-brand">Sanjay</a>    </div>    <div>      <ul class="nav navbar-nav">        <li class="active"><a href="#">Home</a><li>          <li><a href="#">Movies</a></li>          <li><a href="#">Songs</a></li>          <li><a href="#">Tweets</a></li>      </ul>    </div></div></nav><script src="js/bootstrap.min.js"></script><script src="js/jquery.min.js"></script></body></html>
+3 [2016-12-27T18:25:21] <grahamperrin> indonogakusei: if not related to support for Gitter, please seek help elsewhere. This room is dedicated to Gitter. Thanks.
+--------------------------------------------------------------------------------------------------
+1 [2016-12-28T07:44:40] <lydatech> Is there a code collapse feature?
+2 [2016-12-28T17:33:54] <dragon788> lydatech: I think if you click the ... there is an option to collapse gifs and possibly code blocks
+3 [2016-12-28T18:14:14] <lydatech> dragon788: No not code
+4 [2016-12-28T18:14:31] <dragon788> shucks, collapsing code could be handy
+5 [2016-12-28T18:15:04] <toxik-io> Agreed
+--------------------------------------------------------------------------------------------------
+1 [2016-12-28T17:50:18] <jmolivas> Hi, we renamed our github repository there is a chance to rename the gitter channel ?
+--------------------------------------------------------------------------------------------------
+1 [2016-12-28T23:33:28] <Git-Buddy> Hi there! Is Gitter.com unstable? Or is it my laptop?
+2 [2016-12-28T23:33:37] <Git-Buddy> Keeps crashing.
+3 [2016-12-28T23:34:12] <Git-Buddy> It crashes often.
+4 [2016-12-28T23:35:54] <Git-Buddy> Now it doesn't show my last line.  Anyone?
+5 [2016-12-28T23:36:59] <Git-Buddy> ?
+6 [2016-12-28T23:45:15] <pdurbin> we can hear you
+--------------------------------------------------------------------------------------------------
+1 [2016-12-30T14:44:49] <hillct> Good morning all. What are the limitations of integration deployment within rooms? Seemingly anyone can add integrations to any room but I haven't seen any events show up in any room where I'm a member, or otherwise.
+2 [2016-12-30T14:49:45] <hillct> Oh and while I'm thinking about it, both the android and iOS apps will blank out the content of a room (right pane empty, right header still visible). In such cases the only way to recover is to switch to another room and switch back, sometimes more than once to get the content to reappear.
+--------------------------------------------------------------------------------------------------
+[2016-12-29 16:14:21] <weirdavid1_twitter> Hi can you merge this with my github account please
+[2016-12-29 16:19:12] <weirdavid1_twitter> MadLittleMods: Hi can you merge accounts
+[2016-12-29 16:36:08] <grahamperrin> weirdavid1_twitter: re: [<-LINK->] above please refrain from the personal address. Thanks.
+[2016-12-29 16:40:22] <weirdavid1_twitter> Cool just read it
+[2016-12-29 21:42:18] <weirdavid1_twitter> Quiet in here tonight
+--------------------------------------------------------------------------------------------------
+1 [2016-12-31T03:32:24] <mrhgomez1021> hi my profile picture will not update
+--------------------------------------------------------------------------------------------------
+1 [2017-01-01T05:15:32] <meetvaghasia> hello world
+--------------------------------------------------------------------------------------------------
+[2017-01-02 05:20:09] <spiritloveroot_twitter> is gitter open source?
+[2017-01-02 13:26:56] <pdurbin> Good question. I don't believe so.
+--------------------------------------------------------------------------------------------------
+1 [2017-01-03T14:26:14] <aj-willi> hello
+2 [2017-01-03T14:26:26] <aj-willi> how can i find settings in gitter?
+3 [2017-01-03T14:26:40] <aj-willi> to delete account
+--------------------------------------------------------------------------------------------------
+1 [2017-01-04T03:21:40] <tommego> Hello evry one
+2 [2017-01-04T03:22:05] <tommego> first head gitter
+3 [2017-01-04T03:26:46] <seanmitch> tommego: Hey!
+4 [2017-01-04T03:27:49] <tommego> seanmitch: Aha?
+5 [2017-01-04T03:28:00] <tommego> coding
+6 [2017-01-04T03:28:26] <seanmitch> tommego: Hello, hey I was wondering, I am a C# dev and was debating between also learning C and V++
+7 [2017-01-04T03:28:28] <seanmitch> C++*
+8 [2017-01-04T03:29:01] <seanmitch> I like OOP and encapsulation, but since I might want to penetration test when I'm older C might be better for that?
+9 [2017-01-04T03:29:12] <seanmitch> Do you think I should learn c or c++?
+10 [2017-01-04T03:29:29] <tommego> seanmitch: I prefer to c++
+11 [2017-01-04T03:29:57] <seanmitch> Any reason why?
+12 [2017-01-04T03:30:06] <tommego> And I dev app using c++
+13 [2017-01-04T03:30:06] <seanmitch> And is that still easily usable on Linux?
+14 [2017-01-04T03:30:11] <seanmitch> ^
+15 [2017-01-04T03:30:22] <tommego> of course
+16 [2017-01-04T03:30:27] <MadLittleMods> DKurilo: @tommego@seanmitchThis room is for Gitter support. Please read the welcome message when joining a room and mind the room description/topic in the chat header. Please use [<-LINK->]
+17 [2017-01-04T03:30:30] <tommego> I use Qt
+18 [2017-01-04T03:31:03] <tommego> MadLittleMods: sorry
+19 [2017-01-04T03:32:12] <seanmitch> tommego: Join the chat: [<-LINK->]
+20 [2017-01-04T03:32:25] <seanmitch> Lol so we don't get yelled at
+
+--------------------------------------------------------------------------------------------------
+[2017-01-03 19:34:05] <grahamperrin> searching in gitter is a PITA, ...@RodMyers is the pain mostly with the disorder?
+[2017-01-03 19:34:21] <grahamperrin> (The lack of order to search results?)
+[2017-01-04 15:59:05] <RodMyers> grahamperrin: just trying to find a thread can be tedious.  And when a number if us are conversing. The log file grows exponentially
+[2017-01-04 16:21:29] <grahamperrin> Thanks@RodMyersFYI [<-LINK->] and the two that most affect me are [<-ISSUE->] and above all, [<-ISSUE->]
+--------------------------------------------------------------------------------------------------
+[2017-01-03 22:51:19] <DKurilo> Hi all,Does anybody know how to break a line in Gitter mobile application (Android)?I tried Shift + Enter, Ctrl + Enter. But it doesn't work.
+[2017-01-04 03:30:27] <MadLittleMods> DKurilo: @tommego@seanmitchThis room is for Gitter support. Please read the welcome message when joining a room and mind the room description/topic in the chat header. Please use [<-LINK->] 
+[2017-01-04 17:14:43] <DKurilo> MadLittleMods: , I asked about Gitter. My question is:How to make new line in Gitter mobile application?
+[2017-01-04 20:21:46] <MadLittleMods>  [<-LINK->] @DKuriloYou can't, there is only chat mode on mobile.
+[2017-01-05 23:55:18] <dragon788> DKurilo: there is a workaround, if you type some text and move your cursor into the middle of the text and press the enter key it will give you a new line and not send a text, at least on Android
+[2017-01-05 23:55:30] <dragon788> And only sometimes
+[2017-01-06 02:14:16] <DKurilo> dragon788: , thanks. It's not very comfortable. :)
+--------------------------------------------------------------------------------------------------
+1 [2017-01-06T17:44:52] <zachwelch> howdy... just joined gitter today in order to work with the Plone community.  i got connected to the IRC bridge, and it works okay... however, my client is being queried (/who) once per minute, littering my logs with useless messages. Is that expected/normal?   Also, it would super nifty if that bridge could (optionally? bi-directionally?) convert '<nick>:' at the start of a line to '@<nick>', so as  to improve interoperability between the two conventions of addressing individuals in a room.
+--------------------------------------------------------------------------------------------------
+1 [2017-01-07T13:02:35] <tonimarquez84> Hi everyone! my "ACTIVITY" bar is not updatingmy "integrations" are correctly configured... any suggestions? thank you!
+--------------------------------------------------------------------------------------------------
+1 [2017-01-08T14:05:07] <satdav> Good morning
+2 [2017-01-08T14:05:36] <satdav> is their a way to merge 2 glitter accounts this one and@dweiruk_twitterI believe it was
+--------------------------------------------------------------------------------------------------
+1 [2017-01-08T19:13:46] <puremourning> Hello everyone. Why does Gitter client have such a high energy impact on mac OS? It constantly reports as high energy impact and that it requires the discrete graphics chip on macbook pro
+2 [2017-01-08T19:13:59] <puremourning> THis is while running in the gitter client and while running in safari.
+3 [2017-01-08T19:14:11] <puremourning> running in Chrome does not appear to have that issue
+4 [2017-01-08T19:14:42] <puremourning> I've also noticed a lot of spinning when posting messages with markdown on a very slow or flaky network/internet connection
+5 [2017-01-08T19:15:06] <puremourning> is this some issue with gitter client itself or more likely a safari/webkit issue?
+6 [2017-01-08T19:15:49] <puremourning>  [<-LINK->]
+7 [2017-01-08T20:22:38] <mistermantas> I’m not educated on this topic, but could it be that the Gitter client is just an Electron wrapper?
+8 [2017-01-08T20:23:01] <mistermantas> Because, if that’s the case, you’re running another instance of Chrome. But again, this is just speculation.
+--------------------------------------------------------------------------------------------------
+1 [2017-01-10T03:20:47] <InternetUnexplorer> Is [<-ISSUE->] going to be fixed at some point?I may be wrong, but it seems like an easy fix, and the issue has been open for over a month now.
+--------------------------------------------------------------------------------------------------
+1 [2017-01-09T21:11:27] <lisbetho> Hi! Curious if there are any communities in particular that show a good example of room organization
+2 [2017-01-09T21:11:54] <lisbetho> Looking to set one up for my community and want to see a finished product
+3 [2017-01-10T16:31:37] <dragon788> lisbetho: some organizations use a "Lobby" room that is org specific, and then they have additional rooms for each repository, but you can also set up rooms around topics as well (see FreeCodeCamp for examples)
+--------------------------------------------------------------------------------------------------
+1 [2017-01-11T06:31:16] <amitguptagwl> It doesn't work on my site: [<-LINK->] Login issue
+--------------------------------------------------------------------------------------------------
+1 [2017-01-11T18:19:07] <matrixbot> Geezus42How do I bridge riot to gitter?
+--------------------------------------------------------------------------------------------------
+1 [2017-01-12T07:41:59] <paramaggarwal_twitter> I am new here. I really like this approach of an app directed at community-building. However I feel that the homepage does not do a great job of communicating this. Also, it took me a while to figure out how easy to go into a room and try it out.
+2 [2017-01-12T07:44:27] <qinxiaowen> somebody at?
+3 [2017-01-12T07:46:55] <qinxiaowen> paramaggarwal_twitter:
+--------------------------------------------------------------------------------------------------
+1 [2017-01-12T12:27:57] <OFFLlNE> To make a suggestion about chat functionality, should I post it [<-LINK->] or maybe some could point to a place where I could post a suggestion. GitHub issues maybe?
+2 [2017-01-12T14:05:36] <cbj4074> OFFLlNE: Yep, feature requests go on GitHib issues. You can indicate that it's a feature request in the title, and the maintainers will tag it accordingly.
+3 [2017-01-12T14:11:06] <OFFLlNE> cbj4074: aight, thanks
+--------------------------------------------------------------------------------------------------
+1 [2017-01-14T03:10:44] <mtancoigne> Hi !
+2 [2017-01-14T03:11:47] <mtancoigne> (sorry for the pic, that wasn't meant to go here)
+3 [2017-01-14T03:11:58] <mtancoigne> I really like gitter, and was thinking "what about a more compact theme ?"
+4 [2017-01-14T03:12:16] <mtancoigne> the "chat" zone is ok, but a more compact "left" zone may be a good option
+5 [2017-01-14T03:12:42] <mtancoigne> for touch device, the tall "contact" items in lists is great but on a computer, the more I have on screen, the better it is
+6 [2017-01-14T03:14:42] <mtancoigne> What do you think about it ?
+7 [2017-01-14T03:23:22] <mtancoigne>  [<-LINK->]
+8 [2017-01-14T03:24:51] <mtancoigne> that was a quick "console hack" but I think space is important. Scrolling to find a room/person is really boring now :)
+9 [2017-01-14T03:26:53] <mtancoigne> And with all this space, addingseparatorsorcategoriesmay be interesting
+10 [2017-01-14T06:28:27] <grahamperrin> mtancoigne: thanks … maybe boring, but if scrolling will be desirable or required then a scroll bar and scroller should be visible. (If there's a bar in your shot, I can't see it.)
+--------------------------------------------------------------------------------------------------
+1 [2017-01-15T14:52:02] <andyjefferson> hi, trying to use the android app login via Github, and it's stuck at Two-factor authentication, waiting to receive an SMS but nothing coming. Is this only usable on a phone (and not a tablet with no SIM) ?
+2 [2017-01-15T14:54:08] <andyjefferson> never mind, SMS arrived after a long wait!
+--------------------------------------------------------------------------------------------------

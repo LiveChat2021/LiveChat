@@ -1,0 +1,624 @@
+1 [2016-11-23T13:59:53] <streetartnld_twitter> Hi There, can someone help me restoring ethers ?
+--------------------------------------------------------------------------------------------------
+[2016-11-25 22:54:32] <beaver25> I had trouble with the new version 0.8.7  it would not sync properly , it was syncing but was so slow it would never have cought up with it's self . I have now gone back to 0.8.6 .Could my problems have been due to the hard fork as that was the reason i updated to 0.8.7 ? Seeing as the Gethub site said the update was for those that use Mist and did not effect those that are just using the wallet as it does not access the internet.
+[2016-11-25 23:00:09] <beaver25> I have read that others also had trouble syncing the new version 0.8.7 and that is the reason i stop trying with 0.8.7 and went back to 0.8.6 . I think it may follow the wrong Chain at block 1,346,??? not shore about that but the chain data started to bloat and get very big conpared to the size of the chain data that i currently have with 0.8.6 that was up to date as of about 36 hrs ago
+[2016-11-25 23:08:21] <beaver25> I also had trouble with 0.8.6 the first time . It would not sync . I then use Gerth and reved DB and then reloaded it the chain data with this command geth --fast --support-dao-fork --cache=512 --maxpeers 99 --jitvm and this worked
+[2016-11-26 11:08:20] <beaver25> Don't know what you have done but i am getting F-ing pissed off with the wallet not syncing and what the hell has the wallet downloaded new binary's ??????
+[2016-11-26 11:12:31] <beaver25> Geth folder now has to folders with binary's what the hell is the new binay for , i now have 3 versions of geth 2 in the folder Geth in there own folders and 1 version in the geth folder. So witch version is the correct one we should be using ????????????????????????????????????????? F-me you just can't help yourself but F-up every month or 2 can you !
+[2016-11-26 11:28:45] <oneala> i am having the same issue but, be patient, i just got the latest geth version , try to install it and then start it.. it will start syncing
+[2016-11-26 11:28:59] <oneala>  [<-LINK->] 
+[2016-11-26 11:29:12] <oneala> once installet go to progra files/geth and start it
+[2016-11-26 11:29:30] <oneala> make sure you have the latest mist version [<-LINK->] 
+[2016-11-26 11:33:03] <beaver25> just read the news so the chain split , well i can report i just ran the new grth and it's even worse the the origanal version that is loaded with 0.8.6 . In other words i don't think the patch is working . I am not using Mist just the wallet
+[2016-11-26 11:53:41] <beaver25> I ask again is it ok to delete empty accounts by deleting the key in the keystore folder and if i do that will it cause a problem ????
+[2016-11-26 12:12:07] <beaver25> what's the bet the stuff up has been caused by Zcash being linked with ether it is the same group that''s released Zcash that is doing ether .
+[2016-11-26 12:13:10] <beaver25> Zcash is not worth doing for those that see the big price and think they can earn some quick cash mining it
+[2016-11-26 12:16:57] <beaver25> gtx 970 using Nicehash cuda 8 gives only 19 sols , I have just run Zcash for 24 hrs with everything going  gtx 970 using cuda and 680 using open cl as it wont work with the cuda and 4 of 8 cores running got me 0.00501 Zcash  good luck with that one as it seems only big miners with heaps of cash to buy the latest CPU's and you will need at least 20 will be able to mine it
+[2016-11-26 12:18:19] <beaver25> ops the latest GPU's and you will need at least 20 will be able to mine it
+[2016-11-26 12:20:04] <beaver25> if you wish to do anonomous transcation then use Dash coin and don't worry about Zcash
+[2016-11-26 12:21:31] <beaver25> you can mine Dash a lot easyer than Zcash and is more profitable too
+[2016-11-26 13:07:34] <beaver25> Good night i will leave the wallet to sync as it does seem to be syncing but very slowly and the Chain data has grown by 1.3 gig for only aprox 3,200 blocks witch does not seem right , there is still 7,00 to go so i will check it in a few hours but i suspect that the patch does not work with 0.8.6 or does not do what you thought it would do
+[2016-11-26 13:09:56] <beaver25> so i'll let it finish see how big the chain gets note it down and then redo the whole thing and see how big the chaindata folder is and let you know , if it is smaller then your patch is not working but i will let you know tomorrow so good night
+--------------------------------------------------------------------------------------------------
+1 [2016-11-29T09:37:10] <jlpiedrahita_twitter> Hello, can somebody help me? I'm having trouble making geth mine (CPU only for testing purposes) on a Linux (ubuntu) machine
+2 [2016-11-29T09:37:26] <jlpiedrahita_twitter> the miner simply doesn't start mining
+3 [2016-11-29T09:38:07] <jlpiedrahita_twitter> any help would be appreciated
+--------------------------------------------------------------------------------------------------
+[2016-12-03 07:45:39] <quekyt> is anyone else having trouble with Ethereum test network? nothing is going through..
+[2016-12-04 11:54:04] <im_ankki_twitter> quekyt: I'm working on same lmk if you have any problems regarding test-network
+--------------------------------------------------------------------------------------------------
+1 [2016-12-05T18:58:54] <FuriousPeterus_twitter> interested in advertising your company on facebook?
+2 [2016-12-05T18:59:11] <3esmit> FuriousPeterus_twitter: No.
+--------------------------------------------------------------------------------------------------
+[2016-12-06 01:11:07] <NtinoValentino_twitter> hello
+[2016-12-06 01:11:14] <NtinoValentino_twitter> i want mining eth
+[2016-12-06 01:14:58] <NtinoValentino_twitter> where I can download the program for windows 10?
+[2016-12-06 02:20:44] <im_ankki_twitter> NtinoValentino_twitter: you want test-network ETH?
+--------------------------------------------------------------------------------------------------
+[2016-12-06 15:52:20] <DZExpats_twitter> I need help to build an identity card for a group of people using Ethereum platform. Has anyone done that already? Can someone help?
+[2016-12-06 15:53:05] <3esmit> DZExpats_twitter: Do you need the hardware or just the smart contract?
+[2016-12-06 15:54:08] <3esmit> DZExpats_twitter: Read this [<-LINK->] 
+[2016-12-06 15:55:21] <DZExpats_twitter> I don't even know where to start! Can we talk about that? Thanks
+[2016-12-06 15:56:51] <3esmit> DZExpats_twitter: For working with ethereum you need to start understanding blockchain, smart contracts and solidity programming language
+[2016-12-06 15:58:37] <3esmit> You say you need and "identity card", a "card", I imagine a chip card, right? This chip card should be programmer to sign an ethereum transaction, then you should study Java Card Programming [<-LINK->] 
+[2016-12-06 15:58:56] <3esmit> There is tools in Java for ethereum, so you might just grab some code.
+[2016-12-06 15:59:24] <3esmit> Ask for help with Ethereum + Java im ethereumj room [<-LINK->] 
+[2016-12-06 16:00:55] <3esmit> If you are able to develop an Java Card that signs an ethereum transaction to your identity register smart contract, you will be able to have what you want.
+[2016-12-06 16:01:27] <3esmit> BTW, with this card you could even release $ETH, needing some password, if you program so.
+[2016-12-06 16:02:54] <3esmit> Why you need a smart contract in first place? I think to recover in case of theft of loss of idcard, and for storing some information. Check [<-LINK->] 
+[2016-12-06 16:03:13] <DZExpats_twitter> was away
+[2016-12-06 16:05:03] <3esmit> There are many aprooches for what you want to do, we would need to have an extensive study case to know what's better for you, but that should be your work ;)
+[2016-12-06 16:05:22] <3esmit> Feel free to ask me questions about smart contract, blockchain, ethereum, wallet clients, and so on.
+[2016-12-06 16:06:46] <DZExpats_twitter> Thank you all for the help. I will study your recommendations and see if I can make on my own and get back
+[2016-12-06 16:07:53] <3esmit> I found this discussion [<-LINK->] 
+[2016-12-06 16:08:51] <DZExpats_twitter> Thanks. I will study this.
+--------------------------------------------------------------------------------------------------
+[2016-12-07 13:16:31] <FortisConnect_twitter> it says to dep MAX one ether... is this just for initial setup?
+[2016-12-07 13:16:43] <FortisConnect_twitter> do I need to dep something now?
+[2016-12-07 13:16:59] <3esmit> Don't understand, dep?
+[2016-12-07 13:17:08] <3esmit> deposit?
+[2016-12-07 13:17:12] <FortisConnect_twitter> yea
+[2016-12-07 13:17:18] <3esmit> You don't need to deposit anything to run a node
+[2016-12-07 13:17:41] <3esmit> I run ethereum wallet with more than 1 eth
+[2016-12-07 13:17:47] <FortisConnect_twitter> I guess is saying that you need to...
+[2016-12-07 13:18:00] <FortisConnect_twitter> as it needs something to run things in the network...
+[2016-12-07 13:18:02] <FortisConnect_twitter> ?
+[2016-12-07 13:18:21] <3esmit> To build up a Ethereum Multi-signature Wallet
+[2016-12-07 13:18:37] <FortisConnect_twitter> right...
+[2016-12-07 13:18:40] <3esmit> Is a wallet that you need more keys to withdraw past some daily limit
+[2016-12-07 13:19:06] <3esmit> You don't need 1 eth, indeed, but they 'enforce' in the UI as it is nonsense to build a multisig to protect 10 dollars
+[2016-12-07 13:21:50] <3esmit> FortisConnect_twitter:  [<-LINK->] 
+[2016-12-07 13:21:50] <FortisConnect_twitter> I bit lost there... you folks are at 100 miles per hour and folks like me just have much clue
+[2016-12-07 13:23:47] <FortisConnect_twitter> I go stuck...
+[2016-12-07 13:24:58] <3esmit> Ethereum is a lot of new information for you to understand.
+[2016-12-07 13:25:42] <FortisConnect_twitter> sure... but you folks are growing... and I appreciate  your time in helping...
+[2016-12-07 13:25:58] <FortisConnect_twitter> So I got stuck in the deposit...
+[2016-12-07 13:26:24] <3esmit> What are you trying to do?
+[2016-12-07 13:26:58] <FortisConnect_twitter> it shows a deposit address of zillion characters... is this the address that I need to forward btc towards the 1 ether?
+[2016-12-07 13:27:04] <FortisConnect_twitter> I still in the basic setup...
+[2016-12-07 13:27:57] <3esmit> There is a service called shapeshift, it is like a cryptocurrency market exchange, but don't need accounts, just a deposit in a unique address.
+[2016-12-07 13:28:12] <3esmit> The zillion characters is your addess
+[2016-12-07 13:28:22] <FortisConnect_twitter> exactly what I though...
+[2016-12-07 13:28:27] <3esmit> It starts with 0x?
+[2016-12-07 13:28:32] <FortisConnect_twitter> But you can't  copy it?!....
+[2016-12-07 13:28:35] <3esmit> If so, it is your Ethereum Address
+[2016-12-07 13:29:42] <FortisConnect_twitter> exactly... it is showing the address for my setup deposit, but it doesn't allow to copy it... Security reasons?
+[2016-12-07 13:30:20] <3esmit> If you want you can ignore this step, you will be able to deposit anytime in future
+[2016-12-07 13:31:22] <FortisConnect_twitter> ok... that is what I done...
+--------------------------------------------------------------------------------------------------
+[2016-12-09 13:17:44] <ATHARV2010> HI EVERYONE
+[2016-12-09 13:17:52] <ATHARV2010> good evening
+[2016-12-09 13:18:33] <ATHARV2010> can anyone tell me about what is connection between ethereum and ethtrade.org.
+[2016-12-09 13:19:52] <ATHARV2010> rob can u tell me??????
+[2016-12-09 13:22:25] <3esmit> ethtrade.org is using the logo of others without authorization, they used the name of Vitalik Buterin (Ethereum Foundation) without autorization too. They seems like to be a scam called Ponzi Scheme [<-LINK->] 
+[2016-12-09 13:23:12] <3esmit> ATHARV2010: All indicators is that they are a scam.
+[2016-12-09 13:23:13] <3esmit>  [<-LINK->] 
+[2016-12-09 13:25:45] <ATHARV2010> o my god it is very dangerous.
+[2016-12-09 13:26:21] <3esmit> Here is some discussion on reddit about it [<-LINK->] 
+[2016-12-09 13:26:32] <3esmit>  [<-LINK->] 
+[2016-12-09 13:27:43] <3esmit> Unfortunely a lot of people believe in ethtrade since they are paying (for now) but we've seen lot's of schemes that in the start worked and ended by stealing all users funds
+[2016-12-09 13:29:12] <3esmit> There is no way to trust on ethtrade since they used to lie in the past (about Vitalik) and still lie putting that logos on the bottom (like if they were parteners)
+[2016-12-09 13:30:55] <3esmit> Stay away from anything promising high earning upon deposits in their "closed" "centralized" "obscure" account.
+--------------------------------------------------------------------------------------------------
+[2016-12-11 16:14:31] <soumitraj> hi, I just downloaded the MIST clinet and ethereum wallet
+[2016-12-11 16:15:01] <soumitraj> but i observe frequent disconnects every now and then
+[2016-12-11 16:15:21] <soumitraj> My clock is  15.5 seconds behind
+[2016-12-11 16:15:50] <soumitraj> any ideas what can be the reason of disconnects and how do I sync my clock
+[2016-12-11 16:24:53] <erastotle> soumitraj: what OS are you running?
+[2016-12-11 16:25:30] <soumitraj> Thanks, windows10
+[2016-12-11 16:29:50] <erastotle> soumitraj: is your NTP service set correctly?  The following page gives some answers on setting NTP server: [<-LINK->] 
+[2016-12-11 16:30:14] <soumitraj> I will check
+--------------------------------------------------------------------------------------------------
+1 [2016-12-12T08:14:08] <duttakapil> Hello all
+--------------------------------------------------------------------------------------------------
+[2016-12-14 02:06:40] <JakeFriedberg29> I am new to Ethereum and want to become part of the community, unfortunately I am not a programmer. I am business minded, STEM skilled, and love thinking about the future. Where would a non-progammer as me get best started in the Ethereum network?
+[2016-12-14 09:08:54] <BCpowerup> JakeFriedberg29: reddit will be the place to get better exposure to the ecosystem and getting up to date.
+[2016-12-14 12:56:13] <3esmit> JakeFriedberg29: What kind of involvment you want to have? Maybe you want to buy eth and participate to project ICOs?
+[2016-12-15 00:29:54] <JakeFriedberg29> Hi, Thanks for the feedback! Yes, I've been looking on reddit and plan on buying eth as well am eager to participate in project ICOs
+[2016-12-15 12:12:14] <3esmit> JakeFriedberg29: I wish you good look in your investments! Please, research, and don't buy any ICO out there. Check this example of scam (that is made to show how anyone can make scams) [<-LINK->] 
+--------------------------------------------------------------------------------------------------
+1 [2016-12-17T21:51:23] <olusegun101> hi
+2 [2016-12-17T21:52:11] <olusegun101> please can some one tell me more about ethereum and how to register
+3 [2016-12-17T21:52:13] <olusegun101> ??
+--------------------------------------------------------------------------------------------------
+[2016-12-18 11:38:13] <petrosmit> Hi, I've been trying to sync mist wallet but the last 500,000 blocks take forever. for the past 2 days it only syncs 30,000 blocks/day. I run geth client on background with this command geth --datadir C:\Program Files\Geth init testnet_genesis.json; geth --datadir c:\Program Files\Geth --networkid 3 console . Is there a problem with the mist update or am i doing something wrong?
+[2016-12-18 14:02:55] <beaver25> petrosmit :  open a command promp and and type
+[2016-12-18 14:04:38] <beaver25> cd  C:\Users\yourusername\AppData\Roaming\Ethereum Wallet\binaries\Geth\unpacked\geth-windows-amd64-1.5.2-c8695209
+[2016-12-18 14:05:41] <beaver25> this should put you in the right folder where geth is then type
+[2016-12-18 14:06:26] <beaver25> geth removedb this will delete the block chain
+[2016-12-18 14:06:34] <beaver25> then type
+[2016-12-18 14:09:01] <beaver25> geth --fast --cache=512 --maxpeers 75 --jitvm this should start downloading the Bock chain again from scratch and will take approx 3-5hrs depending on your connection speed
+[2016-12-18 14:16:04] <beaver25> DON't open Mist or the ether wallet (depending on witch one your using ) until it completly finishes . Sometimes it may get stuck and if you stop it syncing and then restart it ,it will not download quick (fast) and slows right down. The fast command does not work if it sees that you have some of the Block chain , you have to delete the Block chain and start again
+[2016-12-18 14:26:45] <beaver25> The first 750,000 blocks should download in approx 30 mins on a T2 Fibre connection and then it does slow down but that is more the fact that there is bigger blocks . Also at about 2,870,000 you may notice it 's downloading the  file structure witch is 19 million + (not shore if it's actually Blocks or just data) and will take about 2 hrs , the Block chain as of today  is 15 gig  so it does take some time and the slower your connection is the longer it will take
+[2016-12-18 18:40:54] <petrosmit> @beaver25  Thank you so much for your input.  I do as you say , i deleted the db and run the command but after 5 mins it stops. this is the last thing that shows: goroutine 21658 [select]:github.com/ethereum/go-ethereum/p2p.(Peer).pingLoop(0x40e75b90)        C:/gopath/src/github.com/ethereum/go-ethereum/p2p/peer.go:199 +0x1dbcreated by github.com/ethereum/go-ethereum/p2p.(Peer).run        C:/gopath/src/github.com/ethereum/go-ethereum/p2p/peer.go:146 +0x17fany idea why and what should i do now? In addition is there a fast way i can deploy contracts (to test-net) without downloading the whole chain? i want to use for my master thesis project. Thanks in advance
+[2016-12-18 22:24:20] <beaver25> petrosmit  : what version of Mist or wallet are you using ?  If you have geth version 1.4.11 you will need to use this command line after you delete the block chain and start again : geth --fast --support-dao-fork --cache=512 --maxpeers 75 --jitvm  i have had trouble when i have not used the --support-dao-fork command so try again .  I think you can't get around not downloading the whole chain before you deploy a contract  . You could try uninstalling everything and restarting the system and then reinstall Just mist but install 0.8.7 and that way i know you will have all the right programs in the right places  . However i would remove what is in the Mist folder in c:\user\yourusertname\AppData\Local\Mist and copy the new version 0.8.8 to the Mist folder you have just deleted don't remove the folder Mist just what is inside it . You can download the new version and just unzip it to any folder you wish , it's the contents of the folder you copy and paste to your Mist folder in C:\users\yourusername\AppData\Local\Mist . Don't run Mist until you have  replaced the Mist contents with the new versionif you do it this way don't run geth  just run Mist and let it download . If you still having trouble i would check your connection to see if it's dropping out and contact your ISP .remember if you stop it from downloading you will have to start from scratch as the second time you start it it will not download fast if you have not deleted the chain
+
+--------------------------------------------------------------------------------------------------
+1 [2016-12-20T10:04:29] <insitecoil_twitter> trying to install the program... get error
+--------------------------------------------------------------------------------------------------
+//Three Questions
+[2016-12-20 18:17:25] <KaiChen0411_twitter> Hi guys,Just wanted to ask a few questions regarding to Blockchain:First Question:Do blockchain only accepts digital currencies? Or do they also accept transaction of normal currencies like USD and so on. Will it involve any banks in the process to join the blockchain?Second Question:Does that mean blockchain is eliminating any third party or servicing company like Amazon, Alibaba and more that takes a share in the process?Hope to hear from you all soon thanks! =)
+[2016-12-20 22:17:44] <5chdn>  [<-LINK->] .
+
+//Chat room notification
+[2016-12-20 22:19:28] <5chdn> all: I always observe this channel is full of questions and not a single one answering. If you are currently waiting for an answer, please feel free to cross-post your question on [<-LINK->] .
+--------------------------------------------------------------------------------------------------
+1 [2016-12-22T20:05:06] <thepedropaulino> Hello guys!
+2 [2016-12-22T20:05:14] <thepedropaulino> Need some tips to start working with Ethereum
+3 [2016-12-22T20:05:34] <thepedropaulino> Does anyone have any script or material to start learning ?
+--------------------------------------------------------------------------------------------------
+[2016-12-23 21:28:02] <Intellijoule> How do we exchange ethereum into dollars?
+[2016-12-23 22:15:18] <richbodo> Intellijoule: Most people use an exchange like Kraken or Coinbase
+--------------------------------------------------------------------------------------------------
+1 [2016-12-28T01:21:04] <nencerjsc> hello, how to accept ETH for shop ?
+--------------------------------------------------------------------------------------------------
+1 [2017-01-04T00:06:30] <harsh732> Hi, i just started exploring ethereum can anyone suggest me blog or websites where i can get more information
+--------------------------------------------------------------------------------------------------
+[2017-01-06 13:01:58] <simar7777> Hi,
+[2017-01-06 13:02:58] <simar7777> I am new to blockchain .. and i am trying to use blockchain for file storage and retrieval ..can you point me where and how should i proceed..
+[2017-01-06 14:30:52] <5chdn> simar7777: Swarm. [<-LINK->] 
+--------------------------------------------------------------------------------------------------
+1 [2017-01-08T10:21:54] <JakeFriedberg29> hello, my ethereum wallet will not open or generate an account on a mac, any idea why?
+--------------------------------------------------------------------------------------------------
+[2017-01-12 06:25:04] <newportstudios> New to Ethereum.  I do not see my either in my account.   Any ideas where my either is?
+[2017-01-12 06:26:37] <newportstudios> Sorry meant ether
+[2017-01-12 12:10:31] <3esmit> newportstudios: It is associated with your account in the blockchain. Put your public address at etherscan.io and check if is there.
+--------------------------------------------------------------------------------------------------
+1 [2017-01-16T22:25:45] <pfeilbr> new here. just installed wallet and want to perform some transactions for learning.  how do I get ether on  TEST-NET?
+2 [2017-01-16T22:26:00] <pfeilbr> or is there a good getting started guide?
+3 [2017-01-16T22:42:52] <5chdn> pfeilbr: yeas, check this. [<-LINK->]
+--------------------------------------------------------------------------------------------------
+1 [2017-01-19T20:27:42] <julianmrodriguez> hi basic question, if I install Mist and also the ethereum wallet, will I have 2 full nodes running on mi machine? or will only do the synching and full blockchain download once?
+--------------------------------------------------------------------------------------------------
+[2017-01-20 11:53:00] <benwestster_twitter> how could a beginner inderstand technicaly how ethereum work?
+[2017-01-20 11:54:38] <benwestster_twitter> what's the minimum tools someone need to start mining ethereum?
+[2017-01-21 20:16:09] <koldshot> benwestster_twitter: you need a barebones pc, so mobo with support for 5-7 gpu, min 4gb ram, low cpu and usually 2  gold cert psus linked together. small hdd or usb stick to run OS. Office or box fan.
+[2017-01-21 20:17:52] <koldshot> benwestster_twitter: idea is highest hashrate with lowest wattage balanced with quick roi on price for parts. google coinwarz.
+--------------------------------------------------------------------------------------------------
+[2017-01-24 06:57:45] <vmontaluisa> Hello, i'm a software  developer, can you help me with information    for créate smart contractos?
+[2017-01-24 07:38:24] <jaxxwallet> vmontaluisa: hi you there?
+[2017-01-24 07:39:00] <vmontaluisa> hi, yes
+[2017-01-24 07:39:07] <vmontaluisa> im here..
+[2017-01-24 07:39:09] <jaxxwallet> you still need help ?
+[2017-01-24 07:39:35] <jaxxwallet> also which OS your developing on ?
+[2017-01-24 07:39:37] <vmontaluisa> in newbie in this , but i would like information to
+[2017-01-24 07:39:42] <vmontaluisa> create smart contracts
+[2017-01-24 07:40:00] <vmontaluisa> macos
+--------------------------------------------------------------------------------------------------
+1 [2017-01-28T02:27:13] <TacoByte> is there a list of swarm websites? i only know of bzz:/go-bchat.eth/ and bzz:/theswarm.eth/
+2 [2017-01-28T02:27:50] <TacoByte> do you know any more?
+--------------------------------------------------------------------------------------------------
+[2017-02-02 10:25:01] <proofofidleness> My contract creation transaction is pending after 20 minutes, is there a problem? [<-LINK->] 
+[2017-02-02 10:33:13] <proofofidleness> Is the gas price not high enough?
+[2017-02-02 10:45:02] <proofofidleness> Can I increase the gas price and do the contract creation again?
+[2017-02-02 11:07:32] <proofofidleness> I tried a normal transaction, and it does not get mined either, always pending
+[2017-02-02 11:21:20] <3esmit> Gas price is too low
+[2017-02-02 11:22:02] <3esmit> but now the new transactions need to wait for the others, as nounce increased
+[2017-02-02 11:22:18] <proofofidleness> 3esmit: it is set at:      0.00000002 Ether how much should I put?
+[2017-02-02 11:23:24] <3esmit> That should be fine
+[2017-02-02 11:23:45] <3esmit> but will take more time
+[2017-02-02 11:24:04] <proofofidleness> it's been pending one hour already
+[2017-02-02 11:24:27] <proofofidleness> Ok I understand. Is it possible to speed it up? Replace it?
+[2017-02-02 11:24:28] <3esmit> the minimum is 0.00000002 ETH
+[2017-02-02 11:25:12] <3esmit> I don't know how to do it, trying to figure out
+[2017-02-02 11:25:19] <3esmit> the problem is that nounce increased
+[2017-02-02 11:25:34] <3esmit> what wallet software are you using?
+[2017-02-02 11:26:30] <proofofidleness> 3esmit: parity + geth attach
+[2017-02-02 11:26:42] <proofofidleness> (is that secure?)
+[2017-02-02 11:26:48] <3esmit> what version of parity?
+[2017-02-02 11:27:07] <proofofidleness> the github source one
+[2017-02-02 11:27:19] <3esmit> when you compiled?
+[2017-02-02 11:27:23] <3esmit> Yes, it is secure, but why don't using Parity UI?
+[2017-02-02 11:27:51] <proofofidleness> I like the geth command-line!
+[2017-02-02 11:28:16] <3esmit> Ok.
+[2017-02-02 11:28:27] <proofofidleness> (I am new to ethereum, experimenting)
+[2017-02-02 11:31:26] <3esmit> Not guaranteed to work, but you can send out another one that is identical (including the same nonce), but with higher gas price.
+[2017-02-02 11:32:57] <3esmit> I don't understand why your trasactions are not being inclded
+--------------------------------------------------------------------------------------------------
+[2017-02-03 20:19:26] <Decen_Capital_twitter> Hi. Are there any r/ethereum mods in here? I did a post about an hour ago with info on IDEX, our new decentralized exchange that we just launched today, and the post is not showing up in new. Seems it was flagged as spam
+[2017-02-03 20:19:47] <Decen_Capital_twitter> If any one in here has the ability to get that out of the spam filter that would be great. Thanks!
+--------------------------------------------------------------------------------------------------
+[2017-02-06 13:47:36] <chafey> I just bought some ethereum from coinbase, but etherscan shows the balance as 0 for the ethereum wallet address coinbase has for me.  Any ideas?
+[2017-02-06 13:49:29] <3esmit> chafey: Takes a minute to update the balance. Check again in a few minutes.
+[2017-02-06 13:51:55] <chafey> Its been about 30 minutes now
+[2017-02-06 13:52:53] <chafey> Perhaps coinbase doesn't actually put the ethereum on the network and keeps it internally?
+[2017-02-06 13:53:15] <chafey> Maybe I need to transfer it out of coinbase into my own account?
+[2017-02-06 13:54:05] <3esmit> chafey: They keep it internally, you need to call for withdraw in the account, I don't know how to do it but you can ask support for coinbase.
+[2017-02-06 13:55:24] <chafey> I see how to transfer, just surprised they don't actually put it on the network.
+--------------------------------------------------------------------------------------------------
+[2017-02-06 20:08:44] <proofofidleness> how to build a transaction without sending it?
+[2017-02-06 20:09:44] <proofofidleness> and it seems ethereum is quite different than bitcoin for building transactions: in ethereum, if I send you 1 eth twice, the only thing that changes is the nonce right?
+[2017-02-06 20:09:44] <3esmit>  [<-LINK->] 
+[2017-02-06 20:10:10] <proofofidleness> while in Bitcoin, there are change addresses, transaction outputs, and so on
+[2017-02-06 20:10:27] <3esmit> in ethereum is way easier
+[2017-02-06 20:11:08] <proofofidleness> ok thanks for the advice, I will check this
+[2017-02-06 20:11:58] <3esmit> there are many ways to do this raw transactions, this link cover some of them
+--------------------------------------------------------------------------------------------------
+[2017-02-07 07:27:01] <KanishkGhosh_twitter> Hey.Can someone tell me where to get a Blockchain based SMS,Email and Chat APIs
+[2017-02-07 11:22:38] <3esmit> KanishkGhosh_twitter: Ethcore Parity have email and sms verification to Ethereum accounts, it's used for name registration.
+--------------------------------------------------------------------------------------------------
+[2017-02-07 12:10:46] <Dbinutu> 3esmit: hello mate
+[2017-02-07 12:11:31] <Dbinutu> I am trying to use truffle for ethereum development .
+[2017-02-07 12:12:13] <Dbinutu> I understand that when choosing a client in my case TestRPC , I need to install certain apps on my windows machine .
+[2017-02-07 12:12:47] <Dbinutu> I am trying to install windows-build-tools using Git bash an it is taking forever.
+[2017-02-07 12:13:02] <Dbinutu> Is this normal behavior ?
+[2017-02-07 12:19:44] <Dbinutu>  [<-CODE->] 
+[2017-02-07 12:20:30] <Dbinutu> The second part that sayswaiting for installershas been doing that for the past 12 hours .
+[2017-02-07 12:21:32] <Dbinutu> Can anyone help ?
+[2017-02-07 12:22:00] <3esmit> HI@Dbinutu
+[2017-02-07 12:22:17] <3esmit> I'm sure folks at [<-LINK->] can help you.
+[2017-02-07 12:22:20] <Dbinutu> Hi man
+[2017-02-07 12:22:49] <3esmit> But you can use Geth client
+[2017-02-07 12:22:58] <Dbinutu> I know , but I haven't even downloaded truffle yet .
+[2017-02-07 12:23:09] <3esmit> What are you trying to build?
+[2017-02-07 12:23:30] <Dbinutu> A Dapp .
+[2017-02-07 12:23:45] <Dbinutu> I just need something for testing right now .
+[2017-02-07 12:23:47] <3esmit> "npm install -g -production windows-build-tools"
+[2017-02-07 12:23:53] <3esmit> What you expect with this command?
+[2017-02-07 12:24:24] <Dbinutu> I expect to install some windows dependencies required to run testRPC
+[2017-02-07 12:24:59] <Dbinutu> According to this document . [<-LINK->] 
+[2017-02-07 12:25:01] <3esmit> Hmm.. I usually install tools from microsoft site, seems like you got a script to do that
+[2017-02-07 12:25:38] <3esmit>  [<-CODE->] 
+[2017-02-07 12:25:51] <3esmit> Did you follow this instructions?
+[2017-02-07 12:26:28] <Dbinutu> Not accordingly .
+[2017-02-07 12:26:37] <Dbinutu> to be honest .
+[2017-02-07 12:26:58] <3esmit> Well, you should have installed Visual Studio, Windows SDK, Python 2.7 and OpenSSL.
+[2017-02-07 12:27:23] <3esmit> I didn't have to do this as this things were already installed in my machine
+[2017-02-07 12:27:55] <Dbinutu> Okay , but$ npm install -g -production windows-build-toolsdoes the installations
+[2017-02-07 12:28:51] <3esmit> Seems like it is not working for you. I never used this btw.
+[2017-02-07 12:28:51] <Dbinutu> Because now there is a folder on my machine that has some of those things .
+[2017-02-07 12:29:00] <Dbinutu> Okay .
+--------------------------------------------------------------------------------------------------
+[2017-02-08 03:27:46] <ILTAD> Hey can someone give me a straight answer on mining from a normal (but pretty good) computer? When I look it up all the results look kinda sketchy like minergate.
+[2017-02-08 03:28:14] <ILTAD> As in is it possible and if so how would you go about doing it?
+--------------------------------------------------------------------------------------------------
+[2017-02-09 09:56:50] <tartakovsky> hello guys
+[2017-02-09 09:57:20] <tartakovsky> can i ask questions here if i'm having troubles interacting with a smart contract? :)
+[2017-02-09 12:53:45] <chafey> etartakovsky: yes
+--------------------------------------------------------------------------------------------------
+[2017-02-09 23:53:16] <thirdy> hi. where can I ask noob questions?
+[2017-02-10 09:50:39] <3esmit> thirdy: Hi, I guess here is the best place for that.
+--------------------------------------------------------------------------------------------------
+[2017-02-15 13:31:33] <medlahbib> i am familiar with ethereum
+[2017-02-15 13:31:57] <medlahbib> just i need to know some information about  this new notion
+[2017-02-15 13:32:20] <chafey> looks like consensys is involved, maybe try asking on those gitters?
+[2017-02-15 13:32:29] <medlahbib> it is interesting even more Ethereum it self
+[2017-02-15 13:32:37] <medlahbib> have they a channel?
+[2017-02-15 13:32:54] <chafey> there is the truffle channel
+[2017-02-15 13:33:00] <chafey> truffle is made by consensys, don't know if thery have others
+[2017-02-15 13:33:21] <medlahbib> yes i posted on it
+[2017-02-15 13:33:28] <medlahbib> but i have no answer
+[2017-02-15 13:47:46] <prashanth-devadas> medlahbib: @chafeyDon't know what Enterprise Ethereum is by definition. Perhaps Eris comes close from what I've read in that link [<-LINK->] 
+[2017-02-15 13:48:03] <prashanth-devadas> Thanks for the link on EE
+[2017-02-15 13:52:18] <chafey> Yes, probably similar, but I didn't see them listed in any EE press yet.
+[2017-02-15 13:53:44] <medlahbib> i think that Ethereum is thinking about some thing concurrent to Corda for financial companies
+[2017-02-15 13:53:46] <medlahbib> ;)
+--------------------------------------------------------------------------------------------------
+1 [2017-02-18T15:40:06] <estadio> Hi. I installed the wallet (version 0.8.9) on Windows 8.1 and tried to create an account, but after I had entered twice the password nothing happens. Thanks.
+--------------------------------------------------------------------------------------------------
+[2017-02-21 09:24:45] <amitjaiswal2626_twitter> Hello Team
+[2017-02-21 09:25:05] <amitjaiswal2626_twitter> I want to know about Ether smart contracts
+[2017-02-21 09:25:38] <amitjaiswal2626_twitter> how to integrate existing coin with ether blockchain ?
+[2017-02-21 09:26:29] <harobed> amitjaiswal2626_twitter: this [<-LINK->] ?
+[2017-02-21 09:26:30] <KsenyaSerova> hi@amitjaiswal2626_twitterthere are solidity tutorials here [<-LINK->] 
+[2017-02-21 09:26:39] <KsenyaSerova> did you have a look?
+[2017-02-21 09:27:12] <amitjaiswal2626_twitter> Thanks Stephane and Ksenya, wait let me check
+--------------------------------------------------------------------------------------------------
+//Greeting Rules
+[2017-02-23 18:07:04] <josewalker74_twitter> Hi, I'm new to etherum
+[2017-02-23 18:07:15] <chafey> hi welcome
+[2017-02-23 18:07:23] <alexvandesande> Hi
+[2017-02-23 18:07:31] <josewalker74_twitter> I would like to know if there is any JAVA API that will allow me to sign documents?
+[2017-02-23 18:07:55] <josewalker74_twitter> of course using Etherum
+[2017-02-23 18:07:57] <chafey> there is one Java library called ethereumj.  i don't know if it has signing support
+[2017-02-23 18:08:01] <chafey> but there is a gitter for it
+--------------------------------------------------------------------------------------------------
+[2017-02-24 10:58:05] <AndyKD> hii
+[2017-02-24 10:58:59] <AndyKD> team , by using the ethereum blockchain i want to send secure messages
+[2017-02-24 10:59:12] <AndyKD> is it possible way to do so?
+[2017-02-24 11:19:11] <chafey> Yes, although currently you have to encrypt the messages yourself
+[2017-02-24 12:19:17] <AndyKD> yes i can do that,Any suggestion for the apps or source code to which are doing the same to send the bitmessage on blockchain
+--------------------------------------------------------------------------------------------------
+[2017-02-24 19:14:50] <BLACKX714> Hello
+[2017-02-24 19:15:52] <BLACKX714> I am new to Cryptocurrencry game and want to know about Ethireum.
+[2017-02-24 20:53:12] <Bschuster3434> BLACKX714: Sup
+[2017-02-24 20:53:37] <Bschuster3434> Best place to start is to download this mist client: [<-LINK->] 
+[2017-02-24 21:00:37] <Bschuster3434> Go through the tutorial on how to set-up a contract
+[2017-02-24 21:00:42] <Bschuster3434> that'll help get you started
+--------------------------------------------------------------------------------------------------
+1 [2017-02-27T11:49:36] <cashmakingsites_twitter> Can somebody help me? I my synchronization get stuck on 99%. What am I doing wrong?
+2 [2017-02-27T13:45:29] <cashmakingsites_twitter> Why does synchronizing stop at 99%? Anybody?
+--------------------------------------------------------------------------------------------------
+1 [2017-02-27T12:58:40] <willnwhite> Is testnet always this slow? First time I've used Eth Wallet. Used MetaMask in the browser on mainnet and that's fine.
+2 [2017-02-27T12:59:31] <willnwhite> Only have a few peers, expected many. Are there only 6 peers running testnet?
+--------------------------------------------------------------------------------------------------
+1 [2017-02-27T17:54:33] <NTrkis_twitter> so I dwnloaded the Ethereum wallet for Mac, is the wallet ready for use instantly, or what is there to do?
+--------------------------------------------------------------------------------------------------
+1 [2017-02-27T23:13:01] <dougedmunds> I am looking at your main page [<-LINK->] I am 99.99% positive that the past tense spelling should be "bootstrapped" with 2 p's.   (last paragraph)
+--------------------------------------------------------------------------------------------------
+1 [2017-02-28T13:19:23] <wbinSong> hi,everyone.Who knows how to run go-ethereum on Android platforms?
+--------------------------------------------------------------------------------------------------
+[2017-03-02 05:14:38] <xtreme-varun-goyal> Does anyone know of some good research papers on ethereum I am doing analysis on it for a masters course I am doing?
+[2017-03-02 05:14:56] <chafey> lots of good info on ethereum out there
+[2017-03-02 05:15:00] <chafey> use google
+[2017-03-02 05:15:15] <xtreme-varun-goyal> chafey: thanks"
+--------------------------------------------------------------------------------------------------
+[2017-03-02 05:16:41] <chafey> bitcoin just moves money from one place to another
+[2017-03-02 05:17:01] <chafey> ethereum is capable of replacing most computer systems!!
+[2017-03-02 05:17:13] <chafey> the upside potential of ethereum is amazing
+[2017-03-02 05:17:24] <chafey> its like geting into the internet in 1991
+[2017-03-02 05:18:00] <chafey> and on top of that - it is a cryptocurrency like bitcoin without all of bitcoins problems
+[2017-03-02 05:18:16] <chafey> people are frusrtated with bitcoin and are looking for alternatives... ethereum is it
+[2017-03-02 05:18:46] <frankrbruno> have u started mining ether yet chris?
+[2017-03-02 05:18:55] <chafey> yes, i have 9 gpus mining
+[2017-03-02 05:18:58] <chafey> err 10
+[2017-03-02 05:19:16] <chafey> well depends on when, my son turns off the miner on his computer when he plays overwatch :)
+[2017-03-02 05:19:31] <xtreme-varun-goyal> chris, any trusted website you recommend to buy miners from?
+
+--------------------------------------------------------------------------------------------------
+[2017-03-02 17:17:16] <AMZIJERIMIAH_twitter> Pleasr how can I create an ethereum wallet?
+[2017-03-02 17:35:55] <3esmit> AMZIJERIMIAH_twitter: you can use myetherwallet.com, or download one of the following clients: [<-LINK->]  [<-LINK->] 
+--------------------------------------------------------------------------------------------------
+[2017-03-03 12:57:09] <mattvick> I’m seraching for some speed benchmarks for reading data from the blockchain, say vs MySQL for e.g. Googleing I can’t find anything. Does anybody know if where I could find this kind of thing?
+[2017-03-03 12:58:19] <chafey> I haven't heard of such a performance test
+[2017-03-03 13:01:18] <LogvinovLeon> It's definitely not fast and if you need speed I would suggest to export the data to MySQL or smth
+[2017-03-03 13:02:34] <chafey> ^^ a common pattern is to use ethereum as the "ground truth" and populate a database with data that you need to index or access rapidly
+[2017-03-03 13:10:26] <mattvick> Helpful, thanks :)
+[2017-03-03 13:11:10] <chafey> sure thing.  BTW - based on my testing, the read speed is just fine for supporting basic web apps
+[2017-03-03 13:11:30] <chafey> e.g. - a web app getting data directly from ethereum node over RPC to display in web page
+[2017-03-03 13:11:33] <chafey> its fast enough
+--------------------------------------------------------------------------------------------------
+[2017-03-03 15:01:09] <Sukhchainjatt_twitter> how to check ETH transaction confirmation
+[2017-03-03 15:12:47] <3esmit> etherscan.io@Sukhchainjatt_twitter
+--------------------------------------------------------------------------------------------------
+[2017-03-03 16:46:13] <kesavannb> Hi all , i was worked on Permission less blockchain using Eth , Web3 and Testrpc  , i want to know how to implement the permissioned  blockchain using Ethereum
+[2017-03-03 16:46:48] <chafey>  [<-LINK->] 
+[2017-03-03 16:49:12] <kesavannb> ok Thanks Chris Hafey
+--------------------------------------------------------------------------------------------------
+1 [2017-03-03T17:55:44] <frankrbruno> Hey guys.. it was nice to see it hit 20.70 this morn unfortunately its back down hanging around 19
+2 [2017-03-03T17:56:29] <frankrbruno> Does anyone know where we can watch the recorded version of the allaince meeting???
+--------------------------------------------------------------------------------------------------
+[2017-03-04 15:12:08] <thiagozrx> what ethereum platform oficial to download?
+[2017-03-04 15:51:24] <chafey> bmj519_twitter: people find coinbase.com easy to use for buying ether
+
+--------------------------------------------------------------------------------------------------
+1 [2017-03-07T02:30:33] <bcbenn> Is there any way to change the default data directory in Windows 10? I'd like to put it on a volume other than my "C:" drive. Space is limited on "C:" for me as I have a non-standard partition set up, and I believe it would perform better (as well as have some more data robustness) on a RAID5 volume I have available.
+2 [2017-03-07T02:36:16] <bcbenn> Also, the "Start Mining" option which is only available on the testnet, is there any schedule for when that option will be fully functional. Currently I use genoil's ethminer, but it would be interesting to have this fully integrated with the main core app.
+--------------------------------------------------------------------------------------------------
+[2017-03-07 19:59:19] <lew105_twitter> what is the best way to start learning?
+[2017-03-07 20:10:32] <chafey> what do you want to learn - how to program ethereum?
+[2017-03-07 20:10:37] <chafey> or how to use it? or what?
+[2017-03-07 21:05:05] <lew105_twitter> chafey: , how to program
+[2017-03-07 21:05:53] <chafey> Learn solidity, the main language used to build smart contracts.  There is good documentation out there - use google to find it
+[2017-03-07 21:06:30] <lew105_twitter> chafey: , thanks...started a few things and ran into some errors, but will check the links@NiklasKunkeljust sent
+[2017-03-07 21:06:31] <lew105_twitter> thanks, guys
+--------------------------------------------------------------------------------------------------
+[2017-03-08 14:11:52] <thiagozrx> hello
+[2017-03-08 14:12:02] <chafey> hello
+[2017-03-08 14:12:40] <thiagozrx> Which of the three is closest to the solution?
+[2017-03-08 14:12:48] <thiagozrx> Error: Insufficient funds for gas * price + value undefinedError: Exceeds block gas limit undefinederr: Error: Cannot send value to non-payable construtor
+[2017-03-08 14:15:26] <thiagozrx> some developer?
+[2017-03-08 14:25:18] <pirapira> Are you seeing all of the three error messages at once?
+[2017-03-08 14:28:55] <thiagozrx> No, separately, as I make changes to the code
+[2017-03-08 14:35:20] <thiagozrx> I'm going to have to leave, I'll leave my main code here and email
+[2017-03-08 14:35:27] <thiagozrx> var untitled_cContract = web3.eth.contract([{"constant":true,"inputs":[],"name":"x","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"a","type":"uint256"}],"name":"getChainyData","outputs":[],"payable":false,"type":"function"}]);var untitled_c = untitled_cContract.new({from: web3.eth.accounts[0],data: '0x6060604052341561000c57fe5b5b60ca8061001b6000396000f30060606040526000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630c55699c146044578063cf2197b2146067575bfe5b3415604b57fe5b60516084565b6040518082815260200191505060405180910390f35b3415606e57fe5b60826004808035906020019091905050608a565b005b60005481565b6001811415609a57806000819055505b5b505600a165627a7a723058205b1de2bb9d9b597688d8c15902039a0dd63c28f35ed3d5ff41cd7d13c168f0c00029',gas: '31000'}, function (e, contract){console.log(e, contract);if (typeof contract.address !== 'undefined') {console.log('Contract mined! address: ' + contract.address + ' transactionHash: ' + contract.transactionHash);}})
+[2017-03-08 14:35:35] <thiagozrx> thiago.web@outlook.com.br
+--------------------------------------------------------------------------------------------------
+[2017-03-08 17:28:23] <stilkov_twitter> This may be an entirely dumb question, but I’m wondering why I can’t find a transaction that’s displayed as “Confirmed” in Mist, connected to test-net, when I look for it on [<-LINK->] 
+
+--------------------------------------------------------------------------------------------------
+[2017-03-11 01:48:30] <frankrbruno> Hey Chris Hafey you around?
+[2017-03-11 01:59:20] <frankrbruno> I got the Ledger Nano S  which I use for the Ether only. Is there a way to buy and sell directly from the ledger, or do I have to send the ether to like coinbase then buy and sell, then send it back to the ledger? Also I was wondering is there a way to view your ether stored without having it plugged in?
+[2017-03-11 10:54:58] <chafey> You need an exchange like coinbase to buy/sell ethere to other currencies like USD
+--------------------------------------------------------------------------------------------------
+[2017-03-11 13:35:54] <ModGrip> chafey: New to this glorious world and trying to sync the blockchain. Is it normal that it has taken 24 hours + to sync 11,000 or so blocks? Running quad core Mac with residential internet connection (Comcast).
+[2017-03-11 13:39:18] <ModGrip> Don't worry. Checked in geth with geth.syncing command and am about half way ;)
+[2017-03-11 14:00:26] <chafey> hello
+[2017-03-11 14:00:41] <chafey> ModGrip: i don't know how long it takes
+[2017-03-11 14:04:59] <ModGrip> No worries. Depends on a multitude of factors I imagine. I'm half way it seems so will just stay patient.
+[2017-03-11 14:05:12] <chafey> yes, just be patient
+--------------------------------------------------------------------------------------------------
+[2017-03-12 08:47:44] <ashish_jbp1_twitter> How could i setup my own server?
+[2017-03-12 08:48:00] <3esmit> ashish_jbp1_twitter: You mean node?
+[2017-03-12 08:48:07] <ashish_jbp1_twitter> yes
+[2017-03-12 08:49:30] <3esmit> Download an ethereum client, such as go-ethereum (geth) that comes with Mist wallet, or Parity. Also, a less popular choice is EthereumJ that is used by ethereum-harmony wallet.
+[2017-03-12 08:50:47] <3esmit> go-ethereum and Mist are developed by Ethereum Foundation, Parity is by Ethcore and EthereumJ by ether.camp.
+[2017-03-12 08:52:04] <3esmit>  [<-LINK->]  [<-LINK->]  [<-LINK->] 
+--------------------------------------------------------------------------------------------------
+[2017-03-13 03:58:35] <linagee> Does anyone know of a website for dapps that people think might be a good idea, but don't have the resources to implement? (Kind of an "ideas" site?)
+[2017-03-13 04:01:42] <jarredchase__twitter> linagee: I've seen that question in a few forums and still haven't found a good answer. Maybe something that needs to be created? Searching AKASHA now for #dapps
+[2017-03-13 04:02:12] <relaxed4u> linagee:  [<-LINK->] 
+[2017-03-13 04:02:38] <jarredchase__twitter> linagee: do not click that link. phishing scam
+
+--------------------------------------------------------------------------------------------------
+[2017-03-13 14:51:19] <dandale21_twitter> hi
+[2017-03-13 14:52:42] <dandale21_twitter> ive been sending some ether on ethereum-wallet.net but it seems like my balance is still 0 can anyone help me ty
+--------------------------------------------------------------------------------------------------
+1 [2017-03-13T21:04:01] <JanseparArman_twitter> hello
+2 [2017-03-13T21:04:13] <JanseparArman_twitter> how can i download the wallet
+3 [2017-03-13T21:05:04] <JanseparArman_twitter> actually I downloaded but its a zip file
+4 [2017-03-13T21:05:39] <JanseparArman_twitter> everytime i close the wallet i need to go back to the exe file to open the wallet is it right?
+5 [2017-03-13T21:13:47] <SoloBSD> yes
+6 [2017-03-13T21:13:52] <SoloBSD> I did it that way
+7 [2017-03-13T21:14:12] <SoloBSD> I open the folder and run the exe every time I want to open my wallet
+8 [2017-03-13T21:17:01] <JanseparArman_twitter> thank you
+9 [2017-03-13T21:17:43] <JanseparArman_twitter> can i buy ether via this wallet and pay by my debit card and or paypal?
+10 [2017-03-13T21:20:10] <SoloBSD> I think you can do that
+11 [2017-03-13T21:20:16] <SoloBSD> just select your account
+--------------------------------------------------------------------------------------------------
+[2017-03-14 17:05:41] <Nikkey11> I have same question as@JohnHomez. I am trying to create account with Etherum?
+[2017-03-14 17:05:50] <JohnHomez> Nikkey11: which wallet?
+[2017-03-14 17:06:01] <JohnHomez> you can try with SuperNET [<-LINK->] 
+[2017-03-14 17:06:50] <Nikkey11> as in account to be able to purchase Ethereum
+[2017-03-14 17:07:06] <JohnHomez> Nikkey11: you can use SuperNET to purchase Ether.
+--------------------------------------------------------------------------------------------------
+1 [2017-03-15T01:58:06] <fdbelaihun> I accidentally missed my ethereum wallet app. How can I get it back please>
+2 [2017-03-15T01:58:25] <JohnHomez> fdbelaihun: which wallet?
+3 [2017-03-15T01:58:30] <JohnHomez> on which OS
+4 [2017-03-15T02:01:22] <fdbelaihun> Anfortunatly I am a new user for Ethereum and down loaded the app to my window 10 laptop. After a few trial to make purchase I think my downloaded app is diappeared.
+5 [2017-03-15T02:01:54] <JohnHomez> Try to install EasyDex maybe it will locate your wallet.
+6 [2017-03-15T02:02:01] <JohnHomez>  [<-LINK->]
+7 [2017-03-15T02:06:13] <fdbelaihun> Thanks! I will try it.
+8 [2017-03-15T02:22:41] <fdbelaihun> I find the wallet. Thank you so much!
+--------------------------------------------------------------------------------------------------
+[2017-03-15T14:32:27] <morgansliman> That would make sense I suppose. Know of any way to speed up the process? I installed geth through homebrew but I had to uninstall it because the daemon was eating up all of my RAM
+[2017-03-15T14:32:58] <morgansliman> between geth and google chrome, my computer was barely working lol
+[2017-03-15T14:35:22] <TheScrapcat> morgansliman: lol I sent you a link, go check it out. I'm about to try it as well
+--------------------------------------------------------------------------------------------------
+1 [2017-03-15T20:24:49] <beefbulalo_twitter> guys im new to trhis
+2 [2017-03-15T20:25:12] <beefbulalo_twitter> I wanna know how to become part of the etherium
+3 [2017-03-15T20:25:17] <beefbulalo_twitter> miners club
+--------------------------------------------------------------------------------------------------
+[2017-03-15 22:26:16] <YangLiuDr_twitter> Hi John, does easydex support ether?
+[2017-03-15 22:34:59] <JohnHomez> Yes
+--------------------------------------------------------------------------------------------------
+[2017-03-16 03:55:31] <YangLiuDr_twitter> Price will go down if someone hacked exchange again
+[2017-03-16 03:56:41] <YangLiuDr_twitter> So I got an official answer that EasyDex doesn't support Ethereum! Be aware people!
+--------------------------------------------------------------------------------------------------
+[2017-03-16 13:41:53] <smartspender> hello , i am back.. i still want to figure out how to get my ethereum wallet loaded
+[2017-03-16 13:42:02] <TheScrapcat> Oh alright, I can't help you much then probably, sorry. But If you want to try again, I found a way to quickly (as in a couple hours) sync the Ethereum wallet. Mine wouldn't work for days and yesterday I finally got it synced and running in less than a day.
+[2017-03-16 13:42:15] <smartspender> I have had it loading before, I am only 2 months behind... after the said update I can no longer load blocks?
+[2017-03-16 13:43:15] <smartspender> scrapcat, maybe you can help me load mine?
+[2017-03-16 13:43:43] <TheScrapcat> smartspender: Yea of course. It won't sync?
+[2017-03-16 13:44:41] <smartspender> try reload maybe?
+[2017-03-16 13:44:54] <smartspender> bitcore similar thing happened, loose some btc... but relog solved it
+[2017-03-16 13:44:59] <smartspender> and scrapcat
+[2017-03-16 13:45:14] <smartspender> OH THATS NOT GOOD?
+[2017-03-16 13:45:22] <smartspender> yes my wallet is not syncing..
+[2017-03-16 13:46:19] <TheScrapcat> Okay both@lukebunnettand@smartspenderTry this : [<-LINK->] 
+
+
+--------------------------------------------------------------------------------------------------
+[2017-03-16 13:43:46] <lukebunnett> wtf my account is just showing zero since 11mins ago
+[2017-03-16 13:44:41] <smartspender> try reload maybe?
+[2017-03-16 13:44:54] <smartspender> bitcore similar thing happened, loose some btc... but relog solved it
+[2017-03-16 13:44:58] <lukebunnett> its showing a transaction out 11mins ago that wasnt me
+[2017-03-16 13:44:59] <smartspender> and scrapcat
+[2017-03-16 13:45:14] <smartspender> OH THATS NOT GOOD?
+[2017-03-16 13:45:22] <smartspender> yes my wallet is not syncing..
+[2017-03-16 13:45:24] <lukebunnett> ive just lost all my ETH
+[2017-03-16 13:45:38] <smartspender> and i dont know how to get it to start syncing
+[2017-03-16 13:45:44] <smartspender> and how is that possible, luke??
+[2017-03-16 13:45:48] <lukebunnett> i have no idea
+[2017-03-16 13:46:13] <lukebunnett> this is right after i just posted the error message i was getting in myetheriumwallet
+[2017-03-16 13:46:19] <TheScrapcat> Okay both@lukebunnettand@smartspenderTry this : [<-LINK->] 
+[2017-03-16 13:46:57] <lukebunnett> Its not empty because of sync, i can see a transaction out 11mins ago on etherscan
+[2017-03-16 13:47:21] <lukebunnett> i think someone has stolen it
+[2017-03-16 13:47:32] <TheScrapcat> lukebunnett: if you try again with ethereum, follow this video and re-sync, you'll see your balance and transactions
+[2017-03-16 13:47:33] <smartspender> how can someone steal ether!?!?!?!
+[2017-03-16 13:47:38] <smartspender> can it happen it bitcoin???
+[2017-03-16 13:47:39] <lukebunnett> i jave no idea
+[2017-03-16 13:47:45] <lukebunnett> it must be someone on this blog
+[2017-03-16 13:47:49] <smartspender> i run mac.... does that matter for ether?
+[2017-03-16 13:48:05] <chafey> someone can steal your ether if they can get your private key
+[2017-03-16 13:48:23] <chafey> it is 100% up to you to protect your private key as you have NO RECOURSE
+[2017-03-16 13:48:27] <lukebunnett> oh f6ck
+
+--------------------------------------------------------------------------------------------------
+[2017-03-16 23:24:12] <thirdy> Hi. I got ETH on my address as seen in etherscan.io.However in Mist, it's still showing 0 ETH. How can I update my Mist? I don't have a wallet contract atm.
+[2017-03-16 23:29:40] <doktor1897> thirdy: Hello
+[2017-03-16 23:29:44] <doktor1897> on which windows your using?
+[2017-03-16 23:29:51] <thirdy> win7
+[2017-03-16 23:30:02] <thirdy> Ethereum-Wallet-win64-0-8-9.zip
+[2017-03-16 23:30:08] <doktor1897> try with SuperNET Wallet: [<-LINK->] 
+[2017-03-16 23:30:12] <doktor1897> import your wallet there.
+[2017-03-16 23:30:37] <thirdy> hmm, is this free software?
+[2017-03-16 23:30:52] <doktor1897> yes.
+[2017-03-16 23:32:02] <thirdy> thanks but that won't do for me
+[2017-03-16 23:32:52] <doktor1897> thirdy: Mist will take ages for sync.
+--------------------------------------------------------------------------------------------------
+[2017-03-17 02:58:22] <thirdy> btw. I used metamask. easy to install
+[2017-03-17 03:23:52] <thirdy> how come it's so expensive to do a ETH transaction?
+[2017-03-17 04:26:01] <frankrbruno> thirdy: thanks for the info. I read a little about it but the article looked like it was written by a 5 year old so didn't know if I should believe it or not. This one is well better written with clear information. even though Patrick dai screwed everyone, maybe he got his stuff together and are going to build qtum to be something big... but its a risk .... a risk im not going to take...
+[2017-03-17 04:27:42] <frankrbruno> thirdy: I downloaded ethereum wallet and sent 1 ether to it and never received it.. Still trying to get that back but finding it hopeless cuz coibbase doesn't get back to you...ever... customerservice is non existent... I got the ledger nano s and its awesome...
+--------------------------------------------------------------------------------------------------
+[2017-03-21 12:10:10] <TidiaTDA> Hi
+[2017-03-21 12:10:47] <TidiaTDA> Got a fast question: ethereum blockchain is stored locally as a Json file, right?
+[2017-03-21 13:27:58] <TidiaTDA> Is there somewhere I can get it from without running Geth?
+[2017-03-21 14:36:40] <mudracloud_twitter> TidiaTDA: blockchain is a big directory inside geth/chaindata; you can download a very recent zipped version from our site [<-LINK->] if you want
+[2017-03-21 14:53:33] <TidiaTDA> mudracloud_twitter: thank you very much!
+--------------------------------------------------------------------------------------------------
+[2017-03-21 19:03:59] <PrimolCe_twitter> hello
+[2017-03-21 19:04:10] <doktor1897> PrimolCe_twitter: Hello
+[2017-03-21 19:04:43] <PrimolCe_twitter> is genesis-mining a good site to mine ether
+--------------------------------------------------------------------------------------------------
+1 [2017-03-22T21:00:20] <motahedian> Guys
+2 [2017-03-22T21:00:42] <motahedian> could you just tell me at this moment we have to sell ETH or just keep it ?
+3 [2017-03-22T21:00:53] <jarrodmedrano> HODL
+4 [2017-03-22T21:01:24] <motahedian> Is there any rise again like last week ?@jmedran
+5 [2017-03-22T21:03:19] <jarrodmedrano> Hoping it drops more so I can buy more.
+6 [2017-03-22T21:05:05] <motahedian> jmedran: You tell me to hold it and then you wish it to drop!! what the hell?
+7 [2017-03-22T21:05:34] <jarrodmedrano> You should always hodl
+8 [2017-03-22T21:05:45] <jarrodmedrano> If you're trying to short it, good luck.
+--------------------------------------------------------------------------------------------------
+1 [2017-03-23T11:26:45] <johndzilva> can i create a private BlockChain network for a group of people For Example a network of blockchain for 10 people
+2 [2017-03-23T11:27:27] <r-kamenskiy> johndzilva: yes, you can
+3 [2017-03-23T11:51:16] <johndzilva> r-kamenskiy: is there any gui based deployment console to to implement the private network of block chain
+4 [2017-03-23T11:54:25] <r-kamenskiy> johndzilva: I have not heard of such things. Either you deploy and configure, or use third-party services providing "Private ethereum network"
+5 [2017-03-23T11:59:12] <johndzilva> ive used ethereum wallet but not sure that i can create a private network on my own from the genesis block in that....is there any way????
+--------------------------------------------------------------------------------------------------
+[2017-03-23 18:21:28] <CyrilWork> Can someone explain why the activity bar is filled with bans ? (Serious question)
+--------------------------------------------------------------------------------------------------
+1 [2017-03-25T06:32:04] <dcoolnik> Hello gyus, I am new to ether before starting with ether I want to know  Is it possible to develop a blockchain for record keeping using etherum platform where I can decide where to store the records
+2 [2017-03-25T06:35:47] <dcoolnik> thanx@Gustav-Simonsson.. I want to make somwhat centralized blockchain
+3 [2017-03-25T06:36:52] <dcoolnik> to reduce the storage and increase scalability
+4 [2017-03-25T06:37:45] <dcoolnik> I dont need any incentives for miners for now..just want to test the core concept of my idea
+5 [2017-03-25T06:38:01] <dcoolnik> is it possible using etherum?
+6 [2017-03-25T06:39:18] <Gustav-Simonsson> yepp that's possible, some of the clients are quite modular and can be used for systems with alternative levels of (de)centralization / consensus algorithms
+7 [2017-03-25T06:40:26] <dcoolnik> thanx a lot@Gustav-Simonsson
+--------------------------------------------------------------------------------------------------
+1 [2017-03-25T18:59:34] <CryptoDonkey> Hi there. I have just installed the windows Ethereum wallet from ethereum.org. The synchronisation starts but after about two minutes the processing goes into error each time I start it. I see error "ipcProviderBackend - send request failed: Unable to connect to socket: timeout". Is there somebody here who can explain what the problem is?
+--------------------------------------------------------------------------------------------------
+[2017-03-27 23:08:52] <cooconmeister_twitter> To gustav .... can you help me plx. I am serching for someone who can make own network on etherium with own token. I have a idea for a Project. Can i write you a Email? My Email isadnan.cosovic@rub.de.  plx gustav simonson contact me and Show me first steps
+[2017-03-27 23:11:02] <Gustav-Simonsson> cooconmeister_twitter: there's quite a few tutorials out there if you google 'setup Ethereum private network' - many have exact steps for e.g. the go-ethereum client
+[2017-03-27 23:14:19] <cooconmeister_twitter> Okay. You have your own Project? How do you Know all this things....
+[2017-03-27 23:14:26] <cooconmeister_twitter> Thank you!
+--------------------------------------------------------------------------------------------------
+[2017-03-28 03:29:57] <allthrustLance_twitter> hello
+[2017-03-28 03:31:22] <allthrustLance_twitter> great website, im new to ethereum, just wondering, im more interested in the blockchain as a transaction-enabling platform than creating tokens for funding, is there a place where i can get more information in how to build such a product? more context: i do something similar to SAP and I wish to use ethereum chain :)
+--------------------------------------------------------------------------------------------------
+[2017-03-28 10:19:13] <maximusbaku_twitter> hi there
+[2017-03-28 10:20:14] <maximusbaku_twitter> by mistake I have sent ETC to my ETH address///How can I retrieve them to my ETH address
+[2017-03-28 10:20:42] <maximusbaku_twitter> actually i wanted to buy eth
+[2017-03-28 10:21:00] <maximusbaku_twitter> but bought etc and sent them to eth address
+[2017-03-28 13:26:35] <pirapira> maximusbaku_twitter: first, never remove your private keys.
+[2017-03-28 13:27:05] <pirapira> maximusbaku_twitter: second, I guess you sent it to an ETC account.
+[2017-03-28 13:27:51] <pirapira> maximusbaku_twitter: third, with your private keys and an ETC client, you might be able to access it.
+[2017-03-28 13:29:13] <pirapira> maximusbaku_twitter: fourth, on some exchanges you can sell ETC for ETH.
+[2017-03-28 13:29:23] <pirapira> (if you want to, of course)
+--------------------------------------------------------------------------------------------------
+[2017-03-28 20:52:55] <dominicrwilhelm_twitter> hey guys, bought some ether via anycoindirect and downloaded Mist before.. but no ether in there
+[2017-03-28 20:52:57] <dominicrwilhelm_twitter> what can I do now?
+[2017-03-28 21:43:35] <dominicrwilhelm_twitter> anyone have an answer/help for me?
+[2017-03-29 02:11:34] <jwlondon98> dominicrwilhelm_twitter: i can help
+--------------------------------------------------------------------------------------------------
+[2017-03-29 23:48:06] <umutors_twitter> Hello help please
+[2017-03-29 23:48:50] <umutors_twitter> is [<-LINK->] SCAM ??
+[2017-03-29 23:55:31] <crypto96> not scam just bulshit
+--------------------------------------------------------------------------------------------------
+[2017-03-30 04:11:19] <TREY_57_twitter> Hi all. Im new to crypto but i love ethereum.
+[2017-03-30 04:13:43] <TREY_57_twitter> I love the idea that new networks can be built on the E Blockchain and I want to bring this to my job in medicine. Can anyone recommend courses I can take to master building a private nwtwork
+[2017-03-30 04:27:41] <johndzilva> TREY_57_twitter: hey just need the go-ethereum installed... there is a clear explanation in the github page from the genesis.
+[2017-03-30 04:28:45] <johndzilva> TREY_57_twitter: But there is a minor bug in that for creating a private network (Bootnode)... Hope the bug is resolved in the future updates
+--------------------------------------------------------------------------------------------------
+1 [2017-04-03T14:20:53] <DamonYu2_twitter> Hi everyone, I'm new to Ethereum, I want to send transaction with below code, but get error ""jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"unknown account"", can anyone help me about this? '{"jsonrpc":"2.0","method":"eth_sendTransaction","params":' +'[{'+'"from": "0xAddD69c1c66D1Bad551FD7d6AC0E6DF613CD27bD",'+'"to": "0x8Eb056d58D268a015Bca9452c32D7B5D39bAe7cF",'+'"gas": "0x52",'+'"gasPrice": "0xa",'+'"value": "0xd8d726b7177a8", '+'"data": ""'+'}]' +',"id":1}'
+--------------------------------------------------------------------------------------------------
+[2017-04-03 17:41:42] <ghost~58e28930d73408ce4f55d0f7> hi guys
+[2017-04-03 17:45:07] <ghost~58e28930d73408ce4f55d0f7> I would like to deploy a price history bot on a server to keep track of eth price and plot it. Does anyone have experience with good hosts, what about digital ocean or OpenShift (<- seems nice) ?
+--------------------------------------------------------------------------------------------------
+[2017-04-04 21:01:14] <ashikp> hi i need to know some thing. like i have a eth wallet and id how i mine and payout on there
+[2017-04-04 21:01:22] <ashikp> and which is the best site for mining
+[2017-04-04 21:55:17] <ashikp> can i mine with my bitcoin miner
+[2017-04-05 06:23:21] <ashikp> ??
+[2017-04-05 06:25:41] <crypto96> join to our shitcoin community
+--------------------------------------------------------------------------------------------------
+1 [2017-04-06T22:56:43] <SethEggerRocks> Has anyone heard any news about matchpool?
+2 [2017-04-06T23:27:59] <SethEggerRocks> its not noobish, its scamish
+--------------------------------------------------------------------------------------------------
+1 [2017-04-07T18:48:15] <cerushdope> I am mining with 100MHs but my wallet still says 0 ether for 20 minutes. What is the problem?
+--------------------------------------------------------------------------------------------------
+1 [2017-04-09T01:06:52] <collincusce> hey all I'm getting some conflicting  answers on what minimum stake will be. It's either really high or really low.
+2 [2017-04-09T01:07:07] <collincusce> anyone have an idea?
+--------------------------------------------------------------------------------------------------
+1 [2017-04-09T01:39:05] <RubenZilibowitz_twitter> I'm running Ethereum Wallet and it appears to be downloading the blockchain but for some reason it seems to restart every so often. It tells me %70, but then after a few hours it says %4. What is going on?
+--------------------------------------------------------------------------------------------------
