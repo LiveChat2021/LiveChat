@@ -1,7 +1,7 @@
-### ChatHistory
-====
+## ChatHistory
+---
 ### File organization
-* data/
+* <table><tr><td bgcolor=gray> data/</td></tr></table>
   * raw/
   * disentangle/
   * manual/
