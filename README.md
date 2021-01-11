@@ -1,7 +1,7 @@
 ## ChatHistory
 ---
 ### File organization
-* <table><tr><td bgcolor="gray"> data/</td></tr></table>
-  * raw/
-  * disentangle/
-  * manual/
+* data/
+  * raw/: original chat history
+  * disentangle/: chat history after disentangling
+  * manual/: chat history after manual disentangling
