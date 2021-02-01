@@ -1,4 +1,4 @@
-## ChatHistory
+## LiveChat
 
 ### File organization
 * `data/`
