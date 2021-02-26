@@ -1,5 +1,5 @@
 ## Content
-* [1. Project Summary](#1. Project Summary)
+* [1. Project Summary](#1-project-summary)
   * `raw/`: original chat history
   * `disentangle/`: chat history after disentangling
   * `manual/`: chat history after manual disentangling
