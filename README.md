@@ -1,25 +1,25 @@
 ## Content
 [1 Project Summary](#1-project-summary)<br>
 [2 Study Design](#2-study-design)<br>
-&nbsp;&nbsp;[2.1 Research Questions](#21-research-questions)<br>
-&nbsp;&nbsp;[2.2 Our Dataset](#22-our-dataset)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[2.1 Research Questions](#21-research-questions)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[2.2 Our Dataset](#22-our-dataset)<br>
 [3 Results](#3-results)<br>
-&nbsp;&nbsp;[3.1 Experiment on Dialog Disentanglement](#31-experiment-on-dialog-disentanglement)<br>
-&nbsp;&nbsp;[3.2 RQ1: Communication Profile](#32-rq1-communication-profile)<br>
-&nbsp;&nbsp;[3.3 RQ2: Community Structure](#33-rq2-community-structure)<br>
-&nbsp;&nbsp;[3.4 RQ3: Discussion Topic](#34-rq3-discussion-topic)<br>
-&nbsp;&nbsp;[3.5 RQ4: Interactive Pattern](#35-rq4-interactive-pattern)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[3.1 Experiment on Dialog Disentanglement](#31-experiment-on-dialog-disentanglement)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[3.2 RQ1: Communication Profile](#32-rq1-communication-profile)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[3.3 RQ2: Community Structure](#33-rq2-community-structure)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[3.4 RQ3: Discussion Topic](#34-rq3-discussion-topic)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[3.5 RQ4: Interactive Pattern](#35-rq4-interactive-pattern)<br>
 [4 Conclusion](#4-conclusion)<br>
 [5 Download](#5-download)<br>
 
-## 1. Project Summary
+## 1 Project Summary
 Online communication platforms such as Gitter and Slack play an increasingly critical role in supporting software teamwork, especially for open source development. Conversations on such platforms often contain intensive, valuable information that may be used for better understanding developer communication and collaboration, in order to improve software practices. However, little work has been done in this regard. To bridge the gap, this paper reports a first comprehensive empirical study on developers' live chat data from Gitter. We first collect a large scale of developer daily chat. Then we manually disentangle 749 dialogs, and select the best disentanglement model from four state-of-the-art models for automation, according to their evaluation results. Finally, we perform empirical analysis on live chat aiming to reveal four characteristics: communication profile, community structure, dialog topic, and interaction pattern. In total, we studied 173,278 dialogs, corresponding with 1,402,894 utterances, contributed by 95,416 developers. Major findings include: (1) Developers chat more frequently on workdays than weekends, especially on Wednesday and Thursday; (2) Three social patterns, i.e., constellation, polaris, and galaxy, are observed in live chat communities; (3) Top-3 dialog topics are API usages, errors, and background information; and (4) Six dialog interaction patterns are extracted to guide further improvement. In addition, we provide practical insights on productive dialogs for developers, highlight desired features for platform vendors, and shed light on future research directions. We believe that the findings and insights will enable a better understanding of developers' live chat, as well as a better utilization and mining of knowledge embedded in the massive chat history.
 
-## 2. Study Design
+## 2 Study Design
 ### 2.1 Research Questions
 ### 2.2 Our Dataset
 
-## 3. Results
+## 3 Results
 ### 3.1 Experiment on Dialog Disentanglement
 To analyze the dialogs in a large scale, we experiment with the four state-of-art dialog disentanglement approaches, i.e. BiLSTM model, Bert model, E2E model, and FF model. Specifically, we use the manual disentanglement sample data from the previous step as ground truth data, compare and select the best DD model for the purpose of the further analysis in this study. We test the performances of the four approaches on the 749 manually disentangled dialogs, and adopt four widely used clustering metrics for evaluation: Normalized Mutual Information (NMI) , Adjusted Rand Index (ARI) , Shen-F value and F1 score. ARI is a similarity measure between two clusters based on the evaluation to a pairwise basis, while NMI penalizes more on the cluster-level. Shen-F measures how well related utterances are grouped, which is a very common and useful metric for dialogue disentanglement. F1 is the most strict measure which is calculated using the number of perfectly matching conversations.
 ![image](https://github.com/LiveChat2021/LiveChat/blob/main/images/DD-test.png)
@@ -36,17 +36,43 @@ This figure exhibits the distribution of response time calculated from the 173,2
 Answering RQ1: The peak hours for live chat are from UTC 9 to 10, 13 to 14, and 18 to 21, while UTC 1 to 6 is the low-active hours. Developers are more likely to chat in workdays then weekends, especially in Wednesday and Thursday. Moreover, live chat gets 50% faster replies than the fast answers in Stack Overflow.
 
 ### 3.3 RQ2: Community Structure
+<br>--------------------Table<br>
+This table shows the social network properties of the eight communities. Init.%, Resp.%, and Both% denote the percentage of developers serving the role of dialog initiators, respondents, and both. Intuitively, we consider that respondents share their knowledge to others, while initiators receive knowledge from others. We can see that, the four communities (Appium, Docker, Gitter, and Ethereum) belong to galaxy and polaris networks have higher percentage (75.04%-81.70%) of dialog initiators and lower percentage (18.30%-24.96%) of respondents/both. The high percentage of dialog initiators may relate to the application nature of the open source projects, e.g., Ethereum is one of the most widely open-source blockchain system, thus there is a large number of users acquire technical support from live chat. While the other four communities (Angular, DL4J, Nodejs, and Typescript) have higher percentage (29.94%-48.62%) of respondents/both. A possible explanation is that these four projects are more widely used for development purpose, e.g., angular is a platform for building mobile and desktop web applications, therefore, such communities appear to be knowledge-sharing and collaborative.
+<br>--------------------Figures<br>
+The above figures show the social network visualizations of the eight communities generated by Gephi. Each node represents one developer, and the edge denotes the dialog relationship between two developers. We color the vertex of initiator with blue, the vertex of respondent with yellow, and the vertex of both roles with red. In addition, the node’s size indicates its corresponding degree. Based on the observation on community structures, we categorize the 8 communities into three groups, consisting of:
+* Polaris networkis a type of highly centralized network where the community is organized around its single focal point.
+* Constellation network is a type of moderately centralized network where the community is organized around its multiple focal points. 
+* Galaxy network is a type of decentralized network where all individuals in the community have similar relationships.
+The 4 communities on the top (i.e., Angular, DL4J, NodeJS, and Typescript) belong to the constellation network, i.e., moderately centralized network. 3 communities i.e., Appium, Docker, and Gitter) belong to the polaris network, i.e., highly centralized network. The remaining Ethereum community belongs to the galaxy network, i.e., decentralized network.
+<br>--------------------Border<br>
+Answering RQ2: By visualizing social networks of eight studied communities, we identify three social network structures for developers' live chat. Half of the communities (4/8) are constellation networks. A minority of the communities (3/8) are polaris networks. Only one community belongs to galaxy network. In comparison, we find that developers in live chat may have less influence than developers in email in spreading information, but have a more closely connected community than that from email.
 ### 3.4 RQ3: Discussion Topic
+<br>--------------------Figure<br>
 This figure shows the distribution of discussion topics in developer live chat. The figure shows discussion topics in gray and their categories in white, as well as the percentages of the corresponding dialogs. The taxonomy expands outwards from higher level categories to lower level categories and topics.
+<br>--------------------Table<br>
+This table shows the descriptions of categories. The orange cells are decomposed from "Discrepancy", and the green cells are decomposed from "Conceptual". Besides, we provide examples for these categories. 
+<br>--------------------Examples<br>
+<br>--------------------Border<br>
+Answering RQ3: Developers launch solution-oriented dialogs and problem-oriented dialogs more than knowledge-oriented dialogs. Nearly 1/3 dialogs are about API usage. Developers discuss more about error, unwanted behavior and do-not-work, than reliability issue, performance issue, and test/build failure.
 ### 3.5 RQ4: Interactive Pattern
+<br>--------------------Figure<br>
+This figure illustrates the six interaction patterns in live chat, constructed using open card sorting. This figure shows dialog initiators in blue nodes, respondents in yellow nodes. The lines denote the reply-to relationships, and the labels represent developer intents in this table.
+<br>--------------------Table<br>
+ In this work, we identify the following six interaction patterns: 
+* P1: Exploring Solutions. Given the original questions posted by dialog initiator, other developers provide possible answers. But the initiator gives negative feedback indicating these answers do not address the question. When the correct answer is posted, the initiator gives positive feedback and end the dialog. 
+* P2: Clarifying Answer. Given the original questions posted by dialog initiator, other developer provides a possible answer. Then the initiator posts follow-up questions to clarify the answer until the initiator fully understands. 
+* P3: Clarifying Question. Given the original questions posted by dialog initiator, the respondent requires the initiator to clarify the question in more details until he fully understands. Then the respondent posts his answer, and the initiator gives feedback or greetings.
+* P4: Direct/Discussed Answer. Given the original questions posted by dialog initiator, the respondent directly gives an answer, or gives the answer after an internal discussion.  
+* P5: Self-answered Monologue. The original questions posted by dialog initiator are answered by himself. 
+* P6: Unanswered Monologue. The original questions posted by dialog initiator are not answered
 
-## 4. Conclusion
+## 4 Conclusion
 In this paper, we have presented a first large-scale study to gain an empirical understanding of OSS developers' live chat. Based on 1,402,894 utterances taken from eight popular communities on Gitter, we explore the temporal communication profiles of developers, the social networks and their properties towards the community, the taxonomy of discussion topics, and the interaction patterns in live chat. Our study reveals a number of interesting findings and implications including:  (1) There are three social patterns in the OSS community of live chat: polaris network, constellation network, and galaxy network. Constellation networks are the most, followed by polaris networks, galaxy networks are the least; (2) Developers are more likely to chat in workdays than weekends, especially in Wednesday and Thursday; (3) Developers are more active from UTC 9 to 10, 13 to 14, and 18 to 21, corresponding to Central European working time and American working time. The low-active time slice for chatting is Central European and American night; (4) Nearly 1/3 dialogs are about API usage. Developers discuss more about errors, unwanted behaviors and do-not-work, than reliability issues, performance issues, and test/build failures; (5) There are six interaction patterns identified in live chat: exploring solution, clarifying answer, clarifying question, direct/discussed answer, self-answered monologue, and unanswered monologue; and (6) We provide guidelines for developers in live chat, highlight advanced features for online communication platform vendors, and provoke insightful future research questions for OSS researchers. In future, we plan to investigate how well can we automatically classify the dialogs into different topics, as well as attempt to construct knowledge bases according to already answered questions and their corresponding solutions from live chat.<br>
 We hope that the findings and insights that we have uncovered will help drive future research into a more in-depth understanding of OSS development collaboration and a better utilization and mining of knowledge embedded in massive chat history. To facilitate replications or other types of future work, we provide the utterance data and disentangled dialogs used in this study online: https://github.com/LiveChat2021/LiveChat.
 
 
 
-## 5. Download
+## 5 Download
 * `data/`
   * `raw/`: original chat history
   * `disentangle/`: chat history after disentangling
