@@ -1,10 +1,14 @@
 ## Content
 [1 Project Summary](#1-project-summary)<br>
 [2 Study Design](#2-study-design)<br>
-&nbsp&nbsp[2.1 Research Questions](#21-research-questions)<br>
-&nbsp&nbsp[2.2 Our Dataset](#22-our-dataset)<br>
+&nbsp;&nbsp;[2.1 Research Questions](#21-research-questions)<br>
+&nbsp;&nbsp;[2.2 Our Dataset](#22-our-dataset)<br>
 [3 Results](#3-results)<br>
-
+&nbsp;&nbsp;[3.1 Experiment on Dialog Disentanglement](31-experiment-on-dialog-disentanglement)<br>
+&nbsp;&nbsp;[3.2 RQ1: Communication Profile](32-rq1-communication-profile)<br>
+&nbsp;&nbsp;[3.3 RQ2: Community Structure](33-rq2-community-structure)<br>
+&nbsp;&nbsp;[3.4 RQ3: Discussion Topic](34-rq3-discussion-topic)<br>
+&nbsp;&nbsp;[3.5 RQ4: Interactive Pattern](35-rq4-interactive-pattern)<br>
 [4 Conclusion](#4-conclusion)<br>
 [5 Download](#5-download)<br>
 
@@ -22,13 +26,13 @@ To analyze the dialogs in a large scale, we experiment with the four state-of-ar
 The comparison results are shown in the above figure. The FF approach significantly outperforms the others on disentangling developer live chat. We can see that, FF approach achieves high NMI (avg. 0.74 ) and Shen-F scores (avg. 0.81), and medium-level scores on F1 (avg. 0.47) and ARI (avg. 0.57). Therefore, we select the FF model to disentangle all the utterances of the eight projects. Finally, we use the best FF model to disentangle all the 1,402,894 utterances in chat logs. In total, we obtain 173,278 dialogs.
 
 ### 3.2 RQ1: Communication Profile
---------------------Figure
+<br>--------------------Figure<br>
 This figure compares the distribution of utterances intensity over 24 hours, across the 8 communities. First, we identify the peak hours of each community in red dashed circles, then highlight the time windows based on the peak hours contained in it with the yellow shade. We can see that, there are three windows of peak hours, which are from UTC 9 to 10, 13 to 14, and 18 to 21. In addition, UTC 1 to 6 corresponds to the low chatting-activity hours. Developers are less active in chatting at that time.
---------------------Figure
+<br>--------------------Figure<br>
 This figure shows the distribution of the utterances across different weekdays. We can see that, developers chat more frequently on workdays than on weekends. Noticeably, more developer live chatting happens on Wednesdays and Thursdays than on other weekdays, which possibly corresponds to communication, coordination, and preparation for integration/release/deadline on Fridays.
---------------------Figure
+<br>--------------------Figure<br>
 This figure exhibits the distribution of response time calculated from the 173,278 dialogs of the eight communities. The average response time is 220 seconds, the maximum time lag is 1,264 seconds, and the minimum time lag is 2 seconds. The peak point is (23, 393), which means there are 393 dialogs got replies in 23 seconds. We can see that, the time lag largely increases from 0 to 23 seconds, and descend in a long tail. 80% of the dialogs get first responses in 343 seconds. As reported by recent study on Stack Overflow, the threshold of fast answers was 439 seconds. In comparison, live chat gets 50% faster ((439-220)/439) replies than the fast answers in Stack Overflow. Therefore, we consider the responses from live chat are relatively fast.
---------------------Border
+<br>--------------------Border<br>
 Answering RQ1: The peak hours for live chat are from UTC 9 to 10, 13 to 14, and 18 to 21, while UTC 1 to 6 is the low-active hours. Developers are more likely to chat in workdays then weekends, especially in Wednesday and Thursday. Moreover, live chat gets 50% faster replies than the fast answers in Stack Overflow.
 
 ### 3.3 RQ2: Community Structure
@@ -37,7 +41,7 @@ This figure shows the distribution of discussion topics in developer live chat. 
 ### 3.5 RQ4: Interactive Pattern
 
 ## 4. Conclusion
-In this paper, we have presented a first large-scale study to gain an empirical understanding of OSS developers' live chat. Based on 1,402,894 utterances taken from eight popular communities on Gitter, we explore the temporal communication profiles of developers, the social networks and their properties towards the community, the taxonomy of discussion topics, and the interaction patterns in live chat. Our study reveals a number of interesting findings and implications including:  (1) There are three social patterns in the OSS community of live chat: polaris network, constellation network, and galaxy network. Constellation networks are the most, followed by polaris networks, galaxy networks are the least; (2) Developers are more likely to chat in workdays than weekends, especially in Wednesday and Thursday; (3) Developers are more active from UTC 9 to 10, 13 to 14, and 18 to 21, corresponding to Central European working time and American working time. The low-active time slice for chatting is Central European and American night; (4) Nearly 1/3 dialogs are about API usage. Developers discuss more about errors, unwanted behaviors and do-not-work, than reliability issues, performance issues, and test/build failures; (5) There are six interaction patterns identified in live chat: exploring solution, clarifying answer, clarifying question, direct/discussed answer, self-answered monologue, and unanswered monologue; and (6) We provide guidelines for developers in live chat, highlight advanced features for online communication platform vendors, and provoke insightful future research questions for OSS researchers. In future, we plan to investigate how well can we automatically classify the dialogs into different topics, as well as attempt to construct knowledge bases according to already answered questions and their corresponding solutions from live chat.
+In this paper, we have presented a first large-scale study to gain an empirical understanding of OSS developers' live chat. Based on 1,402,894 utterances taken from eight popular communities on Gitter, we explore the temporal communication profiles of developers, the social networks and their properties towards the community, the taxonomy of discussion topics, and the interaction patterns in live chat. Our study reveals a number of interesting findings and implications including:  (1) There are three social patterns in the OSS community of live chat: polaris network, constellation network, and galaxy network. Constellation networks are the most, followed by polaris networks, galaxy networks are the least; (2) Developers are more likely to chat in workdays than weekends, especially in Wednesday and Thursday; (3) Developers are more active from UTC 9 to 10, 13 to 14, and 18 to 21, corresponding to Central European working time and American working time. The low-active time slice for chatting is Central European and American night; (4) Nearly 1/3 dialogs are about API usage. Developers discuss more about errors, unwanted behaviors and do-not-work, than reliability issues, performance issues, and test/build failures; (5) There are six interaction patterns identified in live chat: exploring solution, clarifying answer, clarifying question, direct/discussed answer, self-answered monologue, and unanswered monologue; and (6) We provide guidelines for developers in live chat, highlight advanced features for online communication platform vendors, and provoke insightful future research questions for OSS researchers. In future, we plan to investigate how well can we automatically classify the dialogs into different topics, as well as attempt to construct knowledge bases according to already answered questions and their corresponding solutions from live chat.<br>
 We hope that the findings and insights that we have uncovered will help drive future research into a more in-depth understanding of OSS development collaboration and a better utilization and mining of knowledge embedded in massive chat history. To facilitate replications or other types of future work, we provide the utterance data and disentangled dialogs used in this study online: https://github.com/LiveChat2021/LiveChat.
 
 
