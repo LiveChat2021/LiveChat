@@ -4,11 +4,11 @@
 &nbsp;&nbsp;[2.1 Research Questions](#21-research-questions)<br>
 &nbsp;&nbsp;[2.2 Our Dataset](#22-our-dataset)<br>
 [3 Results](#3-results)<br>
-&nbsp;&nbsp;[3.1 Experiment on Dialog Disentanglement](31-experiment-on-dialog-disentanglement)<br>
-&nbsp;&nbsp;[3.2 RQ1: Communication Profile](32-rq1-communication-profile)<br>
-&nbsp;&nbsp;[3.3 RQ2: Community Structure](33-rq2-community-structure)<br>
-&nbsp;&nbsp;[3.4 RQ3: Discussion Topic](34-rq3-discussion-topic)<br>
-&nbsp;&nbsp;[3.5 RQ4: Interactive Pattern](35-rq4-interactive-pattern)<br>
+&nbsp;&nbsp;[3.1 Experiment on Dialog Disentanglement](#31-experiment-on-dialog-disentanglement)<br>
+&nbsp;&nbsp;[3.2 RQ1: Communication Profile](#32-rq1-communication-profile)<br>
+&nbsp;&nbsp;[3.3 RQ2: Community Structure](#33-rq2-community-structure)<br>
+&nbsp;&nbsp;[3.4 RQ3: Discussion Topic](#34-rq3-discussion-topic)<br>
+&nbsp;&nbsp;[3.5 RQ4: Interactive Pattern](#35-rq4-interactive-pattern)<br>
 [4 Conclusion](#4-conclusion)<br>
 [5 Download](#5-download)<br>
 
