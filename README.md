@@ -56,6 +56,7 @@
 * Polaris networkis a type of highly centralized network where the community is organized around its single focal point.
 * Constellation network is a type of moderately centralized network where the community is organized around its multiple focal points. 
 * Galaxy network is a type of decentralized network where all individuals in the community have similar relationships.<br>
+
 &ensp;&ensp;The 4 communities on the top (i.e., Angular, DL4J, NodeJS, and Typescript) belong to the constellation network, i.e., moderately centralized network. 3 communities i.e., Appium, Docker, and Gitter) belong to the polaris network, i.e., highly centralized network. The remaining Ethereum community belongs to the galaxy network, i.e., decentralized network.<br>
 &ensp;&ensp;**Answering RQ2**: By visualizing social networks of eight studied communities, we identify three social network structures for developers' live chat. Half of the communities (4/8) are constellation networks. A minority of the communities (3/8) are polaris networks. Only one community belongs to galaxy network. In comparison, we find that developers in live chat may have less influence than developers in email in spreading information, but have a more closely connected community than that from email.
 
