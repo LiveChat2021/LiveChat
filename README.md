@@ -197,11 +197,11 @@
   * `disentangle/`: chat history after disentangling
   * `manual/`: chat history after manual disentangling
 
-[raw(download)](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium.txt): original chat history, including chat logs of the eight Gitter communites, from Angular to Nodejs. <br>
+[raw(download)](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true): original chat history, including chat logs of the eight Gitter communites, from Angular to Nodejs. <br>
 | Project | Size | Download |
-| :-----| ----: | :----: |
-| Angular | 单元格 | 单元格 |
-| Appium | 单元格 | 单元格 |
+| :----:| :----: | :----: |
+| Angular | 单元格 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/angular_angular_chatFormat.ascii.txt?raw=true) |
+| Appium | 单元格 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
 
 disentangle: chat history after disentangling by FF model<br>
 
