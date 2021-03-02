@@ -192,46 +192,46 @@
 &ensp;&ensp;We hope that the findings and insights that we have uncovered will help drive future research into a more in-depth understanding of OSS development collaboration and a better utilization and mining of knowledge embedded in massive chat history. To facilitate replications or other types of future work, we provide the utterance data and disentangled dialogs used in this study online: https://github.com/LiveChat2021/LiveChat.
 
 ## 5 Download
-[Raw(download)](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw.zip?raw=true): original chat history, including chat logs of the eight Gitter communites, from Angular to Typescript. 
+[Raw(Download)](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw.zip?raw=true): original chat history, including chat logs of the eight Gitter communites, from Angular to Typescript. 
 <br>
-| Project | Size(KB) | Download |
+| **Project** | **Size(kb)** | **Download** |
 | :----:| :----: | :----: |
-| Angular | 87,629 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/angular_angular_chatFormat.ascii.txt?raw=true) |
-| Appium | 3,475 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
-| Deeplearning4j | 36,458 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/eclipse_deeplearning4j_chatFormat.ascii.txt?raw=true) |
-| Docker | 3,543 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/docker_docker_chatFormat.ascii.txt?raw=true) |
-| Ethereum | 7,858 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/ethereum_welcome_chatFormat.ascii.txt?raw=true) |
-| Gitter | 1,894 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/gitter_gitter_chatFormat.ascii.txt?raw=true) |
-| Nodejs | 11,029 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/nodejs_node_chatFormat.ascii.txt?raw=true) |
-| Typescript | 22,532 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/Microsoft_Typescript_chatFormat.ascii.txt?raw=true) |
+| Angular | 87,629 | [Download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/angular_angular_chatFormat.ascii.txt?raw=true) |
+| Appium | 3,475 | [Download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
+| Deeplearning4j | 36,458 | [Download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/eclipse_deeplearning4j_chatFormat.ascii.txt?raw=true) |
+| Docker | 3,543 | [Download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/docker_docker_chatFormat.ascii.txt?raw=true) |
+| Ethereum | 7,858 | [Download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/ethereum_welcome_chatFormat.ascii.txt?raw=true) |
+| Gitter | 1,894 | [Download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/gitter_gitter_chatFormat.ascii.txt?raw=true) |
+| Nodejs | 11,029 | [Download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/nodejs_node_chatFormat.ascii.txt?raw=true) |
+| Typescript | 22,532 | [Download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/Microsoft_Typescript_chatFormat.ascii.txt?raw=true) |
 
 
-[Disentangle(download)](https://github.com/LiveChat2021/LiveChat/blob/main/data/disentangle.zip?raw=true): chat history after disentangling by FF model
+[Disentangle(Download)](https://github.com/LiveChat2021/LiveChat/blob/main/data/disentangle.zip?raw=true): chat history after disentangling by FF model
 <br>
-| Project | Size | Download |
+| **Project** | **Number of Dialogs** | **Download** |
 | :----:| :----: | :----: |
-| Angular | 单元格 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/angular_angular_chatFormat.ascii.txt?raw=true) |
-| Appium | 单元格 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
-| Deeplearning4j | 单元格 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
-| Docker | 单元格 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
-| Ethereum | 单元格 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
-| Gitter | 单元格 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
-| Nodejs | 单元格 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
-| Typescript | 单元格 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
+| Angular | 79,619 | [download](https://raw.githubusercontent.com/LiveChat2021/LiveChat/main/data/disentangle/angular_angular.txt) |
+| Appium | 4,906 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
+| Deeplearning4j | 27,256 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
+| Docker | 3,954 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
+| Ethereum | 17,298 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
+| Gitter | 7,452 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
+| Nodejs | 13,981 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
+| Typescript | 18,812 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
 
 
-[Manual(download)](https://github.com/LiveChat2021/LiveChat/blob/main/data/manual.zip?raw=true): chat history after manual disentangling
+[Manual(Download)](https://github.com/LiveChat2021/LiveChat/blob/main/data/manual.zip?raw=true): chat history after manual disentangling
 <br>
-| Project | Size | Download |
+| **Project** | **Number of Dialogs** | **Download** |
 | :----:| :----: | :----: |
-| Angular | 单元格 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/angular_angular_chatFormat.ascii.txt?raw=true) |
-| Appium | 单元格 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
-| Deeplearning4j | 单元格 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
-| Docker | 单元格 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
-| Ethereum | 单元格 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
-| Gitter | 单元格 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
-| Nodejs | 单元格 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
-| Typescript | 单元格 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
+| Angular | 97 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/angular_angular_chatFormat.ascii.txt?raw=true) |
+| Appium | 87 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
+| Deeplearning4j | 100 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
+| Docker | 90 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
+| Ethereum | 96 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
+| Gitter | 86 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
+| Nodejs | 98 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
+| Typescript | 95 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
 <br>
 
 ## 6 References
