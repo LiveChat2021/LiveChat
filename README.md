@@ -192,7 +192,7 @@
 &ensp;&ensp;We hope that the findings and insights that we have uncovered will help drive future research into a more in-depth understanding of OSS development collaboration and a better utilization and mining of knowledge embedded in massive chat history. To facilitate replications or other types of future work, we provide the utterance data and disentangled dialogs used in this study online: https://github.com/LiveChat2021/LiveChat.
 
 ## 5 Download
-[Raw(Download)](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw.zip?raw=true): original chat history, including chat logs of the eight Gitter communites, from Angular to Typescript. 
+[Raw(Download)](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw.zip?raw=true): Original chat history, including chat logs of the eight Gitter communites, from Angular to Typescript. 
 <br>
 | **Project** | **Size(kb)** | **Download** |
 | :----:| :----: | :----: |
@@ -205,33 +205,33 @@
 | Nodejs | 11,029 | [Download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/nodejs_node_chatFormat.ascii.txt?raw=true) |
 | Typescript | 22,532 | [Download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/Microsoft_Typescript_chatFormat.ascii.txt?raw=true) |
 
-
-[Disentangle(Download)](https://github.com/LiveChat2021/LiveChat/blob/main/data/disentangle.zip?raw=true): chat history after disentangling by FF model
+<br>
+[Disentangle(Download)](https://github.com/LiveChat2021/LiveChat/blob/main/data/disentangle.zip?raw=true): Chat history after disentangling by FF model
 <br>
 | **Project** | **Number of Dialogs** | **Download** |
 | :----:| :----: | :----: |
-| Angular | 79,619 | [download](https://raw.githubusercontent.com/LiveChat2021/LiveChat/main/data/disentangle/angular_angular.txt) |
-| Appium | 4,906 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
-| Deeplearning4j | 27,256 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
-| Docker | 3,954 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
-| Ethereum | 17,298 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
-| Gitter | 7,452 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
-| Nodejs | 13,981 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
-| Typescript | 18,812 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
+| Angular | 79,619 | [Download](https://raw.githubusercontent.com/LiveChat2021/LiveChat/main/data/disentangle/angular_angular.txt) |
+| Appium | 4,906 | [Download](https://raw.githubusercontent.com/LiveChat2021/LiveChat/main/data/disentangle/appium_appium.txt) |
+| Deeplearning4j | 27,256 | [Download](https://raw.githubusercontent.com/LiveChat2021/LiveChat/main/data/disentangle/eclipse_deeplearning4j.txt) |
+| Docker | 3,954 | [Download](https://raw.githubusercontent.com/LiveChat2021/LiveChat/main/data/disentangle/docker_docker.txt) |
+| Ethereum | 17,298 | [Download](https://raw.githubusercontent.com/LiveChat2021/LiveChat/main/data/disentangle/ethereum_welcome.txt) |
+| Gitter | 7,452 | [Download](https://raw.githubusercontent.com/LiveChat2021/LiveChat/main/data/disentangle/gitter_gitter.txt) |
+| Nodejs | 13,981 | [Download](https://raw.githubusercontent.com/LiveChat2021/LiveChat/main/data/disentangle/nodejs_node.txt) |
+| Typescript | 18,812 | [Download](https://raw.githubusercontent.com/LiveChat2021/LiveChat/main/data/disentangle/Micro_Typescript.txt) |
+<br>
 
-
-[Manual(Download)](https://github.com/LiveChat2021/LiveChat/blob/main/data/manual.zip?raw=true): chat history after manual disentangling
+[Manual(Download)](https://github.com/LiveChat2021/LiveChat/blob/main/data/manual.zip?raw=true): Chat history after manual disentangling
 <br>
 | **Project** | **Number of Dialogs** | **Download** |
 | :----:| :----: | :----: |
-| Angular | 97 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/angular_angular_chatFormat.ascii.txt?raw=true) |
-| Appium | 87 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
-| Deeplearning4j | 100 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
-| Docker | 90 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
-| Ethereum | 96 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
-| Gitter | 86 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
-| Nodejs | 98 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
-| Typescript | 95 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
+| Angular | 97 | [Download](https://raw.githubusercontent.com/LiveChat2021/LiveChat/main/data/manual/angular.txt) |
+| Appium | 87 | [Download](https://raw.githubusercontent.com/LiveChat2021/LiveChat/main/data/manual/Appium.txt) |
+| Deeplearning4j | 100 | [Download](https://raw.githubusercontent.com/LiveChat2021/LiveChat/main/data/manual/dl4j.txt) |
+| Docker | 90 | [Download](https://raw.githubusercontent.com/LiveChat2021/LiveChat/main/data/manual/docker.txt) |
+| Ethereum | 96 | [Download](https://raw.githubusercontent.com/LiveChat2021/LiveChat/main/data/manual/ethereum.txt) |
+| Gitter | 86 | [Download](https://raw.githubusercontent.com/LiveChat2021/LiveChat/main/data/manual/Gitter.txt) |
+| Nodejs | 98 | [Download](https://raw.githubusercontent.com/LiveChat2021/LiveChat/main/data/manual/nodejs.txt) |
+| Typescript | 95 | [Download](https://raw.githubusercontent.com/LiveChat2021/LiveChat/main/data/manual/Typescript.txt) |
 <br>
 
 ## 6 References
