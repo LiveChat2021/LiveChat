@@ -69,24 +69,24 @@
 <div align=center><img src="https://github.com/LiveChat2021/LiveChat/blob/main/images/donut-sort.png" alt="topic"/></div><br>
 &ensp;&ensp;The above figure shows the ranking of topics. For each topic, we provide an example from the real-world live chat. <br>
 
-* **API usage**: How to know if the keyboard is open or not<br>
+* **API usage: How to know if the keyboard is open or not**<br>
 [2016-12-01 11:32:22] &lt;deepakchoudhury&gt; I have a doubt.hide_keyboard is working great but do you know how to know if the keyboard is open or not<br>
 [2016-12-01 11:32:38] &lt;deepakchoudhury&gt; for andorid app<br>
 [2016-12-01 12:46:38] &lt;pramodnaik&gt; Hi@deepakchoudhury@deepakchoudhury: I don't think u have an option to check if keyboard is opened or not. But u can try catch the hide keyboard. If it throws exception means keyboard is already closed<br>
 [2016-12-01 13:53:26] &lt;deepakchoudhury&gt; Thanks@pramodnaik...its working...<br>
 
-* **Error**: I getError: No such image<br>
+* **Error: I getError: No such image**<br>
 [2016-11-28 21:25:01] &lt;mikewrighton&gt; I getError: No such image, container or task: a9952be2c74f2c6f3a7ae9faf12dc1576367bba5197fe74c243b637289fb653b<br>
 [2016-11-28 21:25:16] &lt;mikewrighton&gt; but an exec id is not an image, container or task<br>
 [2016-11-28 21:26:05] &lt;mikewrighton&gt; so docker inspect, as far as I can tell, does not support quering exec ids<br>
 [2016-11-28 22:53:10] &lt;dragon788&gt; mikewrighton: I think you are correct, inspect is mostly for containers and images<br>
 
-* **Background Info**: If there is some UI and/or orchestrator that allow me to manage multiple cluster in one place<br>
+* **Background Info: If there is some UI and/or orchestrator that allow me to manage multiple cluster in one place**<br>
 [2016-11-30 15:11:51] &lt;jdevillard&gt; Hello, I'm new on docker, I would like to know if there is some UI and/or orchestrator that allow me to manage multiple cluster in one place. I understand that there is many Docker UI available but it seems that it allows to manage only one cluster (or maybe I miss something). Indeed my cluster will be hosted on Azure, in different Vnet and I would like a single interface to manage them all. Do you have any idea?<br>
 [2016-11-30 15:24:18] &lt;marcelmfs&gt; check rancher.com<br>
 [2016-11-30 15:25:30] &lt;jdevillard&gt; interesting thanks@marcelmfs!<br>
 
-* **Unwanted Behavior**： Unexpected balance as 0 for the ethereum walle <br>
+* **Unwanted Behavior： Unexpected balance as 0 for the ethereum walle**<br>
 [2017-02-06 13:47:36] &lt;chafey&gt; I just bought some ethereum from coinbase, but etherscan shows the balance as 0 for the ethereum wallet address coinbase has for me.  Any ideas?<br>
 [2017-02-06 13:49:29] &lt;3esmit&gt; chafey: Takes a minute to update the balance. Check again in a few minutes.<br>
 [2017-02-06 13:51:55] &lt;chafey&gt; Its been about 30 minutes now<br>
@@ -95,16 +95,16 @@
 [2017-02-06 13:54:05] &lt;3esmit&gt; chafey: They keep it internally, you need to call for withdraw in the account, I don't know how to do it but you can ask support for coinbase.<br>
 [2017-02-06 13:55:24] &lt;chafey&gt; I see how to transfer, just surprised they don't actually put it on the network.<br>
 
-* **Learning**: examples for a docker compose to use with php 7, postgresql, mongo e nodejs.<br>
+* **Learning: Examples for a docker compose to use with php 7, postgresql, mongo e nodejs**<br>
 [2016-11-22 13:20:39] &lt;LuizTibo&gt; Hi guys, I need a docker compose to use with php 7, postgresql, mongo e nodejs. Do you have some example?<br>
 [2016-11-22 13:40:58] &lt;marcelmfs&gt; LuizTibo: : [&lt;-LINK-&gt;] <br>
 
-* **Review**: Asking for suggestion about Typescript version for compiling RXJS.<br>
+* **Review: Asking for suggestion about Typescript version for compiling RXJS**<br>
 [2017-02-26 19:45:11] &lt;Deviad&gt; What Typescript version is suggested for compiling  RXJS ?<br>
 [2017-02-26 19:45:20] &lt;Deviad&gt; In order to avoid these issues<br>
 [2017-02-26 20:05:23] &lt;crystalbyte&gt; Deviad: You need core-j s or a similar lib to add Promise support.<br>
 
-* **Social chatting**: Chatting about web developer bootcamp<br>
+* **Social chatting: Chatting about web developer bootcamp**<br>
 [2017-01-03 23:01:04] &lt;timojarv&gt; Dunno, I went with the web developer bootcamp on udemy, I was very happy with it and it was only 15<br>
 [2017-01-03 23:01:15] &lt;timojarv&gt; Now doing advanced react and redux<br>
 [2017-01-03 23:01:51] &lt;AlexandreResende&gt; hmm awesome...<br>
@@ -116,12 +116,12 @@
 [2017-01-04 00:37:57] &lt;IvenOne&gt; ad. everywhere<br>
 [2017-01-04 00:38:10] &lt;IvenOne&gt; awesome<br>
 
-* **General development**: About microsoft languages<br>
+* **General development: About microsoft languages**<br>
 [2017-01-07 07:29:16] &lt;SISheogorath&gt; I don't know all those microsoft languages tends to have ultra long names for their methods and objects<br>
 [2017-01-07 07:29:26] &lt;galvesribeiro&gt; hehehehehe<br>
 [2017-01-07 07:30:17] &lt;SISheogorath&gt; same applies to commandline programs :(dirvsls<br>
 
-* **Do not work**: Code about starting container not working<br>
+* **Do not work: Code about starting container not working**<br>
 [2016-11-21 14:49:22] &lt;sirroland&gt; How I can start nginx and php on starting container?<br>
 [2016-11-21 14:49:44] &lt;sirroland&gt;  [&lt;-CODE-&gt;] not working ((<br>
 [2016-11-21 18:34:59] &lt;killerspaz&gt; krzysztof-magosa: @sirrolandif you want/bin/shto be your interpreter just supply CMD as a quoted array as you have; see: [&lt;-LINK-&gt;] <br>
@@ -129,7 +129,7 @@
 [2016-11-21 18:56:59] &lt;marcfielding1&gt; @sirroland I think you simply need && after the first start so [&lt;-CODE-&gt;] CMD executes a single command so by using && you get it to do both - at least thats my understanding<br>
 [2016-11-21 18:57:13] &lt;marcfielding1&gt; although ideally as has already been mentioned a shell script would be a good idea<br>
 
-* **Reliability Issue**: Frequent disconnects every now and then<br>
+* **Reliability Issue: Frequent disconnects every now and then**<br>
 [2016-12-11 16:14:31] &lt;soumitraj&gt; hi, I just downloaded the MIST clinet and ethereum wallet<br>
 [2016-12-11 16:15:01] &lt;soumitraj&gt; but i observe frequent disconnects every now and then<br>
 [2016-12-11 16:15:21] &lt;soumitraj&gt; My clock is 15.5 seconds behind<br>
@@ -139,13 +139,13 @@
 [2016-12-11 16:29:50] &lt;erastotle&gt; soumitraj: is your NTP service set correctly?  The following page gives some answers on setting NTP server: [&lt;-LINK-&gt;] <br>
 [2016-12-11 16:30:14] &lt;soumitraj&gt; I will check<br>
 
-* **New Features**: Is there a way to set folder ownership on mounted volume?<br>
+* **New Features: Is there a way to set folder ownership on mounted volume?**<br>
 [2016-11-23 08:44:20] &lt;ShurikAg&gt; hi all<br>
 [2016-11-23 08:44:51] &lt;ShurikAg&gt; Is there a way to set folder ownership on mounted volume?<br>
 [2016-11-23 08:45:30] &lt;ShurikAg&gt; Somehow, when I change permissions once, it’s kept on my local docker but not on AWS.<br>
 [2016-11-23 18:08:05] &lt;lucasjahn&gt; ShurikAg: I have a really similar file permission issue. So upvote for any helpful tipp on this :)<br>
 
-* **Performance Issue**:  Implemented word2vec consumes too much resource and my system stop responding <br>
+* **Performance Issue:  Implemented word2vec consumes too much resource and my system stop responding**<br>
 [2016-12-22 05:54:58] &lt;jageshmaharjan&gt; Anyone, implemented the word2vec and plot in a tsne graph .<br>
 [2016-12-22 06:15:27] &lt;agibsonccc&gt; jageshmaharjan:  [&lt;-LINK-&gt;] this is how you save tsne coordinates given a vector<br>
 [2016-12-22 06:15:49] &lt;agibsonccc&gt;  [&lt;-LINK-&gt;] shows how our UI works<br>
@@ -156,14 +156,14 @@
 [2016-12-22 06:21:02] &lt;raver120&gt; jageshmaharjan: Welcome! Here's a link to Deeplearning4j's Gitter Guidelines, our documentation and other DeepLearning resources online. Please explore these and enjoy! [&lt;-LINK-&gt;] <br>
 [2016-12-22 06:21:21] &lt;agibsonccc&gt; yep<br>
 
-* **Design**: Talk through some ideal angular structure perhaps in private<br>
+* **Design: Talk through some ideal angular structure perhaps in private**<br>
 [2016-12-06T12:19:18] &lt;matthewhaworth&gt; Could anyone spare 5 minutes to talk through some ideal angular structure perhaps in private? I could paste it here but I don't want to spam the channel<br>
 
-* **Test/Buid Failure**：Having trouble with Ethereum test network<br>
+* **Test/Buid Failure：Having trouble with Ethereum test network**<br>
 [2016-12-03 07:45:39] &lt;quekyt&gt; is anyone else having trouble with Ethereum test network? nothing is going through..<br>
 [2016-12-04 11:54:04] &lt;im_ankki_twitter&gt; quekyt: I'm working on same lmk if you have any problems regarding test-network<br>
 
-* **API change**: why appium 1.5.3 will not work with my android emulator? <br>
+* **API change: why appium 1.5.3 will not work with my android emulator?**<br>
 [2016-12-30 18:24:58] &lt;blueice349&gt; anyone know why appium 1.5.3 will not work with my android emulator? It worked prior to 1.5.3<br>
 [2016-12-31 07:52:32] &lt;shabinmohan&gt; blueice349: app is nnot launching ?<br>
 [2017-01-02 04:40:27] &lt;blueice349&gt; yes its not I have been trying to firgure out what is wrong<br>
@@ -192,12 +192,21 @@
 &ensp;&ensp;We hope that the findings and insights that we have uncovered will help drive future research into a more in-depth understanding of OSS development collaboration and a better utilization and mining of knowledge embedded in massive chat history. To facilitate replications or other types of future work, we provide the utterance data and disentangled dialogs used in this study online: https://github.com/LiveChat2021/LiveChat.
 
 ## 5 Download
-* `data/`
-  * `raw/`: original chat history
-  * `disentangle/`: chat history after disentangling
-  * `manual/`: chat history after manual disentangling
+[Raw(download)](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw.zip?raw=true): original chat history, including chat logs of the eight Gitter communites, from Angular to Typescript. 
+<br>
+| Project | Size(KB) | Download |
+| :----:| :----: | :----: |
+| Angular | 87,629 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/angular_angular_chatFormat.ascii.txt?raw=true) |
+| Appium | 3,475 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
+| Deeplearning4j | 36,458 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/eclipse_deeplearning4j_chatFormat.ascii.txt?raw=true) |
+| Docker | 3,543 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/docker_docker_chatFormat.ascii.txt?raw=true) |
+| Ethereum | 7,858 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/ethereum_welcome_chatFormat.ascii.txt?raw=true) |
+| Gitter | 1,894 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/gitter_gitter_chatFormat.ascii.txt?raw=true) |
+| Nodejs | 11,029 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/nodejs_node_chatFormat.ascii.txt?raw=true) |
+| Typescript | 22,532 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/Microsoft_Typescript_chatFormat.ascii.txt?raw=true) |
 
-[Raw(download)](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true): original chat history, including chat logs of the eight Gitter communites, from Angular to Typescript. 
+
+[Disentangle(download)](https://github.com/LiveChat2021/LiveChat/blob/main/data/disentangle.zip?raw=true): chat history after disentangling by FF model
 <br>
 | Project | Size | Download |
 | :----:| :----: | :----: |
@@ -211,21 +220,7 @@
 | Typescript | 单元格 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
 
 
-[Disentangle(download)](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true): chat history after disentangling by FF model
-<br>
-| Project | Size | Download |
-| :----:| :----: | :----: |
-| Angular | 单元格 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/angular_angular_chatFormat.ascii.txt?raw=true) |
-| Appium | 单元格 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
-| Deeplearning4j | 单元格 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
-| Docker | 单元格 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
-| Ethereum | 单元格 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
-| Gitter | 单元格 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
-| Nodejs | 单元格 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
-| Typescript | 单元格 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
-
-
-[Manual(download)](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true): chat history after manual disentangling
+[Manual(download)](https://github.com/LiveChat2021/LiveChat/blob/main/data/manual.zip?raw=true): chat history after manual disentangling
 <br>
 | Project | Size | Download |
 | :----:| :----: | :----: |
