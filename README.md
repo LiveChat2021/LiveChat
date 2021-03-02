@@ -197,6 +197,19 @@
   * `disentangle/`: chat history after disentangling
   * `manual/`: chat history after manual disentangling
 
+[raw(download)](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium.txt): original chat history, including chat logs of the eight Gitter communites, from Angular to Nodejs. <br>
+| Project | Size | Download |
+| :-----| ----: | :----: |
+| Angular | 单元格 | 单元格 |
+| Appium | 单元格 | 单元格 |
+
+disentangle: chat history after disentangling by FF model<br>
+
+manual: chat history after manual disentangling<br>
+
+
+
+
 ## 6 References
 [1] Gaoyang Guo, Chaokun Wang, Jun Chen, and Pengcheng Ge. 2018. Who IsAnswering to Whom? Finding “Reply-To” Relations in Group Chats with LongShort-Term Memory Networks. InProceedings of the 7th International Conferenceon Emerging Databases.<br>
 [2] Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2019. BERT:Pre-training of Deep Bidirectional Transformers for Language Understanding. InProceedings of the 2019 Conference of the North American Chapter of the Associationfor Computational Linguistics: Human Language Technologies, NAACL-HLT 2019,Volume 1 (Long and Short Papers). Association for Computational Linguistics,4171–4186.<br>
