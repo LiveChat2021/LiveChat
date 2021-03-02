@@ -197,7 +197,8 @@
   * `disentangle/`: chat history after disentangling
   * `manual/`: chat history after manual disentangling
 
-[Raw(download)](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true): original chat history, including chat logs of the eight Gitter communites, from Angular to Nodejs. <br>
+[Raw(download)](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true): original chat history, including chat logs of the eight Gitter communites, from Angular to Typescript. 
+<br>
 | Project | Size | Download |
 | :----:| :----: | :----: |
 | Angular | 单元格 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/angular_angular_chatFormat.ascii.txt?raw=true) |
@@ -208,8 +209,10 @@
 | Gitter | 单元格 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
 | Nodejs | 单元格 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
 | Typescript | 单元格 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
+
+
+[Disentangle(download)](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true): chat history after disentangling by FF model
 <br>
-[Disentangle(download)](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true): chat history after disentangling by FF model<br>
 | Project | Size | Download |
 | :----:| :----: | :----: |
 | Angular | 单元格 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/angular_angular_chatFormat.ascii.txt?raw=true) |
@@ -220,8 +223,10 @@
 | Gitter | 单元格 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
 | Nodejs | 单元格 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
 | Typescript | 单元格 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
+
+
+[Manual(download)](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true): chat history after manual disentangling
 <br>
-[Manual](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true): chat history after manual disentangling<br>
 | Project | Size | Download |
 | :----:| :----: | :----: |
 | Angular | 单元格 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/angular_angular_chatFormat.ascii.txt?raw=true) |
