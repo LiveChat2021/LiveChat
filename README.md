@@ -66,9 +66,20 @@
 <div align=center><img src="https://github.com/LiveChat2021/LiveChat/blob/main/images/table-topic.png" alt="topic"/></div><br>
 &ensp;&ensp;This table shows the descriptions of categories. The orange cells are decomposed from "Discrepancy", and the green cells are decomposed from "Conceptual". <br>
 <div align=center><img src="https://github.com/LiveChat2021/LiveChat/blob/main/images/donut-sort.png" alt="topic"/></div><br>
-The above figure shows the ranking of topics. For each topic, we provide an example from the real-world live chat. <br>
+&ensp;&ensp;The above figure shows the ranking of topics. For each topic, we provide an example from the real-world live chat. <br>
 
+* API usage: How to know if the keyboard is open or not
+[2016-12-01 11:32:22] <deepakchoudhury> I have a doubt.hide_keyboard is working great but do you know how to know if the keyboard is open or not
+[2016-12-01 11:32:38] <deepakchoudhury> for andorid app
+[2016-12-01 12:46:38] <pramodnaik> Hi@deepakchoudhury@deepakchoudhury: I don't think u have an option to check if keyboard is opened or not. But u can try catch the hide keyboard. If it throws exception means keyboard is already closed
+[2016-12-01 13:53:26] <deepakchoudhury> Thanks@pramodnaik...its working...
 
+* Error: I getError: No such image
+[2016-11-28 21:25:01] <mikewrighton> I getError: No such image, container or task: a9952be2c74f2c6f3a7ae9faf12dc1576367bba5197fe74c243b637289fb653b
+[2016-11-28 21:25:16] <mikewrighton> but an exec id is not an image, container or task
+[2016-11-28 21:26:05] <mikewrighton> so docker inspect, as far as I can tell, does not support quering exec ids
+[2016-11-28 22:53:10] <dragon788> mikewrighton: I think you are correct, inspect is mostly for containers and images
+ 
 &ensp;&ensp;**Answering RQ3**: Developers launch solution-oriented dialogs and problem-oriented dialogs more than knowledge-oriented dialogs. Nearly 1/3 dialogs are about API usage. Developers discuss more about error, unwanted behavior and do-not-work, than reliability issue, performance issue, and test/build failure.
 
 ### 3.5 RQ4: Interactive Pattern
