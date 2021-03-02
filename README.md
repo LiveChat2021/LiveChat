@@ -197,18 +197,42 @@
   * `disentangle/`: chat history after disentangling
   * `manual/`: chat history after manual disentangling
 
-[raw(download)](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true): original chat history, including chat logs of the eight Gitter communites, from Angular to Nodejs. <br>
+[Raw(download)](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true): original chat history, including chat logs of the eight Gitter communites, from Angular to Nodejs. <br>
 | Project | Size | Download |
 | :----:| :----: | :----: |
 | Angular | 单元格 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/angular_angular_chatFormat.ascii.txt?raw=true) |
 | Appium | 单元格 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
-
-disentangle: chat history after disentangling by FF model<br>
-
-manual: chat history after manual disentangling<br>
-
-
-
+| Deeplearning4j | 单元格 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
+| Docker | 单元格 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
+| Ethereum | 单元格 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
+| Gitter | 单元格 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
+| Nodejs | 单元格 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
+| Typescript | 单元格 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
+<br>
+[Disentangle(download)](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true): chat history after disentangling by FF model<br>
+| Project | Size | Download |
+| :----:| :----: | :----: |
+| Angular | 单元格 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/angular_angular_chatFormat.ascii.txt?raw=true) |
+| Appium | 单元格 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
+| Deeplearning4j | 单元格 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
+| Docker | 单元格 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
+| Ethereum | 单元格 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
+| Gitter | 单元格 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
+| Nodejs | 单元格 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
+| Typescript | 单元格 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
+<br>
+[Manual](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true): chat history after manual disentangling<br>
+| Project | Size | Download |
+| :----:| :----: | :----: |
+| Angular | 单元格 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/angular_angular_chatFormat.ascii.txt?raw=true) |
+| Appium | 单元格 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
+| Deeplearning4j | 单元格 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
+| Docker | 单元格 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
+| Ethereum | 单元格 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
+| Gitter | 单元格 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
+| Nodejs | 单元格 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
+| Typescript | 单元格 | [download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
+<br>
 
 ## 6 References
 [1] Gaoyang Guo, Chaokun Wang, Jun Chen, and Pengcheng Ge. 2018. Who IsAnswering to Whom? Finding “Reply-To” Relations in Group Chats with LongShort-Term Memory Networks. InProceedings of the 7th International Conferenceon Emerging Databases.<br>
