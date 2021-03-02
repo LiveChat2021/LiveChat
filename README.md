@@ -70,9 +70,9 @@
 &ensp;&ensp;The above figure shows the ranking of topics. For each topic, we provide an example from the real-world live chat. <br>
 
 * **API usage**: How to know if the keyboard is open or not<br>
-<font color="#385723">[2016-12-01 11:32:22] <deepakchoudhury> I have a doubt.hide_keyboard is working great but do you know how to know if the keyboard is open or not</font><br>
-[2016-12-01 11:32:38] <deepakchoudhury> for andorid app<br>
-<font color="#C55A11">[2016-12-01 12:46:38] <pramodnaik> Hi@deepakchoudhury@deepakchoudhury: I don't think u have an option to check if keyboard is opened or not. But u can try catch the hide keyboard. If it throws exception means keyboard is already closed</font><br>
+<font color=#385723>[2016-12-01 11:32:22] &lt;deepakchoudhury&gt; I have a doubt.hide_keyboard is working great but do you know how to know if the keyboard is open or not</font><br>
+[2016-12-01 11:32:38] &lt;deepakchoudhury&gt; for andorid app<br>
+<font color=#C55A11>[2016-12-01 12:46:38] &lt;pramodnaik&gt; Hi@deepakchoudhury@deepakchoudhury: I don't think u have an option to check if keyboard is opened or not. But u can try catch the hide keyboard. If it throws exception means keyboard is already closed</font><br>
 [2016-12-01 13:53:26] <deepakchoudhury> Thanks@pramodnaik...its working...<br>
 
 * **Error**: I getError: No such image<br>
