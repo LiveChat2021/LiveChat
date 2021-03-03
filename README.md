@@ -43,8 +43,10 @@
 <div align=center><img src="https://github.com/LiveChat2021/LiveChat/blob/main/images/timelag.png" width="400" alt="timelag"/></div><br>
 &ensp;&ensp;This figure exhibits the distribution of response time calculated from the 173,278 dialogs of the eight communities. The average response time is 220 seconds, the maximum time lag is 1,264 seconds, and the minimum time lag is 2 seconds. The peak point is (23, 393), which means there are 393 dialogs got replies in 23 seconds. We can see that, the time lag largely increases from 0 to 23 seconds, and descend in a long tail. 80% of the dialogs get first responses in 343 seconds. As reported by recent study on Stack Overflow, the threshold of fast answers was 439 seconds. In comparison, live chat gets 50% faster ((439-220)/439) replies than the fast answers in Stack Overflow. Therefore, we consider the responses from live chat are relatively fast.<br>
 <br>
+
 | **Answering RQ1: The peak hours for live chat are from UTC 9 to 10, 13 to 14, and 18 to 21, while UTC 1 to 6 is the low-active hours. Developers are more likely to chat in workdays then weekends, especially in Wednesday and Thursday. Moreover, live chat gets 50% faster replies than the fast answers in Stack Overflow.** |
 | :-----|
+
 <br>
 ### 3.3 RQ2: Community Structure
 ![image](https://github.com/LiveChat2021/LiveChat/blob/main/images/table-network.png)<br>
@@ -91,8 +93,10 @@ Nodejs
 &ensp;&ensp;The 4 communities on the top (i.e., Angular, DL4J, NodeJS, and Typescript) belong to the constellation network, i.e., moderately centralized network. 3 communities i.e., Appium, Docker, and Gitter) belong to the polaris network, i.e., highly centralized network. The remaining Ethereum community belongs to the galaxy network, i.e., decentralized network.<br>
 
 <br>
+
 | **Answering RQ2: By visualizing social networks of eight studied communities, we identify three social network structures for developers' live chat. Half of the communities (4/8) are constellation networks. A minority of the communities (3/8) are polaris networks. Only one community belongs to galaxy network. In comparison, we find that developers in live chat may have less influence than developers in email in spreading information, but have a more closely connected community than that from email.** |
 | :-----|
+
 <br>
 
 ### 3.4 RQ3: Discussion Topic
@@ -205,8 +209,10 @@ Nodejs
 [2017-01-02 04:40:32] &lt;blueice349&gt; it works on Android Device<br>
 
 <br>
+
 | **Answering RQ3: Developers launch solution-oriented dialogs and problem-oriented dialogs more than knowledge-oriented dialogs. Nearly 1/3 dialogs are about API usage. Developers discuss more about error, unwanted behavior and do-not-work, than reliability issue, performance issue, and test/build failure.** |
 | :-----|
+
 <br>
 
 ### 3.5 RQ4: Interactive Pattern
@@ -229,8 +235,10 @@ Nodejs
 &ensp;&ensp;The above figure shows the violin plots with thedistribution of duration for each pattern. We can see that althoughP1 takes a small proportion in dialogs, it lasts the longest. Its averageduration is 1.23 hour. P2 and P3 last slightly longer than P4. P5 laststhe shortest, and its average duration is 0.01 hour.<br>
 
 <br>
+
 | **Answering RQ4: Six interaction patterns are identified in live chat: exploring solutions, clarifying answer, clarifying question, direct/discussed answer, self-answered monologue, and unanswered monologue. The direct/discussed answer pattern takes the largest proportions in most of communities. There are still 1/4 dialogs that did not get responses on average. Dialogs belong to Exploring Solutions pattern last the longest time than others. ** |
 | :-----|
+
 <br>
 
 ## 4 Conclusion
