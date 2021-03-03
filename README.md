@@ -45,6 +45,11 @@
 ### 3.3 RQ2: Community Structure
 ![image](https://github.com/LiveChat2021/LiveChat/blob/main/images/table-network.png)<br>
 &ensp;&ensp;This table shows the social network properties of the eight communities. Init.%, Resp.%, and Both% denote the percentage of developers serving the role of dialog initiators, respondents, and both. Intuitively, we consider that respondents share their knowledge to others, while initiators receive knowledge from others. We can see that, the four communities (Appium, Docker, Gitter, and Ethereum) belong to galaxy and polaris networks have higher percentage (75.04%-81.70%) of dialog initiators and lower percentage (18.30%-24.96%) of respondents/both. The high percentage of dialog initiators may relate to the application nature of the open source projects, e.g., Ethereum is one of the most widely open-source blockchain system, thus there is a large number of users acquire technical support from live chat. While the other four communities (Angular, DL4J, Nodejs, and Typescript) have higher percentage (29.94%-48.62%) of respondents/both. A possible explanation is that these four projects are more widely used for development purpose, e.g., angular is a platform for building mobile and desktop web applications, therefore, such communities appear to be knowledge-sharing and collaborative.<br>
+<img width="200"></img>
+Angular
+<img width="200"></img>
+Appium
+<br>
 <img src="https://github.com/LiveChat2021/LiveChat/blob/main/images/RQ1/angular.png" width="400" height="400" alt="angular"/>
 <img src="https://github.com/LiveChat2021/LiveChat/blob/main/images/RQ1/appium.png" width="400" height="400" alt="appium"/><br>
 <img src="https://github.com/LiveChat2021/LiveChat/blob/main/images/RQ1/docker.png" width="400" height="400" alt="docker"/>
@@ -185,6 +190,9 @@
 * P5: Self-answered Monologue. The original questions posted by dialog initiator are answered by himself. 
 * P6: Unanswered Monologue. The original questions posted by dialog initiator are not answered.
 
+<div align=center><img src="https://github.com/LiveChat2021/LiveChat/blob/main/images/duration.png" width="600" alt="duration"/></div><br>
+The above figure shows the violin plots with thedistribution of duration for each pattern. We can see that althoughP1 takes a small proportion in dialogs, it lasts the longest. Its averageduration is 1.23 hour. P2 and P3 last slightly longer than P4. P5 laststhe shortest, and its average duration is 0.01 hour.<br>
+
 &ensp;&ensp;**Answering RQ4**: Six interaction patterns are identified in live chat: exploring solutions, clarifying answer, clarifying question, direct/discussed answer, self-answered monologue, and unanswered monologue. The direct/discussed answer pattern takes the largest proportions in most of communities. There are still 1/4 dialogs that did not get responses on average. Dialogs belong to Exploring Solutions pattern last the longest time than others. 
 
 ## 4 Conclusion
@@ -192,9 +200,9 @@
 &ensp;&ensp;We hope that the findings and insights that we have uncovered will help drive future research into a more in-depth understanding of OSS development collaboration and a better utilization and mining of knowledge embedded in massive chat history. To facilitate replications or other types of future work, we provide the utterance data and disentangled dialogs used in this study online: https://github.com/LiveChat2021/LiveChat.
 
 ## 5 Download
-[Raw(Download)](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw.zip?raw=true): Original chat history, including chat logs of the eight Gitter communites, from Angular to Typescript. 
+[Original chat history (Download all)](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw.zip?raw=true): including <font color='red'>1,402,894</font> utterances of the eight Gitter communites, from Angular to Typescript. 
 <br>
-| **Project** | **Size(kb)** | **Download** |
+| **Project** |       **Size(kb)**      | **Download** |
 | :----:| :----: | :----: |
 | Angular | 87,629 | [Download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/angular_angular_chatFormat.ascii.txt?raw=true) |
 | Appium | 3,475 | [Download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
@@ -206,7 +214,7 @@
 | Typescript | 22,532 | [Download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/Microsoft_Typescript_chatFormat.ascii.txt?raw=true) |
 <br>
 
-[Disentangle(Download)](https://github.com/LiveChat2021/LiveChat/blob/main/data/disentangle.zip?raw=true): Chat history after disentangling by FF model
+[Automatically disentangled dialogs (Download all)](https://github.com/LiveChat2021/LiveChat/blob/main/data/disentangle.zip?raw=true): including 173,278 dialogs disentangled by FF model. 
 <br>
 | **Project** | **Number of Dialogs** | **Download** |
 | :----:| :----: | :----: |
@@ -220,7 +228,7 @@
 | Typescript | 18,812 | [Download](https://raw.githubusercontent.com/LiveChat2021/LiveChat/main/data/disentangle/Micro_Typescript.txt) |
 <br>
 
-[Manual(Download)](https://github.com/LiveChat2021/LiveChat/blob/main/data/manual.zip?raw=true): Chat history after manual disentangling
+[Manually disentangled dialogs (Download all)](https://github.com/LiveChat2021/LiveChat/blob/main/data/manual.zip?raw=true): including 749 dialogs disentangled in a manual way.
 <br>
 | **Project** | **Number of Dialogs** | **Download** |
 | :----:| :----: | :----: |
