@@ -48,7 +48,7 @@
 
 <img width="170"></img>
 Angular
-<img width="300"></img>
+<img width="330"></img>
 Appium
 <br>
 <img src="https://github.com/LiveChat2021/LiveChat/blob/main/images/RQ1/angular.png" width="400" height="400" alt="angular"/>
@@ -56,7 +56,7 @@ Appium
 
 <img width="170"></img>
 Docker
-<img width="300"></img>
+<img width="330"></img>
 Deeplearning4j
 <br>
 <img src="https://github.com/LiveChat2021/LiveChat/blob/main/images/RQ1/docker.png" width="400" height="400" alt="docker"/>
@@ -64,7 +64,7 @@ Deeplearning4j
 
 <img width="170"></img>
 Ethereum
-<img width="300"></img>
+<img width="330"></img>
 Gitter
 <br>
 <img src="https://github.com/LiveChat2021/LiveChat/blob/main/images/RQ1/ethereum.png" width="400" height="400" alt="ethereum"/>
@@ -72,7 +72,7 @@ Gitter
 
 <img width="170"></img>
 Typescript
-<img width="300"></img>
+<img width="330"></img>
 Nodejs
 <br>
 <img src="https://github.com/LiveChat2021/LiveChat/blob/main/images/RQ1/microsoft.png" width="400" height="400" alt="microsoft"/>
@@ -228,7 +228,7 @@ Nodejs
 <br>
 | **Project** |       **Size(kb)**      | **Download** |
 | :----:| :----: | :----: |
-| Angular | 87,629 | [Download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/angular_angular_chatFormat.ascii.txt?raw=true) |
+| Angular | <div style="width: 300pt">87,629</div> | [Download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/angular_angular_chatFormat.ascii.txt?raw=true) |
 | Appium | 3,475 | [Download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
 | Deeplearning4j | 36,458 | [Download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/eclipse_deeplearning4j_chatFormat.ascii.txt?raw=true) |
 | Docker | 3,543 | [Download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/docker_docker_chatFormat.ascii.txt?raw=true) |
@@ -238,7 +238,7 @@ Nodejs
 | Typescript | 22,532 | [Download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/Microsoft_Typescript_chatFormat.ascii.txt?raw=true) |
 <br>
 
-[Automatically disentangled dialogs (Download all)](https://github.com/LiveChat2021/LiveChat/blob/main/data/disentangle.zip?raw=true): including 173,278 dialogs disentangled by FF model. 
+[Automatically disentangled dialogs (Download all)](https://github.com/LiveChat2021/LiveChat/blob/main/data/disentangle.zip?raw=true): including `173,278` dialogs disentangled by FF model. 
 <br>
 | **Project** | **Number of Dialogs** | **Download** |
 | :----:| :----: | :----: |
@@ -252,7 +252,7 @@ Nodejs
 | Typescript | 18,812 | [Download](https://raw.githubusercontent.com/LiveChat2021/LiveChat/main/data/disentangle/Micro_Typescript.txt) |
 <br>
 
-[Manually disentangled dialogs (Download all)](https://github.com/LiveChat2021/LiveChat/blob/main/data/manual.zip?raw=true): including 749 dialogs disentangled in a manual way.
+[Manually disentangled dialogs (Download all)](https://github.com/LiveChat2021/LiveChat/blob/main/data/manual.zip?raw=true): including `749` dialogs disentangled in a manual way.
 <br>
 | **Project** | **Number of Dialogs** | **Download** |
 | :----:| :----: | :----: |
