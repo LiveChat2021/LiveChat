@@ -48,21 +48,33 @@
 
 <img width="170"></img>
 Angular
-<img width="250"></img>
+<img width="300"></img>
 Appium
 <br>
 <img src="https://github.com/LiveChat2021/LiveChat/blob/main/images/RQ1/angular.png" width="400" height="400" alt="angular"/>
 <img src="https://github.com/LiveChat2021/LiveChat/blob/main/images/RQ1/appium.png" width="400" height="400" alt="appium"/><br>
 
-
+<img width="170"></img>
+Docker
+<img width="300"></img>
+Deeplearning4j
+<br>
 <img src="https://github.com/LiveChat2021/LiveChat/blob/main/images/RQ1/docker.png" width="400" height="400" alt="docker"/>
 <img src="https://github.com/LiveChat2021/LiveChat/blob/main/images/RQ1/eclipse.png" width="400" height="400" alt="eclipse"/><br>
 
-
+<img width="170"></img>
+Ethereum
+<img width="300"></img>
+Gitter
+<br>
 <img src="https://github.com/LiveChat2021/LiveChat/blob/main/images/RQ1/ethereum.png" width="400" height="400" alt="ethereum"/>
 <img src="https://github.com/LiveChat2021/LiveChat/blob/main/images/RQ1/gitter.png" width="400" height="400" alt="gitter"/><br>
 
-
+<img width="170"></img>
+Typescript
+<img width="300"></img>
+Nodejs
+<br>
 <img src="https://github.com/LiveChat2021/LiveChat/blob/main/images/RQ1/microsoft.png" width="400" height="400" alt="microsoft"/>
 <img src="https://github.com/LiveChat2021/LiveChat/blob/main/images/RQ1/nodejs.png" width="400" height="400" alt="nodejs"/><br>
 
@@ -212,7 +224,7 @@ Appium
 &ensp;&ensp;We hope that the findings and insights that we have uncovered will help drive future research into a more in-depth understanding of OSS development collaboration and a better utilization and mining of knowledge embedded in massive chat history. To facilitate replications or other types of future work, we provide the utterance data and disentangled dialogs used in this study online: https://github.com/LiveChat2021/LiveChat.
 
 ## 5 Download
-[Original chat history (Download all)](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw.zip?raw=true): including <span style="color: red">1,402,894</span> utterances of the eight Gitter communites, from Angular to Typescript. 
+[Original chat history (Download all)](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw.zip?raw=true): including `1,402,894` utterances of the eight Gitter communites, from Angular to Typescript. 
 <br>
 | **Project** |       **Size(kb)**      | **Download** |
 | :----:| :----: | :----: |
