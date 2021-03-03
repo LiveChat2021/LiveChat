@@ -228,7 +228,7 @@ Nodejs
 <br>
 | **Project** |       **Size(kb)**      | **Download** |
 | :----:| :----: | :----: |
-| Angular | <div style="width: 300pt">87,629</div> | [Download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/angular_angular_chatFormat.ascii.txt?raw=true) |
+| Angular | &nbsp;&nbsp;&nbsp;87,629&nbsp;&nbsp;&nbsp; | [Download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/angular_angular_chatFormat.ascii.txt?raw=true) |
 | Appium | 3,475 | [Download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
 | Deeplearning4j | 36,458 | [Download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/eclipse_deeplearning4j_chatFormat.ascii.txt?raw=true) |
 | Docker | 3,543 | [Download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/docker_docker_chatFormat.ascii.txt?raw=true) |
