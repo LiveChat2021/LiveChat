@@ -91,7 +91,7 @@ Nodejs
 &ensp;&ensp;**Answering RQ2**: By visualizing social networks of eight studied communities, we identify three social network structures for developers' live chat. Half of the communities (4/8) are constellation networks. A minority of the communities (3/8) are polaris networks. Only one community belongs to galaxy network. In comparison, we find that developers in live chat may have less influence than developers in email in spreading information, but have a more closely connected community than that from email.
 
 ### 3.4 RQ3: Discussion Topic
-<div align=center><img src="https://github.com/LiveChat2021/LiveChat/blob/main/images/donut.png" width="600" alt="donut"/></div><br>
+<div align=center><img src="https://github.com/LiveChat2021/LiveChat/blob/main/images/donut.png" width="450" alt="donut"/></div><br>
 &ensp;&ensp;This figure shows the distribution of discussion topics in developer live chat. The figure shows discussion topics in gray and their categories in white, as well as the percentages of the corresponding dialogs. The taxonomy expands outwards from higher level categories to lower level categories and topics.<br>
 <br><br>
 <div align=center><img src="https://github.com/LiveChat2021/LiveChat/blob/main/images/table-topic.png" alt="topic"/></div><br>
@@ -216,8 +216,7 @@ Nodejs
 * **P6: Unanswered Monologue.** The original questions posted by dialog initiator are not answered.
 
 <div align=center><img src="https://github.com/LiveChat2021/LiveChat/blob/main/images/topic-pattern.png" width="600" alt="topic-pattern"/></div><br>
-&ensp;&ensp;The above figure shows the percentage of inter-action patterns in different communities, and the average percent-ages are shown in the legends. We can see that thedirect/discussedanswer(P4) pattern takes the largest proportions in most of commu-nities. In addition, we note that quite a few dialogs (1%) belong to self-answered monologue, while 24% dialogs belong to unansweredmonologue. Nearly 1/4 dialogs did not get responses in live chat.
-
+&ensp;&ensp;The above figure shows the percentage of inter-action patterns in different communities, and the average percent-ages are shown in the legends. We can see that thedirect/discussedanswer(P4) pattern takes the largest proportions in most of commu-nities. In addition, we note that quite a few dialogs (1%) belong to self-answered monologue, while 24% dialogs belong to unansweredmonologue. Nearly 1/4 dialogs did not get responses in live chat.<br>
 <br>
 <div align=center><img src="https://github.com/LiveChat2021/LiveChat/blob/main/images/duration.png" width="600" alt="duration"/></div><br>
 &ensp;&ensp;The above figure shows the violin plots with thedistribution of duration for each pattern. We can see that althoughP1 takes a small proportion in dialogs, it lasts the longest. Its averageduration is 1.23 hour. P2 and P3 last slightly longer than P4. P5 laststhe shortest, and its average duration is 0.01 hour.<br>
