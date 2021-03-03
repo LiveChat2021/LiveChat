@@ -33,11 +33,12 @@
 &ensp;&ensp;The comparison results are shown in the above figure. The FF approach significantly outperforms the others on disentangling developer live chat. We can see that, FF approach achieves high NMI (avg. 0.74 ) and Shen-F scores (avg. 0.81), and medium-level scores on F1 (avg. 0.47) and ARI (avg. 0.57). Therefore, we select the FF model to disentangle all the utterances of the eight projects. Finally, we use the best FF model to disentangle all the 1,402,894 utterances in chat logs. In total, we obtain 173,278 dialogs.
 
 ### 3.2 RQ1: Communication Profile
-<div align=center><img src="https://github.com/LiveChat2021/LiveChat/blob/main/images/hours.png" width="600" alt="hours"/></div><br>
+<div align=center><img src="https://github.com/LiveChat2021/LiveChat/blob/main/images/hours.png" width="500" alt="hours"/></div><br>
 &ensp;&ensp;This figure compares the distribution of utterances intensity over 24 hours, across the 8 communities. First, we identify the peak hours of each community in red dashed circles, then highlight the time windows based on the peak hours contained in it with the yellow shade. We can see that, there are three windows of peak hours, which are from UTC 9 to 10, 13 to 14, and 18 to 21. In addition, UTC 1 to 6 corresponds to the low chatting-activity hours. Developers are less active in chatting at that time.
-<div align=center><img src="https://github.com/LiveChat2021/LiveChat/blob/main/images/days.png" width="600" alt="days"/></div><br>
+<br><br><br>
+<div align=center><img src="https://github.com/LiveChat2021/LiveChat/blob/main/images/days.png" width="500" alt="days"/></div><br>
 &ensp;&ensp;This figure shows the distribution of the utterances across different weekdays. We can see that, developers chat more frequently on workdays than on weekends. Noticeably, more developer live chatting happens on Wednesdays and Thursdays than on other weekdays, which possibly corresponds to communication, coordination, and preparation for integration/release/deadline on Fridays.<br>
-<div align=center><img src="https://github.com/LiveChat2021/LiveChat/blob/main/images/timelag.png" width="600" alt="timelag"/></div><br>
+<div align=center><img src="https://github.com/LiveChat2021/LiveChat/blob/main/images/timelag.png" width="500" alt="timelag"/></div><br>
 &ensp;&ensp;This figure exhibits the distribution of response time calculated from the 173,278 dialogs of the eight communities. The average response time is 220 seconds, the maximum time lag is 1,264 seconds, and the minimum time lag is 2 seconds. The peak point is (23, 393), which means there are 393 dialogs got replies in 23 seconds. We can see that, the time lag largely increases from 0 to 23 seconds, and descend in a long tail. 80% of the dialogs get first responses in 343 seconds. As reported by recent study on Stack Overflow, the threshold of fast answers was 439 seconds. In comparison, live chat gets 50% faster ((439-220)/439) replies than the fast answers in Stack Overflow. Therefore, we consider the responses from live chat are relatively fast.<br>
 
 &ensp;&ensp;**Answering RQ1**: The peak hours for live chat are from UTC 9 to 10, 13 to 14, and 18 to 21, while UTC 1 to 6 is the low-active hours. Developers are more likely to chat in workdays then weekends, especially in Wednesday and Thursday. Moreover, live chat gets 50% faster replies than the fast answers in Stack Overflow.
@@ -204,12 +205,12 @@ Nodejs
 <div align=center><img src="https://github.com/LiveChat2021/LiveChat/blob/main/images/table-intent.png" alt="intent"/></div><br>
 &ensp;&ensp;In this work, we identify the following six interaction patterns:<br>
 
-* P1: Exploring Solutions. Given the original questions posted by dialog initiator, other developers provide possible answers. But the initiator gives negative feedback indicating these answers do not address the question. When the correct answer is posted, the initiator gives positive feedback and end the dialog. 
-* P2: Clarifying Answer. Given the original questions posted by dialog initiator, other developer provides a possible answer. Then the initiator posts follow-up questions to clarify the answer until the initiator fully understands. 
-* P3: Clarifying Question. Given the original questions posted by dialog initiator, the respondent requires the initiator to clarify the question in more details until he fully understands. Then the respondent posts his answer, and the initiator gives feedback or greetings.
-* P4: Direct/Discussed Answer. Given the original questions posted by dialog initiator, the respondent directly gives an answer, or gives the answer after an internal discussion.  
-* P5: Self-answered Monologue. The original questions posted by dialog initiator are answered by himself. 
-* P6: Unanswered Monologue. The original questions posted by dialog initiator are not answered.
+* **P1: Exploring Solutions.** Given the original questions posted by dialog initiator, other developers provide possible answers. But the initiator gives negative feedback indicating these answers do not address the question. When the correct answer is posted, the initiator gives positive feedback and end the dialog. 
+* **P2: Clarifying Answer.** Given the original questions posted by dialog initiator, other developer provides a possible answer. Then the initiator posts follow-up questions to clarify the answer until the initiator fully understands. 
+* **P3: Clarifying Question.** Given the original questions posted by dialog initiator, the respondent requires the initiator to clarify the question in more details until he fully understands. Then the respondent posts his answer, and the initiator gives feedback or greetings.
+* **P4: Direct/Discussed Answer.** Given the original questions posted by dialog initiator, the respondent directly gives an answer, or gives the answer after an internal discussion.  
+* **P5: Self-answered Monologue.** The original questions posted by dialog initiator are answered by himself. 
+* **P6: Unanswered Monologue.** The original questions posted by dialog initiator are not answered.
 
 <div align=center><img src="https://github.com/LiveChat2021/LiveChat/blob/main/images/topic-pattern.png" width="600" alt="topic-pattern"/></div><br>
 &ensp;&ensp;The above figure shows the percentage of inter-action patterns in different communities, and the average percent-ages are shown in the legends. We can see that thedirect/discussedanswer(P4) pattern takes the largest proportions in most of commu-nities. In addition, we note that quite a few dialogs (1%) belong to self-answered monologue, while 24% dialogs belong to unansweredmonologue. Nearly 1/4 dialogs did not get responses in live chat.
