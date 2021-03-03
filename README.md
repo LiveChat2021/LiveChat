@@ -47,7 +47,6 @@
 | **Answering RQ1: The peak hours for live chat are from UTC 9 to 10, 13 to 14, and 18 to 21, while UTC 1 to 6 is the low-active hours. Developers are more likely to chat in workdays then weekends, especially in Wednesday and Thursday. Moreover, live chat gets 50% faster replies than the fast answers in Stack Overflow.** |
 | :-----|
 
-<br>
 ### 3.3 RQ2: Community Structure
 ![image](https://github.com/LiveChat2021/LiveChat/blob/main/images/table-network.png)<br>
 &ensp;&ensp;This table shows the social network properties of the eight communities. Init.%, Resp.%, and Both% denote the percentage of developers serving the role of dialog initiators, respondents, and both. Intuitively, we consider that respondents share their knowledge to others, while initiators receive knowledge from others. We can see that, the four communities (Appium, Docker, Gitter, and Ethereum) belong to galaxy and polaris networks have higher percentage (75.04%-81.70%) of dialog initiators and lower percentage (18.30%-24.96%) of respondents/both. The high percentage of dialog initiators may relate to the application nature of the open source projects, e.g., Ethereum is one of the most widely open-source blockchain system, thus there is a large number of users acquire technical support from live chat. While the other four communities (Angular, DL4J, Nodejs, and Typescript) have higher percentage (29.94%-48.62%) of respondents/both. A possible explanation is that these four projects are more widely used for development purpose, e.g., angular is a platform for building mobile and desktop web applications, therefore, such communities appear to be knowledge-sharing and collaborative.<br>
@@ -96,8 +95,6 @@ Nodejs
 
 | **Answering RQ2: By visualizing social networks of eight studied communities, we identify three social network structures for developers' live chat. Half of the communities (4/8) are constellation networks. A minority of the communities (3/8) are polaris networks. Only one community belongs to galaxy network. In comparison, we find that developers in live chat may have less influence than developers in email in spreading information, but have a more closely connected community than that from email.** |
 | :-----|
-
-<br>
 
 ### 3.4 RQ3: Discussion Topic
 <div align=center><img src="https://github.com/LiveChat2021/LiveChat/blob/main/images/donut.png" width="450" alt="donut"/></div><br>
@@ -213,8 +210,6 @@ Nodejs
 | **Answering RQ3: Developers launch solution-oriented dialogs and problem-oriented dialogs more than knowledge-oriented dialogs. Nearly 1/3 dialogs are about API usage. Developers discuss more about error, unwanted behavior and do-not-work, than reliability issue, performance issue, and test/build failure.** |
 | :-----|
 
-<br>
-
 ### 3.5 RQ4: Interactive Pattern
 <div align=center><img src="https://github.com/LiveChat2021/LiveChat/blob/main/images/patterns.png" width="600" alt="patterns"/></div><br>
 &ensp;&ensp;This figure illustrates the six interaction patterns in live chat, constructed using open card sorting. This figure shows dialog initiators in blue nodes, respondents in yellow nodes. The lines denote the reply-to relationships, and the labels represent developer intents in this table.<br>
@@ -238,8 +233,6 @@ Nodejs
 
 | **Answering RQ4: Six interaction patterns are identified in live chat: exploring solutions, clarifying answer, clarifying question, direct/discussed answer, self-answered monologue, and unanswered monologue. The direct/discussed answer pattern takes the largest proportions in most of communities. There are still 1/4 dialogs that did not get responses on average. Dialogs belong to Exploring Solutions pattern last the longest time than others. ** |
 | :-----|
-
-<br>
 
 ## 4 Conclusion
 &ensp;&ensp;In this paper, we have presented a first large-scale study to gain an empirical understanding of OSS developers' live chat. Based on 1,402,894 utterances taken from eight popular communities on Gitter, we explore the temporal communication profiles of developers, the social networks and their properties towards the community, the taxonomy of discussion topics, and the interaction patterns in live chat. Our study reveals a number of interesting findings and implications including:<br>
