@@ -226,7 +226,7 @@ Nodejs
 ## 5 Download
 [Original chat history (Download all)](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw.zip?raw=true): including `1,402,894` utterances of the eight Gitter communites, from Angular to Typescript. 
 <br>
-| **Project** |       **Size(kb)**      | **Download** |
+| **Project** | <img width="200">**Size(kb)**</img>      | **Download** |
 | :----:| :----: | :----: |
 | Angular | &nbsp;&nbsp;&nbsp;87,629&nbsp;&nbsp;&nbsp; | [Download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/angular_angular_chatFormat.ascii.txt?raw=true) |
 | Appium | 3,475 | [Download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/appium_appium_chatFormat.ascii.txt?raw=true) |
