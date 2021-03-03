@@ -48,7 +48,7 @@
 | :-----|
 
 ### 3.3 RQ2: Community Structure
-![image](https://github.com/LiveChat2021/LiveChat/blob/main/images/table-network.png)<br>
+<div align=center><img src="https://github.com/LiveChat2021/LiveChat/blob/main/images/table-network.png" width="600" alt="network"/></div><br>
 &ensp;&ensp;This table shows the social network properties of the eight communities. Init.%, Resp.%, and Both% denote the percentage of developers serving the role of dialog initiators, respondents, and both. Intuitively, we consider that respondents share their knowledge to others, while initiators receive knowledge from others. We can see that, the four communities (Appium, Docker, Gitter, and Ethereum) belong to galaxy and polaris networks have higher percentage (75.04%-81.70%) of dialog initiators and lower percentage (18.30%-24.96%) of respondents/both. The high percentage of dialog initiators may relate to the application nature of the open source projects, e.g., Ethereum is one of the most widely open-source blockchain system, thus there is a large number of users acquire technical support from live chat. While the other four communities (Angular, DL4J, Nodejs, and Typescript) have higher percentage (29.94%-48.62%) of respondents/both. A possible explanation is that these four projects are more widely used for development purpose, e.g., angular is a platform for building mobile and desktop web applications, therefore, such communities appear to be knowledge-sharing and collaborative.<br>
 
 <img width="170"></img>
