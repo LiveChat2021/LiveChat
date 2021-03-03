@@ -224,7 +224,7 @@ Nodejs
 &ensp;&ensp;We hope that the findings and insights that we have uncovered will help drive future research into a more in-depth understanding of OSS development collaboration and a better utilization and mining of knowledge embedded in massive chat history. To facilitate replications or other types of future work, we provide the utterance data and disentangled dialogs used in this study online: https://github.com/LiveChat2021/LiveChat.
 
 ## 5 Download
-[Original chat history (Download all)](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw.zip?raw=true): including `1,402,894` utterances of the eight Gitter communites, from Angular to Typescript. 
+[Original chat history (Download all)](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw.zip?raw=true): including **`1,402,894`** utterances of the eight Gitter communites, from Angular to Typescript. 
 <br>
 | **Project** | <img width="40"></img>**Size(kb)**<img width="40"></img>      | **Download** |
 | :----:| :----: | :----: |
@@ -238,7 +238,7 @@ Nodejs
 | Typescript | 22,532 | [Download](https://github.com/LiveChat2021/LiveChat/blob/main/data/raw/Microsoft_Typescript_chatFormat.ascii.txt?raw=true) |
 <br>
 
-[Automatically disentangled dialogs (Download all)](https://github.com/LiveChat2021/LiveChat/blob/main/data/disentangle.zip?raw=true): including `173,278` dialogs disentangled by FF model. 
+[Automatically disentangled dialogs (Download all)](https://github.com/LiveChat2021/LiveChat/blob/main/data/disentangle.zip?raw=true): including **`173,278`** dialogs disentangled by FF model. 
 <br>
 | **Project** | **Number of Dialogs** | **Download** |
 | :----:| :----: | :----: |
@@ -252,7 +252,7 @@ Nodejs
 | Typescript | 18,812 | [Download](https://raw.githubusercontent.com/LiveChat2021/LiveChat/main/data/disentangle/Micro_Typescript.txt) |
 <br>
 
-[Manually disentangled dialogs (Download all)](https://github.com/LiveChat2021/LiveChat/blob/main/data/manual.zip?raw=true): including `749` dialogs disentangled in a manual way.
+[Manually disentangled dialogs (Download all)](https://github.com/LiveChat2021/LiveChat/blob/main/data/manual.zip?raw=true): including **`749`** dialogs disentangled in a manual way.
 <br>
 | **Project** | **Number of Dialogs** | **Download** |
 | :----:| :----: | :----: |
