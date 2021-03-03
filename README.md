@@ -231,7 +231,7 @@ Nodejs
 
 <br>
 
-| **Answering RQ4: Six interaction patterns are identified in live chat: exploring solutions, clarifying answer, clarifying question, direct/discussed answer, self-answered monologue, and unanswered monologue. The direct/discussed answer pattern takes the largest proportions in most of communities. There are still 1/4 dialogs that did not get responses on average. Dialogs belong to Exploring Solutions pattern last the longest time than others. ** |
+| **Answering RQ4: Six interaction patterns are identified in live chat: exploring solutions, clarifying answer, clarifying question, direct/discussed answer, self-answered monologue, and unanswered monologue. The direct/discussed answer pattern takes the largest proportions in most of communities. There are still 1/4 dialogs that did not get responses on average. Dialogs belong to Exploring Solutions pattern last the longest time than others.** |
 | :-----|
 
 ## 4 Conclusion
