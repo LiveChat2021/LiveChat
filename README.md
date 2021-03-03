@@ -25,6 +25,7 @@
 
 ### 2.2 Our Dataset
 ![image](https://github.com/LiveChat2021/LiveChat/blob/main/images/table-ourdata.png)<br>
+&ensp;&ensp;The above table shows the statistics about eight selected communities, and the retrieved dataset contains all utterances as of “2020-11-20”. P refers to the num-ber of participants, D refers to the number of dialogs, and U refers to the number of utterances. The total number of participants for the eight communities is 95,416, accounting for 13% of the totalpopulation in Gitter. Thus, we consider that the eight communitiesare representative in the Gitter platform.<br>
 
 ## 3 Results
 ### 3.1 Experiment on Dialog Disentanglement
@@ -33,12 +34,13 @@
 &ensp;&ensp;The comparison results are shown in the above figure. The FF approach significantly outperforms the others on disentangling developer live chat. We can see that, FF approach achieves high NMI (avg. 0.74 ) and Shen-F scores (avg. 0.81), and medium-level scores on F1 (avg. 0.47) and ARI (avg. 0.57). Therefore, we select the FF model to disentangle all the utterances of the eight projects. Finally, we use the best FF model to disentangle all the 1,402,894 utterances in chat logs. In total, we obtain 173,278 dialogs.
 
 ### 3.2 RQ1: Communication Profile
-<div align=center><img src="https://github.com/LiveChat2021/LiveChat/blob/main/images/hours.png" width="500" alt="hours"/></div><br>
+<div align=center><img src="https://github.com/LiveChat2021/LiveChat/blob/main/images/hours.png" width="400" alt="hours"/></div><br>
 &ensp;&ensp;This figure compares the distribution of utterances intensity over 24 hours, across the 8 communities. First, we identify the peak hours of each community in red dashed circles, then highlight the time windows based on the peak hours contained in it with the yellow shade. We can see that, there are three windows of peak hours, which are from UTC 9 to 10, 13 to 14, and 18 to 21. In addition, UTC 1 to 6 corresponds to the low chatting-activity hours. Developers are less active in chatting at that time.
-<br><br><br>
-<div align=center><img src="https://github.com/LiveChat2021/LiveChat/blob/main/images/days.png" width="500" alt="days"/></div><br>
+<br><br>
+<div align=center><img src="https://github.com/LiveChat2021/LiveChat/blob/main/images/days.png" width="400" alt="days"/></div><br>
 &ensp;&ensp;This figure shows the distribution of the utterances across different weekdays. We can see that, developers chat more frequently on workdays than on weekends. Noticeably, more developer live chatting happens on Wednesdays and Thursdays than on other weekdays, which possibly corresponds to communication, coordination, and preparation for integration/release/deadline on Fridays.<br>
-<div align=center><img src="https://github.com/LiveChat2021/LiveChat/blob/main/images/timelag.png" width="500" alt="timelag"/></div><br>
+<br><br>
+<div align=center><img src="https://github.com/LiveChat2021/LiveChat/blob/main/images/timelag.png" width="400" alt="timelag"/></div><br>
 &ensp;&ensp;This figure exhibits the distribution of response time calculated from the 173,278 dialogs of the eight communities. The average response time is 220 seconds, the maximum time lag is 1,264 seconds, and the minimum time lag is 2 seconds. The peak point is (23, 393), which means there are 393 dialogs got replies in 23 seconds. We can see that, the time lag largely increases from 0 to 23 seconds, and descend in a long tail. 80% of the dialogs get first responses in 343 seconds. As reported by recent study on Stack Overflow, the threshold of fast answers was 439 seconds. In comparison, live chat gets 50% faster ((439-220)/439) replies than the fast answers in Stack Overflow. Therefore, we consider the responses from live chat are relatively fast.<br>
 
 &ensp;&ensp;**Answering RQ1**: The peak hours for live chat are from UTC 9 to 10, 13 to 14, and 18 to 21, while UTC 1 to 6 is the low-active hours. Developers are more likely to chat in workdays then weekends, especially in Wednesday and Thursday. Moreover, live chat gets 50% faster replies than the fast answers in Stack Overflow.
@@ -91,6 +93,7 @@ Nodejs
 ### 3.4 RQ3: Discussion Topic
 <div align=center><img src="https://github.com/LiveChat2021/LiveChat/blob/main/images/donut.png" width="600" alt="donut"/></div><br>
 &ensp;&ensp;This figure shows the distribution of discussion topics in developer live chat. The figure shows discussion topics in gray and their categories in white, as well as the percentages of the corresponding dialogs. The taxonomy expands outwards from higher level categories to lower level categories and topics.<br>
+<br><br>
 <div align=center><img src="https://github.com/LiveChat2021/LiveChat/blob/main/images/table-topic.png" alt="topic"/></div><br>
 &ensp;&ensp;This table shows the descriptions of categories. The orange cells are decomposed from "Discrepancy", and the green cells are decomposed from "Conceptual". <br>
 <div align=center><img src="https://github.com/LiveChat2021/LiveChat/blob/main/images/donut-sort.png" alt="topic"/></div><br>
@@ -215,6 +218,7 @@ Nodejs
 <div align=center><img src="https://github.com/LiveChat2021/LiveChat/blob/main/images/topic-pattern.png" width="600" alt="topic-pattern"/></div><br>
 &ensp;&ensp;The above figure shows the percentage of inter-action patterns in different communities, and the average percent-ages are shown in the legends. We can see that thedirect/discussedanswer(P4) pattern takes the largest proportions in most of commu-nities. In addition, we note that quite a few dialogs (1%) belong to self-answered monologue, while 24% dialogs belong to unansweredmonologue. Nearly 1/4 dialogs did not get responses in live chat.
 
+<br><br>
 <div align=center><img src="https://github.com/LiveChat2021/LiveChat/blob/main/images/duration.png" width="600" alt="duration"/></div><br>
 &ensp;&ensp;The above figure shows the violin plots with thedistribution of duration for each pattern. We can see that althoughP1 takes a small proportion in dialogs, it lasts the longest. Its averageduration is 1.23 hour. P2 and P3 last slightly longer than P4. P5 laststhe shortest, and its average duration is 0.01 hour.<br>
 
