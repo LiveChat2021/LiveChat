@@ -23,14 +23,14 @@ highlight desired features for platform vendors, and shed light on future resear
 
 ## 2 Study Design
 ### 2.1 Research Questions
-* RQ1 (Communication Habits): Are there common habits in developers' usage of live-chatting? 
-* RQ2 (Community Structure): What are the structural characteristics of social network built from developer live chat data? 
-* RQ3 (Dialog Topic): What are the primary topic types frequently discussed by developer in live chat? 
-* RQ4 (Interaction Pattern): How developers interact with each other? 
+* RQ1 (Communication Habits): Do Gitter communities demonstrate consistent community communication profiles?
+* RQ2 (Community Structure): What are the structural characteristics of social networks built from developer live chat data? 
+* RQ3 (Dialog Topic): What are the primary topic types frequently discussed by developers in live chat?
+* RQ4 (Interaction Pattern): How do developers typically interact with each other in live chat?
 
 ### 2.2 Our Dataset
 ![image](https://github.com/LiveChat2021/LiveChat/blob/main/images/table-ourdata.png)<br>
-&ensp;&ensp;The above table shows the statistics about eight selected communities, and the retrieved dataset contains all utterances as of “2020-11-20”. P refers to the num-ber of participants, D refers to the number of dialogs, and U refers to the number of utterances. The total number of participants for the eight communities is 95,416, accounting for 13% of the totalpopulation in Gitter. Thus, we consider that the eight communitiesare representative in the Gitter platform.<br>
+&ensp;&ensp;The above table shows the statistics about eight selected communities, and the retrieved dataset contains all utterances as of “2020-11-20”. P refers to the number of participants, D refers to the number of dialogs, and U refers to the number of utterances. The total number of participants for the eight communities is 95,416, accounting for 13% of the totalpopulation in Gitter. Thus, we consider that the eight communities are representative in the Gitter platform.<br>
 
 ## 3 Results
 ### 3.1 Experiment on Dialog Disentanglement
@@ -70,7 +70,7 @@ Docker
 Deeplearning4j
 <br>
 <img src="https://github.com/LiveChat2021/LiveChat/blob/main/images/RQ1/docker.png" width="400" height="400" alt="docker"/>
-<img src="https://github.com/LiveChat2021/LiveChat/blob/main/images/RQ1/dl4j.png" width="400" height="400" alt="eclipse"/><br>
+<img src="https://github.com/LiveChat2021/LiveChat/blob/main/images/RQ1/dl4j.png" width="400" height="400" alt="deeplearning4j"/><br>
 
 <img width="170"></img>
 Ethereum
@@ -85,7 +85,7 @@ Typescript
 <img width="330"></img>
 Nodejs
 <br>
-<img src="https://github.com/LiveChat2021/LiveChat/blob/main/images/RQ1/microsoft.png" width="400" height="400" alt="microsoft"/>
+<img src="https://github.com/LiveChat2021/LiveChat/blob/main/images/RQ1/typescript.png" width="400" height="400" alt="typescript"/>
 <img src="https://github.com/LiveChat2021/LiveChat/blob/main/images/RQ1/nodejs.png" width="400" height="400" alt="nodejs"/><br>
 
 
