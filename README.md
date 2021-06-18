@@ -236,7 +236,7 @@ Nodejs
 &ensp;&ensp;The above figure shows the violin plots with the distribution of duration for each pattern. P1-P5 refer to interaction patterns defined above. Here we only exhibit five patterns because the P6 refers to unanswered monologues which barely have a duration. We can see that although P1 takes a small proportion in dialogs, it lasts the longest. Its average duration is 1.00 hours. P2 and P3 last slightly longer than P4. P5 lasts the shortest, and its average duration is 0.02 hour. <br>
 <br>
 
-| **Answering RQ4: Six interaction patterns are identified in live chat: exploring solutions, clarifying answer, clarifying question, direct/discussed answer, self-answered monologue, and unanswered monologue. The direct/discussed answer pattern takes the largest proportions in most communities. There are still 1/4 dialogs that did not get responses on average. Dialogs that belong to the Exploring Solutions pattern last the longest time than others. ** |
+| **Answering RQ4: Six interaction patterns are identified in live chat: exploring solutions, clarifying answer, clarifying question, direct/discussed answer, self-answered monologue, and unanswered monologue. The direct/discussed answer pattern takes the largest proportions in most communities. There are still 1/4 dialogs that did not get responses on average. Dialogs that belong to the Exploring Solutions pattern last the longest time than others.** |
 | :-----|
 
 ## 4 Conclusion
