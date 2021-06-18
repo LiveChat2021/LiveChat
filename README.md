@@ -95,9 +95,7 @@ Nodejs
 * **Constellation network** is a type of moderately centralized network where the community is organized around its multiple focal points. 
 * **Galaxy network** is a type of decentralized network where all individuals in the community have similar relationships.<br>
 
-&ensp;&ensp;The 4 communities on the top (i.e., Angular, DL4J, NodeJS, and Typescript) belong to the constellation network, i.e., moderately centralized network. 3 communities i.e., Appium, Docker, and Gitter) belong to the polaris network, i.e., highly centralized network. The remaining Ethereum community belongs to the galaxy network, i.e., decentralized network.<br>
-
-&ensp;&ensp;The four communities on the top (i.e., Angular, DL4J, NodeJS, and Typescript) belong to the Constellation network, i.e., moderately centralized network. Three communities(i.e., Appium, Docker, and Gitter) belong to the Polaris network, i.e., a highly centralized network. The remaining Ethereum community belongs to the Galaxy network, i.e., decentralized network.  
+&ensp;&ensp;The four communities on the top (i.e., Angular, DL4J, NodeJS, and Typescript) belong to the Constellation network, i.e., moderately centralized network. Three communities(i.e., Appium, Docker, and Gitter) belong to the Polaris network, i.e., a highly centralized network. The remaining Ethereum community belongs to the Galaxy network, i.e., decentralized network.<br>
 
 <br>
 
@@ -106,7 +104,7 @@ Nodejs
 
 ### 3.4 RQ3: Discussion Topic
 <div align=center><img src="https://github.com/LiveChat2021/LiveChat/blob/main/images/donut.png" width="450" alt="donut"/></div><br>
-&ensp;&ensp;This figure shows the distribution of discussion topics in developer live chat. The figure shows discussion topics in gray and their categories in white, as well as the percentages of the corresponding dialogs. The taxonomy expands outwards from higher level categories to lower level categories and topics.<br>
+&ensp;&ensp;This figure shows the distribution of discussion topics in developer live chat. The figure shows discussion topics in gray and their categories in white, as well as the percentages of the corresponding dialogs. The taxonomy expands outwards from higher-level categories to lower-level categories and topics.<br>
 <br><br>
 <div align=center><img src="https://github.com/LiveChat2021/LiveChat/blob/main/images/table-topic.png" alt="topic"/></div><br>
 &ensp;&ensp;This table shows the descriptions of categories. The orange cells are decomposed from "Discrepancy", and the green cells are decomposed from "Conceptual". <br>
@@ -215,7 +213,7 @@ Nodejs
 
 <br>
 
-| **Answering RQ3: Developers launch solution-oriented dialogs and problem-oriented dialogs more than knowledge-oriented dialogs. Nearly 1/3 dialogs are about API usage. Developers discuss more about error, unwanted behavior and do-not-work, than reliability issue, performance issue, and test/build failure.** |
+| **Answering RQ3: Developers launch solution-oriented dialogs and problem-oriented dialogs more than knowledge-oriented dialogs. Nearly 1/3 of dialogs are about API usage. Developers discuss more error, unwanted behavior, and do-not-work, than reliability issues, performance issues, and test/build failures.** |
 | :-----|
 
 ### 3.5 RQ4: Interactive Pattern
