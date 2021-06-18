@@ -222,22 +222,22 @@ Nodejs
 <div align=center><img src="https://github.com/LiveChat2021/LiveChat/blob/main/images/table-intent.png" alt="intent"/></div><br>
 &ensp;&ensp;In this work, we identify the following six interaction patterns:<br>
 
-* **P1: Exploring Solutions.** Given the original questions posted by dialog initiator, other developers provide possible answers. But the initiator gives negative feedback indicating these answers do not address the question. When the correct answer is posted, the initiator gives positive feedback and end the dialog. 
-* **P2: Clarifying Answer.** Given the original questions posted by dialog initiator, other developer provides a possible answer. Then the initiator posts follow-up questions to clarify the answer until the initiator fully understands. 
-* **P3: Clarifying Question.** Given the original questions posted by dialog initiator, the respondent requires the initiator to clarify the question in more details until he fully understands. Then the respondent posts his answer, and the initiator gives feedback or greetings.
-* **P4: Direct/Discussed Answer.** Given the original questions posted by dialog initiator, the respondent directly gives an answer, or gives the answer after an internal discussion.  
-* **P5: Self-answered Monologue.** The original questions posted by dialog initiator are answered by himself. 
-* **P6: Unanswered Monologue.** The original questions posted by dialog initiator are not answered.
+* **P1: Exploring Solutions.** Given the original questions posted by the dialog initiator, other developers provide possible answers. But the initiator gives negative feedback indicating these answers do not address the question. When the correct answer is posted, the initiator gives positive feedback and ends the dialog. 
+* **P2: Clarifying Answer.** Given the original questions posted by the dialog initiator, another developer provides a possible answer. Then the initiator posts follow-up questions to clarify the answer until the initiator fully understands. 
+* **P3: Clarifying Question.** Given the original questions posted by the dialog initiator, the respondent requires the initiator to clarify the question in more detail until they fully understand. Then the respondent posts an answer, and the initiator gives feedback or greetings.
+* **P4: Direct/Discussed Answer.** Given the original questions posted by the dialog initiator, the respondent directly answers, or answers after an internal discussion.    
+* **P5: Self-answered Monologue.** The original questions posted by the dialog initiator are answered by himself or herself. 
+* **P6: Unanswered Monologue.** The original questions posted by the dialog initiator are not answered. 
 
 <div align=center><img src="https://github.com/LiveChat2021/LiveChat/blob/main/images/topic-pattern.png" width="600" alt="topic-pattern"/></div><br>
-&ensp;&ensp;The above figure shows the percentage of inter-action patterns in different communities, and the average percent-ages are shown in the legends. We can see that thedirect/discussedanswer(P4) pattern takes the largest proportions in most of commu-nities. In addition, we note that quite a few dialogs (1%) belong to self-answered monologue, while 24% dialogs belong to unansweredmonologue. Nearly 1/4 dialogs did not get responses in live chat.<br>
+&ensp;&ensp;The above figure shows the percentage of interaction patterns in different communities, and the average percentages are shown in the legends. We can see that the direct/discussed answer (P4) pattern takes the largest proportions in most communities. In addition, we note that quite a few dialogs (1%) belong to self-answered monologue, while 24% of dialogs belong to unanswered monologue. Nearly 1/4 of dialogs did not get responses in live chat.<br>
 <br>
 <div align=center><img src="https://github.com/LiveChat2021/LiveChat/blob/main/images/duration.png" width="600" alt="duration"/></div><br>
-&ensp;&ensp;The above figure shows the violin plots with thedistribution of duration for each pattern. We can see that althoughP1 takes a small proportion in dialogs, it lasts the longest. Its averageduration is 1.23 hour. P2 and P3 last slightly longer than P4. P5 laststhe shortest, and its average duration is 0.01 hour.<br>
+&ensp;&ensp;The above figure shows the violin plots with the distribution of duration for each pattern. P1-P5 refer to interaction patterns defined above. Here we only exhibit five patterns because the P6 refers to unanswered monologues which barely have a duration. We can see that although P1 takes a small proportion in dialogs, it lasts the longest. Its average duration is 1.00 hours. P2 and P3 last slightly longer than P4. P5 lasts the shortest, and its average duration is 0.02 hour. <br>
 
 <br>
 
-| **Answering RQ4: Six interaction patterns are identified in live chat: exploring solutions, clarifying answer, clarifying question, direct/discussed answer, self-answered monologue, and unanswered monologue. The direct/discussed answer pattern takes the largest proportions in most of communities. There are still 1/4 dialogs that did not get responses on average. Dialogs belong to Exploring Solutions pattern last the longest time than others.** |
+| **Answering RQ4: Six interaction patterns are identified in live chat: exploring solutions, clarifying answer, clarifying question, direct/discussed answer, self-answered monologue, and unanswered monologue. The direct/discussed answer pattern takes the largest proportions in most communities. There are still 1/4 dialogs that did not get responses on average. Dialogs that belong to the Exploring Solutions pattern last the longest time than others. ** |
 | :-----|
 
 ## 4 Conclusion
